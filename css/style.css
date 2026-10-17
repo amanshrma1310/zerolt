@@ -1655,3 +1655,657 @@ img {
   .btn { padding: 11px 20px; font-size: 0.92rem; }
 }
 
+/* ==========================================================================
+   SUB-PAGES: ABOUT, SERVICES & CONTACT STYLES
+   ========================================================================== */
+.page-hero {
+  padding: 135px 0 45px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(94, 67, 243, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 90% 70%, rgba(255, 94, 98, 0.08) 0%, transparent 45%),
+    #ffffff;
+}
+.page-hero h1 {
+  font-size: 3.6rem;
+  max-width: 860px;
+  margin: 0 auto 16px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.page-hero p {
+  font-size: 1.15rem;
+  max-width: 680px;
+  margin: 0 auto 28px;
+  color: var(--text-secondary);
+}
+
+/* Metrics Strip */
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 30px 0 60px;
+}
+.metric-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 26px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.metric-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+.metric-value {
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Story Block */
+.story-block {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 50px;
+  margin-bottom: 60px;
+  box-shadow: var(--shadow-md);
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Comparison Section */
+.comparison-section {
+  background: var(--bg-warm);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 45px;
+  margin-bottom: 65px;
+}
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.comparison-col {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+.comparison-col.highlighted {
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(94, 67, 243, 0.1);
+}
+.comparison-col h3 {
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 0.95rem;
+}
+.comparison-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin: 35px 0 65px;
+}
+.team-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.35s ease;
+  transform-style: preserve-3d;
+}
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+.team-photo-wrap {
+  height: 270px;
+  position: relative;
+  overflow: hidden;
+  background: #181b28;
+}
+.team-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
+}
+.team-card:hover .team-photo-wrap img {
+  transform: scale(1.05);
+}
+.team-details {
+  padding: 24px;
+}
+.team-details h4 {
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+.team-details .role {
+  color: var(--primary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.team-details p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Services Filter Bar */
+.service-filter-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+.filter-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 9px 20px;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(18, 19, 26, 0.04);
+  transition: all 0.25s ease;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(94, 67, 243, 0.35);
+}
+
+.pricing-advantage-banner {
+  background: linear-gradient(135deg, #f7f6ff 0%, #edfcf5 100%);
+  border: 1px solid #e1deff;
+  border-radius: 26px;
+  padding: 36px 40px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.pricing-advantage-text h3 {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+.pricing-advantage-text p {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+}
+
+/* Contact Grid & Form */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+.contact-form-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+  transform-style: preserve-3d;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.94rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+.form-control {
+  width: 100%;
+  padding: 13px 18px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: 0.94rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.25s ease;
+  background: #fafafc;
+}
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+  background: #ffffff;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.sidebar-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transform-style: preserve-3d;
+}
+.sidebar-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+.sidebar-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 18px;
+}
+.sidebar-info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+.faq-section {
+  background: var(--bg-warm);
+  padding: 85px 0;
+  border-top: 1px solid var(--border-light);
+}
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.accordion-item {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.accordion-trigger {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.accordion-trigger h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+.accordion-body {
+  padding: 0 24px 20px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   BOLD AGENCY 3D BACKDROPS & GEOMETRIC SHAPES (NOT AI LOOKING)
+   ========================================================================== */
+.hero-3d-backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Isometric 3D floor grid with forward perspective motion */
+.bg-3d-grid-plane {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background-image: 
+    linear-gradient(rgba(94, 67, 243, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 67, 243, 0.07) 1px, transparent 1px);
+  background-size: 55px 55px;
+  transform: perspective(700px) rotateX(60deg) translateY(-80px);
+  transform-origin: center top;
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, transparent 75%);
+  animation: gridWalk 25s linear infinite;
+}
+
+@keyframes gridWalk {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 55px; }
+}
+
+/* Floating 3D Geometric Shapes */
+.shape-3d {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: drop-shadow(0 20px 35px rgba(94, 67, 243, 0.2));
+  transform-style: preserve-3d;
+}
+
+/* Metallic/Glass 3D Torus */
+.shape-3d-torus {
+  width: 170px;
+  height: 170px;
+  top: 12%;
+  left: 6%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.95), rgba(94, 67, 243, 0.75) 45%, rgba(24, 15, 66, 0.9) 85%);
+  border-radius: 50%;
+  box-shadow: inset -10px -10px 25px rgba(0, 0, 0, 0.4), 0 25px 45px rgba(94, 67, 243, 0.25);
+  animation: floatTorus3D 9s ease-in-out infinite;
+  opacity: 0.85;
+}
+
+/* 3D Chrome Floating Sphere */
+.shape-3d-sphere {
+  width: 120px;
+  height: 120px;
+  bottom: 16%;
+  right: 8%;
+  background: radial-gradient(circle at 30% 25%, #ffffff 0%, #a78bfa 35%, #5e43f3 70%, #1e1b4b 100%);
+  border-radius: 50%;
+  box-shadow: inset -8px -8px 20px rgba(0,0,0,0.5), 0 30px 60px rgba(94, 67, 243, 0.3);
+  animation: floatSphere3D 8s ease-in-out infinite 1.5s;
+  opacity: 0.9;
+}
+
+/* 3D Frosted Glass Prism / Octahedron */
+.shape-3d-prism {
+  width: 140px;
+  height: 140px;
+  top: 22%;
+  right: 28%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(94, 67, 243, 0.15) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 28px;
+  transform: perspective(600px) rotateX(25deg) rotateY(35deg) rotateZ(12deg);
+  animation: floatPrism3D 11s ease-in-out infinite 0.7s;
+  box-shadow: 0 25px 50px rgba(18, 19, 26, 0.08);
+}
+
+/* Floating 3D Glowing Cyber Ring */
+.shape-3d-ring {
+  width: 220px;
+  height: 220px;
+  bottom: 8%;
+  left: 20%;
+  border: 14px solid rgba(94, 67, 243, 0.18);
+  border-top-color: rgba(255, 94, 98, 0.6);
+  border-radius: 50%;
+  transform: perspective(800px) rotateX(65deg) rotateY(-20deg);
+  animation: rotateRing3D 20s linear infinite;
+}
+
+@keyframes floatTorus3D {
+  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+  50% { transform: translateY(-22px) rotate(15deg) scale(1.04); }
+}
+
+@keyframes floatSphere3D {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-28px) rotate(-12deg); }
+}
+
+@keyframes floatPrism3D {
+  0%, 100% { transform: perspective(600px) rotateX(25deg) rotateY(35deg) translateY(0); }
+  50% { transform: perspective(600px) rotateX(35deg) rotateY(15deg) translateY(-20px); }
+}
+
+@keyframes rotateRing3D {
+  0% { transform: perspective(800px) rotateX(65deg) rotateZ(0deg); }
+  100% { transform: perspective(800px) rotateX(65deg) rotateZ(360deg); }
+}
+
+/* ==========================================================================
+   MOBILE-ENABLED 3D CARD ANIMATIONS (AS SPECIFIED BY USER)
+   Continuous, Dynamic 3D Motion On Phone Screens & Touch Devices
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Continuous 3D transforms on mobile so cards look 3D in motion */
+  .hero-main-card {
+    animation: mobileHero3D 6s ease-in-out infinite !important;
+    transform-style: preserve-3d !important;
+  }
+
+  .floating-3d-card-stats {
+    animation: mobileStats3D 5.5s ease-in-out infinite !important;
+    transform-style: preserve-3d !important;
+  }
+
+  .floating-3d-quality-badge {
+    animation: mobileBadge3D 7s ease-in-out infinite !important;
+    transform-style: preserve-3d !important;
+  }
+
+  .ethos-card:nth-child(1) { animation: mobileCardFloatA 8s ease-in-out infinite; }
+  .ethos-card:nth-child(2) { animation: mobileCardFloatB 8.5s ease-in-out infinite 0.5s; }
+  .ethos-card:nth-child(3) { animation: mobileCardFloatA 9s ease-in-out infinite 1s; }
+
+  .service-showcase-row {
+    animation: mobileShowcase3D 9s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
+
+  .project-card {
+    animation: mobileProject3D 8s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
+
+  .shape-3d-torus { width: 110px; height: 110px; top: 5%; left: -20px; }
+  .shape-3d-sphere { width: 80px; height: 80px; bottom: 8%; right: -15px; }
+  .shape-3d-prism { display: none; }
+  .shape-3d-ring { width: 150px; height: 150px; left: 5%; }
+}
+
+@keyframes mobileHero3D {
+  0%, 100% {
+    transform: perspective(900px) rotateX(4deg) rotateY(-5deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(900px) rotateX(-4deg) rotateY(6deg) translateY(-12px);
+  }
+}
+
+@keyframes mobileStats3D {
+  0%, 100% {
+    transform: perspective(800px) rotateX(-5deg) rotateY(6deg) translateY(0px) translateZ(30px);
+  }
+  50% {
+    transform: perspective(800px) rotateX(5deg) rotateY(-4deg) translateY(-14px) translateZ(45px);
+  }
+}
+
+@keyframes mobileBadge3D {
+  0%, 100% {
+    transform: perspective(800px) rotateX(3deg) rotateY(-4deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(800px) rotateX(-3deg) rotateY(4deg) translateY(-8px);
+  }
+}
+
+@keyframes mobileCardFloatA {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(0deg) translateY(0px);
+    box-shadow: var(--shadow-sm);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(3deg) translateY(-6px);
+    box-shadow: 0 16px 36px rgba(94, 67, 243, 0.12);
+  }
+}
+
+@keyframes mobileCardFloatB {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(0deg) translateY(0px);
+    box-shadow: var(--shadow-sm);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(-3deg) translateY(-6px);
+    box-shadow: 0 16px 36px rgba(16, 185, 129, 0.12);
+  }
+}
+
+@keyframes mobileShowcase3D {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(0deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(2deg) translateY(-5px);
+  }
+}
+
+@keyframes mobileProject3D {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(0deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(-2deg) translateY(-6px);
+  }
+}
+
+/* ==========================================================================
+   FLOWDESK QUICK CONSULTATION MODAL (CONNECTED TO HOSTINGER ENDPOINT)
+   ========================================================================== */
+.flowdesk-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 11, 18, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.flowdesk-modal-backdrop.active {
+  display: flex;
+  opacity: 1;
+}
+
+.flowdesk-modal-window {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  max-width: 500px;
+  width: 100%;
+  padding: 36px 32px;
+  position: relative;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flowdesk-modal-backdrop.active .flowdesk-modal-window {
+  transform: translateY(0) scale(1);
+}
+
+.flowdesk-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.flowdesk-modal-close:hover {
+  background: #fee2e2;
+  color: #ef4444;
+  border-color: #fca5a5;
+}
+
+@media (max-width: 992px) {
+  .story-grid { grid-template-columns: 1fr; }
+  .comparison-grid { grid-template-columns: 1fr; }
+  .metrics-strip { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: 1fr; }
+  .contact-main-grid { grid-template-columns: 1fr; }
+  .page-hero h1 { font-size: 2.6rem; }
+  .story-block { padding: 30px 20px; }
+}
+
+@media (max-width: 768px) {
+  .contact-form-card { padding: 26px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+

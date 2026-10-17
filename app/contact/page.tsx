@@ -70,21 +70,26 @@ export default function ContactPage() {
     setErrorMessage('');
 
     try {
-      const res = await fetch('/api/contact', {
+      const payload = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        company: formData.company,
+        notes: `Platforms: ${selectedPlatforms.join(', ')}\nBudget: ${formData.budget}\nDetails: ${formData.message}`,
+      };
+
+      const res = await fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || '',
-          platforms: selectedPlatforms,
-          budget: formData.budget,
-          message: `Company: ${formData.company || 'N/A'}\nWebsite: ${formData.website || 'N/A'}\nDetails: ${formData.message}`,
-        }),
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
       });
 
       const data = await res.json();
       if (data.success) {
+        if (data.redirectUrl) {
+          window.location.href = data.redirectUrl;
+          return;
+        }
         setIsSubmitted(true);
         setFormData({
           name: '',
@@ -96,10 +101,10 @@ export default function ContactPage() {
           message: '',
         });
       } else {
-        setErrorMessage(data.error || 'Failed to submit inquiry.');
+        setErrorMessage(data.error || 'Submission failed. Please try again.');
       }
     } catch {
-      // Graceful fallback for offline or development preview
+      // Fallback
       setIsSubmitted(true);
     } finally {
       setIsSubmitting(false);
@@ -143,24 +148,26 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Your Name *</label>
+                  <label>Full Name *</label>
                   <input
                     type="text"
+                    name="name"
                     className="form-control"
-                    placeholder="e.g. Sarah Jenkins"
+                    placeholder="John Doe"
                     value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
                     required
                   />
                 </div>
                 <div className="form-group">
-                  <label>Work Email *</label>
+                  <label>WhatsApp / Phone Number *</label>
                   <input
-                    type="email"
+                    type="tel"
+                    name="phone"
                     className="form-control"
-                    placeholder="sarah@company.com"
-                    value={formData.email}
-                    onChange={e => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="+91 98765 43210"
+                    value={formData.phone}
+                    onChange={e => setFormData({ ...formData, phone: e.target.value })}
                     required
                   />
                 </div>
@@ -168,23 +175,26 @@ export default function ContactPage() {
 
               <div className="form-row">
                 <div className="form-group">
-                  <label>Company / Brand Name</label>
+                  <label>Work Email *</label>
                   <input
-                    type="text"
+                    type="email"
+                    name="email"
                     className="form-control"
-                    placeholder="e.g. Acme Studio"
-                    value={formData.company}
-                    onChange={e => setFormData({ ...formData, company: e.target.value })}
+                    placeholder="john@company.com"
+                    value={formData.email}
+                    onChange={e => setFormData({ ...formData, email: e.target.value })}
+                    required
                   />
                 </div>
                 <div className="form-group">
-                  <label>Current Website / Funnel URL</label>
+                  <label>Company Name</label>
                   <input
-                    type="url"
+                    type="text"
+                    name="company"
                     className="form-control"
-                    placeholder="https://"
-                    value={formData.website}
-                    onChange={e => setFormData({ ...formData, website: e.target.value })}
+                    placeholder="Acme Corp"
+                    value={formData.company}
+                    onChange={e => setFormData({ ...formData, company: e.target.value })}
                   />
                 </div>
               </div>
@@ -223,11 +233,11 @@ export default function ContactPage() {
               </div>
 
               <div className="form-group">
-                <label>Tell Us About Your Project & Bottlenecks:</label>
+                <label>Requirements / Notes:</label>
                 <textarea
                   className="form-control"
                   rows={4}
-                  placeholder="Describe your goals, current lead drop-offs, or CRM integrations needed..."
+                  placeholder="Tell us about your needs (Webflow, GoHighLevel, n8n, Zoho, Shopify, AI apps)..."
                   value={formData.message}
                   onChange={e => setFormData({ ...formData, message: e.target.value })}
                 ></textarea>
@@ -239,7 +249,7 @@ export default function ContactPage() {
                 disabled={isSubmitting}
                 style={{ width: '100%', fontSize: '1.05rem', padding: '16px' }}
               >
-                {isSubmitting ? 'Sending Request...' : 'Submit Inquiry & Request Proposal'}
+                {isSubmitting ? 'Submitting...' : 'Get Free Consultation'}
                 <span className="btn-pill-icon"><i className="fa-solid fa-arrow-right"></i></span>
               </button>
 
@@ -248,14 +258,18 @@ export default function ContactPage() {
                   style={{
                     marginTop: '20px',
                     background: '#ecfdf5',
-                    border: '1px solid #10b981',
-                    padding: '18px 24px',
+                    border: '1px solid #a7f3d0',
+                    padding: '24px',
                     borderRadius: 'var(--radius-lg)',
+                    textAlign: 'center',
                     color: '#065f46',
                   }}
                 >
-                  <strong style={{ display: 'block', marginBottom: '4px' }}>✨ Thank You for Reaching Out!</strong>
-                  Your technical partner at Zerolt has received your details and will review your requirements with an honest architecture proposal within 4 hours.
+                  <svg style={{ width: '40px', height: '40px', margin: '0 auto 12px', display: 'block', stroke: '#059669' }} viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                  <h3 style={{ margin: '0 0 6px', fontSize: '20px', fontWeight: 800, color: '#047857' }}>Thank You!</h3>
+                  <p style={{ margin: 0, fontSize: '14px', color: '#065f46' }}>Thank you! Our marketing specialist will WhatsApp and email you shortly.</p>
                 </div>
               )}
 

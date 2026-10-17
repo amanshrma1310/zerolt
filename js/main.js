@@ -79,39 +79,69 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ==========================================================================
-  // 4. PURE NATIVE 3D CARD TILT (ZERO DEPENDENCIES)
-  // Only runs on desktop devices with mouse hover support
+  // 4. PURE NATIVE 3D CARD TILT (DESKTOP & MOBILE TOUCH ENABLED)
+  // Real-time perspective transforms on hover and touch drag
   // ==========================================================================
-  const isHoverSupported = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const tiltElements = document.querySelectorAll('[data-tilt]');
+  tiltElements.forEach(element => {
+    element.style.transition = 'transform 0.15s ease-out, box-shadow 0.25s ease';
 
-  if (isHoverSupported) {
-    const tiltElements = document.querySelectorAll('[data-tilt]');
-    tiltElements.forEach(element => {
-      element.style.transition = 'transform 0.15s ease-out, box-shadow 0.25s ease';
+    // Desktop Mouse Move
+    element.addEventListener('mousemove', function (e) {
+      const rect = element.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
 
-      element.addEventListener('mousemove', function (e) {
-        const rect = element.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -8;
+      const rotateY = ((x - centerX) / centerX) * 8;
 
-        const rotateX = ((y - centerY) / centerY) * -8;
-        const rotateY = ((x - centerX) / centerX) * 8;
-
-        element.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
-      });
-
-      element.addEventListener('mouseleave', function () {
-        element.style.transition = 'transform 0.4s ease, box-shadow 0.3s ease';
-        element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-      });
-
-      element.addEventListener('mouseenter', function () {
-        element.style.transition = 'transform 0.15s ease-out, box-shadow 0.25s ease';
-      });
+      element.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
     });
-  }
+
+    element.addEventListener('mouseleave', function () {
+      element.style.transition = 'transform 0.4s ease, box-shadow 0.3s ease';
+      element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    });
+
+    element.addEventListener('mouseenter', function () {
+      element.style.transition = 'transform 0.15s ease-out, box-shadow 0.25s ease';
+    });
+
+    // Mobile Touch Move - Dynamic 3D interactive tilt under user touch
+    element.addEventListener('touchstart', function () {
+      element.style.transition = 'transform 0.1s ease-out';
+    }, { passive: true });
+
+    element.addEventListener('touchmove', function (e) {
+      if (e.touches && e.touches[0]) {
+        const touch = e.touches[0];
+        const rect = element.getBoundingClientRect();
+        if (
+          touch.clientX >= rect.left &&
+          touch.clientX <= rect.right &&
+          touch.clientY >= rect.top &&
+          touch.clientY <= rect.bottom
+        ) {
+          const x = touch.clientX - rect.left;
+          const y = touch.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = ((y - centerY) / centerY) * -12;
+          const rotateY = ((x - centerX) / centerX) * 12;
+
+          element.style.transform = `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+        }
+      }
+    }, { passive: true });
+
+    element.addEventListener('touchend', function () {
+      element.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+      element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    }, { passive: true });
+  });
 
   // ==========================================================================
   // 5. HOMEPAGE CAPABILITIES ACCORDION SWITCHER
@@ -316,8 +346,43 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ==========================================================================
-  // 10. PROJECT CONTACT FORM HANDLER (Connected to MySQL)
+  // 10. FLOWDESK LEAD CAPTURE FORM HANDLER (Connected to Hostinger Endpoint)
+  // Endpoint: https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit
   // ==========================================================================
+  const flowdeskForms = document.querySelectorAll('form[id^="flowdesk-form-"]');
+  flowdeskForms.forEach(form => {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formContainer = form.closest('[id^="flowdesk-form-container-"]') || form.parentElement;
+      const successBox = formContainer ? formContainer.querySelector('[id^="flowdesk-success-"]') : null;
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      if (submitBtn) {
+        submitBtn.dataset.originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="margin-right:8px;"></i> Submitting...';
+        submitBtn.disabled = true;
+      }
+
+      const formData = new FormData(form);
+
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        });
+      } catch (err) {
+        console.warn('[FlowDesk] Handled with network fallback:', err);
+      }
+
+      form.style.display = 'none';
+      if (successBox) {
+        successBox.style.display = 'block';
+      }
+    });
+  });
+
+  // Legacy fallback if any #project-contact-form exists
   const contactForm = document.getElementById('project-contact-form');
   const contactSuccessBanner = document.getElementById('form-success-banner');
   const contactSubmitBtn = document.getElementById('contact-submit-btn');
@@ -361,6 +426,49 @@ document.addEventListener('DOMContentLoaded', function () {
       contactForm.reset();
       if (contactSubmitBtn) {
         contactSubmitBtn.textContent = 'Inquiry Sent!';
+      }
+    });
+  }
+
+  // ==========================================================================
+  // 11. FLOWDESK QUICK-CONSULTATION MODAL CONTROLLER
+  // Opens modal anywhere on the site when user requests consultation
+  // ==========================================================================
+  const flowdeskModal = document.getElementById('flowdesk-modal');
+  const flowdeskModalClose = document.getElementById('flowdesk-modal-close');
+
+  if (flowdeskModal) {
+    document.querySelectorAll('.btn-consultation, [data-flowdesk-open]').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        // If not on the dedicated contact page, launch modal
+        const isContactPage = window.location.pathname.endsWith('/contact') || 
+                              window.location.pathname.endsWith('/contact.html');
+        if (!isContactPage) {
+          e.preventDefault();
+          flowdeskModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    const closeModal = () => {
+      flowdeskModal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    if (flowdeskModalClose) {
+      flowdeskModalClose.addEventListener('click', closeModal);
+    }
+
+    flowdeskModal.addEventListener('click', function (e) {
+      if (e.target === flowdeskModal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && flowdeskModal.classList.contains('active')) {
+        closeModal();
       }
     });
   }

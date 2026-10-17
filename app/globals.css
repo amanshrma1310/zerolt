@@ -2038,4 +2038,295 @@ img {
   .form-row { grid-template-columns: 1fr; }
 }
 
+/* ==========================================================================
+   BOLD AGENCY 3D BACKDROPS & GEOMETRIC SHAPES (NOT AI LOOKING)
+   ========================================================================== */
+.hero-3d-backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Isometric 3D floor grid with forward perspective motion */
+.bg-3d-grid-plane {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background-image: 
+    linear-gradient(rgba(94, 67, 243, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 67, 243, 0.07) 1px, transparent 1px);
+  background-size: 55px 55px;
+  transform: perspective(700px) rotateX(60deg) translateY(-80px);
+  transform-origin: center top;
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, transparent 75%);
+  animation: gridWalk 25s linear infinite;
+}
+
+@keyframes gridWalk {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 55px; }
+}
+
+/* Floating 3D Geometric Shapes */
+.shape-3d {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: drop-shadow(0 20px 35px rgba(94, 67, 243, 0.2));
+  transform-style: preserve-3d;
+}
+
+/* Metallic/Glass 3D Torus */
+.shape-3d-torus {
+  width: 170px;
+  height: 170px;
+  top: 12%;
+  left: 6%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.95), rgba(94, 67, 243, 0.75) 45%, rgba(24, 15, 66, 0.9) 85%);
+  border-radius: 50%;
+  box-shadow: inset -10px -10px 25px rgba(0, 0, 0, 0.4), 0 25px 45px rgba(94, 67, 243, 0.25);
+  animation: floatTorus3D 9s ease-in-out infinite;
+  opacity: 0.85;
+}
+
+/* 3D Chrome Floating Sphere */
+.shape-3d-sphere {
+  width: 120px;
+  height: 120px;
+  bottom: 16%;
+  right: 8%;
+  background: radial-gradient(circle at 30% 25%, #ffffff 0%, #a78bfa 35%, #5e43f3 70%, #1e1b4b 100%);
+  border-radius: 50%;
+  box-shadow: inset -8px -8px 20px rgba(0,0,0,0.5), 0 30px 60px rgba(94, 67, 243, 0.3);
+  animation: floatSphere3D 8s ease-in-out infinite 1.5s;
+  opacity: 0.9;
+}
+
+/* 3D Frosted Glass Prism / Octahedron */
+.shape-3d-prism {
+  width: 140px;
+  height: 140px;
+  top: 22%;
+  right: 28%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(94, 67, 243, 0.15) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 28px;
+  transform: perspective(600px) rotateX(25deg) rotateY(35deg) rotateZ(12deg);
+  animation: floatPrism3D 11s ease-in-out infinite 0.7s;
+  box-shadow: 0 25px 50px rgba(18, 19, 26, 0.08);
+}
+
+/* Floating 3D Glowing Cyber Ring */
+.shape-3d-ring {
+  width: 220px;
+  height: 220px;
+  bottom: 8%;
+  left: 20%;
+  border: 14px solid rgba(94, 67, 243, 0.18);
+  border-top-color: rgba(255, 94, 98, 0.6);
+  border-radius: 50%;
+  transform: perspective(800px) rotateX(65deg) rotateY(-20deg);
+  animation: rotateRing3D 20s linear infinite;
+}
+
+@keyframes floatTorus3D {
+  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+  50% { transform: translateY(-22px) rotate(15deg) scale(1.04); }
+}
+
+@keyframes floatSphere3D {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-28px) rotate(-12deg); }
+}
+
+@keyframes floatPrism3D {
+  0%, 100% { transform: perspective(600px) rotateX(25deg) rotateY(35deg) translateY(0); }
+  50% { transform: perspective(600px) rotateX(35deg) rotateY(15deg) translateY(-20px); }
+}
+
+@keyframes rotateRing3D {
+  0% { transform: perspective(800px) rotateX(65deg) rotateZ(0deg); }
+  100% { transform: perspective(800px) rotateX(65deg) rotateZ(360deg); }
+}
+
+/* ==========================================================================
+   MOBILE-ENABLED 3D CARD ANIMATIONS (AS SPECIFIED BY USER)
+   Continuous, Dynamic 3D Motion On Phone Screens & Touch Devices
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Continuous 3D transforms on mobile so cards look 3D in motion */
+  .hero-main-card {
+    animation: mobileHero3D 6s ease-in-out infinite !important;
+    transform-style: preserve-3d !important;
+  }
+
+  .floating-3d-card-stats {
+    animation: mobileStats3D 5.5s ease-in-out infinite !important;
+    transform-style: preserve-3d !important;
+  }
+
+  .floating-3d-quality-badge {
+    animation: mobileBadge3D 7s ease-in-out infinite !important;
+    transform-style: preserve-3d !important;
+  }
+
+  .ethos-card:nth-child(1) { animation: mobileCardFloatA 8s ease-in-out infinite; }
+  .ethos-card:nth-child(2) { animation: mobileCardFloatB 8.5s ease-in-out infinite 0.5s; }
+  .ethos-card:nth-child(3) { animation: mobileCardFloatA 9s ease-in-out infinite 1s; }
+
+  .service-showcase-row {
+    animation: mobileShowcase3D 9s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
+
+  .project-card {
+    animation: mobileProject3D 8s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
+
+  .shape-3d-torus { width: 110px; height: 110px; top: 5%; left: -20px; }
+  .shape-3d-sphere { width: 80px; height: 80px; bottom: 8%; right: -15px; }
+  .shape-3d-prism { display: none; }
+  .shape-3d-ring { width: 150px; height: 150px; left: 5%; }
+}
+
+@keyframes mobileHero3D {
+  0%, 100% {
+    transform: perspective(900px) rotateX(4deg) rotateY(-5deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(900px) rotateX(-4deg) rotateY(6deg) translateY(-12px);
+  }
+}
+
+@keyframes mobileStats3D {
+  0%, 100% {
+    transform: perspective(800px) rotateX(-5deg) rotateY(6deg) translateY(0px) translateZ(30px);
+  }
+  50% {
+    transform: perspective(800px) rotateX(5deg) rotateY(-4deg) translateY(-14px) translateZ(45px);
+  }
+}
+
+@keyframes mobileBadge3D {
+  0%, 100% {
+    transform: perspective(800px) rotateX(3deg) rotateY(-4deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(800px) rotateX(-3deg) rotateY(4deg) translateY(-8px);
+  }
+}
+
+@keyframes mobileCardFloatA {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(0deg) translateY(0px);
+    box-shadow: var(--shadow-sm);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(3deg) translateY(-6px);
+    box-shadow: 0 16px 36px rgba(94, 67, 243, 0.12);
+  }
+}
+
+@keyframes mobileCardFloatB {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(0deg) translateY(0px);
+    box-shadow: var(--shadow-sm);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(-3deg) translateY(-6px);
+    box-shadow: 0 16px 36px rgba(16, 185, 129, 0.12);
+  }
+}
+
+@keyframes mobileShowcase3D {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(0deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(2deg) translateY(-5px);
+  }
+}
+
+@keyframes mobileProject3D {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(0deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(-2deg) translateY(-6px);
+  }
+}
+
+/* ==========================================================================
+   FLOWDESK QUICK CONSULTATION MODAL (CONNECTED TO HOSTINGER ENDPOINT)
+   ========================================================================== */
+.flowdesk-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 11, 18, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.flowdesk-modal-backdrop.active {
+  display: flex;
+  opacity: 1;
+}
+
+.flowdesk-modal-window {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  max-width: 500px;
+  width: 100%;
+  padding: 36px 32px;
+  position: relative;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flowdesk-modal-backdrop.active .flowdesk-modal-window {
+  transform: translateY(0) scale(1);
+}
+
+.flowdesk-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.flowdesk-modal-close:hover {
+  background: #fee2e2;
+  color: #ef4444;
+  border-color: #fca5a5;
+}
+
+
 

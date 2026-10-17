@@ -2,20 +2,28 @@
   RewriteEngine On
   RewriteBase /
 
-  # 1. Route API calls to PHP scripts on Apache / Hostinger
+  # 1. Redirect /index.html to root /
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # 2. Redirect any request ending in .html to clean URL (e.g. /about.html -> /about)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html\ HTTP/
+  RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+  # 3. Route API endpoints
   RewriteRule ^api/contact/?$ api/contact.php [L,QSA]
   RewriteRule ^api/waitlist/?$ api/waitlist.php [L,QSA]
 
-  # 2. Support Clean URLs (e.g. /about -> about.html)
+  # 4. Internally resolve clean URLs to .html files
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 
 # Specify Default Index Documents
 DirectoryIndex index.html index.php
 
-# Prevent directory listings
+# Prevent directory browsing
 Options -Indexes
 
 # Ensure access permissions are granted to avoid 403 Forbidden

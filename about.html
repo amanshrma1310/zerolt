@@ -233,21 +233,21 @@
   <header class="site-header">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="index.html" class="logo">
+        <a href="/" class="logo">
           <span class="logo-text">Zerolt</span><span class="logo-dot"></span>
         </a>
 
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link active">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="index.html#leadspark" class="nav-link">LeadSpark <span class="nav-tag-new">NEW</span></a></li>
-          <li><a href="index.html#work" class="nav-link">Work</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/about" class="nav-link active">About</a></li>
+          <li><a href="/services" class="nav-link">Services</a></li>
+          <li><a href="/#leadspark" class="nav-link">LeadSpark <span class="nav-tag-new">NEW</span></a></li>
+          <li><a href="/#work" class="nav-link">Work</a></li>
+          <li><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
-          <a href="contact.html" class="btn btn-consultation">
+          <a href="/contact" class="btn btn-consultation">
             Free Consultation <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem; margin-left:4px;"></i>
           </a>
           <button class="mobile-nav-toggle" aria-label="Toggle navigation">
@@ -263,7 +263,14 @@
          2. HERO SECTION
          ======================================================================== -->
     <section class="page-hero">
-      <div class="container">
+      <!-- 3D Geometric Backdrop Shapes -->
+      <div class="hero-3d-backdrop" aria-hidden="true">
+        <div class="bg-3d-grid-plane"></div>
+        <div class="shape-3d shape-3d-torus"></div>
+        <div class="shape-3d shape-3d-sphere"></div>
+      </div>
+
+      <div class="container" style="position:relative; z-index:2;">
         <div class="hero-badge-pill">
           <span class="pulse-indicator"></span>
           <span>Our Story & Mission</span>
@@ -311,7 +318,7 @@
             <p style="margin-bottom:24px;">
               And we don't just build client projects — we engineer our own products, such as <strong>LeadSpark</strong>, to showcase what modern marketing automation is truly capable of when built without compromises.
             </p>
-            <a href="services.html" class="btn btn-primary">
+            <a href="/services" class="btn btn-primary">
               Explore Our Platforms <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
             </a>
           </div>
@@ -433,7 +440,7 @@
           <p>Get in touch directly with our team and receive an honest architecture plan in 4 hours.</p>
         </div>
         <div>
-          <a href="contact.html" class="btn btn-primary" style="font-size:1.05rem; padding:16px 32px;">
+          <a href="/contact" class="btn btn-primary" style="font-size:1.05rem; padding:16px 32px;">
             Say Hello To A Friend <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
           </a>
         </div>
@@ -448,7 +455,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo logo-dark">
+          <a href="/" class="logo logo-dark">
             <span class="logo-text">Zerolt</span><span class="logo-dot"></span>
           </a>
           <p>An elite freelance collective crafting high-converting storefronts, custom CMS websites, and autonomous marketing engines at fair market prices.</p>
@@ -456,20 +463,20 @@
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Zerolt</a></li>
-            <li><a href="services.html">Services & Pricing</a></li>
-            <li><a href="index.html#leadspark">LeadSpark Automation</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Zerolt</a></li>
+            <li><a href="/services">Services & Pricing</a></li>
+            <li><a href="/#leadspark">LeadSpark Automation</a></li>
+            <li><a href="/contact">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Platforms</h4>
           <ul>
-            <li><a href="services.html#ghl">GoHighLevel (GHL)</a></li>
-            <li><a href="services.html#n8n">n8n Orchestration</a></li>
-            <li><a href="services.html#webflow">Webflow & Shopify</a></li>
-            <li><a href="services.html#zoho">Zoho CRM & Flow</a></li>
+            <li><a href="/services#ghl">GoHighLevel (GHL)</a></li>
+            <li><a href="/services#n8n">n8n Orchestration</a></li>
+            <li><a href="/services#webflow">Webflow & Shopify</a></li>
+            <li><a href="/services#zoho">Zoho CRM & Flow</a></li>
           </ul>
         </div>
         <div class="footer-col footer-newsletter">
@@ -484,13 +491,59 @@
       <div class="footer-bottom">
         <div>&copy; 2026 Zerolt.com. All rights reserved. Crafting digital advantage since 2021.</div>
         <div style="display:flex; gap:20px;">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="contact.html">Support</a>
+          <a href="/about">Privacy Policy</a>
+          <a href="/about">Terms of Service</a>
+          <a href="/contact">Support</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- FlowDesk Quick Consultation Modal (Connected to Hostinger Endpoint) -->
+  <div class="flowdesk-modal-backdrop" id="flowdesk-modal">
+    <div class="flowdesk-modal-window">
+      <button class="flowdesk-modal-close" id="flowdesk-modal-close" aria-label="Close">&times;</button>
+      <div style="margin-bottom:18px;">
+        <span class="hero-badge-pill" style="margin-bottom:8px; display:inline-flex; font-size:0.75rem;">⚡ Direct Builder Intake</span>
+        <h3 style="font-size:1.5rem; font-weight:800; color:var(--text-primary); margin-bottom:4px; letter-spacing:-0.02em;">Request Free Consultation</h3>
+        <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">Enter your requirements. An engineer will reach out via WhatsApp & email within 2 hours.</p>
+      </div>
+
+      <!-- FlowDesk Lead Capture Form -->
+      <div id="flowdesk-form-container-form-1" style="max-width: 480px; margin: 0 auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1e293b;">
+        <form id="flowdesk-form-form-1" action="https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit" method="POST">
+          <div style="margin-bottom: 14px;">
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px;">Full Name *</label>
+            <input type="text" name="name" required placeholder="John Doe" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; box-sizing:border-box; outline:none;" onfocus="this.style.borderColor='#6366f1'" onblur="this.style.borderColor='#cbd5e1'">
+          </div>
+          <div style="margin-bottom: 14px;">
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px;">Phone / WhatsApp *</label>
+            <input type="tel" name="phone" required placeholder="+1 234 567 8900" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; box-sizing:border-box; outline:none;" onfocus="this.style.borderColor='#6366f1'" onblur="this.style.borderColor='#cbd5e1'">
+          </div>
+          <div style="margin-bottom: 14px;">
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px;">Email Address *</label>
+            <input type="email" name="email" required placeholder="john@example.com" style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; box-sizing:border-box; outline:none;" onfocus="this.style.borderColor='#6366f1'" onblur="this.style.borderColor='#cbd5e1'">
+          </div>
+          <div style="margin-bottom: 14px;">
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px;">Company / Project Name</label>
+            <input type="text" name="company" placeholder="Acme Inc." style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; box-sizing:border-box; outline:none;" onfocus="this.style.borderColor='#6366f1'" onblur="this.style.borderColor='#cbd5e1'">
+          </div>
+          <div style="margin-bottom: 18px;">
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px;">Project Brief / Notes</label>
+            <textarea name="notes" rows="3" placeholder="Tell us about your requirements, timeline, budget..." style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; box-sizing:border-box; outline:none; resize:vertical;" onfocus="this.style.borderColor='#6366f1'" onblur="this.style.borderColor='#cbd5e1'"></textarea>
+          </div>
+          <button type="submit" id="flowdesk-submit-btn-form-1" style="width:100%; padding:12px; background:linear-gradient(135deg, #5e43f3 0%, #4328d6 100%); color:#fff; border:none; border-radius:8px; font-size:15px; font-weight:700; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.opacity='0.95'" onmouseout="this.style.opacity='1'">
+            Request Free Consultation
+          </button>
+        </form>
+        <div id="flowdesk-success-form-1" style="display:none; text-align:center; padding:30px 20px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; color:#166534;">
+          <svg style="width:48px;height:48px;margin:0 auto 12px;display:block;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <h3 style="margin:0 0 8px;font-size:18px;font-weight:700;">Thank You!</h3>
+          <p style="margin:0;font-size:14px;color:#15803d;">Your details have been submitted to Zerolt on FlowDesk. A senior engineer will reach out within 2 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

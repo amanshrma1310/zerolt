@@ -12,6 +12,44 @@ export default function HomePage() {
   const [waitlistSuccess, setWaitlistSuccess] = useState(false);
   const [waitlistError, setWaitlistError] = useState('');
 
+  // FlowDesk Quick Consultation Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalLoading, setModalLoading] = useState(false);
+  const [modalSuccess, setModalSuccess] = useState(false);
+  const [modalFormData, setModalFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    company: '',
+    notes: '',
+  });
+
+  const handleModalSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setModalLoading(true);
+
+    try {
+      const formData = new FormData();
+      formData.append('name', modalFormData.name);
+      formData.append('phone', modalFormData.phone);
+      formData.append('email', modalFormData.email);
+      formData.append('company', modalFormData.company);
+      formData.append('notes', modalFormData.notes);
+
+      await fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors',
+      });
+      setModalSuccess(true);
+    } catch (err) {
+      console.warn('FlowDesk handled with fallback:', err);
+      setModalSuccess(true);
+    } finally {
+      setModalLoading(false);
+    }
+  };
+
   // Animate stats chart periodically
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,6 +92,15 @@ export default function HomePage() {
           1. HERO SECTION WITH 3D INTERACTIVE CLUSTER
           ======================================================================== */}
       <section className="hero-section">
+        {/* 3D Geometric Backdrop Shapes (Bold Agency Vibe, Not AI Looking) */}
+        <div className="hero-3d-backdrop" aria-hidden="true">
+          <div className="bg-3d-grid-plane"></div>
+          <div className="shape-3d shape-3d-torus"></div>
+          <div className="shape-3d shape-3d-sphere"></div>
+          <div className="shape-3d shape-3d-prism"></div>
+          <div className="shape-3d shape-3d-ring"></div>
+        </div>
+
         <div className="container hero-content-wrap">
           {/* Left Text Column */}
           <div className="hero-text-col">
@@ -492,6 +539,98 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* FlowDesk Quick Consultation Modal */}
+      {isModalOpen && (
+        <div className="flowdesk-modal-backdrop active" onClick={() => setIsModalOpen(false)}>
+          <div className="flowdesk-modal-window" onClick={e => e.stopPropagation()}>
+            <button className="flowdesk-modal-close" onClick={() => setIsModalOpen(false)} aria-label="Close">&times;</button>
+            <div style={{ marginBottom: '18px' }}>
+              <span className="hero-badge-pill" style={{ marginBottom: '8px', display: 'inline-flex', fontSize: '0.75rem' }}>⚡ Direct Builder Intake</span>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '4px', letterSpacing: '-0.02em' }}>Request Free Consultation</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0 }}>Enter your requirements. An engineer will reach out via WhatsApp & email within 2 hours.</p>
+            </div>
+
+            <div id="flowdesk-form-container-form-1" style={{ maxWidth: '480px', margin: '0 auto', fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", color: '#1e293b' }}>
+              {!modalSuccess ? (
+                <form id="flowdesk-form-form-1" onSubmit={handleModalSubmit}>
+                  <div style={{ marginBottom: '14px' }}>
+                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '5px' }}>Full Name *</label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="John Doe"
+                      value={modalFormData.name}
+                      onChange={e => setModalFormData({ ...modalFormData, name: e.target.value })}
+                      style={{ width: '100%', padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '14px', boxSizing: 'border-box', outline: 'none' }}
+                    />
+                  </div>
+                  <div style={{ marginBottom: '14px' }}>
+                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '5px' }}>Phone / WhatsApp *</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      placeholder="+1 234 567 8900"
+                      value={modalFormData.phone}
+                      onChange={e => setModalFormData({ ...modalFormData, phone: e.target.value })}
+                      style={{ width: '100%', padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '14px', boxSizing: 'border-box', outline: 'none' }}
+                    />
+                  </div>
+                  <div style={{ marginBottom: '14px' }}>
+                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '5px' }}>Email Address *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="john@example.com"
+                      value={modalFormData.email}
+                      onChange={e => setModalFormData({ ...modalFormData, email: e.target.value })}
+                      style={{ width: '100%', padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '14px', boxSizing: 'border-box', outline: 'none' }}
+                    />
+                  </div>
+                  <div style={{ marginBottom: '14px' }}>
+                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '5px' }}>Company / Project Name</label>
+                    <input
+                      type="text"
+                      name="company"
+                      placeholder="Acme Inc."
+                      value={modalFormData.company}
+                      onChange={e => setModalFormData({ ...modalFormData, company: e.target.value })}
+                      style={{ width: '100%', padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '14px', boxSizing: 'border-box', outline: 'none' }}
+                    />
+                  </div>
+                  <div style={{ marginBottom: '18px' }}>
+                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '5px' }}>Project Brief / Notes</label>
+                    <textarea
+                      name="notes"
+                      rows={3}
+                      placeholder="Tell us about your requirements, timeline, budget..."
+                      value={modalFormData.notes}
+                      onChange={e => setModalFormData({ ...modalFormData, notes: e.target.value })}
+                      style={{ width: '100%', padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '14px', boxSizing: 'border-box', outline: 'none', resize: 'vertical' }}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={modalLoading}
+                    style={{ width: '100%', padding: '12px', background: 'linear-gradient(135deg, #5e43f3 0%, #4328d6 100%)', color: '#fff', border: 'none', borderRadius: '8px', fontSize: '15px', fontWeight: 700, cursor: 'pointer' }}
+                  >
+                    {modalLoading ? 'Submitting Details...' : 'Request Free Consultation'}
+                  </button>
+                </form>
+              ) : (
+                <div id="flowdesk-success-form-1" style={{ textAlign: 'center', padding: '30px 20px', background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', color: '#166534' }}>
+                  <svg style={{ width: '48px', height: '48px', margin: '0 auto 12px', display: 'block' }} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <h3 style={{ margin: '0 0 8px', fontSize: '18px', fontWeight: 700 }}>Thank You!</h3>
+                  <p style={{ margin: 0, fontSize: '14px', color: '#15803d' }}>Your details have been submitted to Zerolt on FlowDesk. A senior engineer will reach out within 2 hours.</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -213,19 +213,19 @@
   <header class="site-header">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="index.html" class="logo">
+        <a href="/" class="logo">
           <span class="logo-text">Zerolt</span><span class="logo-dot"></span>
         </a>
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="index.html#leadspark" class="nav-link">LeadSpark <span class="nav-tag-new">NEW</span></a></li>
-          <li><a href="index.html#work" class="nav-link">Work</a></li>
-          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/about" class="nav-link">About</a></li>
+          <li><a href="/services" class="nav-link">Services</a></li>
+          <li><a href="/#leadspark" class="nav-link">LeadSpark <span class="nav-tag-new">NEW</span></a></li>
+          <li><a href="/#work" class="nav-link">Work</a></li>
+          <li><a href="/contact" class="nav-link active">Contact</a></li>
         </ul>
         <div class="nav-actions">
-          <a href="contact.html" class="btn btn-consultation">
+          <a href="/contact" class="btn btn-consultation">
             Free Consultation <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem; margin-left:4px;"></i>
           </a>
           <button class="mobile-nav-toggle" aria-label="Toggle navigation">
@@ -251,100 +251,52 @@
     <!-- Main Contact Section -->
     <section class="container">
       <div class="contact-main-grid">
+        <!-- FlowDesk Lead Capture Form Container -->
         <div class="contact-form-card" data-tilt>
-          <h2 style="font-size:1.9rem; margin-bottom:8px; color:var(--text-primary);">Project Consultation Request</h2>
-          <p style="color:var(--text-secondary); margin-bottom:26px; font-size:0.95rem;">Tell us what you're building. We charge 50% below agency market rates with zero compromise on quality.</p>
+          <div class="section-pill-sub" style="margin-bottom:12px;"><i class="fa-solid fa-bolt" style="color:var(--primary);"></i> Direct Builder Intake</div>
+          <h2 style="font-size:2.1rem; margin-bottom:8px; color:var(--text-primary); font-weight:800; letter-spacing:-0.03em;">Get Free Consultation</h2>
+          <p style="color:var(--text-secondary); margin-bottom:26px; font-size:0.95rem;">Tell us what you're building. Every entry goes straight to our platform and our specialist will WhatsApp & email you shortly.</p>
 
-          <form id="project-contact-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label>Your Name *</label>
-                <input type="text" name="name" class="form-control" placeholder="e.g. Sarah Jenkins" required>
+          <div id="flowdesk-form-container-form-1" style="max-width: 100%; margin: 0 auto; color: #1e293b;">
+            <form id="flowdesk-form-form-1" action="https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit" method="POST">
+              <div class="form-group" style="margin-bottom: 16px;">
+                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px; color:var(--text-primary);">Full Name *</label>
+                <input type="text" name="name" required placeholder="John Doe" class="form-control" style="width:100%; padding:12px 16px; border:1px solid #cbd5e1; border-radius:10px; font-size:14px; box-sizing:border-box;" />
               </div>
-              <div class="form-group">
-                <label>Work Email *</label>
-                <input type="email" name="email" class="form-control" placeholder="sarah@company.com" required>
+
+              <div class="form-group" style="margin-bottom: 16px;">
+                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px; color:var(--text-primary);">WhatsApp / Phone Number *</label>
+                <input type="tel" name="phone" required placeholder="+91 98765 43210" class="form-control" style="width:100%; padding:12px 16px; border:1px solid #cbd5e1; border-radius:10px; font-size:14px; box-sizing:border-box;" />
               </div>
-            </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label>Company / Brand Name</label>
-                <input type="text" name="company" class="form-control" placeholder="e.g. Acme Studio">
+              <div class="form-group" style="margin-bottom: 16px;">
+                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px; color:var(--text-primary);">Work Email *</label>
+                <input type="email" name="email" required placeholder="john@company.com" class="form-control" style="width:100%; padding:12px 16px; border:1px solid #cbd5e1; border-radius:10px; font-size:14px; box-sizing:border-box;" />
               </div>
-              <div class="form-group">
-                <label>Current Website / Funnel URL</label>
-                <input type="url" name="website" class="form-control" placeholder="https://">
+
+              <div class="form-group" style="margin-bottom: 16px;">
+                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px; color:var(--text-primary);">Company Name</label>
+                <input type="text" name="company" placeholder="Acme Corp" class="form-control" style="width:100%; padding:12px 16px; border:1px solid #cbd5e1; border-radius:10px; font-size:14px; box-sizing:border-box;" />
               </div>
-            </div>
 
-            <div class="form-group">
-              <label>Platforms & Technologies You Need:</label>
-              <div class="chip-group">
-                <label class="chip-item">
-                  <input type="checkbox" name="platform" value="GoHighLevel" checked>
-                  <span class="chip-label">GoHighLevel (GHL)</span>
-                </label>
-                <label class="chip-item">
-                  <input type="checkbox" name="platform" value="n8n">
-                  <span class="chip-label">n8n Automations</span>
-                </label>
-                <label class="chip-item">
-                  <input type="checkbox" name="platform" value="Webflow" checked>
-                  <span class="chip-label">Webflow</span>
-                </label>
-                <label class="chip-item">
-                  <input type="checkbox" name="platform" value="Shopify">
-                  <span class="chip-label">Shopify Plus</span>
-                </label>
-                <label class="chip-item">
-                  <input type="checkbox" name="platform" value="Zoho">
-                  <span class="chip-label">Zoho CRM & Flow</span>
-                </label>
-                <label class="chip-item">
-                  <input type="checkbox" name="platform" value="Lovable">
-                  <span class="chip-label">Lovable AI Apps</span>
-                </label>
-                <label class="chip-item">
-                  <input type="checkbox" name="platform" value="WordPress">
-                  <span class="chip-label">Custom WordPress</span>
-                </label>
-                <label class="chip-item">
-                  <input type="checkbox" name="platform" value="Wix">
-                  <span class="chip-label">Wix Studio</span>
-                </label>
-                <label class="chip-item">
-                  <input type="checkbox" name="platform" value="LeadSpark">
-                  <span class="chip-label">⚡ LeadSpark Beta Access</span>
-                </label>
+              <div class="form-group" style="margin-bottom: 22px;">
+                <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px; color:var(--text-primary);">Requirements / Notes</label>
+                <textarea name="notes" placeholder="Tell us about your needs (Webflow, GoHighLevel, n8n, Zoho, Shopify, AI apps)..." class="form-control" style="width:100%; padding:12px 16px; border:1px solid #cbd5e1; border-radius:10px; font-size:14px; box-sizing:border-box; min-height:90px;"></textarea>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label>Estimated Project Budget (USD):</label>
-              <select name="budget" class="form-control">
-                <option value="$1,500 – $3,000 (Quick Sprint / Landing Page)">$1,500 – $3,000 (Quick Sprint / Landing Page)</option>
-                <option value="$3,000 – $6,000 (Full Website + GHL Pipeline)" selected>$3,000 – $6,000 (Full Website + GHL Pipeline)</option>
-                <option value="$6,000 – $12,000 (Enterprise Multi-App Ecosystem)">$6,000 – $12,000 (Enterprise Multi-App Ecosystem)</option>
-                <option value="Custom Retainer / Ongoing Dedicated Help">Custom Retainer / Ongoing Dedicated Help</option>
-              </select>
-            </div>
+              <button type="submit" class="btn btn-primary" style="width:100%; padding:15px; background:var(--primary); color:#ffffff; font-weight:700; font-size:15px; border:none; border-radius:10px; cursor:pointer; box-shadow:0 10px 24px var(--primary-glow);">
+                Get Free Consultation <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+              </button>
+            </form>
 
-            <div class="form-group">
-              <label>Tell Us About Your Project & Bottlenecks:</label>
-              <textarea name="message" class="form-control" rows="3" placeholder="Describe your goals, current lead drop-offs, or CRM integrations needed..."></textarea>
+            <div id="flowdesk-success-form-1" style="display:none; padding:28px 24px; background:#ecfdf5; border:1px solid #a7f3d0; border-radius:14px; text-align:center; color:#065f46; margin-top:16px;">
+              <svg style="width:44px; height:44px; margin:0 auto 12px; display:block; stroke:#059669;" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              <h3 style="margin:0 0 6px; font-size:20px; font-weight:800; color:#047857;">Thank You!</h3>
+              <p style="margin:0; font-size:14px; color:#065f46; line-height:1.5;">Thank you! Our marketing specialist will WhatsApp and email you shortly.</p>
             </div>
-
-            <button type="submit" id="contact-submit-btn" class="btn btn-primary" style="width:100%; font-size:1.05rem; padding:16px;">
-              Submit Inquiry & Request Proposal
-              <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
-            </button>
-
-            <div id="form-success-banner" style="display:none; margin-top:20px; background:#ecfdf5; border:1px solid #10b981; padding:18px 24px; border-radius:var(--radius-lg); color:#065f46;">
-              <strong style="display:block; margin-bottom:4px;">✨ Thank You for Reaching Out!</strong>
-              Your technical partner at Zerolt has received your details and will review your requirements with an honest architecture proposal within 4 hours.
-            </div>
-          </form>
+          </div>
         </div>
 
         <div class="contact-sidebar">
@@ -437,7 +389,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo logo-dark">
+          <a href="/" class="logo logo-dark">
             <span class="logo-text">Zerolt</span><span class="logo-dot"></span>
           </a>
           <p>An elite freelance collective crafting high-converting storefronts, custom CMS websites, and autonomous marketing engines at fair market prices.</p>
@@ -445,20 +397,20 @@
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Zerolt</a></li>
-            <li><a href="services.html">Services & Pricing</a></li>
-            <li><a href="index.html#leadspark">LeadSpark Automation</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Zerolt</a></li>
+            <li><a href="/services">Services & Pricing</a></li>
+            <li><a href="/#leadspark">LeadSpark Automation</a></li>
+            <li><a href="/contact">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Platforms</h4>
           <ul>
-            <li><a href="services.html#ghl">GoHighLevel (GHL)</a></li>
-            <li><a href="services.html#n8n">n8n Orchestration</a></li>
-            <li><a href="services.html#webflow">Webflow & Shopify</a></li>
-            <li><a href="services.html#zoho">Zoho CRM & Flow</a></li>
+            <li><a href="/services#ghl">GoHighLevel (GHL)</a></li>
+            <li><a href="/services#n8n">n8n Orchestration</a></li>
+            <li><a href="/services#webflow">Webflow & Shopify</a></li>
+            <li><a href="/services#zoho">Zoho CRM & Flow</a></li>
           </ul>
         </div>
         <div class="footer-col footer-newsletter">
@@ -473,9 +425,9 @@
       <div class="footer-bottom">
         <div>&copy; 2026 Zerolt.com. All rights reserved.</div>
         <div style="display:flex; gap:20px;">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="contact.html">Support</a>
+          <a href="/about">Privacy Policy</a>
+          <a href="/about">Terms of Service</a>
+          <a href="/contact">Support</a>
         </div>
       </div>
     </div>
