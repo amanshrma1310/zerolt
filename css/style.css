@@ -2043,9 +2043,160 @@ img {
 }
 
 /* ==========================================================================
-   ELEGANT MICRO-SHAPES (CALM, NON-STRESSFUL DOTS & TWINKLING STARS)
-   Replaces bulky AI-like 3D shapes with human-crafted, delicate micro-elements
+   CONTINUOUS FLOATING 3D SHAPES ENGINE
+   Fluid, continuous 3D rotating & floating geometric shapes across banners
    ========================================================================== */
+.floating-3d-cluster {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  perspective: 1200px;
+}
+
+/* Base floating shape container */
+.shape-3d-float {
+  position: absolute;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Continuous 3D Floating Keyframes */
+@keyframes float3D_A {
+  0% {
+    transform: translateY(0px) rotateX(15deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: translateY(-26px) rotateX(32deg) rotateY(180deg) rotateZ(15deg);
+  }
+  100% {
+    transform: translateY(0px) rotateX(15deg) rotateY(360deg) rotateZ(0deg);
+  }
+}
+
+@keyframes float3D_B {
+  0% {
+    transform: translateY(0px) rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+  50% {
+    transform: translateY(24px) rotateX(15deg) rotateY(180deg) rotateZ(-20deg);
+  }
+  100% {
+    transform: translateY(0px) rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+@keyframes float3D_C {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translateY(-16px) translateX(12px) rotate(120deg) scale(1.08);
+  }
+  66% {
+    transform: translateY(14px) translateX(-10px) rotate(240deg) scale(0.94);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(360deg) scale(1);
+  }
+}
+
+@keyframes floatTorus3D {
+  0% {
+    transform: rotateX(65deg) rotateY(0deg) translateY(0px);
+  }
+  50% {
+    transform: rotateX(40deg) rotateY(180deg) translateY(-20px);
+  }
+  100% {
+    transform: rotateX(65deg) rotateY(360deg) translateY(0px);
+  }
+}
+
+@keyframes floatOrbGlow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 10px 28px rgba(94, 67, 243, 0.45);
+  }
+  50% {
+    transform: translateY(-22px) scale(1.08);
+    box-shadow: 0 20px 44px rgba(56, 189, 248, 0.6);
+  }
+}
+
+/* 1. Mini 3D Isometric Cube */
+.mini-cube-3d {
+  width: 38px;
+  height: 38px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: float3D_A 9s ease-in-out infinite;
+}
+
+.mini-cube-3d .cube-face {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid rgba(167, 139, 250, 0.65);
+  background: rgba(94, 67, 243, 0.16);
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 12px rgba(167, 139, 250, 0.25);
+}
+
+.mini-cube-3d .face-front  { transform: translateZ(19px); }
+.mini-cube-3d .face-back   { transform: rotateY(180deg) translateZ(19px); }
+.mini-cube-3d .face-right  { transform: rotateY(90deg) translateZ(19px); }
+.mini-cube-3d .face-left   { transform: rotateY(-90deg) translateZ(19px); }
+.mini-cube-3d .face-top    { transform: rotateX(90deg) translateZ(19px); background: rgba(56, 189, 248, 0.22); border-color: rgba(56, 189, 248, 0.7); }
+.mini-cube-3d .face-bottom { transform: rotateX(-90deg) translateZ(19px); }
+
+/* 2. Mini 3D Neon Torus / Ring */
+.mini-torus-3d {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 5px solid #a78bfa;
+  box-shadow: 
+    0 0 22px rgba(167, 139, 250, 0.65),
+    inset 0 0 14px rgba(56, 189, 248, 0.5);
+  animation: floatTorus3D 8s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* 3. Mini 3D Glass Sphere / Orb */
+.mini-sphere-3d {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #38bdf8 30%, #5e43f3 70%, #1e1b4b 100%);
+  box-shadow: 0 10px 26px rgba(94, 67, 243, 0.45);
+  animation: floatOrbGlow 6.5s ease-in-out infinite;
+}
+
+/* 4. Mini 3D Faceted Diamond / Prism */
+.mini-diamond-3d {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.85) 0%, rgba(245, 158, 11, 0.25) 100%);
+  border: 1.5px solid rgba(254, 240, 138, 0.85);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.45);
+  animation: float3D_C 7s ease-in-out infinite;
+}
+
+/* 5. Mini 3D Emerald Capsule */
+.mini-capsule-3d {
+  width: 20px;
+  height: 44px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(52, 211, 153, 0.85) 0%, rgba(16, 185, 129, 0.25) 100%);
+  border: 1.5px solid rgba(110, 231, 183, 0.8);
+  box-shadow: 0 0 18px rgba(16, 185, 129, 0.45);
+  animation: float3D_B 8.5s ease-in-out infinite;
+}
+
+/* Micro-Shapes Support System (Twinkling Stars & Glow Dots) */
 .micro-shape-cluster {
   position: absolute;
   inset: 0;
@@ -2113,11 +2264,6 @@ img {
 @keyframes starTwinkle {
   0%, 100% { transform: scale(0.85) rotate(0deg); opacity: 0.4; }
   50% { transform: scale(1.25) rotate(45deg); opacity: 0.95; }
-}
-
-/* Legacy fallback: graceful reduction of any residual 3D shapes */
-.shape-3d {
-  display: none !important;
 }
 
 /* ==========================================================================
@@ -2550,77 +2696,86 @@ img {
 }
 
 .saas-step-card {
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-xl);
-  padding: 30px 28px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
-  position: relative;
-  overflow: hidden;
+  background: rgba(16, 18, 32, 0.88) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: var(--radius-xl) !important;
+  padding: 28px 28px !important;
+  transition: all 0.35s ease !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35) !important;
 }
 
 .saas-step-card:hover {
-  background: rgba(94, 67, 243, 0.08);
-  border-color: rgba(167, 139, 250, 0.38);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  background: rgba(24, 27, 48, 0.95) !important;
+  border-color: rgba(167, 139, 250, 0.45) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 45px rgba(94, 67, 243, 0.22) !important;
 }
 
 .saas-step-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 12px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-bottom: 14px !important;
+  width: 100% !important;
 }
 
 .saas-step-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
-  flex-shrink: 0;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  border-radius: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.25rem !important;
+  flex-shrink: 0 !important;
 }
 
 .saas-step-number {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #a78bfa;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #a78bfa !important;
+  display: block !important;
+  margin-bottom: 3px !important;
 }
 
 .saas-step-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
 }
 
 .saas-step-card p {
-  color: #a4abbf;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  margin-bottom: 16px;
+  color: #cbd5e1 !important;
+  font-size: 0.96rem !important;
+  line-height: 1.65 !important;
+  margin: 12px 0 16px !important;
 }
 
 .saas-tags-list {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  display: flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
 }
 
 .saas-tag {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 0.74rem;
-  color: #e2e8f0;
-  font-weight: 600;
+  display: inline-block !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  padding: 5px 12px !important;
+  border-radius: 8px !important;
+  font-size: 0.75rem !important;
+  color: #e2e8f0 !important;
+  font-weight: 600 !important;
 }
 
 /* Disruptive Pricing Advantage Card */

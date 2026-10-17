@@ -92,13 +92,34 @@ export default function HomePage() {
           1. HERO SECTION WITH 3D INTERACTIVE CLUSTER
           ======================================================================== */}
       <section className="hero-section">
-        {/* 3D Geometric Backdrop Shapes (Bold Agency Vibe, Not AI Looking) */}
-        <div className="hero-3d-backdrop" aria-hidden="true">
-          <div className="bg-3d-grid-plane"></div>
-          <div className="shape-3d shape-3d-torus"></div>
-          <div className="shape-3d shape-3d-sphere"></div>
-          <div className="shape-3d shape-3d-prism"></div>
-          <div className="shape-3d shape-3d-ring"></div>
+        {/* Continuous Floating 3D Shapes & Ambient Stars */}
+        <div className="floating-3d-cluster" aria-hidden="true">
+          <div className="shape-3d-float" style={{ top: '12%', left: '4%' }}>
+            <div className="mini-cube-3d">
+              <div className="cube-face face-front"></div>
+              <div className="cube-face face-back"></div>
+              <div className="cube-face face-right"></div>
+              <div className="cube-face face-left"></div>
+              <div className="cube-face face-top"></div>
+              <div className="cube-face face-bottom"></div>
+            </div>
+          </div>
+          <div className="shape-3d-float" style={{ top: '22%', right: '5%' }}>
+            <div className="mini-torus-3d"></div>
+          </div>
+          <div className="shape-3d-float" style={{ bottom: '18%', right: '10%' }}>
+            <div className="mini-sphere-3d"></div>
+          </div>
+          <div className="shape-3d-float" style={{ top: '52%', left: '5%' }}>
+            <div className="mini-diamond-3d"></div>
+          </div>
+          <div className="shape-3d-float" style={{ bottom: '20%', left: '12%' }}>
+            <div className="mini-capsule-3d"></div>
+          </div>
+          <div className="star-sparkle" style={{ top: '18%', right: '18%' }}>✦</div>
+          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '28%', left: '22%' }}>✦</div>
+          <div className="dot-micro dot-micro-purple" style={{ top: '36%', right: '8%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '14%', left: '8%' }}></div>
         </div>
 
         <div className="container hero-content-wrap">
@@ -372,13 +393,31 @@ export default function HomePage() {
           6. PROPRIETARY PRODUCT SPOTLIGHT: FLOWDESK (ZEROLT MARKETING OS)
           ======================================================================== */}
       <section className="flowdesk-saas-section" id="leadspark">
-        {/* Calm Ambient Micro-Stars & Glowing Dots (Non-Stressful) */}
-        <div className="micro-shape-cluster" aria-hidden="true">
-          <div className="dot-micro dot-micro-purple" style={{ top: '15%', left: '5%' }}></div>
-          <div className="dot-micro dot-micro-cyan" style={{ bottom: '18%', right: '6%' }}></div>
-          <div className="dot-micro dot-micro-amber" style={{ top: '35%', right: '12%' }}></div>
+        {/* Continuous Floating 3D Shapes & Ambient Stars */}
+        <div className="floating-3d-cluster" aria-hidden="true">
+          <div className="shape-3d-float" style={{ top: '14%', left: '4%' }}>
+            <div className="mini-cube-3d">
+              <div className="cube-face face-front"></div>
+              <div className="cube-face face-back"></div>
+              <div className="cube-face face-right"></div>
+              <div className="cube-face face-left"></div>
+              <div className="cube-face face-top"></div>
+              <div className="cube-face face-bottom"></div>
+            </div>
+          </div>
+          <div className="shape-3d-float" style={{ top: '25%', right: '5%' }}>
+            <div className="mini-torus-3d"></div>
+          </div>
+          <div className="shape-3d-float" style={{ top: '55%', right: '8%' }}>
+            <div className="mini-sphere-3d"></div>
+          </div>
+          <div className="shape-3d-float" style={{ bottom: '18%', left: '6%' }}>
+            <div className="mini-diamond-3d"></div>
+          </div>
           <div className="star-sparkle" style={{ top: '20%', right: '14%' }}>✦</div>
           <div className="star-sparkle star-sparkle-sm" style={{ bottom: '22%', left: '8%' }}>✦</div>
+          <div className="dot-micro dot-micro-purple" style={{ top: '15%', left: '6%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '18%', right: '6%' }}></div>
         </div>
 
         <div className="container">
@@ -432,74 +471,74 @@ export default function HomePage() {
             {/* Scrolling Right Column: Architectural Narrative Cards */}
             <div className="saas-scroll-col">
               {/* Step 1 */}
-              <TiltCard className="saas-step-card">
-                <div className="saas-step-header">
-                  <div className="saas-step-icon" style={{ background: 'rgba(94, 67, 243, 0.2)', color: '#a78bfa' }}>
+              <TiltCard className="saas-step-card" style={{ background: 'rgba(16, 18, 32, 0.92)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '26px 28px', boxShadow: '0 12px 32px rgba(0,0,0,0.35)' }}>
+                <div className="saas-step-header" style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '14px', width: '100%' }}>
+                  <div className="saas-step-icon" style={{ width: '48px', height: '48px', minWidth: '48px', maxWidth: '48px', borderRadius: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '1.25rem', background: 'rgba(94, 67, 243, 0.2)', color: '#a78bfa' }}>
                     <i className="fa-solid fa-code"></i>
                   </div>
                   <div>
-                    <span className="saas-step-number">Step 01</span>
-                    <h3>1-Line HTML Lead Ingestion</h3>
+                    <span className="saas-step-number" style={{ fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#a78bfa', display: 'block', marginBottom: '3px' }}>Step 01</span>
+                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.3 }}>1-Line HTML Lead Ingestion</h3>
                   </div>
                 </div>
-                <p>Embed our lightweight form snippet into Webflow, Shopify, WordPress, or custom HTML in 30 seconds. Ingest leads directly into your dedicated database with zero Zapier subscription costs.</p>
-                <div className="saas-tags-list">
-                  <span className="saas-tag">Zero-Dependency JS</span>
-                  <span className="saas-tag">Direct MySQL Sync</span>
-                  <span className="saas-tag">OCR Document Parser</span>
+                <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Embed our lightweight form snippet into Webflow, Shopify, WordPress, or custom HTML in 30 seconds. Ingest leads directly into your dedicated database with zero Zapier subscription costs.</p>
+                <div className="saas-tags-list" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Zero-Dependency JS</span>
+                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Direct MySQL Sync</span>
+                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>OCR Document Parser</span>
                 </div>
               </TiltCard>
 
               {/* Step 2 */}
-              <TiltCard className="saas-step-card">
-                <div className="saas-step-header">
-                  <div className="saas-step-icon" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399' }}>
+              <TiltCard className="saas-step-card" style={{ background: 'rgba(16, 18, 32, 0.92)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '26px 28px', boxShadow: '0 12px 32px rgba(0,0,0,0.35)' }}>
+                <div className="saas-step-header" style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '14px', width: '100%' }}>
+                  <div className="saas-step-icon" style={{ width: '48px', height: '48px', minWidth: '48px', maxWidth: '48px', borderRadius: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '1.25rem', background: 'rgba(16, 185, 129, 0.2)', color: '#34d399' }}>
                     <i className="fa-solid fa-paper-plane"></i>
                   </div>
                   <div>
-                    <span className="saas-step-number">Step 02</span>
-                    <h3>Sub-60s WhatsApp & SMTP Workflows</h3>
+                    <span className="saas-step-number" style={{ fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#34d399', display: 'block', marginBottom: '3px' }}>Step 02</span>
+                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.3 }}>Sub-60s WhatsApp & SMTP Workflows</h3>
                   </div>
                 </div>
-                <p>Speed to lead decides deals. The moment a lead captures, FlowDesk automatically triggers official WhatsApp Cloud API messages and scheduled email drip campaigns through your verified credentials.</p>
-                <div className="saas-tags-list">
-                  <span className="saas-tag">WhatsApp Cloud API</span>
-                  <span className="saas-tag">Verified SMTP Drip</span>
-                  <span className="saas-tag">&lt;60s Response</span>
+                <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Speed to lead decides deals. The moment a lead captures, FlowDesk automatically triggers official WhatsApp Cloud API messages and scheduled email drip campaigns through your verified credentials.</p>
+                <div className="saas-tags-list" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>WhatsApp Cloud API</span>
+                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Verified SMTP Drip</span>
+                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>&lt;60s Response</span>
                 </div>
               </TiltCard>
 
               {/* Step 3 */}
-              <TiltCard className="saas-step-card">
-                <div className="saas-step-header">
-                  <div className="saas-step-icon" style={{ background: 'rgba(245, 158, 11, 0.2)', color: '#fbbf24' }}>
+              <TiltCard className="saas-step-card" style={{ background: 'rgba(16, 18, 32, 0.92)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '26px 28px', boxShadow: '0 12px 32px rgba(0,0,0,0.35)' }}>
+                <div className="saas-step-header" style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '14px', width: '100%' }}>
+                  <div className="saas-step-icon" style={{ width: '48px', height: '48px', minWidth: '48px', maxWidth: '48px', borderRadius: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '1.25rem', background: 'rgba(245, 158, 11, 0.2)', color: '#fbbf24' }}>
                     <i className="fa-solid fa-users-gear"></i>
                   </div>
                   <div>
-                    <span className="saas-step-number">Step 03</span>
-                    <h3>Team & Pod Governance Matrix</h3>
+                    <span className="saas-step-number" style={{ fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#fbbf24', display: 'block', marginBottom: '3px' }}>Step 03</span>
+                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.3 }}>Team & Pod Governance Matrix</h3>
                   </div>
                 </div>
-                <p>Structure your sales reps into regional or departmental pods. Granular role-based permissions ensure security while pod managers track follow-up performance in real-time.</p>
-                <div className="saas-tags-list">
-                  <span className="saas-tag">Unlimited Team Seats</span>
-                  <span className="saas-tag">Role Hierarchy</span>
-                  <span className="saas-tag">1-Click Outreach Queue</span>
+                <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Structure your sales reps into regional or departmental pods. Granular role-based permissions ensure security while pod managers track follow-up performance in real-time.</p>
+                <div className="saas-tags-list" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Unlimited Team Seats</span>
+                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Role Hierarchy</span>
+                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>1-Click Outreach Queue</span>
                 </div>
               </TiltCard>
 
               {/* Step 4: Pricing Advantage */}
-              <TiltCard className="saas-step-card saas-pricing-step">
-                <div className="saas-step-header">
-                  <div className="saas-step-icon" style={{ background: 'rgba(254, 240, 138, 0.2)', color: '#fef08a' }}>
+              <TiltCard className="saas-step-card saas-pricing-step" style={{ background: 'linear-gradient(135deg, rgba(32, 24, 66, 0.95) 0%, rgba(15, 16, 28, 0.98) 100%)', border: '1px solid rgba(167, 139, 250, 0.4)', borderRadius: '20px', padding: '28px', boxShadow: '0 16px 40px rgba(94, 67, 243, 0.22)' }}>
+                <div className="saas-step-header" style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '14px', width: '100%' }}>
+                  <div className="saas-step-icon" style={{ width: '48px', height: '48px', minWidth: '48px', maxWidth: '48px', borderRadius: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '1.25rem', background: 'rgba(254, 240, 138, 0.2)', color: '#fef08a' }}>
                     <i className="fa-solid fa-handshake"></i>
                   </div>
                   <div>
-                    <span className="saas-step-number" style={{ color: '#fef08a' }}>Unfair Advantage</span>
-                    <h3 style={{ color: '#ffffff' }}>Why Pay $297+/mo For Corporate CRMs?</h3>
+                    <span className="saas-step-number" style={{ fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#fef08a', display: 'block', marginBottom: '3px' }}>Unfair Advantage</span>
+                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.3 }}>Why Pay $297+/mo For Corporate CRMs?</h3>
                   </div>
                 </div>
-                <p>Traditional corporate platforms penalize your growth with per-seat taxes and contact volume fees. We provide full marketing automation at honest freelancer rates.</p>
+                <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Traditional corporate platforms penalize your growth with per-seat taxes and contact volume fees. We provide full marketing automation at honest freelancer rates.</p>
 
                 <div className="saas-pricing-split">
                   <div className="price-card-competitor">
@@ -637,12 +676,25 @@ export default function HomePage() {
           8. CALL TO ACTION BANNER
           ======================================================================== */}
       <section className="footer-cta-banner">
-        {/* Calm Ambient Micro-Stars & Dots */}
-        <div className="micro-shape-cluster" aria-hidden="true">
-          <div className="dot-micro dot-micro-purple" style={{ top: '22%', left: '10%' }}></div>
-          <div className="dot-micro dot-micro-cyan" style={{ bottom: '24%', right: '12%' }}></div>
+        {/* Continuous Floating 3D Shapes & Ambient Stars */}
+        <div className="floating-3d-cluster" aria-hidden="true">
+          <div className="shape-3d-float" style={{ top: '25%', left: '6%' }}>
+            <div className="mini-torus-3d"></div>
+          </div>
+          <div className="shape-3d-float" style={{ bottom: '20%', right: '8%' }}>
+            <div className="mini-cube-3d">
+              <div className="cube-face face-front"></div>
+              <div className="cube-face face-back"></div>
+              <div className="cube-face face-right"></div>
+              <div className="cube-face face-left"></div>
+              <div className="cube-face face-top"></div>
+              <div className="cube-face face-bottom"></div>
+            </div>
+          </div>
           <div className="star-sparkle" style={{ top: '26%', right: '18%' }}>✦</div>
           <div className="star-sparkle star-sparkle-sm" style={{ bottom: '20%', left: '14%' }}>✦</div>
+          <div className="dot-micro dot-micro-purple" style={{ top: '22%', left: '10%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '24%', right: '12%' }}></div>
         </div>
 
         <div className="container footer-cta-content">

@@ -192,12 +192,30 @@ function ServicesContent() {
            1. HERO SECTION & FILTER PILLS
            ======================================================================== */}
       <section className="page-hero">
-        <div className="micro-shape-cluster" aria-hidden="true">
-          <div className="dot-micro dot-micro-purple" style={{ top: '20%', left: '8%' }}></div>
+        <div className="floating-3d-cluster" aria-hidden="true">
+          <div className="shape-3d-float" style={{ top: '18%', left: '6%' }}>
+            <div className="mini-cube-3d">
+              <div className="cube-face face-front"></div>
+              <div className="cube-face face-back"></div>
+              <div className="cube-face face-right"></div>
+              <div className="cube-face face-left"></div>
+              <div className="cube-face face-top"></div>
+              <div className="cube-face face-bottom"></div>
+            </div>
+          </div>
+          <div className="shape-3d-float" style={{ top: '25%', right: '6%' }}>
+            <div className="mini-torus-3d"></div>
+          </div>
+          <div className="shape-3d-float" style={{ bottom: '18%', right: '12%' }}>
+            <div className="mini-sphere-3d"></div>
+          </div>
+          <div className="shape-3d-float" style={{ bottom: '22%', left: '12%' }}>
+            <div className="mini-diamond-3d"></div>
+          </div>
+          <div className="star-sparkle" style={{ top: '24%', right: '16%' }}>✦</div>
+          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '28%', left: '14%' }}>✦</div>
+          <div className="dot-micro dot-micro-purple" style={{ top: '20%', left: '10%' }}></div>
           <div className="dot-micro dot-micro-cyan" style={{ bottom: '25%', right: '10%' }}></div>
-          <div className="dot-micro dot-micro-amber" style={{ top: '42%', right: '18%' }}></div>
-          <div className="star-sparkle" style={{ top: '24%', right: '8%' }}>✦</div>
-          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '28%', left: '12%' }}>✦</div>
         </div>
         <div className="container">
           <div className="hero-badge-pill">
@@ -327,11 +345,24 @@ function ServicesContent() {
            4. CTA BANNER
            ======================================================================== */}
       <section className="footer-cta-banner">
-        <div className="micro-shape-cluster" aria-hidden="true">
-          <div className="dot-micro dot-micro-purple" style={{ top: '25%', left: '9%' }}></div>
-          <div className="dot-micro dot-micro-cyan" style={{ bottom: '28%', right: '11%' }}></div>
+        <div className="floating-3d-cluster" aria-hidden="true">
+          <div className="shape-3d-float" style={{ top: '25%', left: '6%' }}>
+            <div className="mini-torus-3d"></div>
+          </div>
+          <div className="shape-3d-float" style={{ bottom: '22%', right: '8%' }}>
+            <div className="mini-cube-3d">
+              <div className="cube-face face-front"></div>
+              <div className="cube-face face-back"></div>
+              <div className="cube-face face-right"></div>
+              <div className="cube-face face-left"></div>
+              <div className="cube-face face-top"></div>
+              <div className="cube-face face-bottom"></div>
+            </div>
+          </div>
           <div className="star-sparkle" style={{ top: '22%', right: '16%' }}>✦</div>
           <div className="star-sparkle star-sparkle-sm" style={{ bottom: '24%', left: '14%' }}>✦</div>
+          <div className="dot-micro dot-micro-purple" style={{ top: '25%', left: '9%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '28%', right: '11%' }}></div>
         </div>
         <div className="container footer-cta-content">
           <div>
