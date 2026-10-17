@@ -1,0 +1,29 @@
+{
+  "name": "zerolt",
+  "version": "1.0.0",
+  "description": "Zerolt.com — Next-Gen Web & Marketing Automation Platform",
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve .",
+    "start": "serve .",
+    "build": "node -e \"console.log('Static site build ready')\""
+  },
+  "keywords": [
+    "zerolt",
+    "agency",
+    "webflow",
+    "gohighlevel",
+    "n8n",
+    "zoho",
+    "shopify",
+    "lovable",
+    "marketing-automation",
+    "leadspark"
+  ],
+  "author": "Zerolt",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
