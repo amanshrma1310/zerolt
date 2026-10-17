@@ -1,29 +1,24 @@
 {
   "name": "zerolt",
-  "version": "1.0.0",
-  "description": "Zerolt.com — Next-Gen Web & Marketing Automation Platform",
+  "version": "2.0.0",
+  "description": "Zerolt.com — Next.js Web & Marketing Automation Platform with MySQL",
   "private": true,
-  "main": "index.html",
   "scripts": {
-    "dev": "serve .",
-    "start": "serve .",
-    "build": "node -e \"console.log('Static site build ready')\""
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [
-    "zerolt",
-    "agency",
-    "webflow",
-    "gohighlevel",
-    "n8n",
-    "zoho",
-    "shopify",
-    "lovable",
-    "marketing-automation",
-    "leadspark"
-  ],
-  "author": "Zerolt",
-  "license": "MIT",
   "dependencies": {
-    "serve": "^14.2.4"
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "mysql2": "^3.11.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.11",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.6.3"
   }
 }
