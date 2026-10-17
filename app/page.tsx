@@ -161,13 +161,13 @@ export default function HomePage() {
           <div className="hero-visual-cluster">
             <TiltCard className="hero-main-card">
               <img 
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" 
-                alt="Zerolt Lead Solutions Specialist"
+                src="/images/aman-founder.jpg" 
+                alt="Aman — Founder & Lead Systems Architect @ Zerolt"
               />
               <div className="hero-main-card-glow"></div>
               <div className="hero-main-card-caption">
-                <h4>Alex Vance</h4>
-                <p>Lead Freelance Systems Architect @ Zerolt</p>
+                <h4>Aman</h4>
+                <p>Founder & Lead Systems Architect @ Zerolt</p>
               </div>
             </TiltCard>
 
@@ -466,6 +466,45 @@ export default function HomePage() {
                 <span className="saas-metric-pill"><i className="fa-solid fa-shield-halved"></i> 100% Data Sovereignty</span>
                 <span className="saas-metric-pill"><i className="fa-solid fa-users"></i> Unlimited Seats</span>
               </div>
+
+              {/* Builder Credential Card (Aman & Ankush In-House Engineering) */}
+              <div className="saas-builder-card">
+                <div className="saas-builder-profile">
+                  <div className="saas-builder-avatars">
+                    <img src="/images/aman-founder.jpg" alt="Aman - Founder & Architect" />
+                    <img src="/images/ankush-co-founder.jpg" alt="Ankush - Co-Founder & Lead Dev" />
+                  </div>
+                  <div className="saas-builder-text">
+                    <strong>Built In-House by Founders</strong>
+                    <span>Aman & Ankush • Zerolt Core Engineering</span>
+                  </div>
+                </div>
+                <div className="saas-builder-tag">
+                  <i className="fa-solid fa-circle-check"></i> Zero 3rd-Party Markup
+                </div>
+              </div>
+
+              {/* Secondary Live Data Pipeline Architecture Preview */}
+              <div className="saas-live-flow-preview">
+                <div className="saas-flow-header">
+                  <span><i className="fa-solid fa-diagram-project" style={{ color: '#a78bfa', marginRight: '6px' }}></i> Live Pipeline Engine</span>
+                  <span style={{ color: '#10b981', display: 'flex', alignItems: 'center', gap: '5px' }}><span className="pulse-indicator"></span> 99.98% SLA</span>
+                </div>
+                <div className="saas-flow-nodes">
+                  <div className="saas-node-item">
+                    <i className="fa-solid fa-bolt" style={{ color: '#38bdf8' }}></i>
+                    <span>Webhook 48ms</span>
+                  </div>
+                  <div className="saas-node-item">
+                    <i className="fa-brands fa-whatsapp" style={{ color: '#22c55e' }}></i>
+                    <span>WhatsApp Cloud</span>
+                  </div>
+                  <div className="saas-node-item">
+                    <i className="fa-solid fa-database" style={{ color: '#a855f7' }}></i>
+                    <span>MySQL Auto-Sync</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Scrolling Right Column: Architectural Narrative Cards */}
@@ -482,6 +521,13 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Embed our lightweight form snippet into Webflow, Shopify, WordPress, or custom HTML in 30 seconds. Ingest leads directly into your dedicated database with zero Zapier subscription costs.</p>
+                
+                {/* Mini Code Snippet Widget */}
+                <div className="step-preview-snippet">
+                  <span>&lt;script src="https://flowdesk.zerolt.com/embed.js"&gt;&lt;/script&gt;</span>
+                  <i className="fa-solid fa-copy" style={{ color: '#94a3b8' }}></i>
+                </div>
+
                 <div className="saas-tags-list" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                   <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Zero-Dependency JS</span>
                   <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Direct MySQL Sync</span>
@@ -501,6 +547,16 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Speed to lead decides deals. The moment a lead captures, FlowDesk automatically triggers official WhatsApp Cloud API messages and scheduled email drip campaigns through your verified credentials.</p>
+                
+                {/* WhatsApp Live Mockup Widget */}
+                <div className="step-whatsapp-preview">
+                  <i className="fa-brands fa-whatsapp" style={{ fontSize: '1.6rem', color: '#22c55e', flexShrink: 0 }}></i>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '0.85rem', color: '#ffffff' }}>"Hi Alex! Your Zerolt demo is ready."</strong>
+                    <span style={{ fontSize: '0.75rem', color: '#86efac' }}>Delivered in 2.4s • Read receipt verified</span>
+                  </div>
+                </div>
+
                 <div className="saas-tags-list" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                   <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>WhatsApp Cloud API</span>
                   <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Verified SMTP Drip</span>
@@ -520,6 +576,16 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Structure your sales reps into regional or departmental pods. Granular role-based permissions ensure security while pod managers track follow-up performance in real-time.</p>
+                
+                {/* Pod Matrix Widget */}
+                <div className="step-pod-preview">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <i className="fa-solid fa-network-wired" style={{ fontSize: '1.2rem', color: '#fbbf24' }}></i>
+                    <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>Agency Alpha Pod: 14 Active Reps</span>
+                  </div>
+                  <span style={{ background: 'rgba(245,158,11,0.2)', padding: '3px 8px', borderRadius: '6px', fontSize: '0.72rem', fontWeight: 700 }}>Role: Admin</span>
+                </div>
+
                 <div className="saas-tags-list" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                   <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Unlimited Team Seats</span>
                   <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Role Hierarchy</span>
@@ -666,6 +732,57 @@ export default function HomePage() {
                   <span className="meta-pill">Zoho Flow</span>
                   <span className="meta-pill">99/100 Speed</span>
                 </div>
+              </div>
+            </TiltCard>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================
+          7.5 FOUNDERS & LEADERSHIP SPOTLIGHT
+          ======================================================================== */}
+      <section className="founders-spotlight-section" id="team">
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 45px' }}>
+            <div className="section-pill-sub"><i className="fa-solid fa-user-group"></i> Zerolt Leadership</div>
+            <h2 style={{ fontSize: '2.6rem', marginBottom: '12px', fontWeight: 800, color: 'var(--text-primary)' }}>Meet The Founders & Leadership</h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem' }}>We are real freelance craftsmen, not account managers. You work directly with the technical founders who architect and build your software.</p>
+          </div>
+
+          <div className="team-grid">
+            {/* Founder: Aman */}
+            <TiltCard className="team-card">
+              <div className="team-photo-wrap">
+                <img src="/images/aman-founder.jpg" alt="Aman — Founder & Lead Systems Architect" loading="lazy" />
+              </div>
+              <div className="team-details">
+                <h4>Aman</h4>
+                <div className="role" style={{ color: 'var(--primary)', fontWeight: 700 }}>Founder & Lead Systems Architect</div>
+                <p>Visionary behind Zerolt and FlowDesk. Full-stack cloud systems architect dedicated to friend-first collaboration, fair pricing, and enterprise scalability.</p>
+              </div>
+            </TiltCard>
+
+            {/* Co-Founder: Ankush */}
+            <TiltCard className="team-card">
+              <div className="team-photo-wrap">
+                <img src="/images/ankush-co-founder.jpg" alt="Ankush — Co-Founder & Full-Stack Automation Lead" loading="lazy" />
+              </div>
+              <div className="team-details">
+                <h4>Ankush</h4>
+                <div className="role" style={{ color: '#10b981', fontWeight: 700 }}>Co-Founder & Automation Lead</div>
+                <p>Backend specialist, server infrastructure architect, and workflow automation engineer. Builds rock-solid APIs and high-throughput data sync systems.</p>
+              </div>
+            </TiltCard>
+
+            {/* CEO: Neha */}
+            <TiltCard className="team-card">
+              <div className="team-photo-wrap">
+                <img src="/images/neha-ceo.jpg" alt="Neha — CEO & Head of Digital Product" loading="lazy" />
+              </div>
+              <div className="team-details">
+                <h4>Neha</h4>
+                <div className="role" style={{ color: '#ec4899', fontWeight: 700 }}>CEO & Head of Digital Product</div>
+                <p>Strategic product leader and design artisan. Directs client delivery, brand identity, and intuitive UI/UX architectures that convert visitors into revenue.</p>
               </div>
             </TiltCard>
           </div>

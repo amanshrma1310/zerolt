@@ -213,45 +213,48 @@ export default function AboutPage() {
         </div>
 
         <div className="team-grid">
+          {/* Founder: Aman */}
           <TiltCard className="team-card">
             <div className="team-photo-wrap">
               <img 
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" 
-                alt="Alex Vance" 
+                src="/images/aman-founder.jpg" 
+                alt="Aman — Founder & Lead Systems Architect" 
               />
             </div>
             <div className="team-details">
-              <h4>Alex Vance</h4>
-              <div className="role">Chief Systems Architect</div>
-              <p>GoHighLevel and n8n specialist. Spends his nights building automated pipelines and helping founders scale.</p>
+              <h4>Aman</h4>
+              <div className="role" style={{ color: 'var(--primary)', fontWeight: 700 }}>Founder & Lead Systems Architect</div>
+              <p>Visionary behind Zerolt and FlowDesk. Full-stack cloud systems architect dedicated to friend-first collaboration, fair pricing, and enterprise scalability.</p>
             </div>
           </TiltCard>
 
+          {/* Co-Founder: Ankush */}
           <TiltCard className="team-card">
             <div className="team-photo-wrap">
               <img 
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" 
-                alt="Julian Meyer" 
+                src="/images/ankush-co-founder.jpg" 
+                alt="Ankush — Co-Founder & Full-Stack Automation Lead" 
               />
             </div>
             <div className="team-details">
-              <h4>Julian Meyer</h4>
-              <div className="role">Creative Technologist</div>
-              <p>Webflow, 3D WebGL, and Shopify frontend artisan dedicated to 100/100 Lighthouse speed scores.</p>
+              <h4>Ankush</h4>
+              <div className="role" style={{ color: '#10b981', fontWeight: 700 }}>Co-Founder & Automation Lead</div>
+              <p>Backend specialist, server infrastructure architect, and workflow automation engineer. Builds rock-solid APIs and high-throughput data sync systems.</p>
             </div>
           </TiltCard>
 
+          {/* CEO: Neha */}
           <TiltCard className="team-card">
             <div className="team-photo-wrap">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" 
-                alt="Sophia Lin" 
+                src="/images/neha-ceo.jpg" 
+                alt="Neha — CEO & Head of Digital Product" 
               />
             </div>
             <div className="team-details">
-              <h4>Sophia Lin</h4>
-              <div className="role">Lead Product Engineer (LeadSpark)</div>
-              <p>Architect of our proprietary LeadSpark engine, specializing in real-time lead enrichment and instant CRM dispatch.</p>
+              <h4>Neha</h4>
+              <div className="role" style={{ color: '#ec4899', fontWeight: 700 }}>CEO & Head of Digital Product</div>
+              <p>Strategic product leader and design artisan. Directs client delivery, brand identity, and intuitive UI/UX architectures that convert visitors into revenue.</p>
             </div>
           </TiltCard>
         </div>
