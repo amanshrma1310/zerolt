@@ -104,6 +104,15 @@
          2. HERO SECTION WITH 3D CANVAS & INTERACTIVE CLUSTER
          ======================================================================== -->
     <section class="hero-section">
+      <!-- Company Professionals Welcome Video Background -->
+      <div class="hero-video-bg-wrap" aria-hidden="true">
+        <video class="hero-video-bg" autoplay muted loop playsinline poster="https://assets.mixkit.co/videos/4809/4809-thumb-720-0.jpg">
+          <source src="videos/zerolt-welcome.mp4" type="video/mp4">
+          <source src="https://assets.mixkit.co/videos/4809/4809-720.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
       <!-- Continuous Floating 3D Shapes & Ambient Stars -->
       <div class="floating-3d-cluster" aria-hidden="true">
         <!-- 3D Mini Isometric Cube floating on top-left -->
@@ -175,14 +184,20 @@
           </div>
         </div>
 
-        <!-- Hero Right 3D Visual Cluster (Matching Screenshot) -->
+        <!-- Hero Right 3D Visual Cluster: Company Professionals Welcome Video Showcase -->
         <div class="hero-visual-cluster">
-          <div class="hero-main-card" data-tilt>
-            <img src="images/aman-founder.jpg" alt="Aman — Founder & Lead Systems Architect @ Zerolt" fetchpriority="high">
+          <div class="hero-main-card hero-video-card" data-tilt>
+            <video class="hero-card-video" autoplay muted loop playsinline poster="https://assets.mixkit.co/videos/4809/4809-thumb-720-0.jpg">
+              <source src="videos/zerolt-welcome.mp4" type="video/mp4">
+              <source src="https://assets.mixkit.co/videos/4809/4809-720.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-card-badge">
+              <span class="live-dot-pulse"></span> Welcome to Zerolt
+            </div>
             <div class="hero-main-card-glow"></div>
             <div class="hero-main-card-caption">
-              <h4>Aman</h4>
-              <p>Founder & Lead Systems Architect @ Zerolt</p>
+              <h4>Zerolt Technical Studio</h4>
+              <p>Professional freelance engineers collaborating directly with you.</p>
             </div>
           </div>
 
@@ -459,17 +474,22 @@
                 <div class="saas-traffic-dots">
                   <span></span><span></span><span></span>
                 </div>
-                <div class="saas-address-bar">
-                  <i class="fa-solid fa-lock" style="color:#10b981; font-size:0.75rem;"></i>
-                  <span>https://flowdesk.zerolt.com/admin/dashboard</span>
+                <!-- Interactive SaaS Platform Screen Tabs -->
+                <div class="saas-tab-switcher">
+                  <button class="saas-tab-btn active" id="tab-workflows-btn" onclick="switchSaasTab('workflows')">
+                    <i class="fa-solid fa-diagram-project"></i> Workflows Studio
+                  </button>
+                  <button class="saas-tab-btn" id="tab-dashboard-btn" onclick="switchSaasTab('dashboard')">
+                    <i class="fa-solid fa-chart-line"></i> Ingestion & Dashboard
+                  </button>
                 </div>
                 <div class="saas-browser-actions">
-                  <i class="fa-solid fa-circle-check"></i> Live Production
+                  <i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Live Production
                 </div>
               </div>
 
               <div class="saas-dashboard-viewport">
-                <img src="images/flowdesk-dashboard.png" alt="FlowDesk Zerolt Marketing OS Admin Dashboard" class="saas-dashboard-img" loading="lazy" decoding="async">
+                <img id="saas-preview-img" src="images/flowdesk-workflows.png" alt="FlowDesk Automation Workflows Studio" class="saas-dashboard-img" loading="lazy" decoding="async">
               </div>
             </div>
 
@@ -480,27 +500,48 @@
               <span class="saas-metric-pill"><i class="fa-solid fa-users"></i> Unlimited Seats</span>
             </div>
 
-            <!-- Builder Credential Card (Aman & Ankush In-House Engineering) -->
-            <div class="saas-builder-card">
-              <div class="saas-builder-profile">
-                <div class="saas-builder-avatars">
-                  <img src="images/aman-founder.jpg" alt="Aman - Founder & Architect">
-                  <img src="images/ankush-co-founder.jpg" alt="Ankush - Co-Founder & Lead Dev">
-                </div>
-                <div class="saas-builder-text">
-                  <strong>Built In-House by Founders</strong>
-                  <span>Aman & Ankush • Zerolt Core Engineering</span>
-                </div>
+            <!-- Production Workflow Recipes Preview (Only SaaS Platform Features) -->
+            <div class="saas-recipes-preview-card">
+              <div class="saas-recipes-header">
+                <span><i class="fa-solid fa-wand-magic-sparkles" style="color:#a78bfa;"></i> Pre-Built Production Recipes (1-Click Launch)</span>
+                <span class="recipes-count-badge">4 Verified Presets</span>
               </div>
-              <div class="saas-builder-tag">
-                <i class="fa-solid fa-circle-check"></i> Zero 3rd-Party Markup
+              <div class="saas-recipes-grid">
+                <div class="recipe-chip">
+                  <span class="recipe-chip-icon">⚡</span>
+                  <div>
+                    <strong>5-Min Speed-to-Lead</strong>
+                    <span>WhatsApp & Email Autoresponder (5 Steps)</span>
+                  </div>
+                </div>
+                <div class="recipe-chip">
+                  <span class="recipe-chip-icon">📅</span>
+                  <div>
+                    <strong>High-Ticket Demo Booking</strong>
+                    <span>Calendar sync & reminder sequence (5 Steps)</span>
+                  </div>
+                </div>
+                <div class="recipe-chip">
+                  <span class="recipe-chip-icon">🚀</span>
+                  <div>
+                    <strong>Inbound Lead Auto-Tagging</strong>
+                    <span>Rep assignment & pipeline routing (4 Steps)</span>
+                  </div>
+                </div>
+                <div class="recipe-chip">
+                  <span class="recipe-chip-icon">❄️</span>
+                  <div>
+                    <strong>3-Touch Re-engagement</strong>
+                    <span>Revives silent leads automatically (5 Steps)</span>
+                  </div>
+                </div>
               </div>
             </div>
 
             <!-- Secondary Live Data Pipeline Architecture Preview -->
             <div class="saas-live-flow-preview">
               <div class="saas-flow-header">
-                <span><i class="fa-solid fa-diagram-project" style="color:#a78bfa; margin-right:6px;"></i> Live Pipeline Engine</span>
+                <span><i class="fa-solid fa-diagram-project" style="color:#a78bfa; margin-right:6px;"></i> High-Throughput Engine</span>
                 <span style="color:#10b981; display:flex; align-items:center; gap:5px;"><span class="pulse-indicator"></span> 99.98% SLA</span>
               </div>
               <div class="saas-flow-nodes">
@@ -956,5 +997,21 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    function switchSaasTab(tab) {
+      var img = document.getElementById('saas-preview-img');
+      var btnW = document.getElementById('tab-workflows-btn');
+      var btnD = document.getElementById('tab-dashboard-btn');
+      if (tab === 'workflows') {
+        if (img) img.src = 'images/flowdesk-workflows.png';
+        if (btnW) btnW.classList.add('active');
+        if (btnD) btnD.classList.remove('active');
+      } else {
+        if (img) img.src = 'images/flowdesk-dashboard.png';
+        if (btnD) btnD.classList.add('active');
+        if (btnW) btnW.classList.remove('active');
+      }
+    }
+  </script>
 </body>
 </html>

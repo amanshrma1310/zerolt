@@ -11,6 +11,7 @@ export default function HomePage() {
   const [waitlistLoading, setWaitlistLoading] = useState(false);
   const [waitlistSuccess, setWaitlistSuccess] = useState(false);
   const [waitlistError, setWaitlistError] = useState('');
+  const [saasTab, setSaasTab] = useState<'workflows' | 'dashboard'>('workflows');
 
   // FlowDesk Quick Consultation Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -92,6 +93,22 @@ export default function HomePage() {
           1. HERO SECTION WITH 3D INTERACTIVE CLUSTER
           ======================================================================== */}
       <section className="hero-section">
+        {/* Company Professionals Welcome Video Background */}
+        <div className="hero-video-bg-wrap" aria-hidden="true">
+          <video 
+            className="hero-video-bg" 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            poster="https://assets.mixkit.co/videos/4809/4809-thumb-720-0.jpg"
+          >
+            <source src="/videos/zerolt-welcome.mp4" type="video/mp4" />
+            <source src="https://assets.mixkit.co/videos/4809/4809-720.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-video-overlay"></div>
+        </div>
+
         {/* Continuous Floating 3D Shapes & Ambient Stars */}
         <div className="floating-3d-cluster" aria-hidden="true">
           <div className="shape-3d-float" style={{ top: '12%', left: '4%' }}>
@@ -157,17 +174,27 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right 3D Visual Cluster */}
+          {/* Right 3D Visual Cluster: Company Professionals Welcome Video Showcase */}
           <div className="hero-visual-cluster">
-            <TiltCard className="hero-main-card">
-              <img 
-                src="/images/aman-founder.jpg" 
-                alt="Aman — Founder & Lead Systems Architect @ Zerolt"
-              />
+            <TiltCard className="hero-main-card hero-video-card">
+              <video 
+                className="hero-card-video" 
+                autoPlay 
+                muted 
+                loop 
+                playsInline 
+                poster="https://assets.mixkit.co/videos/4809/4809-thumb-720-0.jpg"
+              >
+                <source src="/videos/zerolt-welcome.mp4" type="video/mp4" />
+                <source src="https://assets.mixkit.co/videos/4809/4809-720.mp4" type="video/mp4" />
+              </video>
+              <div className="hero-video-card-badge">
+                <span className="live-dot-pulse"></span> Welcome to Zerolt
+              </div>
               <div className="hero-main-card-glow"></div>
               <div className="hero-main-card-caption">
-                <h4>Aman</h4>
-                <p>Founder & Lead Systems Architect @ Zerolt</p>
+                <h4>Zerolt Technical Studio</h4>
+                <p>Professional freelance engineers collaborating directly with you.</p>
               </div>
             </TiltCard>
 
@@ -441,19 +468,30 @@ export default function HomePage() {
                   <div className="saas-traffic-dots">
                     <span></span><span></span><span></span>
                   </div>
-                  <div className="saas-address-bar">
-                    <i className="fa-solid fa-lock" style={{ color: '#10b981', fontSize: '0.75rem' }}></i>
-                    <span>https://flowdesk.zerolt.com/admin/dashboard</span>
+                  {/* Interactive SaaS Platform Screen Tabs */}
+                  <div className="saas-tab-switcher">
+                    <button 
+                      className={`saas-tab-btn ${saasTab === 'workflows' ? 'active' : ''}`}
+                      onClick={() => setSaasTab('workflows')}
+                    >
+                      <i className="fa-solid fa-diagram-project"></i> Workflows Studio
+                    </button>
+                    <button 
+                      className={`saas-tab-btn ${saasTab === 'dashboard' ? 'active' : ''}`}
+                      onClick={() => setSaasTab('dashboard')}
+                    >
+                      <i className="fa-solid fa-chart-line"></i> Ingestion & Dashboard
+                    </button>
                   </div>
                   <div className="saas-browser-actions">
-                    <i className="fa-solid fa-circle-check"></i> Live Production
+                    <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i> Live Production
                   </div>
                 </div>
 
                 <div className="saas-dashboard-viewport">
                   <img 
-                    src="/images/flowdesk-dashboard.png" 
-                    alt="FlowDesk Zerolt Marketing OS Admin Dashboard" 
+                    src={saasTab === 'workflows' ? '/images/flowdesk-workflows.png' : '/images/flowdesk-dashboard.png'} 
+                    alt={saasTab === 'workflows' ? 'FlowDesk Automation Workflows Studio' : 'FlowDesk Zerolt Marketing OS Admin Dashboard'} 
                     className="saas-dashboard-img" 
                     loading="lazy"
                   />
@@ -467,27 +505,48 @@ export default function HomePage() {
                 <span className="saas-metric-pill"><i className="fa-solid fa-users"></i> Unlimited Seats</span>
               </div>
 
-              {/* Builder Credential Card (Aman & Ankush In-House Engineering) */}
-              <div className="saas-builder-card">
-                <div className="saas-builder-profile">
-                  <div className="saas-builder-avatars">
-                    <img src="/images/aman-founder.jpg" alt="Aman - Founder & Architect" />
-                    <img src="/images/ankush-co-founder.jpg" alt="Ankush - Co-Founder & Lead Dev" />
-                  </div>
-                  <div className="saas-builder-text">
-                    <strong>Built In-House by Founders</strong>
-                    <span>Aman & Ankush • Zerolt Core Engineering</span>
-                  </div>
+              {/* Production Workflow Recipes Preview (Only SaaS Platform Features) */}
+              <div className="saas-recipes-preview-card">
+                <div className="saas-recipes-header">
+                  <span><i className="fa-solid fa-wand-magic-sparkles" style={{ color: '#a78bfa' }}></i> Pre-Built Production Recipes (1-Click Launch)</span>
+                  <span className="recipes-count-badge">4 Verified Presets</span>
                 </div>
-                <div className="saas-builder-tag">
-                  <i className="fa-solid fa-circle-check"></i> Zero 3rd-Party Markup
+                <div className="saas-recipes-grid">
+                  <div className="recipe-chip">
+                    <span className="recipe-chip-icon">⚡</span>
+                    <div>
+                      <strong>5-Min Speed-to-Lead</strong>
+                      <span>WhatsApp & Email Autoresponder (5 Steps)</span>
+                    </div>
+                  </div>
+                  <div className="recipe-chip">
+                    <span className="recipe-chip-icon">📅</span>
+                    <div>
+                      <strong>High-Ticket Demo Booking</strong>
+                      <span>Calendar sync & reminder sequence (5 Steps)</span>
+                    </div>
+                  </div>
+                  <div className="recipe-chip">
+                    <span className="recipe-chip-icon">🚀</span>
+                    <div>
+                      <strong>Inbound Lead Auto-Tagging</strong>
+                      <span>Rep assignment & pipeline routing (4 Steps)</span>
+                    </div>
+                  </div>
+                  <div className="recipe-chip">
+                    <span className="recipe-chip-icon">❄️</span>
+                    <div>
+                      <strong>3-Touch Re-engagement</strong>
+                      <span>Revives silent leads automatically (5 Steps)</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               {/* Secondary Live Data Pipeline Architecture Preview */}
               <div className="saas-live-flow-preview">
                 <div className="saas-flow-header">
-                  <span><i className="fa-solid fa-diagram-project" style={{ color: '#a78bfa', marginRight: '6px' }}></i> Live Pipeline Engine</span>
+                  <span><i className="fa-solid fa-diagram-project" style={{ color: '#a78bfa', marginRight: '6px' }}></i> High-Throughput Engine</span>
                   <span style={{ color: '#10b981', display: 'flex', alignItems: 'center', gap: '5px' }}><span className="pulse-indicator"></span> 99.98% SLA</span>
                 </div>
                 <div className="saas-flow-nodes">
