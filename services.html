@@ -48,6 +48,10 @@
     }
 
     .page-hero {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      width: 100%;
       padding: 130px 0 45px;
       text-align: center;
       background: radial-gradient(circle at 10% 20%, rgba(94, 67, 243, 0.05) 0%, transparent 45%),
@@ -71,6 +75,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 50px;
+      max-width: 100%;
     }
     .filter-btn {
       background: #ffffff;
@@ -102,6 +107,8 @@
       justify-content: space-between;
       gap: 30px;
       flex-wrap: wrap;
+      max-width: 100%;
+      box-sizing: border-box;
     }
     .pricing-advantage-text h3 {
       font-size: 1.6rem;
@@ -120,6 +127,8 @@
       flex-direction: column;
       gap: 50px;
       margin-bottom: 80px;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .service-showcase-row {
@@ -133,6 +142,9 @@
       padding: 44px;
       box-shadow: 0 10px 28px rgba(18, 19, 26, 0.07);
       transition: all 0.35s ease;
+      max-width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .service-showcase-row:hover {
@@ -216,6 +228,8 @@
       overflow: hidden;
       box-shadow: 0 20px 45px rgba(18, 19, 26, 0.1);
       transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .browser-mockup-frame:hover {
@@ -231,6 +245,9 @@
       align-items: center;
       gap: 14px;
       border-bottom: 1px solid #e7e6ee;
+      max-width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .browser-dots {
@@ -251,6 +268,7 @@
 
     .browser-address-bar {
       flex: 1;
+      min-width: 0;
       background: #ffffff;
       border: 1px solid #e3e2ec;
       border-radius: 6px;
@@ -260,9 +278,15 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .browser-address-bar span {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      min-width: 0;
     }
 
     .browser-content {
@@ -297,6 +321,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
     .live-metrics-pill {
@@ -310,14 +336,26 @@
     @media (max-width: 860px) {
       .service-showcase-row, .service-showcase-row.reversed {
         grid-template-columns: 1fr !important;
-        padding: 30px 22px;
-        gap: 30px;
+        padding: 24px 18px !important;
+        gap: 24px !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
       }
       .service-showcase-row.reversed .mockup-side { order: 2; }
       .service-showcase-row.reversed .content-side { order: 1; }
       .deliverables-grid { grid-template-columns: 1fr !important; }
-      .page-hero h1 { font-size: 2.6rem; }
-      .pricing-advantage-banner { padding: 26px 20px; }
+      .page-hero h1 { font-size: 2.3rem; }
+      .pricing-advantage-banner { padding: 22px 18px; }
+      .browser-mockup-frame { max-width: 100% !important; box-sizing: border-box !important; }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero { padding: 110px 0 35px; }
+      .page-hero h1 { font-size: 1.95rem; }
+      .service-showcase-content h2 { font-size: 1.5rem; }
+      .filter-btn { padding: 7px 14px; font-size: 0.8rem; }
+      .browser-live-overlay { font-size: 0.72rem; padding: 8px 12px; }
     }
   </style>
 </head>
@@ -359,11 +397,13 @@
          2. HERO SECTION
          ======================================================================== -->
     <section class="page-hero">
-      <!-- 3D Geometric Backdrop Shapes -->
-      <div class="hero-3d-backdrop" aria-hidden="true">
-        <div class="bg-3d-grid-plane"></div>
-        <div class="shape-3d shape-3d-torus"></div>
-        <div class="shape-3d shape-3d-sphere"></div>
+      <!-- Calm Micro-Stars & Glowing Dots (Non-Stressful) -->
+      <div class="micro-shape-cluster" aria-hidden="true">
+        <div class="dot-micro dot-micro-purple" style="top:20%; left:8%;"></div>
+        <div class="dot-micro dot-micro-cyan" style="bottom:25%; right:10%;"></div>
+        <div class="dot-micro dot-micro-amber" style="top:42%; right:18%;"></div>
+        <div class="star-sparkle" style="top:24%; right:8%;">✦</div>
+        <div class="star-sparkle star-sparkle-sm" style="bottom:28%; left:12%;">✦</div>
       </div>
 
       <div class="container" style="position:relative; z-index:2;">
@@ -699,6 +739,13 @@
          5. CTA BANNER
          ======================================================================== -->
     <section class="footer-cta-banner">
+      <!-- Calm Ambient Micro-Stars & Dots -->
+      <div class="micro-shape-cluster" aria-hidden="true">
+        <div class="dot-micro dot-micro-purple" style="top:25%; left:9%;"></div>
+        <div class="dot-micro dot-micro-cyan" style="bottom:28%; right:11%;"></div>
+        <div class="star-sparkle" style="top:22%; right:16%;">✦</div>
+        <div class="star-sparkle star-sparkle-sm" style="bottom:24%; left:14%;">✦</div>
+      </div>
       <div class="container footer-cta-content">
         <div>
           <h2>Need A Custom Multi-Platform Proposal?</h2>

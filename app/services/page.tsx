@@ -192,6 +192,13 @@ function ServicesContent() {
            1. HERO SECTION & FILTER PILLS
            ======================================================================== */}
       <section className="page-hero">
+        <div className="micro-shape-cluster" aria-hidden="true">
+          <div className="dot-micro dot-micro-purple" style={{ top: '20%', left: '8%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '25%', right: '10%' }}></div>
+          <div className="dot-micro dot-micro-amber" style={{ top: '42%', right: '18%' }}></div>
+          <div className="star-sparkle" style={{ top: '24%', right: '8%' }}>✦</div>
+          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '28%', left: '12%' }}>✦</div>
+        </div>
         <div className="container">
           <div className="hero-badge-pill">
             <span className="pulse-indicator"></span>
@@ -320,6 +327,12 @@ function ServicesContent() {
            4. CTA BANNER
            ======================================================================== */}
       <section className="footer-cta-banner">
+        <div className="micro-shape-cluster" aria-hidden="true">
+          <div className="dot-micro dot-micro-purple" style={{ top: '25%', left: '9%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '28%', right: '11%' }}></div>
+          <div className="star-sparkle" style={{ top: '22%', right: '16%' }}>✦</div>
+          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '24%', left: '14%' }}>✦</div>
+        </div>
         <div className="container footer-cta-content">
           <div>
             <h2>Need A Custom Multi-Platform Proposal?</h2>

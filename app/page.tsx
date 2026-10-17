@@ -225,11 +225,12 @@ export default function HomePage() {
           3. FREELANCER ETHOS SECTION
           ======================================================================== */}
       <section className="zerolt-ethos-section">
-        {/* 3D Geometric Floating Shapes */}
-        <div className="banner-3d-backdrop" aria-hidden="true">
-          <div className="shape-3d shape-3d-torus shape-3d-torus-gold" style={{ top: '10%', left: '5%', width: '110px', height: '110px' }}></div>
-          <div className="shape-3d shape-3d-ring" style={{ bottom: '5%', right: '8%', width: '160px', height: '160px' }}></div>
-          <div className="shape-3d shape-3d-cube" style={{ top: '25%', right: '4%' }}></div>
+        {/* Calm Micro-Stars & Glowing Dots (Non-Stressful) */}
+        <div className="micro-shape-cluster" aria-hidden="true">
+          <div className="dot-micro dot-micro-purple" style={{ top: '25%', left: '6%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '20%', right: '7%' }}></div>
+          <div className="star-sparkle" style={{ top: '20%', right: '12%' }}>✦</div>
+          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '22%', left: '10%' }}>✦</div>
         </div>
 
         <div className="container">
@@ -367,21 +368,24 @@ export default function HomePage() {
       {/* ========================================================================
           6. PROPRIETARY PRODUCT SPOTLIGHT: FLOWDESK (ZEROLT MARKETING OS)
           ======================================================================== */}
+      {/* ========================================================================
+          6. PROPRIETARY PRODUCT SPOTLIGHT: FLOWDESK (ZEROLT MARKETING OS)
+          ======================================================================== */}
       <section className="flowdesk-saas-section" id="leadspark">
-        {/* 3D Geometric Backdrop Shapes Floating in Banner */}
-        <div className="banner-3d-backdrop" aria-hidden="true">
-          <div className="bg-3d-grid-plane"></div>
-          <div className="shape-3d shape-3d-torus shape-3d-torus-gold" style={{ top: '8%', left: '4%', width: '150px', height: '150px' }}></div>
-          <div className="shape-3d shape-3d-sphere shape-3d-sphere-emerald" style={{ bottom: '12%', right: '6%', width: '110px', height: '110px' }}></div>
-          <div className="shape-3d shape-3d-ring" style={{ bottom: '6%', left: '18%', width: '200px', height: '200px' }}></div>
-          <div className="shape-3d shape-3d-cube" style={{ top: '18%', right: '14%' }}></div>
+        {/* Calm Ambient Micro-Stars & Glowing Dots (Non-Stressful) */}
+        <div className="micro-shape-cluster" aria-hidden="true">
+          <div className="dot-micro dot-micro-purple" style={{ top: '15%', left: '5%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '18%', right: '6%' }}></div>
+          <div className="dot-micro dot-micro-amber" style={{ top: '35%', right: '12%' }}></div>
+          <div className="star-sparkle" style={{ top: '20%', right: '14%' }}>✦</div>
+          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '22%', left: '8%' }}>✦</div>
         </div>
 
         <div className="container">
           {/* Section Header */}
           <div className="saas-header">
             <div className="saas-pill-tag">
-              <i className="fa-solid fa-bolt" style={{ color: '#facc15' }}></i> PROPRIETARY SAAS LAUNCH • ZERO SEAT TAX
+              <span className="pulse-indicator"></span> PROPRIETARY SAAS LAUNCH • ZERO SEAT TAX
             </div>
             <h2 className="saas-title">Meet FlowDesk: The All-in-One <span>Marketing OS</span></h2>
             <p className="saas-subtitle">
@@ -389,128 +393,146 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 3D Interactive Browser Showcase Holding Real Dashboard Screenshot */}
-          <div className="saas-browser-cluster">
-            <TiltCard className="saas-browser-window">
-              <div className="saas-browser-topbar">
-                <div className="saas-traffic-dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <div className="saas-address-bar">
-                  <i className="fa-solid fa-lock" style={{ color: '#10b981', fontSize: '0.75rem' }}></i>
-                  <span>https://wheat-raccoon-340819.hostingersite.com/admin/dashboard</span>
-                </div>
-                <div className="saas-browser-actions">
-                  <i className="fa-solid fa-circle-check"></i> Live Production Build
-                </div>
-              </div>
-
-              <div className="saas-dashboard-viewport">
-                <img 
-                  src="/images/flowdesk-dashboard.png" 
-                  alt="FlowDesk Zerolt Marketing OS Admin Dashboard" 
-                  className="saas-dashboard-img" 
-                  loading="lazy"
-                />
-
-                {/* Floating Contextual Interactive 3D Badges */}
-                <div className="saas-float-badge saas-badge-left">
-                  <span className="pulse-indicator"></span>
-                  <span>WhatsApp Cloud API & SMTP Active</span>
+          {/* 2-Column Sticky Image-Like Showcase */}
+          <div className="saas-sticky-layout">
+            {/* Pinned Sticky Left Column: Interactive Browser Dashboard */}
+            <div className="saas-sticky-col">
+              <div className="saas-sticky-browser">
+                <div className="saas-browser-topbar">
+                  <div className="saas-traffic-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div className="saas-address-bar">
+                    <i className="fa-solid fa-lock" style={{ color: '#10b981', fontSize: '0.75rem' }}></i>
+                    <span>https://flowdesk.zerolt.com/admin/dashboard</span>
+                  </div>
+                  <div className="saas-browser-actions">
+                    <i className="fa-solid fa-circle-check"></i> Live Production
+                  </div>
                 </div>
 
-                <div className="saas-float-badge saas-badge-right">
-                  <i className="fa-solid fa-shield-halved" style={{ color: '#38bdf8' }}></i>
-                  <span>Multi-Tier Pod Governance & Matrix</span>
+                <div className="saas-dashboard-viewport">
+                  <img 
+                    src="/images/flowdesk-dashboard.png" 
+                    alt="FlowDesk Zerolt Marketing OS Admin Dashboard" 
+                    className="saas-dashboard-img" 
+                    loading="lazy"
+                  />
                 </div>
               </div>
-            </TiltCard>
-          </div>
 
-          {/* How FlowDesk Works: 4 Core Architectural Pillars */}
-          <div className="saas-pillars-grid">
-            <TiltCard className="saas-pillar-card">
-              <div className="saas-pillar-icon" style={{ background: 'rgba(94, 67, 243, 0.2)', color: '#a78bfa' }}>
-                <i className="fa-solid fa-file-import"></i>
-              </div>
-              <h4>01. Inbound Capture & OCR</h4>
-              <p>Embed seamless high-converting web forms directly on any website or ingest bulk contact records via 1-click Excel, CSV, and OCR document imports.</p>
-            </TiltCard>
-
-            <TiltCard className="saas-pillar-card">
-              <div className="saas-pillar-icon" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399' }}>
-                <i className="fa-solid fa-users-gear"></i>
-              </div>
-              <h4>02. Team & Pod Governance</h4>
-              <p>Assign pod managers, allocate dedicated sales reps, and configure fine-grained role-based permission matrices for total administrative control.</p>
-            </TiltCard>
-
-            <TiltCard className="saas-pillar-card">
-              <div className="saas-pillar-icon" style={{ background: 'rgba(245, 158, 11, 0.2)', color: '#fbbf24' }}>
-                <i className="fa-solid fa-robot"></i>
-              </div>
-              <h4>03. Autonomous Workflows</h4>
-              <p>Trigger automated response-based sequences across official WhatsApp Cloud API and verified outbound SMTP credentials without expensive zap tools.</p>
-            </TiltCard>
-
-            <TiltCard className="saas-pillar-card">
-              <div className="saas-pillar-icon" style={{ background: 'rgba(236, 72, 153, 0.2)', color: '#f472b6' }}>
-                <i className="fa-solid fa-paper-plane"></i>
-              </div>
-              <h4>04. 1-Click Direct Queue</h4>
-              <p>Manage warm opportunities in real-time. Trigger 1-click WhatsApp chat or email outreach directly from your central operational follow-up queue.</p>
-            </TiltCard>
-          </div>
-
-          {/* Disruptive Pricing Advantage: FlowDesk vs Competitors */}
-          <TiltCard className="saas-comparison-banner">
-            <div className="saas-comparison-info">
-              <div className="section-pill-sub" style={{ background: 'rgba(245,158,11,0.15)', color: '#fbbf24', borderColor: 'rgba(245,158,11,0.3)', marginBottom: '12px' }}>
-                <i className="fa-solid fa-hand-holding-dollar"></i> Unfair Market Price Advantage
-              </div>
-              <h3>Why Overpay For Corporate Software?</h3>
-              <p>
-                Platforms like GoHighLevel, HubSpot, and Salesforce charge hundreds of dollars per month, plus punishing per-seat fees and contact penalties. Zerolt delivers full agency marketing power at honest freelancer rates.
-              </p>
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '0.92rem', color: '#cbd5e1' }}>
-                <span><i className="fa-solid fa-check" style={{ color: '#10b981', marginRight: '6px' }}></i> Unlimited Pod Seats</span>
-                <span><i className="fa-solid fa-check" style={{ color: '#10b981', marginRight: '6px' }}></i> Zero Per-Contact Taxes</span>
-                <span><i className="fa-solid fa-check" style={{ color: '#10b981', marginRight: '6px' }}></i> Direct 24/7 WhatsApp Support</span>
+              {/* Sticky Metrics Strip */}
+              <div className="saas-sticky-metrics">
+                <span className="saas-metric-pill"><i className="fa-solid fa-bolt"></i> 48ms API Latency</span>
+                <span className="saas-metric-pill"><i className="fa-solid fa-shield-halved"></i> 100% Data Sovereignty</span>
+                <span className="saas-metric-pill"><i className="fa-solid fa-users"></i> Unlimited Seats</span>
               </div>
             </div>
 
-            <div className="saas-price-tag-wrap">
-              <div className="price-card-competitor">
-                <div className="price-title">Other Platforms</div>
-                <div className="price-amount">$297 - $497</div>
-                <div style={{ fontSize: '0.75rem', color: '#f87171' }}>/month + per seat taxes</div>
-              </div>
+            {/* Scrolling Right Column: Architectural Narrative Cards */}
+            <div className="saas-scroll-col">
+              {/* Step 1 */}
+              <TiltCard className="saas-step-card">
+                <div className="saas-step-header">
+                  <div className="saas-step-icon" style={{ background: 'rgba(94, 67, 243, 0.2)', color: '#a78bfa' }}>
+                    <i className="fa-solid fa-code"></i>
+                  </div>
+                  <div>
+                    <span className="saas-step-number">Step 01</span>
+                    <h3>1-Line HTML Lead Ingestion</h3>
+                  </div>
+                </div>
+                <p>Embed our lightweight form snippet into Webflow, Shopify, WordPress, or custom HTML in 30 seconds. Ingest leads directly into your dedicated database with zero Zapier subscription costs.</p>
+                <div className="saas-tags-list">
+                  <span className="saas-tag">Zero-Dependency JS</span>
+                  <span className="saas-tag">Direct MySQL Sync</span>
+                  <span className="saas-tag">OCR Document Parser</span>
+                </div>
+              </TiltCard>
 
-              <div className="price-card-flowdesk">
-                <div className="price-title">FlowDesk by Zerolt</div>
-                <div className="price-amount">$49</div>
-                <div className="price-sub">/month flat or FREE with custom web builds</div>
-              </div>
+              {/* Step 2 */}
+              <TiltCard className="saas-step-card">
+                <div className="saas-step-header">
+                  <div className="saas-step-icon" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399' }}>
+                    <i className="fa-solid fa-paper-plane"></i>
+                  </div>
+                  <div>
+                    <span className="saas-step-number">Step 02</span>
+                    <h3>Sub-60s WhatsApp & SMTP Workflows</h3>
+                  </div>
+                </div>
+                <p>Speed to lead decides deals. The moment a lead captures, FlowDesk automatically triggers official WhatsApp Cloud API messages and scheduled email drip campaigns through your verified credentials.</p>
+                <div className="saas-tags-list">
+                  <span className="saas-tag">WhatsApp Cloud API</span>
+                  <span className="saas-tag">Verified SMTP Drip</span>
+                  <span className="saas-tag">&lt;60s Response</span>
+                </div>
+              </TiltCard>
+
+              {/* Step 3 */}
+              <TiltCard className="saas-step-card">
+                <div className="saas-step-header">
+                  <div className="saas-step-icon" style={{ background: 'rgba(245, 158, 11, 0.2)', color: '#fbbf24' }}>
+                    <i className="fa-solid fa-users-gear"></i>
+                  </div>
+                  <div>
+                    <span className="saas-step-number">Step 03</span>
+                    <h3>Team & Pod Governance Matrix</h3>
+                  </div>
+                </div>
+                <p>Structure your sales reps into regional or departmental pods. Granular role-based permissions ensure security while pod managers track follow-up performance in real-time.</p>
+                <div className="saas-tags-list">
+                  <span className="saas-tag">Unlimited Team Seats</span>
+                  <span className="saas-tag">Role Hierarchy</span>
+                  <span className="saas-tag">1-Click Outreach Queue</span>
+                </div>
+              </TiltCard>
+
+              {/* Step 4: Pricing Advantage */}
+              <TiltCard className="saas-step-card saas-pricing-step">
+                <div className="saas-step-header">
+                  <div className="saas-step-icon" style={{ background: 'rgba(254, 240, 138, 0.2)', color: '#fef08a' }}>
+                    <i className="fa-solid fa-handshake"></i>
+                  </div>
+                  <div>
+                    <span className="saas-step-number" style={{ color: '#fef08a' }}>Unfair Advantage</span>
+                    <h3 style={{ color: '#ffffff' }}>Why Pay $297+/mo For Corporate CRMs?</h3>
+                  </div>
+                </div>
+                <p>Traditional corporate platforms penalize your growth with per-seat taxes and contact volume fees. We provide full marketing automation at honest freelancer rates.</p>
+
+                <div className="saas-pricing-split">
+                  <div className="price-card-competitor">
+                    <div className="price-title">Other Platforms</div>
+                    <div className="price-amount">$297 - $497</div>
+                    <div style={{ fontSize: '0.74rem', color: '#f87171' }}>/month + per-seat taxes</div>
+                  </div>
+                  <div className="price-card-flowdesk">
+                    <div className="price-title">FlowDesk by Zerolt</div>
+                    <div className="price-amount">$49</div>
+                    <div className="price-sub">/mo flat or FREE with custom builds</div>
+                  </div>
+                </div>
+
+                <div className="saas-cta-actions">
+                  <button 
+                    type="button" 
+                    onClick={() => setIsModalOpen(true)} 
+                    className="btn btn-primary" 
+                    style={{ fontSize: '0.95rem', padding: '12px 24px' }}
+                  >
+                    Claim Free Consultation <span className="btn-pill-icon"><i className="fa-solid fa-arrow-right"></i></span>
+                  </button>
+                  <Link 
+                    href="/services" 
+                    className="btn btn-outline" 
+                    style={{ background: 'rgba(255,255,255,0.06)', color: 'white', borderColor: 'rgba(255,255,255,0.2)', fontSize: '0.95rem', padding: '12px 20px' }}
+                  >
+                    View Capabilities
+                  </Link>
+                </div>
+              </TiltCard>
             </div>
-          </TiltCard>
-
-          {/* Section CTA Actions */}
-          <div className="saas-cta-actions">
-            <button 
-              type="button" 
-              onClick={() => setIsModalOpen(true)} 
-              className="btn btn-primary" 
-              style={{ fontSize: '1rem', padding: '15px 32px' }}
-            >
-              Get Free FlowDesk Consultation <span className="btn-pill-icon"><i className="fa-solid fa-arrow-right"></i></span>
-            </button>
-            <Link 
-              href="/services" 
-              className="btn btn-outline" 
-              style={{ background: 'rgba(255,255,255,0.06)', color: 'white', borderColor: 'rgba(255,255,255,0.2)', fontSize: '1rem', padding: '15px 28px' }}
-            >
-              <i className="fa-solid fa-layer-group" style={{ marginRight: '8px' }}></i> Explore All Services
-            </Link>
           </div>
         </div>
       </section>
@@ -519,10 +541,11 @@ export default function HomePage() {
           7. SELECTED PORTFOLIO & WORK SHOWCASE
           ======================================================================== */}
       <section className="work-section" id="work">
-        {/* 3D Floating Shapes Backdrop */}
-        <div className="banner-3d-backdrop" aria-hidden="true">
-          <div className="shape-3d shape-3d-sphere shape-3d-sphere-emerald" style={{ top: '12%', right: '5%', width: '90px', height: '90px' }}></div>
-          <div className="shape-3d shape-3d-cube" style={{ bottom: '10%', left: '4%' }}></div>
+        {/* Calm Micro-Stars & Glowing Dots (Non-Stressful) */}
+        <div className="micro-shape-cluster" aria-hidden="true">
+          <div className="dot-micro dot-micro-purple" style={{ top: '18%', right: '8%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '15%', left: '6%' }}></div>
+          <div className="star-sparkle" style={{ top: '22%', right: '14%' }}>✦</div>
         </div>
 
         <div className="container">
@@ -614,11 +637,12 @@ export default function HomePage() {
           8. CALL TO ACTION BANNER
           ======================================================================== */}
       <section className="footer-cta-banner">
-        {/* 3D Geometric Floating Shapes */}
-        <div className="banner-3d-backdrop" aria-hidden="true">
-          <div className="shape-3d shape-3d-ring" style={{ top: '5%', left: '12%', width: '180px', height: '180px' }}></div>
-          <div className="shape-3d shape-3d-sphere shape-3d-sphere-emerald" style={{ bottom: '8%', right: '10%', width: '95px', height: '95px' }}></div>
-          <div className="shape-3d shape-3d-cube" style={{ top: '20%', right: '22%' }}></div>
+        {/* Calm Ambient Micro-Stars & Dots */}
+        <div className="micro-shape-cluster" aria-hidden="true">
+          <div className="dot-micro dot-micro-purple" style={{ top: '22%', left: '10%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '24%', right: '12%' }}></div>
+          <div className="star-sparkle" style={{ top: '26%', right: '18%' }}>✦</div>
+          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '20%', left: '14%' }}>✦</div>
         </div>
 
         <div className="container footer-cta-content">

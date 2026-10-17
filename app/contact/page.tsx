@@ -117,6 +117,12 @@ export default function ContactPage() {
            1. HERO SECTION
            ======================================================================== */}
       <section className="page-hero">
+        <div className="micro-shape-cluster" aria-hidden="true">
+          <div className="dot-micro dot-micro-purple" style={{ top: '22%', left: '8%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '24%', right: '10%' }}></div>
+          <div className="star-sparkle" style={{ top: '25%', right: '14%' }}>✦</div>
+          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '22%', left: '12%' }}>✦</div>
+        </div>
         <div className="container">
           <div className="hero-badge-pill">
             <span className="pulse-indicator"></span>

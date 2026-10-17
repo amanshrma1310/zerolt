@@ -90,6 +90,9 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -98,6 +101,8 @@ body {
   background-color: var(--bg-body);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -2037,88 +2042,82 @@ img {
   100% { background-position: 0 55px; }
 }
 
-/* Floating 3D Geometric Shapes */
-.shape-3d {
+/* ==========================================================================
+   ELEGANT MICRO-SHAPES (CALM, NON-STRESSFUL DOTS & TWINKLING STARS)
+   Replaces bulky AI-like 3D shapes with human-crafted, delicate micro-elements
+   ========================================================================== */
+.micro-shape-cluster {
   position: absolute;
+  inset: 0;
   pointer-events: none;
-  border-radius: 50%;
-  filter: drop-shadow(0 20px 35px rgba(94, 67, 243, 0.2));
-  transform-style: preserve-3d;
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* Metallic/Glass 3D Torus */
-.shape-3d-torus {
-  width: 170px;
-  height: 170px;
-  top: 12%;
-  left: 6%;
-  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.95), rgba(94, 67, 243, 0.75) 45%, rgba(24, 15, 66, 0.9) 85%);
+.dot-micro {
+  position: absolute;
   border-radius: 50%;
-  box-shadow: inset -10px -10px 25px rgba(0, 0, 0, 0.4), 0 25px 45px rgba(94, 67, 243, 0.25);
-  animation: floatTorus3D 9s ease-in-out infinite;
+  pointer-events: none;
   opacity: 0.85;
 }
 
-/* 3D Chrome Floating Sphere */
-.shape-3d-sphere {
-  width: 120px;
-  height: 120px;
-  bottom: 16%;
-  right: 8%;
-  background: radial-gradient(circle at 30% 25%, #ffffff 0%, #a78bfa 35%, #5e43f3 70%, #1e1b4b 100%);
-  border-radius: 50%;
-  box-shadow: inset -8px -8px 20px rgba(0,0,0,0.5), 0 30px 60px rgba(94, 67, 243, 0.3);
-  animation: floatSphere3D 8s ease-in-out infinite 1.5s;
-  opacity: 0.9;
+.dot-micro-purple {
+  width: 6px;
+  height: 6px;
+  background: #a78bfa;
+  box-shadow: 0 0 14px 3px rgba(167, 139, 250, 0.7);
+  animation: microPulse 4s ease-in-out infinite;
 }
 
-/* 3D Frosted Glass Prism / Octahedron */
-.shape-3d-prism {
-  width: 140px;
-  height: 140px;
-  top: 22%;
-  right: 28%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(94, 67, 243, 0.15) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 28px;
-  transform: perspective(600px) rotateX(25deg) rotateY(35deg) rotateZ(12deg);
-  animation: floatPrism3D 11s ease-in-out infinite 0.7s;
-  box-shadow: 0 25px 50px rgba(18, 19, 26, 0.08);
+.dot-micro-cyan {
+  width: 5px;
+  height: 5px;
+  background: #38bdf8;
+  box-shadow: 0 0 12px 2px rgba(56, 189, 248, 0.7);
+  animation: microPulse 5s ease-in-out infinite 1.2s;
 }
 
-/* Floating 3D Glowing Cyber Ring */
-.shape-3d-ring {
-  width: 220px;
-  height: 220px;
-  bottom: 8%;
-  left: 20%;
-  border: 14px solid rgba(94, 67, 243, 0.18);
-  border-top-color: rgba(255, 94, 98, 0.6);
-  border-radius: 50%;
-  transform: perspective(800px) rotateX(65deg) rotateY(-20deg);
-  animation: rotateRing3D 20s linear infinite;
+.dot-micro-amber {
+  width: 5px;
+  height: 5px;
+  background: #fbbf24;
+  box-shadow: 0 0 10px 2px rgba(251, 191, 36, 0.65);
+  animation: microPulse 4.5s ease-in-out infinite 2s;
 }
 
-@keyframes floatTorus3D {
-  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-  50% { transform: translateY(-22px) rotate(15deg) scale(1.04); }
+.star-sparkle {
+  position: absolute;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1;
+  color: #c4b5fd;
+  pointer-events: none;
+  opacity: 0.8;
+  text-shadow: 0 0 10px rgba(196, 181, 253, 0.85);
+  animation: starTwinkle 6s ease-in-out infinite;
+  user-select: none;
 }
 
-@keyframes floatSphere3D {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-28px) rotate(-12deg); }
+.star-sparkle-sm {
+  font-size: 10px;
+  color: #93c5fd;
+  text-shadow: 0 0 8px rgba(147, 197, 253, 0.85);
+  animation: starTwinkle 5s ease-in-out infinite 1.8s;
 }
 
-@keyframes floatPrism3D {
-  0%, 100% { transform: perspective(600px) rotateX(25deg) rotateY(35deg) translateY(0); }
-  50% { transform: perspective(600px) rotateX(35deg) rotateY(15deg) translateY(-20px); }
+@keyframes microPulse {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.4); opacity: 1; }
 }
 
-@keyframes rotateRing3D {
-  0% { transform: perspective(800px) rotateX(65deg) rotateZ(0deg); }
-  100% { transform: perspective(800px) rotateX(65deg) rotateZ(360deg); }
+@keyframes starTwinkle {
+  0%, 100% { transform: scale(0.85) rotate(0deg); opacity: 0.4; }
+  50% { transform: scale(1.25) rotate(45deg); opacity: 0.95; }
+}
+
+/* Legacy fallback: graceful reduction of any residual 3D shapes */
+.shape-3d {
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -2156,10 +2155,13 @@ img {
     transform-style: preserve-3d;
   }
 
-  .shape-3d-torus { width: 110px; height: 110px; top: 5%; left: -20px; }
-  .shape-3d-sphere { width: 80px; height: 80px; bottom: 8%; right: -15px; }
-  .shape-3d-prism { display: none; }
-  .shape-3d-ring { width: 150px; height: 150px; left: 5%; }
+  .shape-3d-torus,
+  .shape-3d-sphere,
+  .shape-3d-prism,
+  .shape-3d-ring,
+  .shape-3d-cube {
+    display: none !important;
+  }
 }
 
 @keyframes mobileHero3D {
@@ -2341,39 +2343,21 @@ img {
   z-index: 2;
 }
 
-.shape-3d-cube {
-  width: 90px;
-  height: 90px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(94, 67, 243, 0.25) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 18px;
-  transform: perspective(600px) rotateX(45deg) rotateY(25deg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  animation: floatCube3D 10s ease-in-out infinite;
-}
-
-@keyframes floatCube3D {
-  0%, 100% { transform: perspective(600px) rotateX(45deg) rotateY(25deg) translateY(0); }
-  50% { transform: perspective(600px) rotateX(55deg) rotateY(15deg) translateY(-18px); }
-}
-
-.shape-3d-torus-gold {
-  background: radial-gradient(circle at 35% 35%, rgba(255, 240, 180, 0.95), rgba(245, 158, 11, 0.8) 45%, rgba(90, 40, 5, 0.9) 85%);
-  box-shadow: inset -8px -8px 20px rgba(0, 0, 0, 0.5), 0 20px 45px rgba(245, 158, 11, 0.25);
-}
-
+/* Legacy 3D shape overrides */
+.shape-3d-cube,
+.shape-3d-torus-gold,
 .shape-3d-sphere-emerald {
-  background: radial-gradient(circle at 30% 25%, #ffffff 0%, #6ee7b7 35%, #10b981 70%, #064e3b 100%);
-  box-shadow: inset -8px -8px 20px rgba(0, 0, 0, 0.5), 0 25px 50px rgba(16, 185, 129, 0.25);
+  display: none !important;
 }
 
 /* ==========================================================================
-   FLOWDESK (ZEROLT MARKETING OS) SAAS PLATFORM SHOWCASE
+   FLOWDESK (ZEROLT MARKETING OS) STICKY IMAGE SAAS SHOWCASE
+   Human-designed split layout: sticky browser dashboard on left,
+   narrative architectural features & price comparison on right.
    ========================================================================== */
 .flowdesk-saas-section {
-  background: radial-gradient(ellipse at 50% 20%, #171630 0%, #090a13 70%);
-  padding: 110px 0 100px;
+  background: radial-gradient(ellipse at 50% 12%, #141628 0%, #080911 80%);
+  padding: 100px 0 110px;
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -2383,8 +2367,8 @@ img {
 
 .saas-header {
   text-align: center;
-  max-width: 860px;
-  margin: 0 auto 55px;
+  max-width: 820px;
+  margin: 0 auto 50px;
 }
 
 .saas-pill-tag {
@@ -2394,23 +2378,23 @@ img {
   background: rgba(94, 67, 243, 0.18);
   border: 1px solid rgba(167, 139, 250, 0.35);
   color: #c4b5fd;
-  padding: 7px 18px;
+  padding: 6px 18px;
   border-radius: var(--radius-pill);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 18px;
-  box-shadow: 0 0 20px rgba(94, 67, 243, 0.25);
+  margin-bottom: 16px;
+  box-shadow: 0 0 20px rgba(94, 67, 243, 0.22);
 }
 
 .saas-title {
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: #ffffff;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .saas-title span {
@@ -2420,50 +2404,65 @@ img {
 }
 
 .saas-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   color: #9da3be;
   line-height: 1.65;
   margin: 0 auto;
 }
 
-/* 3D Browser Showcase Frame */
-.saas-browser-cluster {
-  position: relative;
-  max-width: 1120px;
-  margin: 0 auto 65px;
-  perspective: 1200px;
+/* 2-Column Sticky Showcase Architecture */
+.saas-sticky-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 48px;
+  align-items: start;
 }
 
-.saas-browser-window {
+/* Sticky Browser Mockup Frame */
+.saas-sticky-col {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.saas-sticky-browser {
   background: #141727;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   box-shadow: 
-    0 30px 80px rgba(0, 0, 0, 0.6),
-    0 0 60px rgba(94, 67, 243, 0.22);
+    0 25px 70px rgba(0, 0, 0, 0.65),
+    0 0 50px rgba(94, 67, 243, 0.2);
   overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.saas-sticky-browser:hover {
+  border-color: rgba(167, 139, 250, 0.4);
+  box-shadow: 
+    0 30px 85px rgba(0, 0, 0, 0.75),
+    0 0 65px rgba(94, 67, 243, 0.28);
 }
 
 .saas-browser-topbar {
   background: #0f111e;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 14px 22px;
+  padding: 12px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
+  overflow: hidden;
 }
 
 .saas-traffic-dots {
   display: flex;
   gap: 7px;
+  flex-shrink: 0;
 }
 
 .saas-traffic-dots span {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   display: inline-block;
 }
@@ -2476,22 +2475,31 @@ img {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 0.8rem;
+  padding: 5px 12px;
+  font-size: 0.78rem;
   color: #8f95b2;
   display: flex;
   align-items: center;
   gap: 8px;
-  max-width: 520px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.saas-address-bar span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .saas-browser-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.82rem;
+  gap: 8px;
+  font-size: 0.8rem;
   color: #34d399;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
 .saas-dashboard-viewport {
@@ -2508,156 +2516,162 @@ img {
   transition: transform 0.5s ease;
 }
 
-/* Floating interactive status badges on the 3D screenshot */
-.saas-float-badge {
-  position: absolute;
-  background: rgba(15, 17, 30, 0.9);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: 11px 20px;
+/* Status metrics strip beneath sticky browser */
+.saas-sticky-metrics {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.saas-metric-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 7px 13px;
   border-radius: var(--radius-pill);
-  color: white;
+  font-size: 0.78rem;
+  color: #cbd5e1;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
-  font-size: 0.85rem;
-  font-weight: 700;
-  z-index: 3;
+  gap: 6px;
+  font-weight: 600;
 }
 
-.saas-badge-left {
-  top: 14%;
-  left: -20px;
-  animation: floatSlow 7s ease-in-out infinite;
+.saas-metric-pill i {
+  color: #38bdf8;
+  font-size: 0.75rem;
 }
 
-.saas-badge-right {
-  bottom: 18%;
-  right: -20px;
-  animation: floatReverse 8s ease-in-out infinite 0.5s;
+/* Right Scrolling Content Column */
+.saas-scroll-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-/* 4-Pillar Architecture Grid */
-.saas-pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  margin-bottom: 55px;
-}
-
-.saas-pillar-card {
-  background: rgba(255, 255, 255, 0.03);
+.saas-step-card {
+  background: rgba(255, 255, 255, 0.035);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-xl);
-  padding: 30px 24px;
-  transition: all 0.35s ease;
-  transform-style: preserve-3d;
+  padding: 30px 28px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
 }
 
-.saas-pillar-card:hover {
+.saas-step-card:hover {
   background: rgba(94, 67, 243, 0.08);
-  border-color: rgba(167, 139, 250, 0.4);
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(94, 67, 243, 0.15);
+  border-color: rgba(167, 139, 250, 0.38);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
 }
 
-.saas-pillar-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+.saas-step-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.saas-step-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.35rem;
-  margin-bottom: 20px;
+  font-size: 1.15rem;
+  flex-shrink: 0;
 }
 
-.saas-pillar-card h4 {
-  font-size: 1.18rem;
+.saas-step-number {
+  font-size: 0.75rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a78bfa;
+}
+
+.saas-step-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #ffffff;
+  margin: 0;
 }
 
-.saas-pillar-card p {
-  font-size: 0.92rem;
-  color: #9da3be;
-  line-height: 1.6;
-}
-
-/* Price Comparison Banner: FlowDesk vs Competitors */
-.saas-comparison-banner {
-  background: linear-gradient(135deg, rgba(31, 26, 61, 0.85) 0%, rgba(17, 18, 30, 0.95) 100%);
-  border: 1px solid rgba(167, 139, 250, 0.3);
-  border-radius: 26px;
-  padding: 42px 46px;
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 40px;
-  align-items: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-  margin-bottom: 45px;
-}
-
-.saas-comparison-info h3 {
-  font-size: 1.9rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-  color: #ffffff;
-}
-
-.saas-comparison-info p {
-  color: #b0b5cc;
-  font-size: 1rem;
+.saas-step-card p {
+  color: #a4abbf;
+  font-size: 0.95rem;
   line-height: 1.65;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.saas-price-tag-wrap {
+.saas-tags-list {
   display: flex;
-  gap: 18px;
-  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.saas-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+/* Disruptive Pricing Advantage Card */
+.saas-pricing-step {
+  background: linear-gradient(135deg, rgba(32, 24, 66, 0.9) 0%, rgba(15, 16, 28, 0.95) 100%);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  box-shadow: 0 16px 40px rgba(94, 67, 243, 0.18);
+}
+
+.saas-pricing-split {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 14px;
+  margin: 18px 0;
 }
 
 .price-card-competitor {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 20px 22px;
+  border-radius: 14px;
+  padding: 16px 18px;
   text-align: center;
-  flex: 1;
 }
 
 .price-card-competitor .price-title {
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   color: #f87171;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .price-card-competitor .price-amount {
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   font-weight: 800;
   color: #f87171;
   text-decoration: line-through;
   opacity: 0.85;
-  margin: 6px 0;
+  margin: 4px 0;
 }
 
 .price-card-flowdesk {
   background: linear-gradient(135deg, #5e43f3 0%, #4328d6 100%);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 18px;
-  padding: 22px 28px;
+  border-radius: 16px;
+  padding: 18px 20px;
   text-align: center;
-  flex: 1.25;
-  box-shadow: 0 10px 30px rgba(94, 67, 243, 0.4);
+  box-shadow: 0 10px 25px rgba(94, 67, 243, 0.35);
 }
 
 .price-card-flowdesk .price-title {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: #fef08a;
   font-weight: 800;
   text-transform: uppercase;
@@ -2665,38 +2679,91 @@ img {
 }
 
 .price-card-flowdesk .price-amount {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   font-weight: 800;
   color: #ffffff;
   line-height: 1;
-  margin: 6px 0 4px;
+  margin: 4px 0 2px;
 }
 
 .price-card-flowdesk .price-sub {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .saas-cta-actions {
   display: flex;
-  justify-content: center;
-  gap: 18px;
+  gap: 14px;
+  margin-top: 10px;
   flex-wrap: wrap;
 }
 
-@media (max-width: 1024px) {
-  .saas-pillars-grid { grid-template-columns: repeat(2, 1fr); }
-  .saas-comparison-banner { grid-template-columns: 1fr; padding: 32px 24px; }
+/* Attractive, Ambient Footer CTA */
+.footer-cta-banner {
+  padding: 85px 0;
+  background: linear-gradient(135deg, #131422 0%, #0d0e17 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(94, 67, 243, 0.16) 0%, transparent 70%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+.footer-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-cta-content h2 {
+  color: white;
+  font-size: 2.6rem;
+  max-width: 620px;
+  margin-bottom: 8px;
+}
+
+.footer-cta-content p {
+  color: #b0b4c8;
+  font-size: 1.05rem;
+}
+
+/* Zero Horizontal Mobile Scroll Safeguards */
+@media (max-width: 992px) {
+  .saas-sticky-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .saas-sticky-col {
+    position: static;
+  }
+  .saas-sticky-metrics {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 768px) {
-  .saas-title { font-size: 2.3rem; }
-  .saas-pillars-grid { grid-template-columns: 1fr; }
-  .saas-float-badge { display: none; }
-  .saas-price-tag-wrap { flex-direction: column; }
+  .saas-title { font-size: 2.2rem; }
+  .saas-pricing-split { grid-template-columns: 1fr; }
   .price-card-competitor, .price-card-flowdesk { width: 100%; }
-  .saas-browser-topbar { padding: 10px 14px; }
+  .saas-browser-topbar { padding: 9px 12px; }
   .saas-address-bar { font-size: 0.72rem; }
+  .footer-cta-content { flex-direction: column; text-align: center; }
+  .footer-cta-content h2 { font-size: 2rem; }
 }
 
 
