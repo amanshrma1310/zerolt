@@ -34,10 +34,18 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%235e43f3'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='50' fill='white' font-family='sans-serif' font-weight='bold'>Z</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Comfortaa:wght@600;700&family=Quicksand:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=5.0">
 
   <style>
+    /* Logo Typography Matching Reference Screenshot */
+    .logo, .logo-text {
+      font-family: 'Fredoka', 'Comfortaa', 'Quicksand', sans-serif !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.01em;
+    }
+
     .page-hero {
       padding: 130px 0 45px;
       text-align: center;
@@ -65,27 +73,27 @@
     }
     .filter-btn {
       background: #ffffff;
-      border: 1px solid var(--border-light);
-      color: var(--text-secondary);
-      padding: 8px 18px;
-      border-radius: var(--radius-pill);
-      font-size: 0.86rem;
+      border: 1px solid var(--border-light, #e8e7ee);
+      color: var(--text-secondary, #4e5264);
+      padding: 9px 20px;
+      border-radius: 9999px;
+      font-size: 0.88rem;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 8px rgba(18, 19, 26, 0.04);
       transition: all 0.25s ease;
     }
     .filter-btn:hover, .filter-btn.active {
-      background: var(--primary);
+      background: #5e43f3;
       color: white;
-      border-color: var(--primary);
-      box-shadow: 0 4px 16px var(--primary-glow);
+      border-color: #5e43f3;
+      box-shadow: 0 4px 16px rgba(94, 67, 243, 0.35);
     }
 
     .pricing-advantage-banner {
       background: linear-gradient(135deg, #f7f6ff 0%, #edfcf5 100%);
       border: 1px solid #e1deff;
-      border-radius: var(--radius-xl);
+      border-radius: 26px;
       padding: 36px 40px;
       margin-bottom: 60px;
       display: flex;
@@ -97,12 +105,218 @@
     .pricing-advantage-text h3 {
       font-size: 1.6rem;
       margin-bottom: 6px;
-      color: var(--text-primary);
+      color: #111218;
     }
     .pricing-advantage-text p {
       font-size: 0.98rem;
-      color: var(--text-secondary);
+      color: #4e5264;
       max-width: 640px;
+    }
+
+    /* Self-Contained Service Showcase List */
+    .services-showcase-list {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      margin-bottom: 80px;
+    }
+
+    .service-showcase-row {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+      background: #ffffff;
+      border: 1px solid #e8e7ee;
+      border-radius: 26px;
+      padding: 44px;
+      box-shadow: 0 10px 28px rgba(18, 19, 26, 0.07);
+      transition: all 0.35s ease;
+    }
+
+    .service-showcase-row:hover {
+      border-color: #5e43f3;
+      box-shadow: 0 20px 50px rgba(94, 67, 243, 0.12);
+      transform: translateY(-3px);
+    }
+
+    .service-showcase-row.reversed .mockup-side { order: 2; }
+    .service-showcase-row.reversed .content-side { order: 1; }
+
+    .service-tech-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .service-tech-pill {
+      display: inline-flex !important;
+      align-items: center;
+      background: #f4f3fe;
+      color: #5e43f3;
+      border: 1px solid rgba(94, 67, 243, 0.2);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .service-showcase-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+      line-height: 1.2;
+      color: #111218;
+    }
+
+    .service-showcase-content p {
+      font-size: 1.05rem;
+      color: #4e5264;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    /* Bullet-Free Deliverables Grid */
+    .deliverables-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 18px 0 28px;
+      list-style: none !important;
+      list-style-type: none !important;
+      padding: 0 !important;
+    }
+
+    .deliverable-item {
+      display: flex !important;
+      align-items: center;
+      gap: 10px;
+      color: #111218;
+      font-size: 0.94rem;
+      font-weight: 600;
+      list-style: none !important;
+      list-style-type: none !important;
+    }
+
+    .deliverable-item i {
+      color: #10b981;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    /* 3D Browser Mockup Frame (Crisp, High Contrast) */
+    .browser-mockup-frame {
+      background: #ffffff;
+      border: 2px solid #e2e1ec;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(18, 19, 26, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+
+    .browser-mockup-frame:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 60px rgba(94, 67, 243, 0.18);
+      border-color: #5e43f3;
+    }
+
+    .browser-top-bar {
+      background: #f5f4fa;
+      padding: 11px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid #e7e6ee;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .browser-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .browser-dots span:nth-child(1) { background: #ff5f56; }
+    .browser-dots span:nth-child(2) { background: #ffbd2e; }
+    .browser-dots span:nth-child(3) { background: #27c93f; }
+
+    .browser-address-bar {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid #e3e2ec;
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      color: #4e5264;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .browser-content {
+      position: relative;
+      height: 290px;
+      overflow: hidden;
+      background: #f0f0f6;
+    }
+
+    .browser-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .browser-mockup-frame:hover .browser-content img {
+      transform: scale(1.04);
+    }
+
+    .browser-live-overlay {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      background: rgba(14, 15, 22, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .live-metrics-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    @media (max-width: 860px) {
+      .service-showcase-row, .service-showcase-row.reversed {
+        grid-template-columns: 1fr !important;
+        padding: 30px 22px;
+        gap: 30px;
+      }
+      .service-showcase-row.reversed .mockup-side { order: 2; }
+      .service-showcase-row.reversed .content-side { order: 1; }
+      .deliverables-grid { grid-template-columns: 1fr !important; }
+      .page-hero h1 { font-size: 2.6rem; }
+      .pricing-advantage-banner { padding: 26px 20px; }
     }
   </style>
 </head>
@@ -202,12 +416,12 @@
             We don't build generic cookie-cutter templates. We craft award-winning Webflow architectures engineered with modular Client-First frameworks, semantic HTML5, sub-second load times, and custom 3D WebGL interactions that capture high-intent buyers.
           </p>
 
-          <ul class="deliverables-checklist">
-            <li><i class="fa-solid fa-check"></i> Custom Figma to Webflow Build</li>
-            <li><i class="fa-solid fa-check"></i> 100/100 Core Web Vitals</li>
-            <li><i class="fa-solid fa-check"></i> CMS Collection Architecture</li>
-            <li><i class="fa-solid fa-check"></i> Two-Way CRM Form Hooks</li>
-          </ul>
+          <div class="deliverables-grid">
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Custom Figma to Webflow Build</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>100/100 Core Web Vitals</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>CMS Collection Architecture</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Two-Way CRM Form Hooks</span></div>
+          </div>
 
           <a href="contact.html" class="btn btn-primary">
             Start Webflow Project <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
@@ -270,12 +484,12 @@
             Turn traffic into booked revenue. We architect bespoke GoHighLevel snapshots, sub-account setups, dynamic booking calendars, pipeline opportunity stages, and multi-channel SMS/voice bots that respond to incoming leads in under 60 seconds.
           </p>
 
-          <ul class="deliverables-checklist">
-            <li><i class="fa-solid fa-check"></i> Turnkey GHL Snapshot Deployments</li>
-            <li><i class="fa-solid fa-check"></i> AI SMS & WhatsApp Sequences</li>
-            <li><i class="fa-solid fa-check"></i> Multi-Stage Opportunity Tracking</li>
-            <li><i class="fa-solid fa-check"></i> Stripe & Calendar Sync</li>
-          </ul>
+          <div class="deliverables-grid">
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Turnkey GHL Snapshot Deployments</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>AI SMS & WhatsApp Sequences</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Multi-Stage Opportunity Tracking</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Stripe & Calendar Sync</span></div>
+          </div>
 
           <a href="contact.html" class="btn btn-primary">
             Deploy GHL Infrastructure <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
@@ -296,12 +510,12 @@
             Eliminate recurring Zapier subscription bloat. We engineer self-hosted or managed n8n automation pipelines that connect webhooks, databases, AI models, and internal communications with 100% data privacy and infinite scaling capacity.
           </p>
 
-          <ul class="deliverables-checklist">
-            <li><i class="fa-solid fa-check"></i> Custom Webhook Routing Nodes</li>
-            <li><i class="fa-solid fa-check"></i> Self-Hosted Docker Setup & Security</li>
-            <li><i class="fa-solid fa-check"></i> AI Agent & LLM Data Enrichment</li>
-            <li><i class="fa-solid fa-check"></i> Automated Error Catching & Logs</li>
-          </ul>
+          <div class="deliverables-grid">
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Custom Webhook Routing Nodes</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Self-Hosted Docker Setup & Security</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>AI Agent & LLM Data Enrichment</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Automated Error Catching & Logs</span></div>
+          </div>
 
           <a href="contact.html" class="btn btn-primary">
             Build n8n Automations <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
@@ -364,12 +578,12 @@
             Custom 2.0 themes crafted for scale. We engineer lightning-fast product pages, one-click upsells, checkout extensions, and automated ERP/inventory synchronization with Zoho and external warehouses.
           </p>
 
-          <ul class="deliverables-checklist">
-            <li><i class="fa-solid fa-check"></i> Custom Bespoke Liquid Engineering</li>
-            <li><i class="fa-solid fa-check"></i> High AOV Sticky Cart & Upsell Engine</li>
-            <li><i class="fa-solid fa-check"></i> ERP & Zoho Inventory Sync</li>
-            <li><i class="fa-solid fa-check"></i> Blazing-Fast Mobile Performance</li>
-          </ul>
+          <div class="deliverables-grid">
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Custom Bespoke Liquid Engineering</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>High AOV Sticky Cart & Upsell Engine</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>ERP & Zoho Inventory Sync</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Blazing-Fast Mobile Performance</span></div>
+          </div>
 
           <a href="contact.html" class="btn btn-primary">
             Scale Shopify Store <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
@@ -390,12 +604,12 @@
             Connect disparate platforms into a single unified source of truth. We build automated data flows between Zoho CRM, Zoho Books, customer support portals, and website lead forms using custom Deluge scripting and secure API webhooks.
           </p>
 
-          <ul class="deliverables-checklist">
-            <li><i class="fa-solid fa-check"></i> Deluge Scripting & Custom Functions</li>
-            <li><i class="fa-solid fa-check"></i> Zoho Creator Internal Portals</li>
-            <li><i class="fa-solid fa-check"></i> Automated Billing & Invoicing Loops</li>
-            <li><i class="fa-solid fa-check"></i> Multi-Currency Financial Sync</li>
-          </ul>
+          <div class="deliverables-grid">
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Deluge Scripting & Custom Functions</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Zoho Creator Internal Portals</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Automated Billing & Invoicing Loops</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Multi-Currency Financial Sync</span></div>
+          </div>
 
           <a href="contact.html" class="btn btn-primary">
             Integrate Zoho Suite <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
@@ -458,12 +672,12 @@
             Why wait 6 months for software development? We utilize cutting-edge AI builder platforms like Lovable to design, engineer, and deploy fully functional web applications, internal tools, and client dashboards backed by Supabase in days.
           </p>
 
-          <ul class="deliverables-checklist">
-            <li><i class="fa-solid fa-check"></i> Production-Ready React & Tailwind Apps</li>
-            <li><i class="fa-solid fa-check"></i> Live Supabase Database & Auth Setup</li>
-            <li><i class="fa-solid fa-check"></i> AI Agent Features & Chat Assistants</li>
-            <li><i class="fa-solid fa-check"></i> Instant Deployment to Custom Domains</li>
-          </ul>
+          <div class="deliverables-grid">
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Production-Ready React & Tailwind Apps</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Live Supabase Database & Auth Setup</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>AI Agent Features & Chat Assistants</span></div>
+            <div class="deliverable-item"><i class="fa-solid fa-check"></i> <span>Instant Deployment to Custom Domains</span></div>
+          </div>
 
           <a href="contact.html" class="btn btn-primary">
             Launch AI App <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>

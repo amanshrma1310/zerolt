@@ -3,11 +3,11 @@
    Light & Crisp Contrast + Royal Violet Theme (Matching Original Design)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Comfortaa:wght@600;700&family=Quicksand:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Brand Typography */
-  --font-logo: 'Quicksand', 'Fredoka', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Brand Typography - Exact Rounded Geometric Monoline Font from Reference */
+  --font-logo: 'Fredoka', 'Comfortaa', 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Brand Primary Accents */
@@ -73,6 +73,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 html {
@@ -989,12 +999,15 @@ img {
 }
 
 .service-tech-pill {
+  display: inline-flex;
+  align-items: center;
   background: #f4f3fe;
   color: var(--primary);
   border: 1px solid rgba(94, 67, 243, 0.2);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  padding: 4px 12px;
+  letter-spacing: 0.03em;
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
   text-transform: uppercase;
 }
@@ -1013,8 +1026,36 @@ img {
   margin-bottom: 24px;
 }
 
+/* Bullet-Free Deliverables Grid */
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 18px 0 28px;
+  list-style: none !important;
+}
+
+.deliverable-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-size: 0.94rem;
+  font-weight: 600;
+  list-style: none !important;
+}
+
+.deliverable-item i {
+  color: var(--emerald);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
 .deliverables-checklist {
-  list-style: none;
+  list-style: none !important;
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
@@ -1023,6 +1064,8 @@ img {
 }
 
 .deliverables-checklist li {
+  list-style: none !important;
+  list-style-type: none !important;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1553,13 +1596,21 @@ img {
   .hero-badges-strip { justify-content: center; }
   .credibility-grid { grid-template-columns: 1fr; gap: 40px; }
   .ethos-grid { grid-template-columns: 1fr; }
-  .service-showcase-row, .service-showcase-row.reversed { grid-template-columns: 1fr; padding: 30px 24px; }
-  .service-showcase-row.reversed .mockup-side { order: 1; }
-  .service-showcase-row.reversed .content-side { order: 2; }
   .pipeline-steps-grid { grid-template-columns: repeat(2, 1fr); }
   .work-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-cta-content { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 860px) {
+  .service-showcase-row, .service-showcase-row.reversed {
+    grid-template-columns: 1fr;
+    padding: 30px 22px;
+    gap: 30px;
+  }
+  .service-showcase-row.reversed .mockup-side { order: 2; }
+  .service-showcase-row.reversed .content-side { order: 1; }
+  .deliverables-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
