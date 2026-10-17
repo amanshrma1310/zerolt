@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Comprehensive SEO Meta Tags -->
   <title>Services & Solutions — Zerolt | GoHighLevel, n8n, Webflow, Shopify & AI Automation</title>
-  <meta name="description" content="Explore Zerolt's full-stack services: custom Webflow & Shopify websites, GoHighLevel CRM funnels, n8n workflow automations, Zoho integrations, and LeadSpark rollout.">
+  <meta name="description" content="Explore Zerolt's full-stack services: custom Webflow & Shopify websites, GoHighLevel CRM funnels, n8n workflow automations, and Zoho integrations at honest freelance rates.">
   <meta name="keywords" content="Zerolt services, Webflow development, GoHighLevel agency, n8n automation, Zoho CRM integration, Shopify Plus, Lovable AI, LeadSpark marketing automation">
   <meta name="author" content="Zerolt.com">
   <meta name="robots" content="index, follow">
@@ -19,13 +18,7 @@
   <meta property="og:url" content="https://zerolt.com/services.html">
   <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
 
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Zerolt Services — Webflow, GoHighLevel, n8n & Shopify">
-  <meta name="twitter:description" content="Complete digital growth ecosystems: websites, CRM pipelines, and autonomous workflows.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
-
-  <!-- Schema.org JSON-LD Structured Data for SEO -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -33,56 +26,7 @@
     "name": "Zerolt Web & Marketing Automation Services",
     "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
     "url": "https://zerolt.com/services.html",
-    "priceRange": "$$$",
-    "description": "High-converting web design on Webflow, Shopify, and WordPress, integrated with GoHighLevel and n8n workflows.",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Zerolt Agency Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Webflow Enterprise & CMS Websites"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "GoHighLevel (GHL) CRM & Sales Pipelines"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "n8n Autonomous Workflow Automation"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Shopify Plus E-Commerce Storefronts"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Zoho CRM & Flow Enterprise Integration"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "LeadSpark Marketing Automation Engine"
-          }
-        }
-      ]
-    }
+    "priceRange": "$$"
   }
   </script>
 
@@ -95,12 +39,13 @@
 
   <style>
     .page-hero {
-      padding: 125px 0 45px;
+      padding: 130px 0 45px;
       text-align: center;
-      position: relative;
+      background: radial-gradient(circle at 10% 20%, rgba(94, 67, 243, 0.05) 0%, transparent 45%),
+                  radial-gradient(circle at 90% 70%, rgba(16, 185, 129, 0.05) 0%, transparent 45%);
     }
     .page-hero h1 {
-      font-size: 3.5rem;
+      font-size: 3.6rem;
       max-width: 860px;
       margin: 0 auto 16px;
       line-height: 1.1;
@@ -108,10 +53,9 @@
     .page-hero p {
       font-size: 1.15rem;
       max-width: 680px;
-      margin: 0 auto 30px;
+      margin: 0 auto 28px;
     }
 
-    /* Interactive Category Filter Pills */
     .service-filter-bar {
       display: flex;
       justify-content: center;
@@ -120,14 +64,15 @@
       margin-bottom: 50px;
     }
     .filter-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #9ba1b0;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      color: var(--text-secondary);
       padding: 8px 18px;
       border-radius: var(--radius-pill);
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 600;
       cursor: pointer;
+      box-shadow: var(--shadow-sm);
       transition: all 0.25s ease;
     }
     .filter-btn:hover, .filter-btn.active {
@@ -137,96 +82,27 @@
       box-shadow: 0 4px 16px var(--primary-glow);
     }
 
-    /* Showcase Layout: 2-Column alternating card with 3D Browser Mockups */
-    .services-showcase-list {
-      display: flex;
-      flex-direction: column;
-      gap: 55px;
-      margin-bottom: 70px;
-    }
-    .service-showcase-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 50px;
-      background: rgba(20, 22, 34, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.09);
+    .pricing-advantage-banner {
+      background: linear-gradient(135deg, #f7f6ff 0%, #edfcf5 100%);
+      border: 1px solid #e1deff;
       border-radius: var(--radius-xl);
-      padding: 40px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-      transition: all 0.35s ease;
-    }
-    .service-showcase-row:hover {
-      border-color: rgba(94, 67, 243, 0.45);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px var(--primary-glow);
-    }
-    .service-showcase-row.reversed {
-      grid-template-columns: 1fr 1fr;
-    }
-    .service-showcase-row.reversed .mockup-side {
-      order: 2;
-    }
-    .service-showcase-row.reversed .content-side {
-      order: 1;
-    }
-
-    .service-tech-badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-    .service-tech-pill {
-      background: rgba(94, 67, 243, 0.15);
-      color: #c4b5fd;
-      border: 1px solid rgba(94, 67, 243, 0.35);
-      font-size: 0.74rem;
-      font-weight: 700;
-      padding: 3px 12px;
-      border-radius: var(--radius-pill);
-      text-transform: uppercase;
-    }
-    .service-showcase-content h2 {
-      font-size: 2.2rem;
-      margin-bottom: 14px;
-      line-height: 1.2;
-    }
-    .service-showcase-content p {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 22px;
-    }
-    .deliverables-checklist {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 28px;
-      font-size: 0.92rem;
-    }
-    .deliverables-checklist li {
+      padding: 36px 40px;
+      margin-bottom: 60px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      color: #e2e5f1;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
     }
-    .deliverables-checklist li i {
-      color: var(--emerald);
-      font-size: 0.85rem;
+    .pricing-advantage-text h3 {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      color: var(--text-primary);
     }
-
-    @media (max-width: 992px) {
-      .service-showcase-row,
-      .service-showcase-row.reversed {
-        grid-template-columns: 1fr;
-        padding: 28px 20px;
-        gap: 30px;
-      }
-      .service-showcase-row.reversed .mockup-side { order: 1; }
-      .service-showcase-row.reversed .content-side { order: 2; }
-      .page-hero h1 { font-size: 2.5rem; }
-      .deliverables-checklist { grid-template-columns: 1fr; }
+    .pricing-advantage-text p {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      max-width: 640px;
     }
   </style>
 </head>
@@ -248,7 +124,6 @@
           <li><a href="services.html" class="nav-link active">Services</a></li>
           <li><a href="index.html#leadspark" class="nav-link">LeadSpark <span class="nav-tag-new">NEW</span></a></li>
           <li><a href="index.html#work" class="nav-link">Work</a></li>
-          <li><a href="index.html#process" class="nav-link">Process</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
 
@@ -272,10 +147,10 @@
       <div class="container">
         <div class="hero-badge-pill">
           <span class="pulse-indicator"></span>
-          <span>Web Architecture • CRM Systems • Workflow Pipelines</span>
+          <span>Transparent Freelance Pricing • Friend-First 24/7 Support</span>
         </div>
         <h1>Our Core <span class="highlight-text">Services</span> & Live Platforms</h1>
-        <p>Explore our high-performance CMS web builds, automated GoHighLevel funnels, and enterprise n8n workflow integrations with real-world prototypes.</p>
+        <p>Enterprise-grade Webflow, Shopify, GoHighLevel and n8n architectures delivered directly by passionate freelance engineers at 50% below agency market rates.</p>
 
         <!-- Category Filter Pills -->
         <div class="service-filter-bar">
@@ -285,13 +160,32 @@
           <button class="filter-btn" data-filter="n8n">n8n Automations</button>
           <button class="filter-btn" data-filter="zoho">Zoho CRM & Flow</button>
           <button class="filter-btn" data-filter="ai">Lovable AI Apps</button>
-          <button class="filter-btn" data-filter="leadspark">LeadSpark Engine</button>
         </div>
       </div>
     </section>
 
     <!-- ========================================================================
-         3. SERVICES SHOWCASE: DETAILED 3D SCREENSHOTS & PLATFORM ARCHITECTURES
+         3. PRICING ADVANTAGE BANNER (SPECIFIED BY USER)
+         ======================================================================== -->
+    <div class="container">
+      <div class="pricing-advantage-banner">
+        <div class="pricing-advantage-text">
+          <div class="hero-badge-pill" style="margin-bottom:8px; background:white;">
+            <i class="fa-solid fa-handshake" style="color:var(--primary); margin-right:6px;"></i> The Zerolt Price Promise
+          </div>
+          <h3>World-Class Engineering at 40% – 60% Lower Than Market Rates</h3>
+          <p>We work directly as your technical friends. No fancy agency overhead, no account manager salaries, no ticket delays. You get direct access to top-tier builders who troubleshoot problems at any hour of the day.</p>
+        </div>
+        <div>
+          <a href="contact.html" class="btn btn-primary">
+            Request Fair Quote <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         4. SERVICES SHOWCASE: CRISP LIGHT THEME CARDS & 3D BROWSER MOCKUPS
          ======================================================================== -->
     <section class="container services-showcase-list">
 
@@ -321,12 +215,11 @@
         </div>
 
         <div class="mockup-side">
-          <!-- 3D Browser Mockup Frame -->
           <div class="browser-mockup-frame">
             <div class="browser-top-bar">
               <div class="browser-dots"><span></span><span></span><span></span></div>
               <div class="browser-address-bar">
-                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <i class="fa-solid fa-lock" style="font-size:0.65rem; color:var(--emerald);"></i>
                 <span>https://zerolt.com/showcase/saas-fintech</span>
               </div>
             </div>
@@ -336,7 +229,7 @@
                 <span class="live-metrics-pill" style="color:#10b981;">
                   <span class="pulse-indicator"></span> Live Webflow Build
                 </span>
-                <span style="font-size:0.75rem; color:#c4b5fd; font-weight:700;">Score: 99 / 100 Speed</span>
+                <span style="font-size:0.75rem; color:#ffffff; font-weight:700;">Score: 99 / 100 Speed</span>
               </div>
             </div>
           </div>
@@ -350,7 +243,7 @@
             <div class="browser-top-bar">
               <div class="browser-dots"><span></span><span></span><span></span></div>
               <div class="browser-address-bar">
-                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <i class="fa-solid fa-lock" style="font-size:0.65rem; color:var(--emerald);"></i>
                 <span>https://app.gohighlevel.com/v2/location/zerolt-pipeline</span>
               </div>
             </div>
@@ -368,7 +261,7 @@
 
         <div class="content-side service-showcase-content">
           <div class="service-tech-badges">
-            <span class="service-tech-pill" style="color:#60a5fa; border-color:rgba(96,165,250,0.4);">GoHighLevel (GHL)</span>
+            <span class="service-tech-pill" style="background:#eff6ff; color:#0052ff; border-color:rgba(0,82,255,0.2);">GoHighLevel (GHL)</span>
             <span class="service-tech-pill">Custom Snapshots</span>
             <span class="service-tech-pill">AI Booking</span>
           </div>
@@ -394,7 +287,7 @@
       <div class="service-showcase-row" data-tilt data-category="n8n">
         <div class="content-side service-showcase-content">
           <div class="service-tech-badges">
-            <span class="service-tech-pill" style="color:#f87171; border-color:rgba(248,113,113,0.4);">n8n Autonomous Workflows</span>
+            <span class="service-tech-pill" style="background:#fff1f0; color:#ff4d4f; border-color:rgba(255,77,79,0.2);">n8n Autonomous Workflows</span>
             <span class="service-tech-pill">Self-Hosted Docker</span>
             <span class="service-tech-pill">Zero Zapier Fees</span>
           </div>
@@ -420,14 +313,14 @@
             <div class="browser-top-bar">
               <div class="browser-dots"><span></span><span></span><span></span></div>
               <div class="browser-address-bar">
-                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <i class="fa-solid fa-lock" style="font-size:0.65rem; color:var(--emerald);"></i>
                 <span>https://n8n.zerolt.com/workflow/lead-enrichment-v4</span>
               </div>
             </div>
             <div class="browser-content">
               <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="n8n Enterprise Automation Canvas" loading="lazy">
               <div class="browser-live-overlay">
-                <span class="live-metrics-pill" style="color:#f87171;">
+                <span class="live-metrics-pill" style="color:#ff7a59;">
                   <i class="fa-solid fa-bolt"></i> n8n Cluster: 14 Nodes
                 </span>
                 <span style="font-size:0.75rem; color:#34d399; font-weight:700;">140K Executions / mo</span>
@@ -444,7 +337,7 @@
             <div class="browser-top-bar">
               <div class="browser-dots"><span></span><span></span><span></span></div>
               <div class="browser-address-bar">
-                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <i class="fa-solid fa-lock" style="font-size:0.65rem; color:var(--emerald);"></i>
                 <span>https://store.zerolt.com/products/engineered-scale</span>
               </div>
             </div>
@@ -454,7 +347,7 @@
                 <span class="live-metrics-pill" style="color:#34d399;">
                   <i class="fa-brands fa-shopify"></i> Shopify 2.0 Storefront
                 </span>
-                <span style="font-size:0.75rem; color:#a78bfa; font-weight:700;">+38% Cart Conversion</span>
+                <span style="font-size:0.75rem; color:#c4b5fd; font-weight:700;">+38% Cart Conversion</span>
               </div>
             </div>
           </div>
@@ -462,7 +355,7 @@
 
         <div class="content-side service-showcase-content">
           <div class="service-tech-badges">
-            <span class="service-tech-pill" style="color:#34d399; border-color:rgba(52,211,153,0.4);">Shopify Plus</span>
+            <span class="service-tech-pill" style="background:#f0fdf4; color:#16a34a; border-color:rgba(22,163,74,0.2);">Shopify Plus</span>
             <span class="service-tech-pill">Liquid Architecture</span>
             <span class="service-tech-pill">Checkout Extensibility</span>
           </div>
@@ -488,7 +381,7 @@
       <div class="service-showcase-row" data-tilt data-category="zoho">
         <div class="content-side service-showcase-content">
           <div class="service-tech-badges">
-            <span class="service-tech-pill" style="color:#fb7185; border-color:rgba(251,113,133,0.4);">Zoho Suite</span>
+            <span class="service-tech-pill" style="background:#fef2f2; color:#dc2626; border-color:rgba(220,38,38,0.2);">Zoho Suite</span>
             <span class="service-tech-pill">Zoho Flow & Creator</span>
             <span class="service-tech-pill">Deluge Scripting</span>
           </div>
@@ -514,7 +407,7 @@
             <div class="browser-top-bar">
               <div class="browser-dots"><span></span><span></span><span></span></div>
               <div class="browser-address-bar">
-                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <i class="fa-solid fa-lock" style="font-size:0.65rem; color:var(--emerald);"></i>
                 <span>https://crm.zoho.com/crm/org8429104/tab/Potentials</span>
               </div>
             </div>
@@ -524,21 +417,21 @@
                 <span class="live-metrics-pill" style="color:#fb7185;">
                   <i class="fa-solid fa-database"></i> Zoho Two-Way Sync
                 </span>
-                <span style="font-size:0.75rem; color:#60a5fa; font-weight:700;">Real-Time Replication</span>
+                <span style="font-size:0.75rem; color:#ffffff; font-weight:700;">Real-Time Replication</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- SERVICE 6: Lovable AI & Modern App Prototyping -->
+      <!-- SERVICE 6: Lovable AI Apps -->
       <div class="service-showcase-row reversed" data-tilt data-category="ai">
         <div class="mockup-side">
           <div class="browser-mockup-frame">
             <div class="browser-top-bar">
               <div class="browser-dots"><span></span><span></span><span></span></div>
               <div class="browser-address-bar">
-                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <i class="fa-solid fa-lock" style="font-size:0.65rem; color:var(--emerald);"></i>
                 <span>https://lovable.dev/projects/zerolt-ai-agent-v1</span>
               </div>
             </div>
@@ -548,7 +441,7 @@
                 <span class="live-metrics-pill" style="color:#ec4899;">
                   <i class="fa-solid fa-wand-magic-sparkles"></i> Lovable AI MVP
                 </span>
-                <span style="font-size:0.75rem; color:#34d399; font-weight:700;">Shipped in 7 Days</span>
+                <span style="font-size:0.75rem; color:#ffffff; font-weight:700;">Shipped in 7 Days</span>
               </div>
             </div>
           </div>
@@ -556,7 +449,7 @@
 
         <div class="content-side service-showcase-content">
           <div class="service-tech-badges">
-            <span class="service-tech-pill" style="color:#ec4899; border-color:rgba(236,72,153,0.4);">Lovable AI Apps</span>
+            <span class="service-tech-pill" style="background:#fdf2f8; color:#db2777; border-color:rgba(219,39,119,0.2);">Lovable AI Apps</span>
             <span class="service-tech-pill">Supabase DB</span>
             <span class="service-tech-pill">Rapid MVPs</span>
           </div>
@@ -581,35 +474,17 @@
     </section>
 
     <!-- ========================================================================
-         4. LEADSPARK EARLY ACCESS SNEAK PEEK
-         ======================================================================== -->
-    <section class="container" style="margin-bottom: 70px;">
-      <div style="background:linear-gradient(135deg, #10121d 0%, #171929 100%); border:1px solid rgba(255, 255, 255, 0.12); border-radius:var(--radius-xl); padding:40px; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
-        <div style="max-width:650px;">
-          <div class="leadspark-pill" style="margin-bottom:12px;"><i class="fa-solid fa-fire"></i> UPCOMING PROPRIETARY PRODUCT</div>
-          <h2 style="font-size:2.2rem; margin-bottom:10px;">LeadSpark: Autonomous Marketing Automation</h2>
-          <p style="color:#9ba1b0; font-size:0.98rem; line-height:1.6;">All Zerolt client builds receive complimentary VIP priority onboarding into LeadSpark for instant lead intelligence, enrichment, and zero-drop-off CRM routing.</p>
-        </div>
-        <div>
-          <a href="index.html#leadspark" class="btn" style="background:var(--leadspark-gradient); color:white; padding:14px 28px;">
-            Join VIP Waitlist <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
          5. CTA BANNER
          ======================================================================== -->
     <section class="footer-cta-banner">
       <div class="container footer-cta-content">
         <div>
           <h2>Need A Custom Multi-Platform Proposal?</h2>
-          <p>Tell us your tech stack and target outcomes. We'll send an architecture proposal in 4 hours.</p>
+          <p>Tell us your tech stack and target outcomes. We'll send an honest proposal in 4 hours.</p>
         </div>
         <div>
           <a href="contact.html" class="btn btn-primary" style="font-size:1.05rem; padding:16px 32px;">
-            Request Custom Scope <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+            Request Proposal <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
           </a>
         </div>
       </div>
@@ -623,16 +498,16 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
+          <a href="index.html" class="logo logo-dark">
             <span class="logo-text">Zerolt</span><span class="logo-dot"></span>
           </a>
-          <p>Engineering high-converting digital storefronts, custom CMS websites, and autonomous marketing automation engines.</p>
+          <p>An elite freelance collective crafting high-converting storefronts, custom CMS websites, and autonomous marketing engines at fair market prices.</p>
         </div>
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Agency</a></li>
+            <li><a href="about.html">About Zerolt</a></li>
             <li><a href="services.html">Services & Pricing</a></li>
             <li><a href="index.html#leadspark">LeadSpark Automation</a></li>
             <li><a href="contact.html">Contact Us</a></li>
@@ -671,7 +546,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
   <script src="js/main.js"></script>
 
-  <!-- Interactive Filter Controller -->
   <script>
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', function() {

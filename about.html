@@ -4,45 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Full SEO Meta Tags -->
-  <title>About Us — Zerolt | The Engineers Behind High-Converting Web & Autonomous Workflows</title>
-  <meta name="description" content="Learn about Zerolt: an elite digital architecture agency bridging modern web design (Webflow, Shopify) with autonomous CRM automation (GoHighLevel, n8n, Zoho).">
-  <meta name="keywords" content="About Zerolt, web design agency, GoHighLevel experts, n8n automation specialists, Zoho CRM architects, Webflow enterprise, marketing automation agency">
+  <title>About Us — Zerolt | Elite Freelancers & Automation Builders</title>
+  <meta name="description" content="Discover Zerolt: an elite collective of passionate freelance builders who work like friends to solve your problems at fair, market-beating prices.">
+  <meta name="keywords" content="About Zerolt, freelance agency, GoHighLevel experts, n8n developers, Webflow builders, affordable web design collective">
   <meta name="author" content="Zerolt.com">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://zerolt.com/about.html">
 
-  <!-- OpenGraph / Social Sharing -->
+  <!-- OpenGraph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="About Zerolt — Web Architects & Marketing Automation Engineers">
-  <meta property="og:description" content="We build revenue-generating digital infrastructure where award-winning design seamlessly triggers automated CRM pipelines.">
+  <meta property="og:title" content="About Zerolt — Freelancers Who Build Like Friends">
+  <meta property="og:description" content="We are passionate freelance builders creating platforms to show the world. Fair pricing, zero agency overhead, 24/7 personal care.">
   <meta property="og:url" content="https://zerolt.com/about.html">
   <meta property="og:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80">
 
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About Zerolt — Web & Automation Agency">
-  <meta name="twitter:description" content="Bridging high-end web design with GoHighLevel, n8n, and Zoho workflow engineering.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80">
-
-  <!-- Schema.org JSON-LD Structured Data for Organization -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Zerolt",
     "url": "https://zerolt.com",
-    "logo": "https://zerolt.com/assets/logo.png",
-    "sameAs": [
-      "https://twitter.com/zerolt",
-      "https://linkedin.com/company/zerolt",
-      "https://github.com/amanshrma1310/zerolt"
-    ],
-    "description": "Elite web design and marketing automation agency specializing in GoHighLevel, n8n, Zoho, Webflow, and Shopify.",
-    "founder": {
-      "@type": "Person",
-      "name": "Zerolt Leadership"
-    }
+    "description": "Elite freelance collective creating modern websites and autonomous marketing automation engines."
   }
   </script>
 
@@ -55,11 +38,13 @@
 
   <style>
     .page-hero {
-      padding: 125px 0 45px;
+      padding: 130px 0 45px;
       text-align: center;
+      background: radial-gradient(circle at 10% 20%, rgba(94, 67, 243, 0.05) 0%, transparent 45%),
+                  radial-gradient(circle at 90% 70%, rgba(255, 94, 98, 0.05) 0%, transparent 45%);
     }
     .page-hero h1 {
-      font-size: 3.5rem;
+      font-size: 3.6rem;
       max-width: 860px;
       margin: 0 auto 16px;
       line-height: 1.1;
@@ -67,7 +52,7 @@
     .page-hero p {
       font-size: 1.15rem;
       max-width: 680px;
-      margin: 0 auto 30px;
+      margin: 0 auto 28px;
     }
 
     .metrics-strip {
@@ -77,40 +62,54 @@
       margin: 30px 0 60px;
     }
     .metric-card {
-      background: rgba(22, 25, 38, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #ffffff;
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-xl);
-      padding: 24px;
+      padding: 26px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      box-shadow: var(--shadow-sm);
       transition: all 0.3s ease;
     }
     .metric-card:hover {
       transform: translateY(-5px);
       border-color: var(--primary);
-      box-shadow: 0 15px 40px var(--primary-glow);
+      box-shadow: var(--shadow-md);
     }
     .metric-value {
-      font-size: 2.6rem;
+      font-size: 2.7rem;
       font-weight: 800;
-      color: #a78bfa;
+      color: var(--primary);
       line-height: 1;
       margin-bottom: 6px;
     }
     .metric-label {
       font-size: 0.85rem;
-      color: #9ba1b0;
+      color: var(--text-secondary);
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
 
-    /* Comparison Matrix: Old Way vs Zerolt Way */
-    .comparison-section {
-      background: rgba(20, 22, 34, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.09);
+    /* Ethos Deep Dive */
+    .story-block {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-xl);
-      padding: 40px;
+      padding: 50px;
+      margin-bottom: 60px;
+      box-shadow: var(--shadow-md);
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .comparison-section {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: 45px;
       margin-bottom: 65px;
     }
     .comparison-grid {
@@ -119,15 +118,15 @@
       gap: 30px;
     }
     .comparison-col {
-      background: rgba(13, 14, 21, 0.7);
+      background: #ffffff;
       border-radius: var(--radius-lg);
-      padding: 28px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
     }
     .comparison-col.highlighted {
-      border-color: rgba(94, 67, 243, 0.5);
-      background: linear-gradient(145deg, rgba(94, 67, 243, 0.1) 0%, rgba(13, 14, 21, 0.9) 100%);
-      box-shadow: 0 10px 30px rgba(94, 67, 243, 0.15);
+      border-color: var(--primary);
+      box-shadow: 0 10px 30px rgba(94, 67, 243, 0.1);
     }
     .comparison-col h3 {
       font-size: 1.35rem;
@@ -140,8 +139,8 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      font-size: 0.92rem;
+      gap: 14px;
+      font-size: 0.95rem;
     }
     .comparison-list li {
       display: flex;
@@ -149,15 +148,14 @@
       gap: 10px;
     }
 
-    /* Team Grid */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 28px;
       margin: 35px 0 65px;
     }
     .team-card {
-      background: var(--bg-card);
+      background: #ffffff;
       border: 1px solid var(--border-light);
       border-radius: var(--radius-xl);
       overflow: hidden;
@@ -166,11 +164,11 @@
     }
     .team-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+      box-shadow: var(--shadow-md);
       border-color: var(--primary);
     }
     .team-photo-wrap {
-      height: 260px;
+      height: 270px;
       position: relative;
       overflow: hidden;
       background: #181b28;
@@ -183,33 +181,35 @@
       transition: transform 0.5s ease;
     }
     .team-card:hover .team-photo-wrap img {
-      transform: scale(1.06);
+      transform: scale(1.05);
     }
     .team-details {
-      padding: 22px;
+      padding: 24px;
     }
     .team-details h4 {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin-bottom: 4px;
+      color: var(--text-primary);
     }
     .team-details .role {
-      color: #a78bfa;
-      font-size: 0.85rem;
+      color: var(--primary);
+      font-size: 0.88rem;
       font-weight: 700;
       margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
     .team-details p {
-      font-size: 0.88rem;
-      line-height: 1.5;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
     }
 
     @media (max-width: 992px) {
+      .story-grid { grid-template-columns: 1fr; }
       .comparison-grid { grid-template-columns: 1fr; }
       .metrics-strip { grid-template-columns: repeat(2, 1fr); }
       .team-grid { grid-template-columns: 1fr; }
-      .page-hero h1 { font-size: 2.5rem; }
+      .page-hero h1 { font-size: 2.6rem; }
+      .story-block { padding: 30px 20px; }
     }
   </style>
 </head>
@@ -231,7 +231,6 @@
           <li><a href="services.html" class="nav-link">Services</a></li>
           <li><a href="index.html#leadspark" class="nav-link">LeadSpark <span class="nav-tag-new">NEW</span></a></li>
           <li><a href="index.html#work" class="nav-link">Work</a></li>
-          <li><a href="index.html#process" class="nav-link">Process</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
 
@@ -255,64 +254,111 @@
       <div class="container">
         <div class="hero-badge-pill">
           <span class="pulse-indicator"></span>
-          <span>Our Ethos & Origin</span>
+          <span>Our Story & Mission</span>
         </div>
-        <h1>Design Without Automation Is Just Art. <span class="highlight-text">We Build Machines.</span></h1>
-        <p>Zerolt bridges award-winning frontend design with autonomous CRM engines. We make sure every visitor action triggers instant pipeline revenue.</p>
+        <h1>We Are Freelancers Who Build Like <span class="highlight-text">Friends</span></h1>
+        <p>Zerolt is an elite collective of passionate freelance builders. We don't hide behind account managers or inflated retainers — we work side-by-side with you to solve your problems at any hour of the day.</p>
 
-        <!-- Metrics Strip (Tightened Spacing) -->
+        <!-- Metrics Strip -->
         <div class="metrics-strip">
           <div class="metric-card" data-tilt>
             <div class="metric-value">150+</div>
-            <div class="metric-label">Completed Builds</div>
+            <div class="metric-label">Completed Systems</div>
           </div>
           <div class="metric-card" data-tilt>
-            <div class="metric-value">$45M+</div>
-            <div class="metric-label">Pipeline Processed</div>
+            <div class="metric-value">50%</div>
+            <div class="metric-label">Below Market Price</div>
+          </div>
+          <div class="metric-card" data-tilt>
+            <div class="metric-value">24/7</div>
+            <div class="metric-label">Friend-First Support</div>
           </div>
           <div class="metric-card" data-tilt>
             <div class="metric-value">&lt;60s</div>
-            <div class="metric-label">Average Lead Response</div>
-          </div>
-          <div class="metric-card" data-tilt>
-            <div class="metric-value">99.8%</div>
-            <div class="metric-label">Automation Uptime</div>
+            <div class="metric-label">Lead Response Engine</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================================================
-         3. COMPARISON SECTION: TRADITIONAL VS ZEROLT ARCHITECTURE
+         3. WHO WE ARE: THE ZEROLT MANIFESTO
+         ======================================================================== -->
+    <section class="container">
+      <div class="story-block">
+        <div class="story-grid">
+          <div>
+            <div class="section-pill-sub"><i class="fa-solid fa-heart"></i> The Zerolt Philosophy</div>
+            <h2 style="font-size:2.5rem; margin-bottom:18px; line-height:1.2;">Not Just An Agency. We Are Builders Creating Platforms To Show The World.</h2>
+            <p style="margin-bottom:16px;">
+              Most traditional web agencies exist to bill hours. They assign you junior account executives, charge thousands of dollars for basic modifications, and take 3 days to reply to a simple email.
+            </p>
+            <p style="margin-bottom:16px;">
+              <strong>Zerolt was created to do things differently.</strong> We are a tightly knit group of elite freelance engineers, Webflow craftsmen, and automation specialists. When you hire us, you are working directly with the creator of your software — treating your business like a friend would, jumping in whenever an issue arises, and charging an honest, fraction-of-market fee.
+            </p>
+            <p style="margin-bottom:24px;">
+              And we don't just build client projects — we engineer our own products, such as <strong>LeadSpark</strong>, to showcase what modern marketing automation is truly capable of when built without compromises.
+            </p>
+            <a href="services.html" class="btn btn-primary">
+              Explore Our Platforms <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+
+          <div style="position:relative;">
+            <div class="browser-mockup-frame">
+              <div class="browser-top-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-address-bar">
+                  <i class="fa-solid fa-lock" style="font-size:0.65rem; color:var(--emerald);"></i>
+                  <span>https://zerolt.com/manifesto/friend-first-builders</span>
+                </div>
+              </div>
+              <div class="browser-content" style="height:340px;">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Zerolt Team Workstation">
+                <div class="browser-live-overlay">
+                  <span class="live-metrics-pill" style="color:#10b981;">
+                    <i class="fa-solid fa-code"></i> Direct Engineer Access
+                  </span>
+                  <span style="font-size:0.75rem; color:#ffffff; font-weight:700;">Zero Bureaucracy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. TRADITIONAL AGENCY VS ZEROLT COMPARISON
          ======================================================================== -->
     <section class="container">
       <div class="comparison-section">
         <div style="text-align:center; max-width:650px; margin:0 auto 35px;">
-          <div class="section-pill-sub"><i class="fa-solid fa-code-compare"></i> The Industry Gap</div>
-          <h2 style="font-size:2.4rem; margin-bottom:8px;">Why Traditional Web Agencies Leave You Stranded</h2>
-          <p>Most agencies build a website in a silo. Zerolt builds connected revenue infrastructure.</p>
+          <div class="section-pill-sub"><i class="fa-solid fa-scale-balanced"></i> Honest Comparison</div>
+          <h2 style="font-size:2.4rem; margin-bottom:8px;">How We Compare To Traditional Agencies</h2>
+          <p>See why high-growth founders and businesses choose Zerolt's freelance model.</p>
         </div>
 
         <div class="comparison-grid">
           <!-- Traditional Agency -->
           <div class="comparison-col">
-            <h3 style="color:#f87171;"><i class="fa-solid fa-circle-xmark"></i> The Traditional Agency Model</h3>
+            <h3 style="color:#ef4444;"><i class="fa-solid fa-circle-xmark"></i> Traditional Corporate Agency</h3>
             <ul class="comparison-list">
-              <li><i class="fa-solid fa-xmark" style="color:#f87171; margin-top:3px;"></i> <strong>Static Deliverables:</strong> Deliver HTML/Webflow files and leave backend setup to the client.</li>
-              <li><i class="fa-solid fa-xmark" style="color:#f87171; margin-top:3px;"></i> <strong>Lead Drop-Off:</strong> Contact forms dump leads into an unmonitored inbox with 8+ hour response delays.</li>
-              <li><i class="fa-solid fa-xmark" style="color:#f87171; margin-top:3px;"></i> <strong>Subscription Bloat:</strong> Thousands of dollars in recurring Zapier tasks and bloated third-party plugins.</li>
-              <li><i class="fa-solid fa-xmark" style="color:#f87171; margin-top:3px;"></i> <strong>No CRM Sync:</strong> Sales reps manually copy-paste lead info between tools, losing 40% of inbound buyers.</li>
+              <li><i class="fa-solid fa-xmark" style="color:#ef4444; margin-top:3px;"></i> <strong>Expensive Markups:</strong> \$15,000+ retainers to pay for account executives and lavish office rent.</li>
+              <li><i class="fa-solid fa-xmark" style="color:#ef4444; margin-top:3px;"></i> <strong>Slow Ticket Queues:</strong> 48-hour response times; you never speak directly to the actual coder.</li>
+              <li><i class="fa-solid fa-xmark" style="color:#ef4444; margin-top:3px;"></i> <strong>Hidden Extra Costs:</strong> Nickel-and-dime billing for every minor bug fix or small layout tweak.</li>
+              <li><i class="fa-solid fa-xmark" style="color:#ef4444; margin-top:3px;"></i> <strong>Template Resellers:</strong> Rebranding existing templates without understanding backend automation.</li>
             </ul>
           </div>
 
           <!-- Zerolt Model -->
           <div class="comparison-col highlighted" data-tilt>
-            <h3 style="color:#34d399;"><i class="fa-solid fa-circle-check"></i> The Zerolt Autonomous Architecture</h3>
+            <h3 style="color:var(--primary);"><i class="fa-solid fa-circle-check"></i> The Zerolt Freelance Collective</h3>
             <ul class="comparison-list">
-              <li><i class="fa-solid fa-check" style="color:#34d399; margin-top:3px;"></i> <strong>Connected Digital Ecosystems:</strong> Frontends hard-wired into GoHighLevel, n8n, and Zoho from Day 1.</li>
-              <li><i class="fa-solid fa-check" style="color:#34d399; margin-top:3px;"></i> <strong>&lt;60s Automated Outreach:</strong> Inbound leads are auto-enriched and followed up via SMS/email while intent is hot.</li>
-              <li><i class="fa-solid fa-check" style="color:#34d399; margin-top:3px;"></i> <strong>Zero Per-Zap Taxes:</strong> Self-hosted n8n infrastructure processes millions of workflow tasks without extra fees.</li>
-              <li><i class="fa-solid fa-check" style="color:#34d399; margin-top:3px;"></i> <strong>LeadSpark Integration:</strong> Priority access to our proprietary lead intelligence and enrichment engine.</li>
+              <li><i class="fa-solid fa-check" style="color:var(--emerald); margin-top:3px;"></i> <strong>40% – 60% Below Market Rates:</strong> Lean freelance efficiency delivering higher quality for less money.</li>
+              <li><i class="fa-solid fa-check" style="color:var(--emerald); margin-top:3px;"></i> <strong>Friend-First 24/7 Problem Solving:</strong> We answer at any hour. Need an urgent fix on Sunday? We hop on.</li>
+              <li><i class="fa-solid fa-check" style="color:var(--emerald); margin-top:3px;"></i> <strong>Transparent & Fair:</strong> Upfront pricing, zero hidden surprises, and free ongoing peace-of-mind support.</li>
+              <li><i class="fa-solid fa-check" style="color:var(--emerald); margin-top:3px;"></i> <strong>Real Product Builders:</strong> We build our own platforms (LeadSpark) to push modern automation forward.</li>
             </ul>
           </div>
         </div>
@@ -320,17 +366,16 @@
     </section>
 
     <!-- ========================================================================
-         4. CORE ENGINEERING TEAM
+         5. CORE FREELANCE BUILDERS
          ======================================================================== -->
     <section class="container">
       <div style="text-align:center; max-width:650px; margin:0 auto 30px;">
-        <div class="section-pill-sub"><i class="fa-solid fa-users-gear"></i> Leadership</div>
-        <h2 style="font-size:2.4rem; margin-bottom:8px;">The Architects Behind Zerolt</h2>
-        <p>A specialized squad of systems designers, frontend engineers, and CRM automation leads.</p>
+        <div class="section-pill-sub"><i class="fa-solid fa-laptop-code"></i> The Builders</div>
+        <h2 style="font-size:2.4rem; margin-bottom:8px;">Meet Your Technical Friends</h2>
+        <p>The craftsmen who will personally engineer and support your systems.</p>
       </div>
 
       <div class="team-grid">
-        <!-- Team 1 -->
         <div class="team-card" data-tilt>
           <div class="team-photo-wrap">
             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Alex Vance" loading="lazy">
@@ -338,48 +383,46 @@
           <div class="team-details">
             <h4>Alex Vance</h4>
             <div class="role">Chief Systems Architect</div>
-            <p>Directs GoHighLevel multi-tenant architectures, n8n clusters, and automated enterprise CRM integrations.</p>
+            <p>GoHighLevel and n8n specialist. Spends his nights building automated pipelines and helping founders scale.</p>
           </div>
         </div>
 
-        <!-- Team 2 -->
         <div class="team-card" data-tilt>
           <div class="team-photo-wrap">
             <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Julian Meyer" loading="lazy">
           </div>
           <div class="team-details">
             <h4>Julian Meyer</h4>
-            <div class="role">Lead Creative Technologist</div>
-            <p>Master of Webflow enterprise designs, 3D WebGL user interactions, and high-performance Shopify storefronts.</p>
+            <div class="role">Creative Technologist</div>
+            <p>Webflow, 3D WebGL, and Shopify frontend artisan dedicated to 100/100 Lighthouse speed scores.</p>
           </div>
         </div>
 
-        <!-- Team 3 -->
         <div class="team-card" data-tilt>
           <div class="team-photo-wrap">
             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Sophia Lin" loading="lazy">
           </div>
           <div class="team-details">
             <h4>Sophia Lin</h4>
-            <div class="role">Head of Product (LeadSpark)</div>
-            <p>Spearheads the development of LeadSpark, ensuring real-time lead data enrichment and frictionless routing.</p>
+            <div class="role">Lead Product Engineer (LeadSpark)</div>
+            <p>Architect of our proprietary LeadSpark engine, specializing in real-time lead enrichment and instant CRM dispatch.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================================================
-         5. CTA BANNER
+         6. CTA BANNER
          ======================================================================== -->
     <section class="footer-cta-banner">
       <div class="container footer-cta-content">
         <div>
-          <h2>Ready To Partner With Zerolt?</h2>
-          <p>Book a discovery call and let's map out your high-converting web and automation engine.</p>
+          <h2>Ready To Work With Builders Who Care?</h2>
+          <p>Get in touch directly with our team and receive an honest architecture plan in 4 hours.</p>
         </div>
         <div>
           <a href="contact.html" class="btn btn-primary" style="font-size:1.05rem; padding:16px 32px;">
-            Book Strategy Call <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+            Say Hello To A Friend <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
           </a>
         </div>
       </div>
@@ -387,22 +430,22 @@
   </main>
 
   <!-- ========================================================================
-       6. SITE FOOTER
+       7. SITE FOOTER
        ======================================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
+          <a href="index.html" class="logo logo-dark">
             <span class="logo-text">Zerolt</span><span class="logo-dot"></span>
           </a>
-          <p>Engineering high-converting digital storefronts, custom CMS websites, and autonomous marketing automation engines.</p>
+          <p>An elite freelance collective crafting high-converting storefronts, custom CMS websites, and autonomous marketing engines at fair market prices.</p>
         </div>
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Agency</a></li>
+            <li><a href="about.html">About Zerolt</a></li>
             <li><a href="services.html">Services & Pricing</a></li>
             <li><a href="index.html#leadspark">LeadSpark Automation</a></li>
             <li><a href="contact.html">Contact Us</a></li>
@@ -415,7 +458,6 @@
             <li><a href="services.html#n8n">n8n Orchestration</a></li>
             <li><a href="services.html#webflow">Webflow & Shopify</a></li>
             <li><a href="services.html#zoho">Zoho CRM & Flow</a></li>
-            <li><a href="services.html#lovable">Lovable AI Apps</a></li>
           </ul>
         </div>
         <div class="footer-col footer-newsletter">
