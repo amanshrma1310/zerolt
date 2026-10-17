@@ -255,26 +255,26 @@
           <h2 style="font-size:1.9rem; margin-bottom:8px; color:var(--text-primary);">Project Consultation Request</h2>
           <p style="color:var(--text-secondary); margin-bottom:26px; font-size:0.95rem;">Tell us what you're building. We charge 50% below agency market rates with zero compromise on quality.</p>
 
-          <form id="project-contact-form" onsubmit="event.preventDefault(); document.getElementById('form-success-banner').style.display='block'; this.reset();">
+          <form id="project-contact-form">
             <div class="form-row">
               <div class="form-group">
                 <label>Your Name *</label>
-                <input type="text" class="form-control" placeholder="e.g. Sarah Jenkins" required>
+                <input type="text" name="name" class="form-control" placeholder="e.g. Sarah Jenkins" required>
               </div>
               <div class="form-group">
                 <label>Work Email *</label>
-                <input type="email" class="form-control" placeholder="sarah@company.com" required>
+                <input type="email" name="email" class="form-control" placeholder="sarah@company.com" required>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label>Company / Brand Name</label>
-                <input type="text" class="form-control" placeholder="e.g. Acme Studio">
+                <input type="text" name="company" class="form-control" placeholder="e.g. Acme Studio">
               </div>
               <div class="form-group">
                 <label>Current Website / Funnel URL</label>
-                <input type="url" class="form-control" placeholder="https://">
+                <input type="url" name="website" class="form-control" placeholder="https://">
               </div>
             </div>
 
@@ -322,27 +322,27 @@
 
             <div class="form-group">
               <label>Estimated Project Budget (USD):</label>
-              <select class="form-control">
-                <option value="1.5k-3k">$1,500 – $3,000 (Quick Sprint / Landing Page)</option>
-                <option value="3k-6k" selected>$3,000 – $6,000 (Full Website + GHL Pipeline)</option>
-                <option value="6k-12k">$6,000 – $12,000 (Enterprise Multi-App Ecosystem)</option>
-                <option value="custom">Custom Retainer / Ongoing Dedicated Help</option>
+              <select name="budget" class="form-control">
+                <option value="$1,500 – $3,000 (Quick Sprint / Landing Page)">$1,500 – $3,000 (Quick Sprint / Landing Page)</option>
+                <option value="$3,000 – $6,000 (Full Website + GHL Pipeline)" selected>$3,000 – $6,000 (Full Website + GHL Pipeline)</option>
+                <option value="$6,000 – $12,000 (Enterprise Multi-App Ecosystem)">$6,000 – $12,000 (Enterprise Multi-App Ecosystem)</option>
+                <option value="Custom Retainer / Ongoing Dedicated Help">Custom Retainer / Ongoing Dedicated Help</option>
               </select>
             </div>
 
             <div class="form-group">
               <label>Tell Us About Your Project & Bottlenecks:</label>
-              <textarea class="form-control" rows="3" placeholder="Describe your goals, current lead drop-offs, or CRM integrations needed..."></textarea>
+              <textarea name="message" class="form-control" rows="3" placeholder="Describe your goals, current lead drop-offs, or CRM integrations needed..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width:100%; font-size:1.05rem; padding:16px;">
+            <button type="submit" id="contact-submit-btn" class="btn btn-primary" style="width:100%; font-size:1.05rem; padding:16px;">
               Submit Inquiry & Request Proposal
               <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
             </button>
 
             <div id="form-success-banner" style="display:none; margin-top:20px; background:#ecfdf5; border:1px solid #10b981; padding:18px 24px; border-radius:var(--radius-lg); color:#065f46;">
               <strong style="display:block; margin-bottom:4px;">✨ Thank You for Reaching Out!</strong>
-              Your technical partner at Zerolt will review your requirements and respond via email within 4 hours.
+              Your technical partner at Zerolt has received your details and will review your requirements with an honest architecture proposal within 4 hours.
             </div>
           </form>
         </div>

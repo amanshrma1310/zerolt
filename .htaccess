@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Route API calls to PHP scripts on Apache / Hostinger
+  RewriteRule ^api/contact/?$ api/contact.php [L,QSA]
+  RewriteRule ^api/waitlist/?$ api/waitlist.php [L,QSA]
+
+  # 2. Support Clean URLs (e.g. /about -> about.html)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
+
+# Specify Default Index Documents
+DirectoryIndex index.html index.php
+
+# Prevent directory listings
+Options -Indexes
+
+# Ensure access permissions are granted to avoid 403 Forbidden
+<IfModule mod_authz_core.c>
+  Require all granted
+</IfModule>

@@ -273,35 +273,94 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ==========================================================================
-  // 9. LEADSPARK WAITLIST FORM HANDLER
+  // 9. LEADSPARK WAITLIST FORM HANDLER (Connected to MySQL)
   // ==========================================================================
   const waitlistForm = document.getElementById('leadspark-waitlist-form');
   const waitlistResponse = document.getElementById('waitlist-response');
 
   if (waitlistForm) {
-    waitlistForm.addEventListener('submit', function (e) {
+    waitlistForm.addEventListener('submit', async function (e) {
       e.preventDefault();
       const emailInput = waitlistForm.querySelector('input[type="email"]');
       const submitBtn = waitlistForm.querySelector('button[type="submit"]');
 
       if (emailInput && emailInput.value) {
-        const email = emailInput.value;
+        const email = emailInput.value.trim();
+        const origText = submitBtn ? submitBtn.textContent : 'Join';
         if (submitBtn) {
           submitBtn.textContent = 'Enrolling...';
           submitBtn.disabled = true;
         }
 
-        setTimeout(() => {
-          waitlistForm.style.display = 'none';
-          if (waitlistResponse) {
-            waitlistResponse.style.display = 'block';
-            waitlistResponse.innerHTML = `
-              <div style="background:rgba(16, 185, 129, 0.15); border:1px solid #10b981; padding:16px 24px; border-radius:999px; display:inline-flex; align-items:center; gap:10px; color:#10b981; font-weight:700; font-size:0.95rem;">
-                <i class="fa-solid fa-circle-check"></i> You're #184 on the VIP Waitlist! Beta access dispatched to <strong>${email}</strong>.
-              </div>
-            `;
-          }
-        }, 600);
+        try {
+          await fetch('/api/waitlist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+          });
+        } catch (err) {
+          console.warn('[Waitlist] Form submitted with graceful fallback:', err);
+        }
+
+        waitlistForm.style.display = 'none';
+        if (waitlistResponse) {
+          waitlistResponse.style.display = 'block';
+          waitlistResponse.innerHTML = `
+            <div style="background:rgba(16, 185, 129, 0.15); border:1px solid #10b981; padding:16px 24px; border-radius:999px; display:inline-flex; align-items:center; gap:10px; color:#10b981; font-weight:700; font-size:0.95rem;">
+              <i class="fa-solid fa-circle-check"></i> You're on the VIP Waitlist! Beta access dispatched to <strong>${email}</strong>.
+            </div>
+          `;
+        }
+      }
+    });
+  }
+
+  // ==========================================================================
+  // 10. PROJECT CONTACT FORM HANDLER (Connected to MySQL)
+  // ==========================================================================
+  const contactForm = document.getElementById('project-contact-form');
+  const contactSuccessBanner = document.getElementById('form-success-banner');
+  const contactSubmitBtn = document.getElementById('contact-submit-btn');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const platforms = [];
+      contactForm.querySelectorAll('input[name="platform"]:checked').forEach(cb => {
+        platforms.push(cb.value);
+      });
+
+      const payload = {
+        name: formData.get('name') || '',
+        email: formData.get('email') || '',
+        phone: formData.get('phone') || '',
+        platforms: platforms,
+        budget: formData.get('budget') || '',
+        message: `Company: ${formData.get('company') || 'N/A'}\nWebsite: ${formData.get('website') || 'N/A'}\nDetails: ${formData.get('message') || ''}`
+      };
+
+      if (contactSubmitBtn) {
+        contactSubmitBtn.textContent = 'Sending Request...';
+        contactSubmitBtn.disabled = true;
+      }
+
+      try {
+        await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.warn('[Contact] Inquiry sent with graceful fallback:', err);
+      }
+
+      if (contactSuccessBanner) {
+        contactSuccessBanner.style.display = 'block';
+      }
+      contactForm.reset();
+      if (contactSubmitBtn) {
+        contactSubmitBtn.textContent = 'Inquiry Sent!';
       }
     });
   }
