@@ -39,14 +39,15 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%235e43f3'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='50' fill='white' font-family='sans-serif' font-weight='bold'>Z</text></svg>">
 
-  <!-- Fonts & Icons -->
+  <!-- Fonts & Icons (Optimized for Sub-Second Load) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Comfortaa:wght@600;700&family=Quicksand:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
   <!-- Core Stylesheet with Cache-Buster -->
-  <link rel="stylesheet" href="css/style.css?v=6.0">
+  <link rel="stylesheet" href="css/style.css?v=7.0">
 
   <style>
     /* Logo Typography Matching Reference Screenshot */
@@ -150,7 +151,7 @@
         <!-- Hero Right 3D Visual Cluster (Matching Screenshot) -->
         <div class="hero-visual-cluster">
           <div class="hero-main-card" data-tilt>
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Zerolt Lead Solutions Specialist">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Zerolt Lead Solutions Specialist" fetchpriority="high">
             <div class="hero-main-card-glow"></div>
             <div class="hero-main-card-caption">
               <h4>Alex Vance</h4>
@@ -234,6 +235,13 @@
          4. NEW: THE ZEROLT FREELANCER ETHOS SECTION (SPECIFIED BY USER)
          ======================================================================== -->
     <section class="zerolt-ethos-section">
+      <!-- 3D Geometric Floating Shapes -->
+      <div class="banner-3d-backdrop" aria-hidden="true">
+        <div class="shape-3d shape-3d-torus shape-3d-torus-gold" style="top:10%; left:5%; width:110px; height:110px;"></div>
+        <div class="shape-3d shape-3d-ring" style="bottom:5%; right:8%; width:160px; height:160px;"></div>
+        <div class="shape-3d shape-3d-cube" style="top:25%; right:4%;"></div>
+      </div>
+
       <div class="container">
         <div style="text-align:center; max-width:700px; margin:0 auto 40px;">
           <div class="section-pill-sub"><i class="fa-solid fa-users"></i> Why Clients Love Zerolt</div>
@@ -351,64 +359,138 @@
     </section>
 
     <!-- ========================================================================
-         6. UPCOMING PRODUCT SPOTLIGHT: LEADSPARK BY ZEROLT
+         6. PROPRIETARY PRODUCT SPOTLIGHT: FLOWDESK (ZEROLT MARKETING OS)
          ======================================================================== -->
-    <section class="leadspark-section" id="leadspark">
-      <div class="leadspark-glow-bg"></div>
+    <section class="flowdesk-saas-section" id="leadspark">
+      <!-- 3D Geometric Backdrop Shapes Floating in Banner -->
+      <div class="banner-3d-backdrop" aria-hidden="true">
+        <div class="bg-3d-grid-plane"></div>
+        <div class="shape-3d shape-3d-torus shape-3d-torus-gold" style="top:8%; left:4%; width:150px; height:150px;"></div>
+        <div class="shape-3d shape-3d-sphere shape-3d-sphere-emerald" style="bottom:12%; right:6%; width:110px; height:110px;"></div>
+        <div class="shape-3d shape-3d-ring" style="bottom:6%; left:18%; width:200px; height:200px;"></div>
+        <div class="shape-3d shape-3d-cube" style="top:18%; right:14%;"></div>
+      </div>
 
-      <div class="container leadspark-container">
-        <div class="leadspark-header">
-          <div class="leadspark-pill">
-            <i class="fa-solid fa-fire"></i> PROPRIETARY PRODUCT LAUNCH
+      <div class="container">
+        <!-- Section Header -->
+        <div class="saas-header">
+          <div class="saas-pill-tag">
+            <i class="fa-solid fa-bolt" style="color:#facc15;"></i> PROPRIETARY SAAS LAUNCH • ZERO SEAT TAX
           </div>
-          <h2>Meet LeadSpark: The Autonomous Marketing Automation Engine</h2>
-          <p>
-            Built by Zerolt freelancers to showcase what's possible: LeadSpark captures visitor signals, enriches lead profiles in real-time, and synchronizes seamless follow-up sequences across GoHighLevel & n8n within 60 seconds.
+          <h2 class="saas-title">Meet FlowDesk: The All-in-One <span>Marketing OS</span></h2>
+          <p class="saas-subtitle">
+            Engineered in-house by Zerolt freelance builders. Ingest leads via embeddable forms, trigger automated WhatsApp Cloud API & SMTP drip workflows, and manage multi-tier agency pods — at <strong>70% below</strong> bloated corporate platforms.
           </p>
         </div>
 
-        <div class="leadspark-pipeline-card" data-tilt>
-          <div class="pipeline-steps-grid">
-            <div class="pipeline-step-node node-1">
-              <div class="node-icon"><i class="fa-solid fa-magnet"></i></div>
-              <h4>01. Inbound Capture</h4>
-              <p>Detects high-intent visitors across Webflow, Shopify, or WordPress forms with zero friction.</p>
+        <!-- 3D Interactive Browser Showcase Holding Real Dashboard Screenshot -->
+        <div class="saas-browser-cluster" data-tilt>
+          <div class="saas-browser-window">
+            <div class="saas-browser-topbar">
+              <div class="saas-traffic-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="saas-address-bar">
+                <i class="fa-solid fa-lock" style="color:#10b981; font-size:0.75rem;"></i>
+                <span>https://wheat-raccoon-340819.hostingersite.com/admin/dashboard</span>
+              </div>
+              <div class="saas-browser-actions">
+                <i class="fa-solid fa-circle-check"></i> Live Production Build
+              </div>
             </div>
 
-            <div class="pipeline-step-node node-2">
-              <div class="node-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-              <h4>02. Real-Time Enrichment</h4>
-              <p>LeadSpark auto-enriches contact company size, LinkedIn data, and verified phone numbers instantly.</p>
-            </div>
+            <div class="saas-dashboard-viewport">
+              <img src="images/flowdesk-dashboard.png" alt="FlowDesk Zerolt Marketing OS Admin Dashboard" class="saas-dashboard-img" loading="lazy" decoding="async">
 
-            <div class="pipeline-step-node node-3">
-              <div class="node-icon"><i class="fa-solid fa-network-wired"></i></div>
-              <h4>03. Auto Sync to GHL & n8n</h4>
-              <p>Direct two-way dispatch into GoHighLevel opportunity pipelines or custom n8n webhooks.</p>
-            </div>
+              <!-- Floating Contextual Interactive 3D Badges -->
+              <div class="saas-float-badge saas-badge-left">
+                <span class="pulse-indicator"></span>
+                <span>WhatsApp Cloud API & SMTP Active</span>
+              </div>
 
-            <div class="pipeline-step-node node-4">
-              <div class="node-icon"><i class="fa-solid fa-comments"></i></div>
-              <h4>04. &lt;60s AI Outreach</h4>
-              <p>Triggers hyper-personalized SMS, WhatsApp, or email sequences while lead intent is at peak.</p>
+              <div class="saas-float-badge saas-badge-right">
+                <i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i>
+                <span>Multi-Tier Pod Governance & Matrix</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="waitlist-box">
-          <div class="waitlist-text">
-            <h3>Get VIP Early Access to LeadSpark</h3>
-            <p>Join founders & operators getting beta access and exclusive launch templates.</p>
+        <!-- How FlowDesk Works: 4 Core Architectural Pillars -->
+        <div class="saas-pillars-grid">
+          <div class="saas-pillar-card" data-tilt>
+            <div class="saas-pillar-icon" style="background:rgba(94, 67, 243, 0.2); color:#a78bfa;">
+              <i class="fa-solid fa-file-import"></i>
+            </div>
+            <h4>01. Inbound Capture & OCR</h4>
+            <p>Embed seamless high-converting web forms directly on any website or ingest bulk contact records via 1-click Excel, CSV, and OCR document imports.</p>
           </div>
 
-          <form class="waitlist-form" id="leadspark-waitlist-form">
-            <input type="email" class="waitlist-input" placeholder="Enter your work email..." required>
-            <button type="submit" class="waitlist-btn">
-              Claim Beta Access <i class="fa-solid fa-bolt" style="margin-left:6px;"></i>
-            </button>
-          </form>
+          <div class="saas-pillar-card" data-tilt>
+            <div class="saas-pillar-icon" style="background:rgba(16, 185, 129, 0.2); color:#34d399;">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h4>02. Team & Pod Governance</h4>
+            <p>Assign pod managers, allocate dedicated sales reps, and configure fine-grained role-based permission matrices for total administrative control.</p>
+          </div>
 
-          <div id="waitlist-response" style="display:none;"></div>
+          <div class="saas-pillar-card" data-tilt>
+            <div class="saas-pillar-icon" style="background:rgba(245, 158, 11, 0.2); color:#fbbf24;">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h4>03. Autonomous Workflows</h4>
+            <p>Trigger automated response-based sequences across official WhatsApp Cloud API and verified outbound SMTP credentials without expensive zap tools.</p>
+          </div>
+
+          <div class="saas-pillar-card" data-tilt>
+            <div class="saas-pillar-icon" style="background:rgba(236, 72, 153, 0.2); color:#f472b6;">
+              <i class="fa-solid fa-paper-plane"></i>
+            </div>
+            <h4>04. 1-Click Direct Queue</h4>
+            <p>Manage warm opportunities in real-time. Trigger 1-click WhatsApp chat or email outreach directly from your central operational follow-up queue.</p>
+          </div>
+        </div>
+
+        <!-- Disruptive Pricing Advantage: FlowDesk vs Competitors -->
+        <div class="saas-comparison-banner" data-tilt>
+          <div class="saas-comparison-info">
+            <div class="section-pill-sub" style="background:rgba(245,158,11,0.15); color:#fbbf24; border-color:rgba(245,158,11,0.3); margin-bottom:12px;">
+              <i class="fa-solid fa-hand-holding-dollar"></i> Unfair Market Price Advantage
+            </div>
+            <h3>Why Overpay For Corporate Software?</h3>
+            <p>
+              Platforms like GoHighLevel, HubSpot, and Salesforce charge hundreds of dollars per month, plus punishing per-seat fees and contact penalties. Zerolt delivers full agency marketing power at honest freelancer rates.
+            </p>
+            <div style="display:flex; gap:16px; flex-wrap:wrap; font-size:0.92rem; color:#cbd5e1;">
+              <span><i class="fa-solid fa-check" style="color:#10b981; margin-right:6px;"></i> Unlimited Pod Seats</span>
+              <span><i class="fa-solid fa-check" style="color:#10b981; margin-right:6px;"></i> Zero Per-Contact Taxes</span>
+              <span><i class="fa-solid fa-check" style="color:#10b981; margin-right:6px;"></i> Direct 24/7 WhatsApp Support</span>
+            </div>
+          </div>
+
+          <div class="saas-price-tag-wrap">
+            <div class="price-card-competitor">
+              <div class="price-title">Other Platforms</div>
+              <div class="price-amount">$297 - $497</div>
+              <div style="font-size:0.75rem; color:#f87171;">/month + per seat taxes</div>
+            </div>
+
+            <div class="price-card-flowdesk">
+              <div class="price-title">FlowDesk by Zerolt</div>
+              <div class="price-amount">$49</div>
+              <div class="price-sub">/month flat or FREE with custom web builds</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section CTA Actions -->
+        <div class="saas-cta-actions">
+          <a href="/contact" class="btn btn-primary btn-consultation" style="font-size:1rem; padding:15px 32px;">
+            Get Free FlowDesk Consultation <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+          <a href="/services" class="btn btn-outline" style="background:rgba(255,255,255,0.06); color:white; border-color:rgba(255,255,255,0.2); font-size:1rem; padding:15px 28px;">
+            <i class="fa-solid fa-layer-group" style="margin-right:8px;"></i> Explore All Services
+          </a>
         </div>
       </div>
     </section>
@@ -417,6 +499,12 @@
          7. RECENT WORK & PORTFOLIO
          ======================================================================== -->
     <section class="work-section" id="work">
+      <!-- 3D Floating Shapes Backdrop -->
+      <div class="banner-3d-backdrop" aria-hidden="true">
+        <div class="shape-3d shape-3d-sphere shape-3d-sphere-emerald" style="top:12%; right:5%; width:90px; height:90px;"></div>
+        <div class="shape-3d shape-3d-cube" style="bottom:10%; left:4%;"></div>
+      </div>
+
       <div class="container">
         <div class="work-header">
           <div>
@@ -425,7 +513,7 @@
             </div>
             <h2>Take A Look At Our Recent Work</h2>
           </div>
-          <a href="services.html" class="btn btn-outline" style="background:#191b26; color:white; border-color:#2a2d3e;">
+          <a href="/services" class="btn btn-outline" style="background:#191b26; color:white; border-color:#2a2d3e;">
             View all services <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
           </a>
         </div>
@@ -506,6 +594,13 @@
          8. CALL TO ACTION BANNER
          ======================================================================== -->
     <section class="footer-cta-banner">
+      <!-- 3D Geometric Floating Shapes -->
+      <div class="banner-3d-backdrop" aria-hidden="true">
+        <div class="shape-3d shape-3d-ring" style="top:5%; left:12%; width:180px; height:180px;"></div>
+        <div class="shape-3d shape-3d-sphere shape-3d-sphere-emerald" style="bottom:8%; right:10%; width:95px; height:95px;"></div>
+        <div class="shape-3d shape-3d-cube" style="top:20%; right:22%;"></div>
+      </div>
+
       <div class="container footer-cta-content">
         <div>
           <h2>Need An Unfair Advantage At A Fair Price?</h2>

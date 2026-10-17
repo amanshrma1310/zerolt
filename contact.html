@@ -23,8 +23,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Comfortaa:wght@600;700&family=Quicksand:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=6.0">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="css/style.css?v=7.0">
 
   <style>
     /* Logo Typography Matching Reference Screenshot */
@@ -238,7 +239,14 @@
 
   <main>
     <section class="page-hero">
-      <div class="container">
+      <!-- 3D Geometric Floating Shapes -->
+      <div class="banner-3d-backdrop" aria-hidden="true">
+        <div class="shape-3d shape-3d-torus shape-3d-torus-gold" style="top:12%; left:6%; width:120px; height:120px;"></div>
+        <div class="shape-3d shape-3d-sphere shape-3d-sphere-emerald" style="bottom:15%; right:8%; width:90px; height:90px;"></div>
+        <div class="shape-3d shape-3d-cube" style="top:20%; right:15%;"></div>
+      </div>
+
+      <div class="container" style="position:relative; z-index:2;">
         <div class="hero-badge-pill">
           <span class="pulse-indicator"></span>
           <span>Friend-First Collaboration • Guaranteed 4-Hour Response</span>
