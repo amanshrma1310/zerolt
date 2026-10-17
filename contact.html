@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Zerolt | Start Your Web & Automation Project</title>
+  <meta name="description" content="Get in touch with Zerolt. Tell us about your website, GoHighLevel, n8n, or Zoho requirements. Guaranteed response within 4 hours.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%235e43f3'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='50' fill='white' font-family='sans-serif' font-weight='bold'>Z</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .page-hero {
+      padding: 160px 0 60px;
+      text-align: center;
+      background: radial-gradient(circle at 10% 20%, rgba(94, 67, 243, 0.05) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 70%, rgba(255, 94, 98, 0.05) 0%, transparent 45%);
+    }
+    .page-hero h1 {
+      font-size: 3.8rem;
+      max-width: 780px;
+      margin: 0 auto 16px;
+      line-height: 1.1;
+    }
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      margin-bottom: 90px;
+    }
+    .contact-form-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: 45px;
+      box-shadow: var(--shadow-sm);
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text-primary);
+      outline: none;
+      transition: all 0.3s ease;
+      background: #fafafc;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 4px var(--primary-light);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    /* Platform interest multi-select chips */
+    .chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .chip-item {
+      cursor: pointer;
+      user-select: none;
+    }
+    .chip-item input {
+      display: none;
+    }
+    .chip-label {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #f4f4f7;
+      border: 1px solid #e5e5ea;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
+    }
+    .chip-item input:checked + .chip-label {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+    /* Contact Sidebar Cards */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .sidebar-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .sidebar-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+    .sidebar-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .sidebar-info-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .faq-section {
+      background: var(--bg-warm);
+      padding: 90px 0;
+    }
+    @media (max-width: 992px) {
+      .contact-main-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 2.6rem; }
+      .contact-form-card { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo">zerolt<span class="logo-dot"></span></a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="index.html#leadspark" class="nav-link">LeadSpark <span class="nav-tag-new">NEW</span></a></li>
+          <li><a href="index.html#work" class="nav-link">Work</a></li>
+          <li><a href="index.html#process" class="nav-link">Process</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="contact.html" class="btn btn-consultation">
+            Free Consultation <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem; margin-left:4px;"></i>
+          </a>
+          <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-badge-pill" style="margin-bottom:20px;">
+          <span class="pulse-indicator"></span>
+          <span>Fast Turnaround • 4-Hour Response SLA</span>
+        </div>
+        <h1>Let's Build Your Digital Advantage</h1>
+        <p>Tell us about your brand, current platforms, and growth targets. We'll outline the exact architecture to scale your lead flow.</p>
+      </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="container">
+      <div class="contact-main-grid">
+        <!-- Inquiry Form -->
+        <div class="contact-form-card" data-tilt>
+          <h2 style="font-size:2rem; margin-bottom:10px;">Project Consultation Request</h2>
+          <p style="color:var(--text-secondary); margin-bottom:28px;">Fill out the details below and our technical leads will reach out with a scoping document.</p>
+
+          <form id="project-contact-form" onsubmit="event.preventDefault(); document.getElementById('form-success-banner').style.display='block'; this.reset();">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" class="form-control" placeholder="e.g. Sarah Jenkins" required>
+              </div>
+              <div class="form-group">
+                <label>Work Email *</label>
+                <input type="email" class="form-control" placeholder="sarah@company.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Company / Brand Name</label>
+                <input type="text" class="form-control" placeholder="e.g. Acme Corp">
+              </div>
+              <div class="form-group">
+                <label>Current Website / Funnel URL</label>
+                <input type="url" class="form-control" placeholder="https://">
+              </div>
+            </div>
+
+            <!-- Platform Chips -->
+            <div class="form-group">
+              <label>Platforms & Technologies You Need (Select All That Apply):</label>
+              <div class="chip-group">
+                <label class="chip-item">
+                  <input type="checkbox" name="platform" value="GoHighLevel" checked>
+                  <span class="chip-label">GoHighLevel (GHL)</span>
+                </label>
+                <label class="chip-item">
+                  <input type="checkbox" name="platform" value="n8n">
+                  <span class="chip-label">n8n Automations</span>
+                </label>
+                <label class="chip-item">
+                  <input type="checkbox" name="platform" value="Webflow" checked>
+                  <span class="chip-label">Webflow</span>
+                </label>
+                <label class="chip-item">
+                  <input type="checkbox" name="platform" value="Shopify">
+                  <span class="chip-label">Shopify Plus</span>
+                </label>
+                <label class="chip-item">
+                  <input type="checkbox" name="platform" value="Zoho">
+                  <span class="chip-label">Zoho CRM & Flow</span>
+                </label>
+                <label class="chip-item">
+                  <input type="checkbox" name="platform" value="Lovable">
+                  <span class="chip-label">Lovable AI Apps</span>
+                </label>
+                <label class="chip-item">
+                  <input type="checkbox" name="platform" value="WordPress">
+                  <span class="chip-label">Custom WordPress</span>
+                </label>
+                <label class="chip-item">
+                  <input type="checkbox" name="platform" value="Wix">
+                  <span class="chip-label">Wix Studio</span>
+                </label>
+                <label class="chip-item">
+                  <input type="checkbox" name="platform" value="LeadSpark">
+                  <span class="chip-label">⚡ LeadSpark Beta Access</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Estimated Budget -->
+            <div class="form-group">
+              <label>Estimated Project Budget (USD):</label>
+              <select class="form-control">
+                <option value="3k-5k">$3,000 – $5,000 (Quick Launch / Optimization)</option>
+                <option value="5k-10k" selected>$5,000 – $10,000 (Full Website + GHL Pipeline)</option>
+                <option value="10k-25k">$10,000 – $25,000 (Enterprise Ecosystem + Custom n8n)</option>
+                <option value="25k+">$25,000+ (Full Custom Architecture / Retainer)</option>
+              </select>
+            </div>
+
+            <!-- Project Details -->
+            <div class="form-group">
+              <label>Tell Us About Your Project & Bottlenecks:</label>
+              <textarea class="form-control" rows="4" placeholder="Briefly describe what you're trying to build, current lead drop-offs, or CRM integrations needed..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; font-size:1.05rem; padding:16px;">
+              Submit Inquiry & Request Proposal
+              <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+
+            <!-- Success State -->
+            <div id="form-success-banner" style="display:none; margin-top:20px; background:#ecfdf5; border:1px solid #10b981; padding:18px 24px; border-radius:var(--radius-lg); color:#065f46;">
+              <strong style="display:block; margin-bottom:4px;">✨ Thank You for Reaching Out!</strong>
+              Our technical team will review your requirements and respond via email within 4 business hours.
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar Details -->
+        <div class="contact-sidebar">
+          <!-- Direct Discovery Call Card -->
+          <div class="sidebar-card" data-tilt style="background:linear-gradient(135deg, #12131d 0%, #1a1c2b 100%); color:white; border-color:#2a2c42;">
+            <div style="font-size:2rem; margin-bottom:12px;">📅 ⚡</div>
+            <h3 style="color:white;">Need An Immediate Chat?</h3>
+            <p style="color:#9ba1b0; font-size:0.95rem; margin-bottom:20px;">
+              Skip the back-and-forth email queue. Grab a 30-minute discovery call directly on our founder's calendar.
+            </p>
+            <a href="https://calendly.com" target="_blank" class="btn btn-primary" style="width:100%; font-size:0.95rem;">
+              Book 30-Min Discovery Call <i class="fa-solid fa-calendar-check" style="margin-left:6px;"></i>
+            </a>
+          </div>
+
+          <!-- Direct Coordinates -->
+          <div class="sidebar-card">
+            <h3>Direct Contact Coordinates</h3>
+            <div class="sidebar-info-item">
+              <div class="sidebar-info-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <strong style="display:block; font-size:0.95rem;">Inquiries & Proposals</strong>
+                <a href="mailto:hello@zerolt.com" style="color:var(--primary); font-size:0.92rem; font-weight:600;">hello@zerolt.com</a>
+              </div>
+            </div>
+
+            <div class="sidebar-info-item">
+              <div class="sidebar-info-icon"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <strong style="display:block; font-size:0.95rem;">Response Commitment</strong>
+                <span style="color:var(--text-secondary); font-size:0.92rem;">Within 4 hours (Mon - Sat)</span>
+              </div>
+            </div>
+
+            <div class="sidebar-info-item">
+              <div class="sidebar-info-icon"><i class="fa-solid fa-earth-americas"></i></div>
+              <div>
+                <strong style="display:block; font-size:0.95rem;">Global Operations</strong>
+                <span style="color:var(--text-secondary); font-size:0.92rem;">Serving clients in USA, UK, Europe & Worldwide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="faq-section">
+      <div class="container" style="max-width:850px;">
+        <div style="text-align:center; margin-bottom:50px;">
+          <div class="section-pill-sub"><i class="fa-solid fa-circle-question"></i> Common Questions</div>
+          <h2 style="font-size:2.6rem;">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="accordion-list">
+          <div class="accordion-item active">
+            <div class="accordion-trigger">
+              <h3>How fast can Zerolt launch a Webflow + GoHighLevel setup?</h3>
+              <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="accordion-body">
+              <p>Our standard turnaround for a high-converting 5 to 8 page Webflow website with a fully wired GoHighLevel opportunity pipeline and automated SMS/email booking follow-up is typically <strong>2 to 3 weeks</strong>.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-trigger">
+              <h3>Why do you recommend n8n over Zapier or Make?</h3>
+              <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="accordion-body">
+              <p>While we support all platforms, self-hosted n8n allows high-volume lead processing without paying hundreds of dollars in monthly "task/operation" overages. You retain 100% control of your customer data and can run complex loops and AI agents natively.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-trigger">
+              <h3>How does LeadSpark integrate with our existing website?</h3>
+              <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="accordion-body">
+              <p>LeadSpark requires adding a single lightweight JavaScript snippet (less than 12KB) to your header. It immediately starts monitoring inbound traffic, enrichments, and dispatches data straight into your CRM or webhook endpoints.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-trigger">
+              <h3>Do you provide ongoing support after deployment?</h3>
+              <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="accordion-body">
+              <p>Yes! We offer monthly retainer packages covering continuous speed audits, new funnel split-testing, n8n server maintenance, GHL snapshot updates, and priority Slack channel support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">zerolt<span class="logo-dot"></span></a>
+          <p>Crafting high-converting digital storefronts, custom CMS websites, and autonomous marketing automation engines.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Agency</a></li>
+            <li><a href="services.html">Services & Pricing</a></li>
+            <li><a href="index.html#leadspark">LeadSpark Automation</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platforms</h4>
+          <ul>
+            <li><a href="services.html#ghl">GoHighLevel (GHL)</a></li>
+            <li><a href="services.html#n8n">n8n Orchestration</a></li>
+            <li><a href="services.html#webflow">Webflow & Shopify</a></li>
+            <li><a href="services.html#zoho">Zoho CRM & Flow</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Ahead</h4>
+          <p>Receive bi-weekly playbooks on marketing automation and web design.</p>
+          <form class="footer-input-wrap" onsubmit="event.preventDefault(); alert('Subscribed!');">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Zerolt.com. All rights reserved.</div>
+        <div style="display:flex; gap:20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="contact.html">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

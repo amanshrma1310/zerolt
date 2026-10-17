@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zerolt — Elite Web Design & Marketing Automation Agency | GoHighLevel, n8n, Webflow</title>
+  <meta name="description" content="Zerolt is a premier web design and marketing automation agency. We build high-converting websites on Webflow, Shopify, and WordPress, seamlessly integrated with GoHighLevel, n8n, and Zoho workflows.">
+  <meta name="keywords" content="Zerolt, GoHighLevel agency, n8n automation, Zoho CRM, Webflow design, Lovable AI, Shopify agency, marketing automation, LeadSpark">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%235e43f3'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='50' fill='white' font-family='sans-serif' font-weight='bold'>Z</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. NAVIGATION HEADER
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          zerolt<span class="logo-dot"></span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li>
+            <a href="#leadspark" class="nav-link">
+              LeadSpark
+              <span class="nav-tag-new">NEW</span>
+            </a>
+          </li>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Action CTA -->
+        <div class="nav-actions">
+          <a href="contact.html" class="btn btn-consultation">
+            Free Consultation <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem; margin-left:4px;"></i>
+          </a>
+          <!-- Mobile Menu Hamburger -->
+          <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================
+         2. HERO SECTION WITH 3D CANVAS & INTERACTIVE CLUSTER
+         ======================================================================== -->
+    <section class="hero-section">
+      <!-- Three.js Interactive 3D Canvas Background -->
+      <canvas id="hero-3d-canvas"></canvas>
+
+      <div class="container hero-content-wrap">
+        <!-- Hero Left Text Column -->
+        <div class="hero-text-col">
+          <div class="hero-badge-pill">
+            <span class="pulse-indicator"></span>
+            <span>⚡ On demand live support & automation</span>
+          </div>
+
+          <h1 class="hero-title">
+            Awesome <span class="highlight-text">Solution</span> For Your Business Growth
+          </h1>
+
+          <p class="hero-desc">
+            We engineer high-converting digital platforms across Webflow, Shopify & WordPress, seamlessly wired into autonomous GoHighLevel, n8n, and Zoho workflow pipelines.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="contact.html" class="btn btn-primary">
+              Get Started Now
+              <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <button class="btn btn-outline btn-how-works trigger-video-modal">
+              <span class="play-icon"><i class="fa-solid fa-play"></i></span>
+              How it works
+            </button>
+          </div>
+
+          <div class="hero-micro-note">
+            <i class="fa-solid fa-circle-check" style="color:var(--emerald); margin-right:6px;"></i>
+            Bespoke architectures that adapt to your exact business workflow. Zero bloat.
+          </div>
+        </div>
+
+        <!-- Hero Right 3D Visual Cluster (Matching Screenshot) -->
+        <div class="hero-visual-cluster">
+          <!-- Ambient 3D Glowing Orbs -->
+          <div class="floating-3d-orb orb-1"></div>
+          <div class="floating-3d-orb orb-2"></div>
+
+          <!-- Main 3D Card (Developer / Strategist showcase) -->
+          <div class="hero-main-card" data-tilt>
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Zerolt Lead Solutions Specialist">
+            <div class="hero-main-card-glow"></div>
+            <div class="hero-main-card-caption">
+              <h4>Alex Vance</h4>
+              <p>Head of Systems Architecture @ Zerolt</p>
+            </div>
+          </div>
+
+          <!-- Floating 3D Card 1: 99% Analytics Report -->
+          <div class="floating-3d-card-stats" data-tilt>
+            <div class="stats-card-top">
+              <span class="stats-number">99</span>
+              <span class="stats-percent">%</span>
+            </div>
+            <p class="stats-label">Track and analyze the business reports.</p>
+            <div class="stats-chart-bars">
+              <div class="chart-bar" style="height: 40%;"></div>
+              <div class="chart-bar" style="height: 65%;"></div>
+              <div class="chart-bar" style="height: 50%;"></div>
+              <div class="chart-bar active" style="height: 90%;"></div>
+              <div class="chart-bar active" style="height: 75%;"></div>
+              <div class="chart-bar" style="height: 60%;"></div>
+            </div>
+          </div>
+
+          <!-- Floating 3D Card 2: Decided Quality Verified Stamp -->
+          <div class="floating-3d-quality-badge" data-tilt>
+            <div class="quality-badge-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="quality-badge-text">
+              <span>01 • Verified</span>
+              <strong>Decided Quality</strong>
+            </div>
+          </div>
+
+          <!-- Floating 3D Card 3: Interactive Play Pill -->
+          <div class="floating-3d-play-pill trigger-video-modal" data-tilt>
+            <div class="play-circle">
+              <i class="fa-solid fa-play"></i>
+            </div>
+            <span>How its work</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. PLATFORM TICKER & ECOSYSTEM INTEGRATION
+         ======================================================================== -->
+    <section class="ecosystem-section">
+      <div class="container">
+        <h3 class="ecosystem-title">Engineered Across Modern CMS & Automation Standards</h3>
+      </div>
+
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <!-- Marquee Badges -->
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#0052ff; color:#fff;">G</span> GoHighLevel (GHL)
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#ff6d5a; color:#fff;">⚡</span> n8n Workflow Automation
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#4353ff; color:#fff;">W</span> Webflow Enterprise
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#95bf47; color:#fff;"><i class="fa-brands fa-shopify"></i></span> Shopify Plus
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#ff4d4d; color:#fff;">Z</span> Zoho CRM & Flow
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#e91e63; color:#fff;">♥</span> Lovable AI Apps
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#21759b; color:#fff;"><i class="fa-brands fa-wordpress"></i></span> Custom WordPress
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#0c0d12; color:#fff;">W</span> Wix Studio
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#ff4a00; color:#fff;">_</span> Zapier & Make.com
+          </div>
+
+          <!-- Duplicate for seamless infinite loop -->
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#0052ff; color:#fff;">G</span> GoHighLevel (GHL)
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#ff6d5a; color:#fff;">⚡</span> n8n Workflow Automation
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#4353ff; color:#fff;">W</span> Webflow Enterprise
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#95bf47; color:#fff;"><i class="fa-brands fa-shopify"></i></span> Shopify Plus
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#ff4d4d; color:#fff;">Z</span> Zoho CRM & Flow
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#e91e63; color:#fff;">♥</span> Lovable AI Apps
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#21759b; color:#fff;"><i class="fa-brands fa-wordpress"></i></span> Custom WordPress
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#0c0d12; color:#fff;">W</span> Wix Studio
+          </div>
+          <div class="tech-badge-item">
+            <span class="tech-icon" style="background:#ff4a00; color:#fff;">_</span> Zapier & Make.com
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. AGENCY CREDIBILITY SECTION (Warm Linen Grid Background)
+         ======================================================================== -->
+    <section class="agency-credibility-section">
+      <div class="container credibility-grid">
+        <!-- Left: Image Stack with 3D Experience Floating Badges -->
+        <div class="credibility-visual-stack">
+          <div class="credibility-main-image" data-tilt>
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Zerolt Collaboration Team">
+          </div>
+
+          <!-- 28+ Experience Badge -->
+          <div class="credibility-badge-experience" data-tilt>
+            <span class="exp-number">150+</span>
+            <span class="exp-label">Successful Builds</span>
+          </div>
+
+          <!-- Support Badge -->
+          <div class="credibility-badge-support">
+            <div style="font-size:1.8rem; color:var(--primary);"><i class="fa-solid fa-headset"></i></div>
+            <div>
+              <strong style="display:block; font-size:1.05rem;">Working Experience</strong>
+              <span style="font-size:0.8rem; color:var(--text-muted);">99.8% Client Retention</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Agency Narrative & Features -->
+        <div class="credibility-content">
+          <h2>Powerful Agency For Corporate & Modern Business.</h2>
+          <p>
+            We strive to develop real-world web solutions that are ideal for small to enterprise-scale projects with bespoke project requirements. We don't just write HTML; we engineer connected sales ecosystems where websites trigger automated CRM pipelines effortlessly.
+          </p>
+
+          <div class="credibility-features-list">
+            <div class="cred-feat-item">
+              <span class="icon"><i class="fa-solid fa-check"></i></span>
+              <div>
+                <h5>High-Converting Frontends</h5>
+                <p>Clean, semantic code crafted on Webflow & Shopify.</p>
+              </div>
+            </div>
+
+            <div class="cred-feat-item">
+              <span class="icon"><i class="fa-solid fa-bolt"></i></span>
+              <div>
+                <h5>Zero-Latency Lead Sync</h5>
+                <p>Every lead instantly injected into GoHighLevel & Zoho.</p>
+              </div>
+            </div>
+
+            <div class="cred-feat-item">
+              <span class="icon"><i class="fa-solid fa-infinity"></i></span>
+              <div>
+                <h5>Autonomous n8n Pipelines</h5>
+                <p>Custom workflows without expensive per-zap subscription bloat.</p>
+              </div>
+            </div>
+
+            <div class="cred-feat-item">
+              <span class="icon"><i class="fa-solid fa-shield-heart"></i></span>
+              <div>
+                <h5>Dedicated Engineering Care</h5>
+                <p>24/7 proactive monitoring, updates, and speed audits.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="about.html" class="btn btn-primary">
+            Read about us
+            <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. INTERACTIVE 3D CAPABILITIES ACCORDION (From Screenshot)
+         ======================================================================== -->
+    <section class="capabilities-section">
+      <div class="container">
+        <div class="capabilities-header">
+          <div class="section-pill-sub">
+            <i class="fa-solid fa-chart-line"></i> Business 3X approach
+          </div>
+          <h2>How We Take Your Business To The Next Level</h2>
+        </div>
+
+        <div class="capabilities-grid">
+          <!-- Left Accordion Items -->
+          <div class="accordion-list">
+            <!-- Brand Identity -->
+            <div class="accordion-item" data-capability="brand">
+              <div class="accordion-trigger">
+                <h3>Brand Identity & Design Systems</h3>
+                <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+              </div>
+              <div class="accordion-body">
+                <p>We forge iconic identities, design token architectures, and component libraries that ensure consistent brand elevation across all customer touchpoints.</p>
+                <div class="accordion-tags">
+                  <span class="accordion-tag">Figma Libraries</span>
+                  <span class="accordion-tag">Visual Identity</span>
+                  <span class="accordion-tag">Design Systems</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Websites (Active Default) -->
+            <div class="accordion-item active" data-capability="websites">
+              <div class="accordion-trigger">
+                <h3>Websites & Next-Gen CMS</h3>
+                <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+              </div>
+              <div class="accordion-body">
+                <p>We strive to develop real-world web solutions that are ideal for small to large projects with bespoke project requirements, scoring 95+ on Google PageSpeed.</p>
+                <div class="accordion-tags">
+                  <span class="accordion-tag">Webflow</span>
+                  <span class="accordion-tag">Shopify Plus</span>
+                  <span class="accordion-tag">Lovable AI</span>
+                  <span class="accordion-tag">WordPress</span>
+                  <span class="accordion-tag">Wix Studio</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- GoHighLevel & CRM -->
+            <div class="accordion-item" data-capability="ghl">
+              <div class="accordion-trigger">
+                <h3>GoHighLevel CRM & Pipeline Wiring</h3>
+                <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+              </div>
+              <div class="accordion-body">
+                <p>End-to-end GoHighLevel setups, snapshot creation, automated calendar scheduling, multi-stage opportunity pipelines, and real-time SMS/voice agent follow-ups.</p>
+                <div class="accordion-tags">
+                  <span class="accordion-tag">GHL Snapshots</span>
+                  <span class="accordion-tag">Opportunity Pipelines</span>
+                  <span class="accordion-tag">Sub-Accounts</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- n8n & Workflow Automations -->
+            <div class="accordion-item" data-capability="n8n">
+              <div class="accordion-trigger">
+                <h3>n8n Autonomous Automations</h3>
+                <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+              </div>
+              <div class="accordion-body">
+                <p>Self-hosted or managed n8n orchestrations that bridge your website forms with Zoho CRM, Postgres databases, AI models, and internal Slack notifications.</p>
+                <div class="accordion-tags">
+                  <span class="accordion-tag">n8n Self-Hosted</span>
+                  <span class="accordion-tag">Zoho Flow</span>
+                  <span class="accordion-tag">Webhook Orchestration</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SEO & Conversion -->
+            <div class="accordion-item" data-capability="seo">
+              <div class="accordion-trigger">
+                <h3>SEO & Conversion Architecture</h3>
+                <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+              </div>
+              <div class="accordion-body">
+                <p>Turn web visitors into qualified leads with data-driven funnel optimization, schema markup, Core Web Vitals refinement, and high-intent CRO landing pages.</p>
+                <div class="accordion-tags">
+                  <span class="accordion-tag">Technical SEO</span>
+                  <span class="accordion-tag">CRO Funnels</span>
+                  <span class="accordion-tag">A/B Testing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 3D Dynamic Stage -->
+          <div class="capabilities-3d-stage">
+            <div class="capabilities-3d-card" data-tilt>
+              <div class="stage-top-bar">
+                <div class="stage-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <span class="stage-badge" id="stage-badge-text">Next-Gen Web Platforms</span>
+              </div>
+
+              <div class="stage-center-visual">
+                <div class="stage-mockup-frame">
+                  <div id="stage-visual-content">
+                    <div style="text-align: center;">
+                      <div style="font-size: 2.8rem; margin-bottom: 8px;">💻 🚀</div>
+                      <div style="display:flex; gap:8px; justify-content:center; margin-top:12px; flex-wrap:wrap;">
+                        <span style="background:rgba(94,67,243,0.3); padding:4px 12px; border-radius:20px; font-size:0.75rem; color:#fff;">Webflow 100/100</span>
+                        <span style="background:rgba(16,185,129,0.3); padding:4px 12px; border-radius:20px; font-size:0.75rem; color:#fff;">Shopify Plus</span>
+                        <span style="background:rgba(245,158,11,0.3); padding:4px 12px; border-radius:20px; font-size:0.75rem; color:#fff;">Lovable AI</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stage-info">
+                <h4 id="stage-title">High-Converting Web Experiences</h4>
+                <p id="stage-desc">
+                  Engineered on Webflow, Shopify Plus, Lovable AI, Wix Studio, and WordPress. Sub-second load times, mobile perfection, and seamless CRM integrations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. UPCOMING PRODUCT SPOTLIGHT: LEADSPARK BY ZEROLT
+         ======================================================================== -->
+    <section class="leadspark-section" id="leadspark">
+      <div class="leadspark-glow-bg"></div>
+
+      <div class="container leadspark-container">
+        <div class="leadspark-header">
+          <div class="leadspark-pill">
+            <i class="fa-solid fa-fire"></i> UPCOMING PRODUCT LAUNCH
+          </div>
+          <h2>Meet LeadSpark: The Autonomous Marketing Automation Engine</h2>
+          <p>
+            Stop losing 50% of your inbound inquiries to delayed responses. LeadSpark captures visitor signals, enriches lead profiles in real-time, and synchronizes seamless follow-up sequences across GoHighLevel & n8n within 60 seconds.
+          </p>
+        </div>
+
+        <!-- 3D Flow Architecture Card -->
+        <div class="leadspark-pipeline-card" data-tilt>
+          <div class="pipeline-steps-grid">
+            <!-- Node 1 -->
+            <div class="pipeline-step-node node-1">
+              <div class="node-icon"><i class="fa-solid fa-magnet"></i></div>
+              <h4>01. Inbound Capture</h4>
+              <p>Detects high-intent visitors across Webflow, Shopify, or WordPress forms with zero friction.</p>
+            </div>
+
+            <!-- Node 2 -->
+            <div class="pipeline-step-node node-2">
+              <div class="node-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <h4>02. Real-Time Enrichment</h4>
+              <p>LeadSpark auto-enriches contact company size, LinkedIn data, and verified phone numbers instantly.</p>
+            </div>
+
+            <!-- Node 3 -->
+            <div class="pipeline-step-node node-3">
+              <div class="node-icon"><i class="fa-solid fa-network-wired"></i></div>
+              <h4>03. Auto Sync to GHL & n8n</h4>
+              <p>Direct two-way dispatch into GoHighLevel opportunity pipelines or custom n8n webhooks.</p>
+            </div>
+
+            <!-- Node 4 -->
+            <div class="pipeline-step-node node-4">
+              <div class="node-icon"><i class="fa-solid fa-comments"></i></div>
+              <h4>04. &lt;60s AI Outreach</h4>
+              <p>Triggers hyper-personalized SMS, WhatsApp, or email sequences while lead intent is at peak.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Early Access Waitlist Box -->
+        <div class="waitlist-box">
+          <div class="waitlist-text">
+            <h3>Get VIP Early Access to LeadSpark</h3>
+            <p>Join founders & agency operators getting beta access and exclusive launch templates.</p>
+          </div>
+
+          <form class="waitlist-form" id="leadspark-waitlist-form">
+            <input type="email" class="waitlist-input" placeholder="Enter your work email..." required>
+            <button type="submit" class="waitlist-btn">
+              Claim Beta Access <i class="fa-solid fa-bolt" style="margin-left:6px;"></i>
+            </button>
+          </form>
+
+          <div id="waitlist-response" style="display:none;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. RECENT WORK & PORTFOLIO (Dark High-Contrast Theme)
+         ======================================================================== -->
+    <section class="work-section" id="work">
+      <div class="container">
+        <div class="work-header">
+          <div>
+            <div class="section-pill-sub" style="color:#a494ff;">
+              <i class="fa-solid fa-briefcase"></i> Selected Portfolio
+            </div>
+            <h2>Take A Look At Our Recent Work</h2>
+          </div>
+          <a href="services.html" class="btn btn-outline" style="background:#191b26; color:white; border-color:#2a2d3e;">
+            View all projects <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
+          </a>
+        </div>
+
+        <div class="work-grid">
+          <!-- Project 1 -->
+          <div class="project-card" data-tilt>
+            <div class="project-thumbnail">
+              <span class="project-pill-category">Webflow & GoHighLevel</span>
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="SaaS Growth Architecture">
+            </div>
+            <div class="project-info">
+              <h3>FinTech SaaS Growth Infrastructure</h3>
+              <p>Complete redesign on Webflow integrated with multi-tenant GoHighLevel lead scoring, booking funnels, and automated CRM tracking.</p>
+              <div class="project-meta-pills">
+                <span class="meta-pill">Webflow</span>
+                <span class="meta-pill">GoHighLevel</span>
+                <span class="meta-pill">+320% Qualified Leads</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-tilt>
+            <div class="project-thumbnail">
+              <span class="project-pill-category">n8n & Zoho Automation</span>
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="n8n Enterprise Automation">
+            </div>
+            <div class="project-info">
+              <h3>Autonomous E-Commerce Supply Pipeline</h3>
+              <p>Custom n8n microservices connecting Shopify Plus with Zoho Inventory and real-time customer WhatsApp notifications.</p>
+              <div class="project-meta-pills">
+                <span class="meta-pill">Shopify Plus</span>
+                <span class="meta-pill">n8n Self-Hosted</span>
+                <span class="meta-pill">Zoho CRM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         8. BUSINESS PROCESS SECTION
+         ======================================================================== -->
+    <section class="process-section" id="process">
+      <div class="container">
+        <div class="process-header">
+          <div class="section-pill-sub">
+            <i class="fa-solid fa-arrows-spin"></i> Streamlined Process
+          </div>
+          <h2>Understand The Business Process</h2>
+          <p>We combine design thinking with systems engineering to deliver high-performing digital engines on schedule.</p>
+        </div>
+
+        <div class="process-cards-grid">
+          <!-- Step 1 -->
+          <div class="process-card">
+            <div class="process-number">01</div>
+            <h4>Audit & Blueprint</h4>
+            <p>We analyze your target audience, platform requirements, and mapping lead flows before writing a single line of code.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-card">
+            <div class="process-number">02</div>
+            <h4>UI/UX Design</h4>
+            <p>Creating responsive, high-converting interfaces in Figma tailored for Webflow, Shopify, or modern web apps.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-card">
+            <div class="process-number">03</div>
+            <h4>Pipeline Wiring</h4>
+            <p>Hooking up your forms to GoHighLevel pipelines, n8n orchestrations, and Zoho databases for instant synchronization.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-card">
+            <div class="process-number">04</div>
+            <h4>Launch & Scale</h4>
+            <p>Rigorous multi-device QA, Core Web Vitals optimization, and continuous conversion tracking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         9. TESTIMONIALS & TRUST GRID
+         ======================================================================== -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="testimonials-header">
+          <div class="section-pill-sub" style="color:#a494ff;">
+            <i class="fa-solid fa-star"></i> Testimonials
+          </div>
+          <h2>Trusted By The World's Fastest Growing Companies</h2>
+          <p>See why founders, agency owners, and growth leaders partner with Zerolt.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="test-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="test-quote">
+                "Zerolt revamped our entire digital presence. Our new Webflow site coupled with GoHighLevel pipelines literally doubled our booking rate in the first 30 days."
+              </p>
+            </div>
+            <div class="test-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus Sterling" class="author-avatar">
+              <div class="author-info">
+                <h5>Marcus Sterling</h5>
+                <p>Founder, ScalePoint Media</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="test-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="test-quote">
+                "Their n8n automation framework saved us over $1,200/mo in Zapier fees while processing thousands of lead inquiries with zero errors. Absolutely world-class team."
+              </p>
+            </div>
+            <div class="test-author">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Elena Rostova" class="author-avatar">
+              <div class="author-info">
+                <h5>Elena Rostova</h5>
+                <p>COO, Lumina Retail Tech</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="test-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="test-quote">
+                "We beta tested their LeadSpark workflow tool and it completely streamlined our response times. Zerolt is the only agency that truly understands both design and backend CRM."
+              </p>
+            </div>
+            <div class="test-author">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="David Chen" class="author-avatar">
+              <div class="author-info">
+                <h5>David Chen</h5>
+                <p>VP of Growth, NexaCloud</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         10. CALL TO ACTION BANNER (Dark Glowing Mode)
+         ======================================================================== -->
+    <section class="footer-cta-banner">
+      <div class="container footer-cta-content">
+        <div>
+          <h2>Got a project? Need an Unfair Advantage?</h2>
+          <p>Let's architect a website and automated lead engine that scales with your ambition.</p>
+        </div>
+        <div>
+          <a href="contact.html" class="btn btn-primary" style="font-size:1.1rem; padding:18px 36px;">
+            Book a Discovery Call
+            <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       11. SITE FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            zerolt<span class="logo-dot"></span>
+          </a>
+          <p>
+            Crafting high-converting digital storefronts, custom CMS websites, and autonomous marketing automation engines across the globe.
+          </p>
+          <div style="display:flex; gap:16px; margin-top:20px; font-size:1.1rem;">
+            <a href="#" style="color:#9ba1b0;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" style="color:#9ba1b0;"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" style="color:#9ba1b0;"><i class="fa-brands fa-github"></i></a>
+            <a href="#" style="color:#9ba1b0;"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Agency</a></li>
+            <li><a href="services.html">Services & Pricing</a></li>
+            <li><a href="#leadspark">LeadSpark Automation</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Platforms -->
+        <div class="footer-col">
+          <h4>Platforms</h4>
+          <ul>
+            <li><a href="services.html#ghl">GoHighLevel (GHL)</a></li>
+            <li><a href="services.html#n8n">n8n Orchestration</a></li>
+            <li><a href="services.html#webflow">Webflow & Shopify</a></li>
+            <li><a href="services.html#zoho">Zoho CRM & Flow</a></li>
+            <li><a href="services.html#lovable">Lovable AI Apps</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Ahead</h4>
+          <p>Receive bi-weekly playbooks on marketing automation, n8n workflows, and high-conversion design.</p>
+          <form class="footer-input-wrap" onsubmit="event.preventDefault(); alert('Subscribed to Zerolt Insights!');">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Zerolt.com. All rights reserved. Crafting digital advantage since 2021.</div>
+        <div style="display:flex; gap:20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="contact.html">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       12. INTERACTIVE VIDEO MODAL
+       ======================================================================== -->
+  <div class="video-modal" id="video-modal">
+    <div class="video-modal-content">
+      <button class="video-modal-close" aria-label="Close modal">&times;</button>
+      <div class="video-player-frame">
+        <iframe id="video-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three.js (3D WebGL Library) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Vanilla Tilt (3D Card Perspective Engine) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+  <!-- Zerolt 3D Canvas Background -->
+  <script src="js/three-scene.js"></script>
+
+  <!-- Zerolt Interactive Controller -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

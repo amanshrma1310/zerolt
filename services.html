@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Solutions — Zerolt | GoHighLevel, n8n, Webflow, Shopify</title>
+  <meta name="description" content="Explore Zerolt's full suite of services: Webflow development, GoHighLevel setups, n8n workflow automations, Zoho CRM integration, and LeadSpark rollout.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%235e43f3'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='50' fill='white' font-family='sans-serif' font-weight='bold'>Z</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .page-hero {
+      padding: 160px 0 80px;
+      text-align: center;
+      background: radial-gradient(circle at 10% 20%, rgba(94, 67, 243, 0.05) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 70%, rgba(16, 185, 129, 0.05) 0%, transparent 45%);
+    }
+    .page-hero h1 {
+      font-size: 3.8rem;
+      max-width: 860px;
+      margin: 0 auto 20px;
+      line-height: 1.1;
+    }
+    .services-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 90px;
+    }
+    .service-detail-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: 36px 30px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .service-detail-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+    .service-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 22px;
+    }
+    .service-detail-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+    }
+    .service-detail-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .service-checkmarks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 26px;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+    .service-checkmarks li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .service-checkmarks li i {
+      color: var(--emerald);
+      font-size: 0.85rem;
+    }
+    .service-tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    @media (max-width: 1024px) {
+      .services-full-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 2.6rem; }
+      .services-full-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo">zerolt<span class="logo-dot"></span></a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="index.html#leadspark" class="nav-link">LeadSpark <span class="nav-tag-new">NEW</span></a></li>
+          <li><a href="index.html#work" class="nav-link">Work</a></li>
+          <li><a href="index.html#process" class="nav-link">Process</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="contact.html" class="btn btn-consultation">
+            Free Consultation <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem; margin-left:4px;"></i>
+          </a>
+          <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-badge-pill" style="margin-bottom:20px;">
+          <span class="pulse-indicator"></span>
+          <span>Core Capabilities & Platforms</span>
+        </div>
+        <h1>Full-Stack Web Design & Autonomous Automation Services</h1>
+        <p>From custom Webflow and Shopify digital experiences to enterprise GoHighLevel setups and n8n backend pipelines, we build solutions that scale your operations.</p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="container">
+      <div class="services-full-grid">
+        <!-- 1. Webflow & Modern Web -->
+        <div class="service-detail-card" data-tilt id="webflow">
+          <div>
+            <div class="service-icon-box" style="background:#eef2ff; color:#4353ff;">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h3>Webflow Enterprise & CMS</h3>
+            <p>Custom-tailored Webflow builds with bespoke interactions, CMS collections, modular style guides, and 100/100 Core Web Vitals.</p>
+            <ul class="service-checkmarks">
+              <li><i class="fa-solid fa-check"></i> Clean Client-First Framework</li>
+              <li><i class="fa-solid fa-check"></i> Advanced GSAP & 3D WebGL Interactions</li>
+              <li><i class="fa-solid fa-check"></i> SEO Semantic Architecture</li>
+              <li><i class="fa-solid fa-check"></i> Seamless Form Webhook Routing</li>
+            </ul>
+          </div>
+          <div class="service-tags-wrap">
+            <span class="accordion-tag">Webflow</span>
+            <span class="accordion-tag">Figma</span>
+            <span class="accordion-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- 2. GoHighLevel (GHL) Architecture -->
+        <div class="service-detail-card" data-tilt id="ghl">
+          <div>
+            <div class="service-icon-box" style="background:#eff6ff; color:#0052ff;">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <h3>GoHighLevel (GHL) CRM & Funnels</h3>
+            <p>Turnkey GoHighLevel snapshots, sub-account architectures, custom landing pages, and multi-channel appointment booking bots.</p>
+            <ul class="service-checkmarks">
+              <li><i class="fa-solid fa-check"></i> Custom Snapshot Development</li>
+              <li><i class="fa-solid fa-check"></i> Automated SMS & WhatsApp Workflows</li>
+              <li><i class="fa-solid fa-check"></i> Opportunity Pipeline Routing</li>
+              <li><i class="fa-solid fa-check"></i> Calendar Sync & Follow-Up Sequences</li>
+            </ul>
+          </div>
+          <div class="service-tags-wrap">
+            <span class="accordion-tag">GoHighLevel</span>
+            <span class="accordion-tag">CRM Pipelines</span>
+            <span class="accordion-tag">SMS AI</span>
+          </div>
+        </div>
+
+        <!-- 3. n8n Enterprise Automations -->
+        <div class="service-detail-card" data-tilt id="n8n">
+          <div>
+            <div class="service-icon-box" style="background:#fff1f0; color:#ff4d4f;">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <h3>n8n Workflow Automation</h3>
+            <p>Self-hosted and managed n8n orchestrations connecting your website forms, databases, and CRMs with zero recurring per-zap subscription costs.</p>
+            <ul class="service-checkmarks">
+              <li><i class="fa-solid fa-check"></i> High-Throughput Webhook Processing</li>
+              <li><i class="fa-solid fa-check"></i> Self-Hosted Server Deployment (Docker)</li>
+              <li><i class="fa-solid fa-check"></i> AI Agent & LLM Chain Integrations</li>
+              <li><i class="fa-solid fa-check"></i> Error Fallbacks & Retries</li>
+            </ul>
+          </div>
+          <div class="service-tags-wrap">
+            <span class="accordion-tag">n8n</span>
+            <span class="accordion-tag">Docker</span>
+            <span class="accordion-tag">API Integration</span>
+          </div>
+        </div>
+
+        <!-- 4. Shopify Plus & E-Commerce -->
+        <div class="service-detail-card" data-tilt id="shopify">
+          <div>
+            <div class="service-icon-box" style="background:#f0fdf4; color:#16a34a;">
+              <i class="fa-brands fa-shopify"></i>
+            </div>
+            <h3>Shopify Plus & E-Commerce</h3>
+            <p>High-conversion storefront design, custom Liquid development, checkout optimization, and automated inventory sync with external ERPs.</p>
+            <ul class="service-checkmarks">
+              <li><i class="fa-solid fa-check"></i> Custom 2.0 Theme Engineering</li>
+              <li><i class="fa-solid fa-check"></i> High AOV Cart Upsells</li>
+              <li><i class="fa-solid fa-check"></i> ERP & Zoho Inventory Sync</li>
+              <li><i class="fa-solid fa-check"></i> Blazing-Fast Mobile Performance</li>
+            </ul>
+          </div>
+          <div class="service-tags-wrap">
+            <span class="accordion-tag">Shopify Plus</span>
+            <span class="accordion-tag">Liquid</span>
+            <span class="accordion-tag">E-Commerce</span>
+          </div>
+        </div>
+
+        <!-- 5. Zoho CRM & Flow Integration -->
+        <div class="service-detail-card" data-tilt id="zoho">
+          <div>
+            <div class="service-icon-box" style="background:#fef2f2; color:#dc2626;">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h3>Zoho CRM & Ecosystem Sync</h3>
+            <p>End-to-end integration across Zoho CRM, Zoho Flow, and Zoho Books, connecting enterprise operations with your digital storefronts.</p>
+            <ul class="service-checkmarks">
+              <li><i class="fa-solid fa-check"></i> Custom Deluge Scripting</li>
+              <li><i class="fa-solid fa-check"></i> Multi-System Lead Normalization</li>
+              <li><i class="fa-solid fa-check"></i> Automated Billing & Invoicing</li>
+              <li><i class="fa-solid fa-check"></i> Custom Field & Module Layouts</li>
+            </ul>
+          </div>
+          <div class="service-tags-wrap">
+            <span class="accordion-tag">Zoho CRM</span>
+            <span class="accordion-tag">Zoho Flow</span>
+            <span class="accordion-tag">Deluge</span>
+          </div>
+        </div>
+
+        <!-- 6. Lovable AI & Modern App Prototyping -->
+        <div class="service-detail-card" data-tilt id="lovable">
+          <div>
+            <div class="service-icon-box" style="background:#fdf2f8; color:#db2777;">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3>Lovable AI & Modern App Prototypes</h3>
+            <p>Leveraging cutting-edge AI builder platforms like Lovable to rapidly prototype, iterate, and ship functional web applications in days.</p>
+            <ul class="service-checkmarks">
+              <li><i class="fa-solid fa-check"></i> Rapid Interactive MVPs</li>
+              <li><i class="fa-solid fa-check"></i> Supabase & Backend Binding</li>
+              <li><i class="fa-solid fa-check"></i> Modern React & Tailwind Frontends</li>
+              <li><i class="fa-solid fa-check"></i> Immediate User Feedback Validation</li>
+            </ul>
+          </div>
+          <div class="service-tags-wrap">
+            <span class="accordion-tag">Lovable</span>
+            <span class="accordion-tag">Supabase</span>
+            <span class="accordion-tag">AI Apps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LeadSpark Integration Callout -->
+    <section class="container" style="margin-bottom: 90px;">
+      <div style="background:linear-gradient(135deg, #10121b 0%, #161826 100%); border:1px solid #282a3d; border-radius:var(--radius-xl); padding:50px 40px; color:white; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;">
+        <div style="max-width:650px;">
+          <div class="leadspark-pill" style="margin-bottom:14px;"><i class="fa-solid fa-bolt"></i> Proprietary Tech</div>
+          <h2 style="color:white; font-size:2.4rem; margin-bottom:12px;">Launching Soon: LeadSpark Marketing Engine</h2>
+          <p style="color:#9ba1b0; font-size:1.05rem;">All our client builds are eligible for priority early onboarding into our proprietary lead intelligence and autonomous follow-up platform.</p>
+        </div>
+        <div>
+          <a href="index.html#leadspark" class="btn" style="background:var(--leadspark-gradient); color:white; padding:16px 32px;">
+            Join Early Waitlist <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="footer-cta-banner">
+      <div class="container footer-cta-content">
+        <div>
+          <h2>Need A Custom Web & Automation Setup?</h2>
+          <p>Tell us your platforms and we'll craft a bespoke proposal within 24 hours.</p>
+        </div>
+        <div>
+          <a href="contact.html" class="btn btn-primary" style="font-size:1.1rem; padding:18px 36px;">
+            Request a Proposal
+            <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">zerolt<span class="logo-dot"></span></a>
+          <p>Crafting high-converting digital storefronts, custom CMS websites, and autonomous marketing automation engines.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Agency</a></li>
+            <li><a href="services.html">Services & Pricing</a></li>
+            <li><a href="index.html#leadspark">LeadSpark Automation</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platforms</h4>
+          <ul>
+            <li><a href="services.html#ghl">GoHighLevel (GHL)</a></li>
+            <li><a href="services.html#n8n">n8n Orchestration</a></li>
+            <li><a href="services.html#webflow">Webflow & Shopify</a></li>
+            <li><a href="services.html#zoho">Zoho CRM & Flow</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Ahead</h4>
+          <p>Receive bi-weekly playbooks on marketing automation and web design.</p>
+          <form class="footer-input-wrap" onsubmit="event.preventDefault(); alert('Subscribed!');">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Zerolt.com. All rights reserved.</div>
+        <div style="display:flex; gap:20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="contact.html">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

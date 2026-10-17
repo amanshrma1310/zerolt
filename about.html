@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Zerolt | Web Architects & Marketing Automation Engineers</title>
+  <meta name="description" content="Discover Zerolt: an elite digital agency bridging high-end web design with GoHighLevel, n8n, and Zoho workflow automation.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%235e43f3'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='50' fill='white' font-family='sans-serif' font-weight='bold'>Z</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .page-hero {
+      padding: 160px 0 80px;
+      background: radial-gradient(circle at 10% 20%, rgba(94, 67, 243, 0.05) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 70%, rgba(255, 94, 98, 0.05) 0%, transparent 45%);
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-size: 3.8rem;
+      max-width: 820px;
+      margin: 0 auto 20px;
+      line-height: 1.1;
+    }
+    .page-hero p {
+      font-size: 1.25rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin: 60px 0;
+    }
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+    .metric-value {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .metric-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin: 80px 0;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 50px 0;
+    }
+    .team-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+    .team-photo {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    .team-details {
+      padding: 24px;
+    }
+    .team-details h4 {
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+    .team-details .role {
+      color: var(--primary);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .team-details p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 2.6rem; }
+      .metrics-strip { grid-template-columns: repeat(2, 1fr); }
+      .philosophy-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo">
+          zerolt<span class="logo-dot"></span>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="index.html#leadspark" class="nav-link">LeadSpark <span class="nav-tag-new">NEW</span></a></li>
+          <li><a href="index.html#work" class="nav-link">Work</a></li>
+          <li><a href="index.html#process" class="nav-link">Process</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="contact.html" class="btn btn-consultation">
+            Free Consultation <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem; margin-left:4px;"></i>
+          </a>
+          <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-badge-pill" style="margin-bottom:20px;">
+          <span class="pulse-indicator"></span>
+          <span>Our Story & Mission</span>
+        </div>
+        <h1>We Build Websites That Connect Directly To Revenue Engines</h1>
+        <p>Zerolt was founded on a simple observation: beautiful websites are useless if leads sit idle in an inbox. We bridge award-winning web design with autonomous backend CRM automations.</p>
+
+        <!-- Metrics Strip -->
+        <div class="metrics-strip">
+          <div class="metric-card" data-tilt>
+            <div class="metric-value">150+</div>
+            <div class="metric-label">Completed Systems</div>
+          </div>
+          <div class="metric-card" data-tilt>
+            <div class="metric-value">$45M+</div>
+            <div class="metric-label">Pipeline Processed</div>
+          </div>
+          <div class="metric-card" data-tilt>
+            <div class="metric-value">&lt;60s</div>
+            <div class="metric-label">Average Lead Response</div>
+          </div>
+          <div class="metric-card" data-tilt>
+            <div class="metric-value">99.8%</div>
+            <div class="metric-label">Workflow Uptime</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="container" style="padding-bottom: 80px;">
+      <div class="philosophy-grid">
+        <div class="credibility-main-image" data-tilt style="width:100%; height:440px;">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Zerolt Strategy Room">
+        </div>
+        <div>
+          <div class="section-pill-sub"><i class="fa-solid fa-compass"></i> Why Zerolt</div>
+          <h2 style="font-size:2.8rem; margin-bottom:20px; line-height:1.15;">Design Without Automation Is Just Art. We Build Machines.</h2>
+          <p style="margin-bottom:16px;">
+            Most agencies leave you with a Webflow or WordPress site and wish you good luck. When someone fills out your contact form, you get a generic email, which gets answered 8 hours later. By then, the client has contacted 3 competitors.
+          </p>
+          <p style="margin-bottom:24px;">
+            At Zerolt, every frontend button, booking modal, and form we construct is hard-wired into <strong>GoHighLevel</strong>, <strong>n8n</strong>, and <strong>Zoho CRM</strong>. Leads are enriched with verified company intelligence, logged into pipeline opportunities, and triggered into instant conversational SMS or email follow-ups automatically.
+          </p>
+          <a href="services.html" class="btn btn-primary">
+            Explore Our Services
+            <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section style="background:var(--bg-warm); padding:90px 0;">
+      <div class="container">
+        <div style="text-align:center; max-width:650px; margin:0 auto 40px;">
+          <div class="section-pill-sub"><i class="fa-solid fa-users"></i> The Engineers</div>
+          <h2 style="font-size:2.8rem; margin-bottom:12px;">Crafted By Specialists</h2>
+          <p>Meet the team architecting your web presence, CRM pipelines, and autonomous workflows.</p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Member 1 -->
+          <div class="team-card" data-tilt>
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Alex Vance" class="team-photo">
+            <div class="team-details">
+              <h4>Alex Vance</h4>
+              <div class="role">Chief Systems Architect</div>
+              <p>Specializes in GoHighLevel multi-tenant infrastructure and high-throughput n8n workflow orchestrations.</p>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="team-card" data-tilt>
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Julian Meyer" class="team-photo">
+            <div class="team-details">
+              <h4>Julian Meyer</h4>
+              <div class="role">Lead Creative Technologist</div>
+              <p>Expert in Webflow enterprise builds, Lovable AI applications, and 3D interactive user experiences.</p>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="team-card" data-tilt>
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Sophia Lin" class="team-photo">
+            <div class="team-details">
+              <h4>Sophia Lin</h4>
+              <div class="role">Head of Product (LeadSpark)</div>
+              <p>Directs the engineering of LeadSpark, ensuring real-time lead enrichment and frictionless CRM routing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="footer-cta-banner">
+      <div class="container footer-cta-content">
+        <div>
+          <h2>Ready To Transform Your Digital Architecture?</h2>
+          <p>Schedule a call with our technical leads and receive a comprehensive automation audit.</p>
+        </div>
+        <div>
+          <a href="contact.html" class="btn btn-primary" style="font-size:1.1rem; padding:18px 36px;">
+            Book Strategy Call
+            <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">zerolt<span class="logo-dot"></span></a>
+          <p>Crafting high-converting digital storefronts, custom CMS websites, and autonomous marketing automation engines.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Agency</a></li>
+            <li><a href="services.html">Services & Pricing</a></li>
+            <li><a href="index.html#leadspark">LeadSpark Automation</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platforms</h4>
+          <ul>
+            <li><a href="services.html#ghl">GoHighLevel (GHL)</a></li>
+            <li><a href="services.html#n8n">n8n Orchestration</a></li>
+            <li><a href="services.html#webflow">Webflow & Shopify</a></li>
+            <li><a href="services.html#zoho">Zoho CRM & Flow</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Ahead</h4>
+          <p>Receive bi-weekly playbooks on marketing automation and web design.</p>
+          <form class="footer-input-wrap" onsubmit="event.preventDefault(); alert('Subscribed!');">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Zerolt.com. All rights reserved.</div>
+        <div style="display:flex; gap:20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="contact.html">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
