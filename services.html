@@ -3,112 +3,245 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services & Solutions — Zerolt | GoHighLevel, n8n, Webflow, Shopify</title>
-  <meta name="description" content="Explore Zerolt's full suite of services: Webflow development, GoHighLevel setups, n8n workflow automations, Zoho CRM integration, and LeadSpark rollout.">
+  
+  <!-- Comprehensive SEO Meta Tags -->
+  <title>Services & Solutions — Zerolt | GoHighLevel, n8n, Webflow, Shopify & AI Automation</title>
+  <meta name="description" content="Explore Zerolt's full-stack services: custom Webflow & Shopify websites, GoHighLevel CRM funnels, n8n workflow automations, Zoho integrations, and LeadSpark rollout.">
+  <meta name="keywords" content="Zerolt services, Webflow development, GoHighLevel agency, n8n automation, Zoho CRM integration, Shopify Plus, Lovable AI, LeadSpark marketing automation">
+  <meta name="author" content="Zerolt.com">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://zerolt.com/services.html">
 
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Services & Solutions — Zerolt | Web & Automation Architecture">
+  <meta property="og:description" content="Discover how Zerolt builds high-converting websites on Webflow & Shopify, connected directly to GoHighLevel & n8n autonomous lead engines.">
+  <meta property="og:url" content="https://zerolt.com/services.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zerolt Services — Webflow, GoHighLevel, n8n & Shopify">
+  <meta name="twitter:description" content="Complete digital growth ecosystems: websites, CRM pipelines, and autonomous workflows.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Schema.org JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Zerolt Web & Marketing Automation Services",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    "url": "https://zerolt.com/services.html",
+    "priceRange": "$$$",
+    "description": "High-converting web design on Webflow, Shopify, and WordPress, integrated with GoHighLevel and n8n workflows.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Zerolt Agency Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webflow Enterprise & CMS Websites"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "GoHighLevel (GHL) CRM & Sales Pipelines"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "n8n Autonomous Workflow Automation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Shopify Plus E-Commerce Storefronts"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Zoho CRM & Flow Enterprise Integration"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "LeadSpark Marketing Automation Engine"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Preconnect & Fonts -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%235e43f3'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='50' fill='white' font-family='sans-serif' font-weight='bold'>Z</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 
   <style>
     .page-hero {
-      padding: 160px 0 80px;
+      padding: 125px 0 45px;
       text-align: center;
-      background: radial-gradient(circle at 10% 20%, rgba(94, 67, 243, 0.05) 0%, transparent 40%),
-                  radial-gradient(circle at 90% 70%, rgba(16, 185, 129, 0.05) 0%, transparent 45%);
+      position: relative;
     }
     .page-hero h1 {
-      font-size: 3.8rem;
+      font-size: 3.5rem;
       max-width: 860px;
-      margin: 0 auto 20px;
+      margin: 0 auto 16px;
       line-height: 1.1;
     }
-    .services-full-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-bottom: 90px;
+    .page-hero p {
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0 auto 30px;
     }
-    .service-detail-card {
-      background: #ffffff;
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-xl);
-      padding: 36px 30px;
-      box-shadow: var(--shadow-sm);
+
+    /* Interactive Category Filter Pills */
+    .service-filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #9ba1b0;
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 16px var(--primary-glow);
+    }
+
+    /* Showcase Layout: 2-Column alternating card with 3D Browser Mockups */
+    .services-showcase-list {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      gap: 55px;
+      margin-bottom: 70px;
     }
-    .service-detail-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--primary);
-    }
-    .service-icon-box {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      display: flex;
+    .service-showcase-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 22px;
+      gap: 50px;
+      background: rgba(20, 22, 34, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      transition: all 0.35s ease;
     }
-    .service-detail-card h3 {
-      font-size: 1.45rem;
-      margin-bottom: 12px;
+    .service-showcase-row:hover {
+      border-color: rgba(94, 67, 243, 0.45);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px var(--primary-glow);
     }
-    .service-detail-card p {
-      font-size: 0.95rem;
+    .service-showcase-row.reversed {
+      grid-template-columns: 1fr 1fr;
+    }
+    .service-showcase-row.reversed .mockup-side {
+      order: 2;
+    }
+    .service-showcase-row.reversed .content-side {
+      order: 1;
+    }
+
+    .service-tech-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .service-tech-pill {
+      background: rgba(94, 67, 243, 0.15);
+      color: #c4b5fd;
+      border: 1px solid rgba(94, 67, 243, 0.35);
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+    }
+    .service-showcase-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .service-showcase-content p {
+      font-size: 1rem;
       color: var(--text-secondary);
       line-height: 1.6;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
-    .service-checkmarks {
+    .deliverables-checklist {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 26px;
-      font-size: 0.9rem;
-      color: var(--text-primary);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+      font-size: 0.92rem;
     }
-    .service-checkmarks li {
+    .deliverables-checklist li {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      color: #e2e5f1;
     }
-    .service-checkmarks li i {
+    .deliverables-checklist li i {
       color: var(--emerald);
       font-size: 0.85rem;
     }
-    .service-tags-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding-top: 18px;
-      border-top: 1px solid var(--border-subtle);
-    }
-    @media (max-width: 1024px) {
-      .services-full-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 768px) {
-      .page-hero h1 { font-size: 2.6rem; }
-      .services-full-grid { grid-template-columns: 1fr; }
+
+    @media (max-width: 992px) {
+      .service-showcase-row,
+      .service-showcase-row.reversed {
+        grid-template-columns: 1fr;
+        padding: 28px 20px;
+        gap: 30px;
+      }
+      .service-showcase-row.reversed .mockup-side { order: 1; }
+      .service-showcase-row.reversed .content-side { order: 2; }
+      .page-hero h1 { font-size: 2.5rem; }
+      .deliverables-checklist { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ========================================================================
+       1. NAVIGATION HEADER
+       ======================================================================== -->
   <header class="site-header">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="index.html" class="logo">zerolt<span class="logo-dot"></span></a>
+        <a href="index.html" class="logo">
+          <span class="logo-text">Zerolt</span><span class="logo-dot"></span>
+        </a>
+
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
@@ -118,6 +251,7 @@
           <li><a href="index.html#process" class="nav-link">Process</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
+
         <div class="nav-actions">
           <a href="contact.html" class="btn btn-consultation">
             Free Consultation <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem; margin-left:4px;"></i>
@@ -131,194 +265,368 @@
   </header>
 
   <main>
+    <!-- ========================================================================
+         2. HERO SECTION
+         ======================================================================== -->
     <section class="page-hero">
       <div class="container">
-        <div class="hero-badge-pill" style="margin-bottom:20px;">
+        <div class="hero-badge-pill">
           <span class="pulse-indicator"></span>
-          <span>Core Capabilities & Platforms</span>
+          <span>Web Architecture • CRM Systems • Workflow Pipelines</span>
         </div>
-        <h1>Full-Stack Web Design & Autonomous Automation Services</h1>
-        <p>From custom Webflow and Shopify digital experiences to enterprise GoHighLevel setups and n8n backend pipelines, we build solutions that scale your operations.</p>
-      </div>
-    </section>
+        <h1>Our Core <span class="highlight-text">Services</span> & Live Platforms</h1>
+        <p>Explore our high-performance CMS web builds, automated GoHighLevel funnels, and enterprise n8n workflow integrations with real-world prototypes.</p>
 
-    <!-- Services Grid -->
-    <section class="container">
-      <div class="services-full-grid">
-        <!-- 1. Webflow & Modern Web -->
-        <div class="service-detail-card" data-tilt id="webflow">
-          <div>
-            <div class="service-icon-box" style="background:#eef2ff; color:#4353ff;">
-              <i class="fa-solid fa-layer-group"></i>
-            </div>
-            <h3>Webflow Enterprise & CMS</h3>
-            <p>Custom-tailored Webflow builds with bespoke interactions, CMS collections, modular style guides, and 100/100 Core Web Vitals.</p>
-            <ul class="service-checkmarks">
-              <li><i class="fa-solid fa-check"></i> Clean Client-First Framework</li>
-              <li><i class="fa-solid fa-check"></i> Advanced GSAP & 3D WebGL Interactions</li>
-              <li><i class="fa-solid fa-check"></i> SEO Semantic Architecture</li>
-              <li><i class="fa-solid fa-check"></i> Seamless Form Webhook Routing</li>
-            </ul>
-          </div>
-          <div class="service-tags-wrap">
-            <span class="accordion-tag">Webflow</span>
-            <span class="accordion-tag">Figma</span>
-            <span class="accordion-tag">JavaScript</span>
-          </div>
-        </div>
-
-        <!-- 2. GoHighLevel (GHL) Architecture -->
-        <div class="service-detail-card" data-tilt id="ghl">
-          <div>
-            <div class="service-icon-box" style="background:#eff6ff; color:#0052ff;">
-              <i class="fa-solid fa-diagram-project"></i>
-            </div>
-            <h3>GoHighLevel (GHL) CRM & Funnels</h3>
-            <p>Turnkey GoHighLevel snapshots, sub-account architectures, custom landing pages, and multi-channel appointment booking bots.</p>
-            <ul class="service-checkmarks">
-              <li><i class="fa-solid fa-check"></i> Custom Snapshot Development</li>
-              <li><i class="fa-solid fa-check"></i> Automated SMS & WhatsApp Workflows</li>
-              <li><i class="fa-solid fa-check"></i> Opportunity Pipeline Routing</li>
-              <li><i class="fa-solid fa-check"></i> Calendar Sync & Follow-Up Sequences</li>
-            </ul>
-          </div>
-          <div class="service-tags-wrap">
-            <span class="accordion-tag">GoHighLevel</span>
-            <span class="accordion-tag">CRM Pipelines</span>
-            <span class="accordion-tag">SMS AI</span>
-          </div>
-        </div>
-
-        <!-- 3. n8n Enterprise Automations -->
-        <div class="service-detail-card" data-tilt id="n8n">
-          <div>
-            <div class="service-icon-box" style="background:#fff1f0; color:#ff4d4f;">
-              <i class="fa-solid fa-gears"></i>
-            </div>
-            <h3>n8n Workflow Automation</h3>
-            <p>Self-hosted and managed n8n orchestrations connecting your website forms, databases, and CRMs with zero recurring per-zap subscription costs.</p>
-            <ul class="service-checkmarks">
-              <li><i class="fa-solid fa-check"></i> High-Throughput Webhook Processing</li>
-              <li><i class="fa-solid fa-check"></i> Self-Hosted Server Deployment (Docker)</li>
-              <li><i class="fa-solid fa-check"></i> AI Agent & LLM Chain Integrations</li>
-              <li><i class="fa-solid fa-check"></i> Error Fallbacks & Retries</li>
-            </ul>
-          </div>
-          <div class="service-tags-wrap">
-            <span class="accordion-tag">n8n</span>
-            <span class="accordion-tag">Docker</span>
-            <span class="accordion-tag">API Integration</span>
-          </div>
-        </div>
-
-        <!-- 4. Shopify Plus & E-Commerce -->
-        <div class="service-detail-card" data-tilt id="shopify">
-          <div>
-            <div class="service-icon-box" style="background:#f0fdf4; color:#16a34a;">
-              <i class="fa-brands fa-shopify"></i>
-            </div>
-            <h3>Shopify Plus & E-Commerce</h3>
-            <p>High-conversion storefront design, custom Liquid development, checkout optimization, and automated inventory sync with external ERPs.</p>
-            <ul class="service-checkmarks">
-              <li><i class="fa-solid fa-check"></i> Custom 2.0 Theme Engineering</li>
-              <li><i class="fa-solid fa-check"></i> High AOV Cart Upsells</li>
-              <li><i class="fa-solid fa-check"></i> ERP & Zoho Inventory Sync</li>
-              <li><i class="fa-solid fa-check"></i> Blazing-Fast Mobile Performance</li>
-            </ul>
-          </div>
-          <div class="service-tags-wrap">
-            <span class="accordion-tag">Shopify Plus</span>
-            <span class="accordion-tag">Liquid</span>
-            <span class="accordion-tag">E-Commerce</span>
-          </div>
-        </div>
-
-        <!-- 5. Zoho CRM & Flow Integration -->
-        <div class="service-detail-card" data-tilt id="zoho">
-          <div>
-            <div class="service-icon-box" style="background:#fef2f2; color:#dc2626;">
-              <i class="fa-solid fa-cubes"></i>
-            </div>
-            <h3>Zoho CRM & Ecosystem Sync</h3>
-            <p>End-to-end integration across Zoho CRM, Zoho Flow, and Zoho Books, connecting enterprise operations with your digital storefronts.</p>
-            <ul class="service-checkmarks">
-              <li><i class="fa-solid fa-check"></i> Custom Deluge Scripting</li>
-              <li><i class="fa-solid fa-check"></i> Multi-System Lead Normalization</li>
-              <li><i class="fa-solid fa-check"></i> Automated Billing & Invoicing</li>
-              <li><i class="fa-solid fa-check"></i> Custom Field & Module Layouts</li>
-            </ul>
-          </div>
-          <div class="service-tags-wrap">
-            <span class="accordion-tag">Zoho CRM</span>
-            <span class="accordion-tag">Zoho Flow</span>
-            <span class="accordion-tag">Deluge</span>
-          </div>
-        </div>
-
-        <!-- 6. Lovable AI & Modern App Prototyping -->
-        <div class="service-detail-card" data-tilt id="lovable">
-          <div>
-            <div class="service-icon-box" style="background:#fdf2f8; color:#db2777;">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-            </div>
-            <h3>Lovable AI & Modern App Prototypes</h3>
-            <p>Leveraging cutting-edge AI builder platforms like Lovable to rapidly prototype, iterate, and ship functional web applications in days.</p>
-            <ul class="service-checkmarks">
-              <li><i class="fa-solid fa-check"></i> Rapid Interactive MVPs</li>
-              <li><i class="fa-solid fa-check"></i> Supabase & Backend Binding</li>
-              <li><i class="fa-solid fa-check"></i> Modern React & Tailwind Frontends</li>
-              <li><i class="fa-solid fa-check"></i> Immediate User Feedback Validation</li>
-            </ul>
-          </div>
-          <div class="service-tags-wrap">
-            <span class="accordion-tag">Lovable</span>
-            <span class="accordion-tag">Supabase</span>
-            <span class="accordion-tag">AI Apps</span>
-          </div>
+        <!-- Category Filter Pills -->
+        <div class="service-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Capabilities</button>
+          <button class="filter-btn" data-filter="web">Webflow & Shopify</button>
+          <button class="filter-btn" data-filter="ghl">GoHighLevel (GHL)</button>
+          <button class="filter-btn" data-filter="n8n">n8n Automations</button>
+          <button class="filter-btn" data-filter="zoho">Zoho CRM & Flow</button>
+          <button class="filter-btn" data-filter="ai">Lovable AI Apps</button>
+          <button class="filter-btn" data-filter="leadspark">LeadSpark Engine</button>
         </div>
       </div>
     </section>
 
-    <!-- LeadSpark Integration Callout -->
-    <section class="container" style="margin-bottom: 90px;">
-      <div style="background:linear-gradient(135deg, #10121b 0%, #161826 100%); border:1px solid #282a3d; border-radius:var(--radius-xl); padding:50px 40px; color:white; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;">
+    <!-- ========================================================================
+         3. SERVICES SHOWCASE: DETAILED 3D SCREENSHOTS & PLATFORM ARCHITECTURES
+         ======================================================================== -->
+    <section class="container services-showcase-list">
+
+      <!-- SERVICE 1: Webflow Enterprise & Modern Web -->
+      <div class="service-showcase-row" data-tilt data-category="web">
+        <div class="content-side service-showcase-content">
+          <div class="service-tech-badges">
+            <span class="service-tech-pill">Webflow Enterprise</span>
+            <span class="service-tech-pill">GSAP 3D</span>
+            <span class="service-tech-pill">Lighthouse 99+</span>
+          </div>
+          <h2>High-Converting Webflow Builds & Custom Frontends</h2>
+          <p>
+            We don't build generic cookie-cutter templates. We craft award-winning Webflow architectures engineered with modular Client-First frameworks, semantic HTML5, sub-second load times, and custom 3D WebGL interactions that capture high-intent buyers.
+          </p>
+
+          <ul class="deliverables-checklist">
+            <li><i class="fa-solid fa-check"></i> Custom Figma to Webflow Build</li>
+            <li><i class="fa-solid fa-check"></i> 100/100 Core Web Vitals</li>
+            <li><i class="fa-solid fa-check"></i> CMS Collection Architecture</li>
+            <li><i class="fa-solid fa-check"></i> Two-Way CRM Form Hooks</li>
+          </ul>
+
+          <a href="contact.html" class="btn btn-primary">
+            Start Webflow Project <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+
+        <div class="mockup-side">
+          <!-- 3D Browser Mockup Frame -->
+          <div class="browser-mockup-frame">
+            <div class="browser-top-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-address-bar">
+                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <span>https://zerolt.com/showcase/saas-fintech</span>
+              </div>
+            </div>
+            <div class="browser-content">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Webflow Enterprise SaaS Platform" loading="lazy">
+              <div class="browser-live-overlay">
+                <span class="live-metrics-pill" style="color:#10b981;">
+                  <span class="pulse-indicator"></span> Live Webflow Build
+                </span>
+                <span style="font-size:0.75rem; color:#c4b5fd; font-weight:700;">Score: 99 / 100 Speed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 2: GoHighLevel (GHL) CRM Architecture -->
+      <div class="service-showcase-row reversed" data-tilt data-category="ghl">
+        <div class="mockup-side">
+          <div class="browser-mockup-frame">
+            <div class="browser-top-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-address-bar">
+                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <span>https://app.gohighlevel.com/v2/location/zerolt-pipeline</span>
+              </div>
+            </div>
+            <div class="browser-content">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80" alt="GoHighLevel Pipeline Architecture" loading="lazy">
+              <div class="browser-live-overlay">
+                <span class="live-metrics-pill" style="color:#60a5fa;">
+                  <i class="fa-solid fa-diagram-project"></i> GHL Pipeline Active
+                </span>
+                <span style="font-size:0.75rem; color:#fbbf24; font-weight:700;">&lt;60s Auto SMS Follow-up</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-side service-showcase-content">
+          <div class="service-tech-badges">
+            <span class="service-tech-pill" style="color:#60a5fa; border-color:rgba(96,165,250,0.4);">GoHighLevel (GHL)</span>
+            <span class="service-tech-pill">Custom Snapshots</span>
+            <span class="service-tech-pill">AI Booking</span>
+          </div>
+          <h2>GoHighLevel (GHL) CRM & Autonomous Sales Pipelines</h2>
+          <p>
+            Turn traffic into booked revenue. We architect bespoke GoHighLevel snapshots, sub-account setups, dynamic booking calendars, pipeline opportunity stages, and multi-channel SMS/voice bots that respond to incoming leads in under 60 seconds.
+          </p>
+
+          <ul class="deliverables-checklist">
+            <li><i class="fa-solid fa-check"></i> Turnkey GHL Snapshot Deployments</li>
+            <li><i class="fa-solid fa-check"></i> AI SMS & WhatsApp Sequences</li>
+            <li><i class="fa-solid fa-check"></i> Multi-Stage Opportunity Tracking</li>
+            <li><i class="fa-solid fa-check"></i> Stripe & Calendar Sync</li>
+          </ul>
+
+          <a href="contact.html" class="btn btn-primary">
+            Deploy GHL Infrastructure <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- SERVICE 3: n8n Workflow Automation -->
+      <div class="service-showcase-row" data-tilt data-category="n8n">
+        <div class="content-side service-showcase-content">
+          <div class="service-tech-badges">
+            <span class="service-tech-pill" style="color:#f87171; border-color:rgba(248,113,113,0.4);">n8n Autonomous Workflows</span>
+            <span class="service-tech-pill">Self-Hosted Docker</span>
+            <span class="service-tech-pill">Zero Zapier Fees</span>
+          </div>
+          <h2>n8n Workflow Automation & Enterprise Data Routing</h2>
+          <p>
+            Eliminate recurring Zapier subscription bloat. We engineer self-hosted or managed n8n automation pipelines that connect webhooks, databases, AI models, and internal communications with 100% data privacy and infinite scaling capacity.
+          </p>
+
+          <ul class="deliverables-checklist">
+            <li><i class="fa-solid fa-check"></i> Custom Webhook Routing Nodes</li>
+            <li><i class="fa-solid fa-check"></i> Self-Hosted Docker Setup & Security</li>
+            <li><i class="fa-solid fa-check"></i> AI Agent & LLM Data Enrichment</li>
+            <li><i class="fa-solid fa-check"></i> Automated Error Catching & Logs</li>
+          </ul>
+
+          <a href="contact.html" class="btn btn-primary">
+            Build n8n Automations <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+
+        <div class="mockup-side">
+          <div class="browser-mockup-frame">
+            <div class="browser-top-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-address-bar">
+                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <span>https://n8n.zerolt.com/workflow/lead-enrichment-v4</span>
+              </div>
+            </div>
+            <div class="browser-content">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="n8n Enterprise Automation Canvas" loading="lazy">
+              <div class="browser-live-overlay">
+                <span class="live-metrics-pill" style="color:#f87171;">
+                  <i class="fa-solid fa-bolt"></i> n8n Cluster: 14 Nodes
+                </span>
+                <span style="font-size:0.75rem; color:#34d399; font-weight:700;">140K Executions / mo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 4: Shopify Plus & Modern E-Commerce -->
+      <div class="service-showcase-row reversed" data-tilt data-category="web">
+        <div class="mockup-side">
+          <div class="browser-mockup-frame">
+            <div class="browser-top-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-address-bar">
+                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <span>https://store.zerolt.com/products/engineered-scale</span>
+              </div>
+            </div>
+            <div class="browser-content">
+              <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=900&q=80" alt="Shopify Plus E-Commerce Experience" loading="lazy">
+              <div class="browser-live-overlay">
+                <span class="live-metrics-pill" style="color:#34d399;">
+                  <i class="fa-brands fa-shopify"></i> Shopify 2.0 Storefront
+                </span>
+                <span style="font-size:0.75rem; color:#a78bfa; font-weight:700;">+38% Cart Conversion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-side service-showcase-content">
+          <div class="service-tech-badges">
+            <span class="service-tech-pill" style="color:#34d399; border-color:rgba(52,211,153,0.4);">Shopify Plus</span>
+            <span class="service-tech-pill">Liquid Architecture</span>
+            <span class="service-tech-pill">Checkout Extensibility</span>
+          </div>
+          <h2>High-AOV Shopify Plus & E-Commerce Scaled Storefronts</h2>
+          <p>
+            Custom 2.0 themes crafted for scale. We engineer lightning-fast product pages, one-click upsells, checkout extensions, and automated ERP/inventory synchronization with Zoho and external warehouses.
+          </p>
+
+          <ul class="deliverables-checklist">
+            <li><i class="fa-solid fa-check"></i> Custom Bespoke Liquid Engineering</li>
+            <li><i class="fa-solid fa-check"></i> High AOV Sticky Cart & Upsell Engine</li>
+            <li><i class="fa-solid fa-check"></i> ERP & Zoho Inventory Sync</li>
+            <li><i class="fa-solid fa-check"></i> Blazing-Fast Mobile Performance</li>
+          </ul>
+
+          <a href="contact.html" class="btn btn-primary">
+            Scale Shopify Store <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- SERVICE 5: Zoho CRM & Enterprise Flow Integration -->
+      <div class="service-showcase-row" data-tilt data-category="zoho">
+        <div class="content-side service-showcase-content">
+          <div class="service-tech-badges">
+            <span class="service-tech-pill" style="color:#fb7185; border-color:rgba(251,113,133,0.4);">Zoho Suite</span>
+            <span class="service-tech-pill">Zoho Flow & Creator</span>
+            <span class="service-tech-pill">Deluge Scripting</span>
+          </div>
+          <h2>Zoho CRM & Multi-System Enterprise Synchronization</h2>
+          <p>
+            Connect disparate platforms into a single unified source of truth. We build automated data flows between Zoho CRM, Zoho Books, customer support portals, and website lead forms using custom Deluge scripting and secure API webhooks.
+          </p>
+
+          <ul class="deliverables-checklist">
+            <li><i class="fa-solid fa-check"></i> Deluge Scripting & Custom Functions</li>
+            <li><i class="fa-solid fa-check"></i> Zoho Creator Internal Portals</li>
+            <li><i class="fa-solid fa-check"></i> Automated Billing & Invoicing Loops</li>
+            <li><i class="fa-solid fa-check"></i> Multi-Currency Financial Sync</li>
+          </ul>
+
+          <a href="contact.html" class="btn btn-primary">
+            Integrate Zoho Suite <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+
+        <div class="mockup-side">
+          <div class="browser-mockup-frame">
+            <div class="browser-top-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-address-bar">
+                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <span>https://crm.zoho.com/crm/org8429104/tab/Potentials</span>
+              </div>
+            </div>
+            <div class="browser-content">
+              <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=900&q=80" alt="Zoho CRM Enterprise Integration" loading="lazy">
+              <div class="browser-live-overlay">
+                <span class="live-metrics-pill" style="color:#fb7185;">
+                  <i class="fa-solid fa-database"></i> Zoho Two-Way Sync
+                </span>
+                <span style="font-size:0.75rem; color:#60a5fa; font-weight:700;">Real-Time Replication</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 6: Lovable AI & Modern App Prototyping -->
+      <div class="service-showcase-row reversed" data-tilt data-category="ai">
+        <div class="mockup-side">
+          <div class="browser-mockup-frame">
+            <div class="browser-top-bar">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-address-bar">
+                <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i>
+                <span>https://lovable.dev/projects/zerolt-ai-agent-v1</span>
+              </div>
+            </div>
+            <div class="browser-content">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80" alt="Lovable AI App Architecture" loading="lazy">
+              <div class="browser-live-overlay">
+                <span class="live-metrics-pill" style="color:#ec4899;">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> Lovable AI MVP
+                </span>
+                <span style="font-size:0.75rem; color:#34d399; font-weight:700;">Shipped in 7 Days</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-side service-showcase-content">
+          <div class="service-tech-badges">
+            <span class="service-tech-pill" style="color:#ec4899; border-color:rgba(236,72,153,0.4);">Lovable AI Apps</span>
+            <span class="service-tech-pill">Supabase DB</span>
+            <span class="service-tech-pill">Rapid MVPs</span>
+          </div>
+          <h2>Lovable AI Applications & Rapid Interactive Prototypes</h2>
+          <p>
+            Why wait 6 months for software development? We utilize cutting-edge AI builder platforms like Lovable to design, engineer, and deploy fully functional web applications, internal tools, and client dashboards backed by Supabase in days.
+          </p>
+
+          <ul class="deliverables-checklist">
+            <li><i class="fa-solid fa-check"></i> Production-Ready React & Tailwind Apps</li>
+            <li><i class="fa-solid fa-check"></i> Live Supabase Database & Auth Setup</li>
+            <li><i class="fa-solid fa-check"></i> AI Agent Features & Chat Assistants</li>
+            <li><i class="fa-solid fa-check"></i> Instant Deployment to Custom Domains</li>
+          </ul>
+
+          <a href="contact.html" class="btn btn-primary">
+            Launch AI App <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================
+         4. LEADSPARK EARLY ACCESS SNEAK PEEK
+         ======================================================================== -->
+    <section class="container" style="margin-bottom: 70px;">
+      <div style="background:linear-gradient(135deg, #10121d 0%, #171929 100%); border:1px solid rgba(255, 255, 255, 0.12); border-radius:var(--radius-xl); padding:40px; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
         <div style="max-width:650px;">
-          <div class="leadspark-pill" style="margin-bottom:14px;"><i class="fa-solid fa-bolt"></i> Proprietary Tech</div>
-          <h2 style="color:white; font-size:2.4rem; margin-bottom:12px;">Launching Soon: LeadSpark Marketing Engine</h2>
-          <p style="color:#9ba1b0; font-size:1.05rem;">All our client builds are eligible for priority early onboarding into our proprietary lead intelligence and autonomous follow-up platform.</p>
+          <div class="leadspark-pill" style="margin-bottom:12px;"><i class="fa-solid fa-fire"></i> UPCOMING PROPRIETARY PRODUCT</div>
+          <h2 style="font-size:2.2rem; margin-bottom:10px;">LeadSpark: Autonomous Marketing Automation</h2>
+          <p style="color:#9ba1b0; font-size:0.98rem; line-height:1.6;">All Zerolt client builds receive complimentary VIP priority onboarding into LeadSpark for instant lead intelligence, enrichment, and zero-drop-off CRM routing.</p>
         </div>
         <div>
-          <a href="index.html#leadspark" class="btn" style="background:var(--leadspark-gradient); color:white; padding:16px 32px;">
-            Join Early Waitlist <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
+          <a href="index.html#leadspark" class="btn" style="background:var(--leadspark-gradient); color:white; padding:14px 28px;">
+            Join VIP Waitlist <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- CTA Banner -->
+    <!-- ========================================================================
+         5. CTA BANNER
+         ======================================================================== -->
     <section class="footer-cta-banner">
       <div class="container footer-cta-content">
         <div>
-          <h2>Need A Custom Web & Automation Setup?</h2>
-          <p>Tell us your platforms and we'll craft a bespoke proposal within 24 hours.</p>
+          <h2>Need A Custom Multi-Platform Proposal?</h2>
+          <p>Tell us your tech stack and target outcomes. We'll send an architecture proposal in 4 hours.</p>
         </div>
         <div>
-          <a href="contact.html" class="btn btn-primary" style="font-size:1.1rem; padding:18px 36px;">
-            Request a Proposal
-            <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
+          <a href="contact.html" class="btn btn-primary" style="font-size:1.05rem; padding:16px 32px;">
+            Request Custom Scope <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- ========================================================================
+       6. SITE FOOTER
+       ======================================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">zerolt<span class="logo-dot"></span></a>
-          <p>Crafting high-converting digital storefronts, custom CMS websites, and autonomous marketing automation engines.</p>
+          <a href="index.html" class="logo">
+            <span class="logo-text">Zerolt</span><span class="logo-dot"></span>
+          </a>
+          <p>Engineering high-converting digital storefronts, custom CMS websites, and autonomous marketing automation engines.</p>
         </div>
         <div class="footer-col">
           <h4>Navigation</h4>
@@ -333,23 +641,24 @@
         <div class="footer-col">
           <h4>Platforms</h4>
           <ul>
-            <li><a href="services.html#ghl">GoHighLevel (GHL)</a></li>
-            <li><a href="services.html#n8n">n8n Orchestration</a></li>
-            <li><a href="services.html#webflow">Webflow & Shopify</a></li>
-            <li><a href="services.html#zoho">Zoho CRM & Flow</a></li>
+            <li><a href="#ghl">GoHighLevel (GHL)</a></li>
+            <li><a href="#n8n">n8n Orchestration</a></li>
+            <li><a href="#webflow">Webflow & Shopify</a></li>
+            <li><a href="#zoho">Zoho CRM & Flow</a></li>
+            <li><a href="#lovable">Lovable AI Apps</a></li>
           </ul>
         </div>
         <div class="footer-col footer-newsletter">
           <h4>Stay Ahead</h4>
           <p>Receive bi-weekly playbooks on marketing automation and web design.</p>
-          <form class="footer-input-wrap" onsubmit="event.preventDefault(); alert('Subscribed!');">
+          <form class="footer-input-wrap" onsubmit="event.preventDefault(); alert('Subscribed to Zerolt Insights!');">
             <input type="email" placeholder="Enter your email" required>
             <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
           </form>
         </div>
       </div>
       <div class="footer-bottom">
-        <div>&copy; 2026 Zerolt.com. All rights reserved.</div>
+        <div>&copy; 2026 Zerolt.com. All rights reserved. Crafting digital advantage since 2021.</div>
         <div style="display:flex; gap:20px;">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -361,5 +670,23 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Interactive Filter Controller -->
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.getAttribute('data-filter');
+        document.querySelectorAll('.service-showcase-row').forEach(row => {
+          if (filter === 'all' || row.getAttribute('data-category') === filter) {
+            row.style.display = 'grid';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
