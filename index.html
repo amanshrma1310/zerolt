@@ -46,15 +46,142 @@
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-  <!-- Core Stylesheet with Cache-Buster -->
-  <link rel="stylesheet" href="css/style.css?v=8.0">
+  <!-- Core Stylesheet with Cache-Buster v12.0 -->
+  <link rel="stylesheet" href="css/style.css?v=12.0">
 
-  <style>
+  <!-- Critical Inline Styles to Guarantee 100% Reliable Hero & FlowDesk Display Against Any Caching -->
+  <style id="critical-hero-flowdesk">
     /* Logo Typography Matching Reference Screenshot */
     .logo, .logo-text {
       font-family: 'Fredoka', 'Comfortaa', 'Quicksand', sans-serif !important;
       font-weight: 700 !important;
       letter-spacing: -0.01em;
+    }
+    .site-header {
+      background: rgba(11, 12, 22, 0.65) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    .site-header .logo-text {
+      color: #ffffff !important;
+    }
+    .site-header .nav-menu {
+      background: rgba(255, 255, 255, 0.07) !important;
+      border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    }
+    .site-header .nav-link {
+      color: #cbd5e1 !important;
+    }
+    .site-header .nav-link:hover, .site-header .nav-link.active {
+      color: #ffffff !important;
+    }
+    .site-header .nav-link.active {
+      background: rgba(94, 67, 243, 0.35) !important;
+    }
+    .site-header .btn-consultation {
+      background: rgba(94, 67, 243, 0.25) !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(167, 139, 250, 0.4) !important;
+    }
+    .mobile-nav-toggle span {
+      background: #ffffff !important;
+    }
+    /* Hero Banner Critical */
+    .hero-section {
+      background: #0b0c16 !important;
+      min-height: 92vh !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      position: relative !important;
+      overflow: hidden !important;
+      padding-top: 130px !important;
+      padding-bottom: 90px !important;
+    }
+    .hero-video-bg-wrap {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      overflow: hidden !important;
+      z-index: 1 !important;
+      pointer-events: none !important;
+    }
+    .hero-video-bg {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center bottom !important;
+      opacity: 0.92 !important;
+      filter: hue-rotate(150deg) saturate(1.25) contrast(1.12) !important;
+    }
+    .hero-video-overlay {
+      position: absolute !important;
+      inset: 0 !important;
+      background: radial-gradient(circle at 50% 32%, rgba(94, 67, 243, 0.48) 0%, rgba(13, 14, 28, 0.82) 65%, #090a14 100%),
+                  linear-gradient(180deg, rgba(13, 14, 28, 0.85) 0%, rgba(94, 67, 243, 0.28) 50%, rgba(9, 10, 20, 0.98) 100%) !important;
+      pointer-events: none !important;
+    }
+    .hero-content-wrap {
+      position: relative !important;
+      z-index: 2 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      max-width: 920px !important;
+      margin: 0 auto !important;
+      padding: 0 20px !important;
+    }
+    /* FlowDesk Critical */
+    .saas-bento-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+      gap: 24px !important;
+      max-width: 1060px !important;
+      margin: 0 auto !important;
+    }
+    .saas-bento-card {
+      background: rgba(16, 18, 32, 0.88) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      border-radius: 20px !important;
+      padding: 30px 28px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4) !important;
+      box-sizing: border-box !important;
+    }
+    .saas-bento-icon {
+      width: 52px !important;
+      height: 52px !important;
+      min-width: 52px !important;
+      min-height: 52px !important;
+      border-radius: 16px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 1.35rem !important;
+      margin-bottom: 20px !important;
+      flex-shrink: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .saas-bento-banner {
+      grid-column: 1 / -1 !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 32px !important;
+      background: linear-gradient(135deg, rgba(94, 67, 243, 0.18) 0%, rgba(30, 27, 75, 0.6) 100%) !important;
+      border: 1px solid rgba(167, 139, 250, 0.3) !important;
+      border-radius: 22px !important;
+      padding: 36px 40px !important;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+      flex-wrap: wrap !important;
+      box-sizing: border-box !important;
     }
   </style>
 </head>
@@ -104,13 +231,13 @@
          2. HERO SECTION WITH 3D CANVAS & INTERACTIVE CLUSTER
          ======================================================================== -->
     <section class="hero-section">
-      <!-- Company Professionals Welcome Video Background -->
+      <!-- Company Professionals Welcome Video Background with Zerolt Royal Purple Brand Hue -->
       <div class="hero-video-bg-wrap" aria-hidden="true">
-        <video class="hero-video-bg" autoplay muted loop playsinline poster="images/zerolt-team-wave-poster.png">
+        <video class="hero-video-bg" autoplay muted loop playsinline poster="images/zerolt-team-wave-poster.png" style="width:100%; height:100%; object-fit:cover; object-position:center bottom; opacity:0.92; filter:hue-rotate(150deg) saturate(1.25) contrast(1.12);">
           <source src="videos/zerolt-team-wave-opt.mp4" type="video/mp4">
           <source src="videos/zerolt-team-wave.mp4" type="video/mp4">
         </video>
-        <div class="hero-video-overlay"></div>
+        <div class="hero-video-overlay" style="position:absolute; inset:0; background:radial-gradient(circle at 50% 32%, rgba(94, 67, 243, 0.48) 0%, rgba(13, 14, 28, 0.82) 65%, #090a14 100%), linear-gradient(180deg, rgba(13, 14, 28, 0.85) 0%, rgba(94, 67, 243, 0.28) 50%, rgba(9, 10, 20, 0.98) 100%); pointer-events:none;"></div>
       </div>
 
       <!-- Continuous Floating 3D Shapes & Ambient Stars -->
@@ -127,118 +254,60 @@
           </div>
         </div>
         <!-- 3D Neon Torus Ring floating on top-right -->
-        <div class="shape-3d-float" style="top:22%; right:5%;">
+        <div class="shape-3d-float" style="top:18%; right:5%;">
           <div class="mini-torus-3d"></div>
         </div>
-        <!-- 3D Glass Sphere / Orb floating on bottom-right -->
-        <div class="shape-3d-float" style="bottom:18%; right:10%;">
+        <!-- 3D Glass Sphere / Orb floating on mid-right -->
+        <div class="shape-3d-float" style="top:58%; right:7%;">
           <div class="mini-sphere-3d"></div>
         </div>
         <!-- 3D Faceted Diamond floating mid-left -->
         <div class="shape-3d-float" style="top:52%; left:5%;">
           <div class="mini-diamond-3d"></div>
         </div>
-        <!-- 3D Emerald Capsule floating bottom-left -->
-        <div class="shape-3d-float" style="bottom:20%; left:12%;">
-          <div class="mini-capsule-3d"></div>
-        </div>
         <!-- Ambient Twinkling Stars & Micro Glow Dots -->
         <div class="star-sparkle" style="top:18%; right:18%;">✦</div>
-        <div class="star-sparkle star-sparkle-sm" style="bottom:28%; left:22%;">✦</div>
-        <div class="dot-micro dot-micro-purple" style="top:36%; right:8%;"></div>
-        <div class="dot-micro dot-micro-cyan" style="bottom:14%; left:8%;"></div>
+        <div class="star-sparkle star-sparkle-sm" style="bottom:28%; left:18%;">✦</div>
+        <div class="dot-micro dot-micro-purple" style="top:32%; right:8%;"></div>
+        <div class="dot-micro dot-micro-cyan" style="bottom:24%; left:8%;"></div>
       </div>
 
-      <div class="container hero-content-wrap">
-        <!-- Hero Left Text Column -->
-        <div class="hero-text-col">
-          <div class="hero-badge-pill">
-            <span class="pulse-indicator"></span>
-            <span>⚡ Freelance Collective • Friend-First 24/7 Support</span>
-          </div>
-
-          <h1 class="hero-title">
-            Awesome <span class="highlight-text">Solution</span> For Your Business Growth
-          </h1>
-
-          <p class="hero-desc">
-            We are not an overpriced corporate agency. We are an elite collective of passionate freelance builders who engineer high-converting Webflow, Shopify & WordPress platforms wired directly into GoHighLevel and n8n workflows — at an honest, market-beating price.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="/contact" class="btn btn-primary">
-              Get Started Now
-              <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
-            </a>
-
-            <a href="#work" class="btn btn-outline btn-how-works">
-              <span class="play-icon"><i class="fa-solid fa-briefcase"></i></span>
-              See Our Work
-            </a>
-          </div>
-
-          <div class="hero-badges-strip">
-            <span class="hero-badge-tag"><i class="fa-solid fa-handshake-angle"></i> Work Like Friends</span>
-            <span class="hero-badge-tag"><i class="fa-solid fa-tag"></i> 50% Lower Market Rates</span>
-            <span class="hero-badge-tag"><i class="fa-solid fa-clock"></i> 24/7 Any-Time Problem Solving</span>
-          </div>
+      <div class="container hero-content-wrap" style="position:relative; z-index:2; max-width:920px; margin:0 auto; padding:110px 20px 140px; text-align:center; display:flex; flex-direction:column; align-items:center;">
+        <div class="hero-badge-pill" style="display:inline-flex; align-items:center; gap:10px; background:rgba(255, 255, 255, 0.08); border:1px solid rgba(255, 255, 255, 0.18); padding:8px 20px; border-radius:999px; font-size:0.86rem; font-weight:600; color:#e2e8f0; box-shadow:0 4px 20px rgba(0, 0, 0, 0.35); margin-bottom:24px; backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);">
+          <span class="pulse-indicator"></span>
+          <span>⚡ Freelance Collective • Friend-First 24/7 Support</span>
         </div>
 
-        <!-- Hero Right 3D Visual Cluster: Company Professionals Welcome Card -->
-        <div class="hero-visual-cluster">
-          <div class="hero-welcome-card" data-tilt>
-            <div>
-              <div class="hero-welcome-badge">
-                <span class="live-dot-pulse"></span> Meet Your Zerolt Team
-              </div>
-            </div>
-            <div class="hero-welcome-body">
-              <div class="hero-welcome-icon">👋</div>
-              <h4>Say Hello to Your Builders</h4>
-              <p>Zero corporate bureaucracy. Directly collaborate with our elite tech & design collective on WhatsApp & Slack.</p>
-              <div class="hero-welcome-tags">
-                <span><i class="fa-solid fa-code"></i> Full-Stack</span>
-                <span><i class="fa-solid fa-wand-magic-sparkles"></i> UI/UX</span>
-                <span><i class="fa-solid fa-bolt"></i> n8n Automation</span>
-              </div>
-            </div>
-          </div>
+        <h1 class="hero-title" style="font-size:clamp(2.4rem, 5.2vw, 4.2rem); line-height:1.15; font-weight:800; letter-spacing:-0.035em; color:#ffffff; margin-bottom:22px; text-align:center;">
+          Awesome <span class="highlight-text" style="background:linear-gradient(135deg, #a78bfa 0%, #c084fc 45%, #60a5fa 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; display:inline-block;">Solution</span> For Your Business Growth
+        </h1>
 
-          <!-- Floating 3D Card 1: 99% Analytics Report -->
-          <div class="floating-3d-card-stats" data-tilt>
-            <div class="stats-card-top">
-              <span class="stats-number">99</span>
-              <span class="stats-percent">%</span>
-            </div>
-            <p class="stats-label">Track and analyze the business reports.</p>
-            <div class="stats-chart-bars">
-              <div class="chart-bar" style="height: 40%;"></div>
-              <div class="chart-bar" style="height: 65%;"></div>
-              <div class="chart-bar" style="height: 50%;"></div>
-              <div class="chart-bar active" style="height: 90%;"></div>
-              <div class="chart-bar active" style="height: 75%;"></div>
-              <div class="chart-bar" style="height: 60%;"></div>
-            </div>
-          </div>
+        <p class="hero-desc" style="font-size:1.15rem; line-height:1.65; color:rgba(241, 245, 249, 0.88); max-width:740px; margin:0 auto 34px; text-align:center;">
+          We are not an overpriced corporate agency. We are an elite collective of passionate freelance builders who engineer high-converting Webflow, Shopify &amp; WordPress platforms wired directly into GoHighLevel and n8n workflows &mdash; at an honest, 50% lower market rate.
+        </p>
 
-          <!-- Floating 3D Card 2: Decided Quality Verified Stamp -->
-          <div class="floating-3d-quality-badge" data-tilt>
-            <div class="quality-badge-icon">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <div class="quality-badge-text">
-              <span>01 • Verified</span>
-              <strong>Decided Quality</strong>
-            </div>
-          </div>
-
-          <!-- Floating 3D Card 3: Interactive Work Link Pill -->
-          <a href="#work" class="floating-3d-play-pill" data-tilt>
-            <div class="play-circle">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <span>Live Work</span>
+        <div class="hero-cta-group" style="display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:36px; flex-wrap:wrap;">
+          <a href="/contact" class="btn btn-primary" style="padding:14px 32px; font-size:1.02rem; box-shadow:0 10px 30px rgba(94, 67, 243, 0.6);">
+            Get Started Now
+            <span class="btn-pill-icon"><i class="fa-solid fa-arrow-right"></i></span>
           </a>
+
+          <a href="#work" class="btn btn-hero-dark" style="background:rgba(255, 255, 255, 0.08); color:#ffffff; border:1px solid rgba(255, 255, 255, 0.2); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); padding:14px 28px; font-size:1.02rem; border-radius:999px; text-decoration:none; display:inline-flex; align-items:center; gap:10px; font-weight:600;">
+            <span class="play-icon" style="color:#a78bfa;"><i class="fa-solid fa-briefcase"></i></span>
+            See Our Work
+          </a>
+        </div>
+
+        <div class="hero-badges-strip" style="display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap;">
+          <span class="hero-badge-tag" style="background:rgba(255, 255, 255, 0.06); border:1px solid rgba(255, 255, 255, 0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:rgba(241, 245, 249, 0.9); padding:8px 18px; border-radius:999px; font-size:0.86rem; font-weight:600; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-handshake-angle" style="color:#a78bfa;"></i> Work Like Friends
+          </span>
+          <span class="hero-badge-tag" style="background:rgba(255, 255, 255, 0.06); border:1px solid rgba(255, 255, 255, 0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:rgba(241, 245, 249, 0.9); padding:8px 18px; border-radius:999px; font-size:0.86rem; font-weight:600; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-tag" style="color:#34d399;"></i> 50% Lower Market Rates
+          </span>
+          <span class="hero-badge-tag" style="background:rgba(255, 255, 255, 0.06); border:1px solid rgba(255, 255, 255, 0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:rgba(241, 245, 249, 0.9); padding:8px 18px; border-radius:999px; font-size:0.86rem; font-weight:600; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-clock" style="color:#fbbf24;"></i> 24/7 Any-Time Support
+          </span>
         </div>
       </div>
     </section>
@@ -505,11 +574,11 @@
         </div>
 
         <!-- Modern Bento Feature Grid -->
-        <div class="saas-bento-grid">
+        <div class="saas-bento-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1060px; margin: 0 auto;">
           <!-- Bento Card 1: 1-Line HTML Lead Ingestion -->
-          <div class="saas-bento-card" data-tilt>
+          <div class="saas-bento-card" style="background: rgba(16, 18, 32, 0.88); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 30px 28px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); box-sizing: border-box;" data-tilt>
             <div>
-              <div class="saas-bento-icon" style="background: rgba(94, 67, 243, 0.2); color: #a78bfa;">
+              <div class="saas-bento-icon" style="display: inline-flex; width: 52px; height: 52px; min-width: 52px; min-height: 52px; border-radius: 16px; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 20px; background: rgba(94, 67, 243, 0.25); color: #a78bfa; flex-shrink: 0; box-sizing: border-box;">
                 <i class="fa-solid fa-code"></i>
               </div>
               <span class="saas-bento-tag" style="color: #a78bfa;">Step 01 • Instant Ingest</span>
@@ -529,9 +598,9 @@
           </div>
 
           <!-- Bento Card 2: Sub-60s WhatsApp Cloud Speed-to-Lead -->
-          <div class="saas-bento-card" data-tilt>
+          <div class="saas-bento-card" style="background: rgba(16, 18, 32, 0.88); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 30px 28px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); box-sizing: border-box;" data-tilt>
             <div>
-              <div class="saas-bento-icon" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">
+              <div class="saas-bento-icon" style="display: inline-flex; width: 52px; height: 52px; min-width: 52px; min-height: 52px; border-radius: 16px; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 20px; background: rgba(16, 185, 129, 0.25); color: #34d399; flex-shrink: 0; box-sizing: border-box;">
                 <i class="fa-solid fa-paper-plane"></i>
               </div>
               <span class="saas-bento-tag" style="color: #34d399;">Step 02 • Sub-60s SLA</span>
@@ -554,9 +623,9 @@
           </div>
 
           <!-- Bento Card 3: 4 Production Recipes Included -->
-          <div class="saas-bento-card" data-tilt>
+          <div class="saas-bento-card" style="background: rgba(16, 18, 32, 0.88); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 30px 28px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); box-sizing: border-box;" data-tilt>
             <div>
-              <div class="saas-bento-icon" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">
+              <div class="saas-bento-icon" style="display: inline-flex; width: 52px; height: 52px; min-width: 52px; min-height: 52px; border-radius: 16px; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 20px; background: rgba(245, 158, 11, 0.25); color: #fbbf24; flex-shrink: 0; box-sizing: border-box;">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
               </div>
               <span class="saas-bento-tag" style="color: #fbbf24;">Step 03 • 1-Click Launch</span>
@@ -578,7 +647,7 @@
           </div>
 
           <!-- Row 2 Full-Width Bento Banner: Unfair Pricing Advantage -->
-          <div class="saas-bento-banner">
+          <div class="saas-bento-banner" style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 32px; background: linear-gradient(135deg, rgba(94, 67, 243, 0.18) 0%, rgba(30, 27, 75, 0.6) 100%); border: 1px solid rgba(167, 139, 250, 0.3); border-radius: 22px; padding: 36px 40px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); flex-wrap: wrap; box-sizing: border-box;">
             <div class="saas-banner-info">
               <span class="saas-bento-tag" style="color: #fef08a;">Unfair Advantage • Zero Per-Seat Markups</span>
               <h3>Why Pay $297+/mo For Corporate CRMs?</h3>

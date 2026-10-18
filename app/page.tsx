@@ -102,11 +102,12 @@ export default function HomePage() {
             loop 
             playsInline 
             poster="/images/zerolt-team-wave-poster.png"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center bottom', opacity: 0.92, filter: 'hue-rotate(150deg) saturate(1.25) contrast(1.12)' }}
           >
             <source src="/videos/zerolt-team-wave-opt.mp4" type="video/mp4" />
             <source src="/videos/zerolt-team-wave.mp4" type="video/mp4" />
           </video>
-          <div className="hero-video-overlay"></div>
+          <div className="hero-video-overlay" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 32%, rgba(94, 67, 243, 0.48) 0%, rgba(13, 14, 28, 0.82) 65%, #090a14 100%), linear-gradient(180deg, rgba(13, 14, 28, 0.85) 0%, rgba(94, 67, 243, 0.28) 50%, rgba(9, 10, 20, 0.98) 100%)', pointerEvents: 'none' }}></div>
         </div>
 
         {/* Continuous Floating 3D Shapes & Ambient Stars */}
@@ -121,115 +122,57 @@ export default function HomePage() {
               <div className="cube-face face-bottom"></div>
             </div>
           </div>
-          <div className="shape-3d-float" style={{ top: '22%', right: '5%' }}>
+          <div className="shape-3d-float" style={{ top: '18%', right: '5%' }}>
             <div className="mini-torus-3d"></div>
           </div>
-          <div className="shape-3d-float" style={{ bottom: '18%', right: '10%' }}>
+          <div className="shape-3d-float" style={{ top: '58%', right: '7%' }}>
             <div className="mini-sphere-3d"></div>
           </div>
           <div className="shape-3d-float" style={{ top: '52%', left: '5%' }}>
             <div className="mini-diamond-3d"></div>
           </div>
-          <div className="shape-3d-float" style={{ bottom: '20%', left: '12%' }}>
-            <div className="mini-capsule-3d"></div>
-          </div>
           <div className="star-sparkle" style={{ top: '18%', right: '18%' }}>✦</div>
-          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '28%', left: '22%' }}>✦</div>
-          <div className="dot-micro dot-micro-purple" style={{ top: '36%', right: '8%' }}></div>
-          <div className="dot-micro dot-micro-cyan" style={{ bottom: '14%', left: '8%' }}></div>
+          <div className="star-sparkle star-sparkle-sm" style={{ bottom: '28%', left: '18%' }}>✦</div>
+          <div className="dot-micro dot-micro-purple" style={{ top: '32%', right: '8%' }}></div>
+          <div className="dot-micro dot-micro-cyan" style={{ bottom: '24%', left: '8%' }}></div>
         </div>
 
-        <div className="container hero-content-wrap">
-          {/* Left Text Column */}
-          <div className="hero-text-col">
-            <div className="hero-badge-pill">
-              <span className="pulse-indicator"></span>
-              <span>⚡ Freelance Collective • Friend-First 24/7 Support</span>
-            </div>
-
-            <h1 className="hero-title">
-              Awesome <span className="highlight-text">Solution</span> For Your Business Growth
-            </h1>
-
-            <p className="hero-desc">
-              We are not an overpriced corporate agency. We are an elite collective of passionate freelance builders who engineer high-converting Webflow, Shopify & WordPress platforms wired directly into GoHighLevel and n8n workflows &mdash; at an honest, market-beating price.
-            </p>
-
-            <div className="hero-cta-group">
-              <Link href="/contact" className="btn btn-primary">
-                Get Started Now
-                <span className="btn-pill-icon"><i className="fa-solid fa-arrow-right"></i></span>
-              </Link>
-
-              <a href="#work" className="btn btn-outline btn-how-works">
-                <span className="play-icon"><i className="fa-solid fa-briefcase"></i></span>
-                See Our Work
-              </a>
-            </div>
-
-            <div className="hero-badges-strip">
-              <span className="hero-badge-tag"><i className="fa-solid fa-handshake-angle"></i> Work Like Friends</span>
-              <span className="hero-badge-tag"><i className="fa-solid fa-tag"></i> 50% Lower Market Rates</span>
-              <span className="hero-badge-tag"><i className="fa-solid fa-clock"></i> 24/7 Any-Time Problem Solving</span>
-            </div>
+        <div className="container hero-content-wrap" style={{ position: 'relative', zIndex: 2, maxWidth: '920px', margin: '0 auto', padding: '110px 20px 140px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div className="hero-badge-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.18)', padding: '8px 20px', borderRadius: '999px', fontSize: '0.86rem', fontWeight: 600, color: '#e2e8f0', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.35)', marginBottom: '24px', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+            <span className="pulse-indicator"></span>
+            <span>⚡ Freelance Collective • Friend-First 24/7 Support</span>
           </div>
 
-          {/* Right 3D Visual Cluster: Company Professionals Welcome Card */}
-          <div className="hero-visual-cluster">
-            <TiltCard className="hero-welcome-card">
-              <div>
-                <div className="hero-welcome-badge">
-                  <span className="live-dot-pulse"></span> Meet Your Zerolt Team
-                </div>
-              </div>
-              <div className="hero-welcome-body">
-                <div className="hero-welcome-icon">👋</div>
-                <h4>Say Hello to Your Builders</h4>
-                <p>Zero corporate bureaucracy. Directly collaborate with our elite tech & design collective on WhatsApp & Slack.</p>
-                <div className="hero-welcome-tags">
-                  <span><i className="fa-solid fa-code"></i> Full-Stack</span>
-                  <span><i className="fa-solid fa-wand-magic-sparkles"></i> UI/UX</span>
-                  <span><i className="fa-solid fa-bolt"></i> n8n Automation</span>
-                </div>
-              </div>
-            </TiltCard>
+          <h1 className="hero-title" style={{ fontSize: 'clamp(2.4rem, 5.2vw, 4.2rem)', lineHeight: 1.15, fontWeight: 800, letterSpacing: '-0.035em', color: '#ffffff', marginBottom: '22px', textAlign: 'center' }}>
+            Awesome <span className="highlight-text" style={{ background: 'linear-gradient(135deg, #a78bfa 0%, #c084fc 45%, #60a5fa 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>Solution</span> For Your Business Growth
+          </h1>
 
-            {/* Floating 3D Card 1: 99% Analytics Report */}
-            <TiltCard className="floating-3d-card-stats">
-              <div className="stats-card-top">
-                <span className="stats-number">99</span>
-                <span className="stats-percent">%</span>
-              </div>
-              <p className="stats-label">Track and analyze the business reports.</p>
-              <div className="stats-chart-bars">
-                {chartHeights.map((h, i) => (
-                  <div
-                    key={i}
-                    className={`chart-bar ${i === 3 || i === 4 ? 'active' : ''}`}
-                    style={{ height: `${h}%` }}
-                  ></div>
-                ))}
-              </div>
-            </TiltCard>
+          <p className="hero-desc" style={{ fontSize: '1.15rem', lineHeight: 1.65, color: 'rgba(241, 245, 249, 0.88)', maxWidth: '740px', margin: '0 auto 34px', textAlign: 'center' }}>
+            We are not an overpriced corporate agency. We are an elite collective of passionate freelance builders who engineer high-converting Webflow, Shopify &amp; WordPress platforms wired directly into GoHighLevel and n8n workflows &mdash; at an honest, 50% lower market rate.
+          </p>
 
-            {/* Floating 3D Card 2: Decided Quality Stamp */}
-            <TiltCard className="floating-3d-quality-badge">
-              <div className="quality-badge-icon">
-                <i className="fa-solid fa-shield-halved"></i>
-              </div>
-              <div className="quality-badge-text">
-                <span>01 • Verified</span>
-                <strong>Decided Quality</strong>
-              </div>
-            </TiltCard>
+          <div className="hero-cta-group" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '36px', flexWrap: 'wrap' }}>
+            <Link href="/contact" className="btn btn-primary" style={{ padding: '14px 32px', fontSize: '1.02rem', boxShadow: '0 10px 30px rgba(94, 67, 243, 0.6)' }}>
+              Get Started Now
+              <span className="btn-pill-icon"><i className="fa-solid fa-arrow-right"></i></span>
+            </Link>
 
-            {/* Floating 3D Card 3: Interactive Work Pill */}
-            <a href="#work" className="floating-3d-play-pill">
-              <div className="play-circle">
-                <i className="fa-solid fa-briefcase"></i>
-              </div>
-              <span>Live Work</span>
+            <a href="#work" className="btn btn-hero-dark" style={{ background: 'rgba(255, 255, 255, 0.08)', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.2)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', padding: '14px 28px', fontSize: '1.02rem', borderRadius: '999px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '10px', fontWeight: 600 }}>
+              <span className="play-icon" style={{ color: '#a78bfa' }}><i className="fa-solid fa-briefcase"></i></span>
+              See Our Work
             </a>
+          </div>
+
+          <div className="hero-badges-strip" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            <span className="hero-badge-tag" style={{ background: 'rgba(255, 255, 255, 0.06)', border: '1px solid rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', color: 'rgba(241, 245, 249, 0.9)', padding: '8px 18px', borderRadius: '999px', fontSize: '0.86rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <i className="fa-solid fa-handshake-angle" style={{ color: '#a78bfa' }}></i> Work Like Friends
+            </span>
+            <span className="hero-badge-tag" style={{ background: 'rgba(255, 255, 255, 0.06)', border: '1px solid rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', color: 'rgba(241, 245, 249, 0.9)', padding: '8px 18px', borderRadius: '999px', fontSize: '0.86rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <i className="fa-solid fa-tag" style={{ color: '#34d399' }}></i> 50% Lower Market Rates
+            </span>
+            <span className="hero-badge-tag" style={{ background: 'rgba(255, 255, 255, 0.06)', border: '1px solid rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', color: 'rgba(241, 245, 249, 0.9)', padding: '8px 18px', borderRadius: '999px', fontSize: '0.86rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <i className="fa-solid fa-clock" style={{ color: '#fbbf24' }}></i> 24/7 Any-Time Support
+            </span>
           </div>
         </div>
       </section>
@@ -503,11 +446,11 @@ export default function HomePage() {
         </div>
 
         {/* Modern Bento Feature Grid */}
-        <div className="saas-bento-grid">
+        <div className="saas-bento-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', maxWidth: '1060px', margin: '0 auto' }}>
           {/* Bento Card 1: 1-Line HTML Lead Ingestion */}
-          <TiltCard className="saas-bento-card">
+          <TiltCard className="saas-bento-card" style={{ background: 'rgba(16, 18, 32, 0.88)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '20px', padding: '30px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 16px 40px rgba(0, 0, 0, 0.4)', boxSizing: 'border-box' }}>
             <div>
-              <div className="saas-bento-icon" style={{ background: 'rgba(94, 67, 243, 0.2)', color: '#a78bfa' }}>
+              <div className="saas-bento-icon" style={{ display: 'inline-flex', width: '52px', height: '52px', minWidth: '52px', minHeight: '52px', borderRadius: '16px', alignItems: 'center', justifyContent: 'center', fontSize: '1.35rem', marginBottom: '20px', background: 'rgba(94, 67, 243, 0.25)', color: '#a78bfa', flexShrink: 0, boxSizing: 'border-box' }}>
                 <i className="fa-solid fa-code"></i>
               </div>
               <span className="saas-bento-tag" style={{ color: '#a78bfa' }}>Step 01 • Instant Ingest</span>
@@ -527,9 +470,9 @@ export default function HomePage() {
           </TiltCard>
 
           {/* Bento Card 2: Sub-60s WhatsApp Cloud Speed-to-Lead */}
-          <TiltCard className="saas-bento-card">
+          <TiltCard className="saas-bento-card" style={{ background: 'rgba(16, 18, 32, 0.88)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '20px', padding: '30px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 16px 40px rgba(0, 0, 0, 0.4)', boxSizing: 'border-box' }}>
             <div>
-              <div className="saas-bento-icon" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399' }}>
+              <div className="saas-bento-icon" style={{ display: 'inline-flex', width: '52px', height: '52px', minWidth: '52px', minHeight: '52px', borderRadius: '16px', alignItems: 'center', justifyContent: 'center', fontSize: '1.35rem', marginBottom: '20px', background: 'rgba(16, 185, 129, 0.25)', color: '#34d399', flexShrink: 0, boxSizing: 'border-box' }}>
                 <i className="fa-solid fa-paper-plane"></i>
               </div>
               <span className="saas-bento-tag" style={{ color: '#34d399' }}>Step 02 • Sub-60s SLA</span>
@@ -552,9 +495,9 @@ export default function HomePage() {
           </TiltCard>
 
           {/* Bento Card 3: 4 Production Recipes Included */}
-          <TiltCard className="saas-bento-card">
+          <TiltCard className="saas-bento-card" style={{ background: 'rgba(16, 18, 32, 0.88)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '20px', padding: '30px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 16px 40px rgba(0, 0, 0, 0.4)', boxSizing: 'border-box' }}>
             <div>
-              <div className="saas-bento-icon" style={{ background: 'rgba(245, 158, 11, 0.2)', color: '#fbbf24' }}>
+              <div className="saas-bento-icon" style={{ display: 'inline-flex', width: '52px', height: '52px', minWidth: '52px', minHeight: '52px', borderRadius: '16px', alignItems: 'center', justifyContent: 'center', fontSize: '1.35rem', marginBottom: '20px', background: 'rgba(245, 158, 11, 0.25)', color: '#fbbf24', flexShrink: 0, boxSizing: 'border-box' }}>
                 <i className="fa-solid fa-wand-magic-sparkles"></i>
               </div>
               <span className="saas-bento-tag" style={{ color: '#fbbf24' }}>Step 03 • 1-Click Launch</span>
@@ -576,7 +519,7 @@ export default function HomePage() {
           </TiltCard>
 
           {/* Row 2 Full-Width Bento Banner: Unfair Pricing Advantage */}
-          <div className="saas-bento-banner">
+          <div className="saas-bento-banner" style={{ gridColumn: '1 / -1', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '32px', background: 'linear-gradient(135deg, rgba(94, 67, 243, 0.18) 0%, rgba(30, 27, 75, 0.6) 100%)', border: '1px solid rgba(167, 139, 250, 0.3)', borderRadius: '22px', padding: '36px 40px', boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)', flexWrap: 'wrap', boxSizing: 'border-box' }}>
             <div className="saas-banner-info">
               <span className="saas-bento-tag" style={{ color: '#fef08a' }}>Unfair Advantage • Zero Per-Seat Markups</span>
               <h3>Why Pay $297+/mo For Corporate CRMs?</h3>
