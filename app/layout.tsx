@@ -1,36 +1,7 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans, Fredoka, Comfortaa, Quicksand } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-sans',
-  display: 'swap',
-});
-
-const fredoka = Fredoka({
-  subsets: ['latin'],
-  weight: ['500', '600', '700'],
-  variable: '--font-fredoka',
-  display: 'swap',
-});
-
-const comfortaa = Comfortaa({
-  subsets: ['latin'],
-  weight: ['600', '700'],
-  variable: '--font-comfortaa',
-  display: 'swap',
-});
-
-const quicksand = Quicksand({
-  subsets: ['latin'],
-  weight: ['600', '700'],
-  variable: '--font-quicksand',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'Zerolt — Elite Freelancers & Automation Builders | Webflow, GoHighLevel, n8n, Shopify',
@@ -71,8 +42,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${fredoka.variable} ${comfortaa.variable} ${quicksand.variable}`}>
+    <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Comfortaa:wght@600;700&family=Quicksand:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" 
+          rel="stylesheet" 
+        />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
       <body>
