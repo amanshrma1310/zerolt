@@ -101,10 +101,10 @@ export default function HomePage() {
             muted 
             loop 
             playsInline 
-            poster="https://assets.mixkit.co/videos/4809/4809-thumb-720-0.jpg"
+            poster="/images/zerolt-team-wave-poster.png"
           >
-            <source src="/videos/zerolt-welcome.mp4" type="video/mp4" />
-            <source src="https://assets.mixkit.co/videos/4809/4809-720.mp4" type="video/mp4" />
+            <source src="/videos/zerolt-team-wave-opt.mp4" type="video/mp4" />
+            <source src="/videos/zerolt-team-wave.mp4" type="video/mp4" />
           </video>
           <div className="hero-video-overlay"></div>
         </div>
@@ -174,27 +174,23 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right 3D Visual Cluster: Company Professionals Welcome Video Showcase */}
+          {/* Right 3D Visual Cluster: Company Professionals Welcome Card */}
           <div className="hero-visual-cluster">
-            <TiltCard className="hero-main-card hero-video-card">
-              <video 
-                className="hero-card-video" 
-                autoPlay 
-                muted 
-                loop 
-                playsInline 
-                poster="https://assets.mixkit.co/videos/4809/4809-thumb-720-0.jpg"
-              >
-                <source src="/videos/zerolt-welcome.mp4" type="video/mp4" />
-                <source src="https://assets.mixkit.co/videos/4809/4809-720.mp4" type="video/mp4" />
-              </video>
-              <div className="hero-video-card-badge">
-                <span className="live-dot-pulse"></span> Welcome to Zerolt
+            <TiltCard className="hero-welcome-card">
+              <div>
+                <div className="hero-welcome-badge">
+                  <span className="live-dot-pulse"></span> Meet Your Zerolt Team
+                </div>
               </div>
-              <div className="hero-main-card-glow"></div>
-              <div className="hero-main-card-caption">
-                <h4>Zerolt Technical Studio</h4>
-                <p>Professional freelance engineers collaborating directly with you.</p>
+              <div className="hero-welcome-body">
+                <div className="hero-welcome-icon">👋</div>
+                <h4>Say Hello to Your Builders</h4>
+                <p>Zero corporate bureaucracy. Directly collaborate with our elite tech & design collective on WhatsApp & Slack.</p>
+                <div className="hero-welcome-tags">
+                  <span><i className="fa-solid fa-code"></i> Full-Stack</span>
+                  <span><i className="fa-solid fa-wand-magic-sparkles"></i> UI/UX</span>
+                  <span><i className="fa-solid fa-bolt"></i> n8n Automation</span>
+                </div>
               </div>
             </TiltCard>
 
@@ -459,245 +455,166 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 2-Column Sticky Image-Like Showcase */}
-          <div className="saas-sticky-layout">
-            {/* Pinned Sticky Left Column: Interactive Browser Dashboard */}
-            <div className="saas-sticky-col">
-              <div className="saas-sticky-browser">
-                <div className="saas-browser-topbar">
-                  <div className="saas-traffic-dots">
-                    <span></span><span></span><span></span>
-                  </div>
-                  {/* Interactive SaaS Platform Screen Tabs */}
-                  <div className="saas-tab-switcher">
-                    <button 
-                      className={`saas-tab-btn ${saasTab === 'workflows' ? 'active' : ''}`}
-                      onClick={() => setSaasTab('workflows')}
-                    >
-                      <i className="fa-solid fa-diagram-project"></i> Workflows Studio
-                    </button>
-                    <button 
-                      className={`saas-tab-btn ${saasTab === 'dashboard' ? 'active' : ''}`}
-                      onClick={() => setSaasTab('dashboard')}
-                    >
-                      <i className="fa-solid fa-chart-line"></i> Ingestion & Dashboard
-                    </button>
-                  </div>
-                  <div className="saas-browser-actions">
-                    <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i> Live Production
-                  </div>
-                </div>
-
-                <div className="saas-dashboard-viewport">
-                  <img 
-                    src={saasTab === 'workflows' ? '/images/flowdesk-workflows.png' : '/images/flowdesk-dashboard.png'} 
-                    alt={saasTab === 'workflows' ? 'FlowDesk Automation Workflows Studio' : 'FlowDesk Zerolt Marketing OS Admin Dashboard'} 
-                    className="saas-dashboard-img" 
-                    loading="lazy"
-                  />
-                </div>
+          {/* Full-Width Cinematic SaaS Showcase Window */}
+          <div className="saas-showcase-container">
+          <div className="saas-showcase-glow" aria-hidden="true"></div>
+          <div className="saas-browser-window">
+            <div className="saas-browser-topbar">
+              <div className="saas-traffic-dots">
+                <span></span><span></span><span></span>
               </div>
-
-              {/* Sticky Metrics Strip */}
-              <div className="saas-sticky-metrics">
-                <span className="saas-metric-pill"><i className="fa-solid fa-bolt"></i> 48ms API Latency</span>
-                <span className="saas-metric-pill"><i className="fa-solid fa-shield-halved"></i> 100% Data Sovereignty</span>
-                <span className="saas-metric-pill"><i className="fa-solid fa-users"></i> Unlimited Seats</span>
+              {/* Interactive SaaS Platform Screen Tabs */}
+              <div className="saas-tab-switcher">
+                <button 
+                  className={`saas-tab-btn ${saasTab === 'workflows' ? 'active' : ''}`}
+                  onClick={() => setSaasTab('workflows')}
+                >
+                  <i className="fa-solid fa-diagram-project"></i> Workflows Studio
+                </button>
+                <button 
+                  className={`saas-tab-btn ${saasTab === 'dashboard' ? 'active' : ''}`}
+                  onClick={() => setSaasTab('dashboard')}
+                >
+                  <i className="fa-solid fa-chart-line"></i> Ingestion & Dashboard
+                </button>
               </div>
-
-              {/* Production Workflow Recipes Preview (Only SaaS Platform Features) */}
-              <div className="saas-recipes-preview-card">
-                <div className="saas-recipes-header">
-                  <span><i className="fa-solid fa-wand-magic-sparkles" style={{ color: '#a78bfa' }}></i> Pre-Built Production Recipes (1-Click Launch)</span>
-                  <span className="recipes-count-badge">4 Verified Presets</span>
-                </div>
-                <div className="saas-recipes-grid">
-                  <div className="recipe-chip">
-                    <span className="recipe-chip-icon">⚡</span>
-                    <div>
-                      <strong>5-Min Speed-to-Lead</strong>
-                      <span>WhatsApp & Email Autoresponder (5 Steps)</span>
-                    </div>
-                  </div>
-                  <div className="recipe-chip">
-                    <span className="recipe-chip-icon">📅</span>
-                    <div>
-                      <strong>High-Ticket Demo Booking</strong>
-                      <span>Calendar sync & reminder sequence (5 Steps)</span>
-                    </div>
-                  </div>
-                  <div className="recipe-chip">
-                    <span className="recipe-chip-icon">🚀</span>
-                    <div>
-                      <strong>Inbound Lead Auto-Tagging</strong>
-                      <span>Rep assignment & pipeline routing (4 Steps)</span>
-                    </div>
-                  </div>
-                  <div className="recipe-chip">
-                    <span className="recipe-chip-icon">❄️</span>
-                    <div>
-                      <strong>3-Touch Re-engagement</strong>
-                      <span>Revives silent leads automatically (5 Steps)</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Secondary Live Data Pipeline Architecture Preview */}
-              <div className="saas-live-flow-preview">
-                <div className="saas-flow-header">
-                  <span><i className="fa-solid fa-diagram-project" style={{ color: '#a78bfa', marginRight: '6px' }}></i> High-Throughput Engine</span>
-                  <span style={{ color: '#10b981', display: 'flex', alignItems: 'center', gap: '5px' }}><span className="pulse-indicator"></span> 99.98% SLA</span>
-                </div>
-                <div className="saas-flow-nodes">
-                  <div className="saas-node-item">
-                    <i className="fa-solid fa-bolt" style={{ color: '#38bdf8' }}></i>
-                    <span>Webhook 48ms</span>
-                  </div>
-                  <div className="saas-node-item">
-                    <i className="fa-brands fa-whatsapp" style={{ color: '#22c55e' }}></i>
-                    <span>WhatsApp Cloud</span>
-                  </div>
-                  <div className="saas-node-item">
-                    <i className="fa-solid fa-database" style={{ color: '#a855f7' }}></i>
-                    <span>MySQL Auto-Sync</span>
-                  </div>
-                </div>
+              <div className="saas-browser-actions">
+                <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i> Live Production
               </div>
             </div>
 
-            {/* Scrolling Right Column: Architectural Narrative Cards */}
-            <div className="saas-scroll-col">
-              {/* Step 1 */}
-              <TiltCard className="saas-step-card" style={{ background: 'rgba(16, 18, 32, 0.92)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '26px 28px', boxShadow: '0 12px 32px rgba(0,0,0,0.35)' }}>
-                <div className="saas-step-header" style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '14px', width: '100%' }}>
-                  <div className="saas-step-icon" style={{ width: '48px', height: '48px', minWidth: '48px', maxWidth: '48px', borderRadius: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '1.25rem', background: 'rgba(94, 67, 243, 0.2)', color: '#a78bfa' }}>
-                    <i className="fa-solid fa-code"></i>
-                  </div>
-                  <div>
-                    <span className="saas-step-number" style={{ fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#a78bfa', display: 'block', marginBottom: '3px' }}>Step 01</span>
-                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.3 }}>1-Line HTML Lead Ingestion</h3>
-                  </div>
-                </div>
-                <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Embed our lightweight form snippet into Webflow, Shopify, WordPress, or custom HTML in 30 seconds. Ingest leads directly into your dedicated database with zero Zapier subscription costs.</p>
-                
-                {/* Mini Code Snippet Widget */}
-                <div className="step-preview-snippet">
-                  <span>&lt;script src="https://flowdesk.zerolt.com/embed.js"&gt;&lt;/script&gt;</span>
-                  <i className="fa-solid fa-copy" style={{ color: '#94a3b8' }}></i>
-                </div>
-
-                <div className="saas-tags-list" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Zero-Dependency JS</span>
-                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Direct MySQL Sync</span>
-                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>OCR Document Parser</span>
-                </div>
-              </TiltCard>
-
-              {/* Step 2 */}
-              <TiltCard className="saas-step-card" style={{ background: 'rgba(16, 18, 32, 0.92)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '26px 28px', boxShadow: '0 12px 32px rgba(0,0,0,0.35)' }}>
-                <div className="saas-step-header" style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '14px', width: '100%' }}>
-                  <div className="saas-step-icon" style={{ width: '48px', height: '48px', minWidth: '48px', maxWidth: '48px', borderRadius: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '1.25rem', background: 'rgba(16, 185, 129, 0.2)', color: '#34d399' }}>
-                    <i className="fa-solid fa-paper-plane"></i>
-                  </div>
-                  <div>
-                    <span className="saas-step-number" style={{ fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#34d399', display: 'block', marginBottom: '3px' }}>Step 02</span>
-                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.3 }}>Sub-60s WhatsApp & SMTP Workflows</h3>
-                  </div>
-                </div>
-                <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Speed to lead decides deals. The moment a lead captures, FlowDesk automatically triggers official WhatsApp Cloud API messages and scheduled email drip campaigns through your verified credentials.</p>
-                
-                {/* WhatsApp Live Mockup Widget */}
-                <div className="step-whatsapp-preview">
-                  <i className="fa-brands fa-whatsapp" style={{ fontSize: '1.6rem', color: '#22c55e', flexShrink: 0 }}></i>
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '0.85rem', color: '#ffffff' }}>"Hi Alex! Your Zerolt demo is ready."</strong>
-                    <span style={{ fontSize: '0.75rem', color: '#86efac' }}>Delivered in 2.4s • Read receipt verified</span>
-                  </div>
-                </div>
-
-                <div className="saas-tags-list" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>WhatsApp Cloud API</span>
-                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Verified SMTP Drip</span>
-                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>&lt;60s Response</span>
-                </div>
-              </TiltCard>
-
-              {/* Step 3 */}
-              <TiltCard className="saas-step-card" style={{ background: 'rgba(16, 18, 32, 0.92)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '26px 28px', boxShadow: '0 12px 32px rgba(0,0,0,0.35)' }}>
-                <div className="saas-step-header" style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '14px', width: '100%' }}>
-                  <div className="saas-step-icon" style={{ width: '48px', height: '48px', minWidth: '48px', maxWidth: '48px', borderRadius: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '1.25rem', background: 'rgba(245, 158, 11, 0.2)', color: '#fbbf24' }}>
-                    <i className="fa-solid fa-users-gear"></i>
-                  </div>
-                  <div>
-                    <span className="saas-step-number" style={{ fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#fbbf24', display: 'block', marginBottom: '3px' }}>Step 03</span>
-                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.3 }}>Team & Pod Governance Matrix</h3>
-                  </div>
-                </div>
-                <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Structure your sales reps into regional or departmental pods. Granular role-based permissions ensure security while pod managers track follow-up performance in real-time.</p>
-                
-                {/* Pod Matrix Widget */}
-                <div className="step-pod-preview">
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-network-wired" style={{ fontSize: '1.2rem', color: '#fbbf24' }}></i>
-                    <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>Agency Alpha Pod: 14 Active Reps</span>
-                  </div>
-                  <span style={{ background: 'rgba(245,158,11,0.2)', padding: '3px 8px', borderRadius: '6px', fontSize: '0.72rem', fontWeight: 700 }}>Role: Admin</span>
-                </div>
-
-                <div className="saas-tags-list" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Unlimited Team Seats</span>
-                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>Role Hierarchy</span>
-                  <span className="saas-tag" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', padding: '5px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#e2e8f0', fontWeight: 600 }}>1-Click Outreach Queue</span>
-                </div>
-              </TiltCard>
-
-              {/* Step 4: Pricing Advantage */}
-              <TiltCard className="saas-step-card saas-pricing-step" style={{ background: 'linear-gradient(135deg, rgba(32, 24, 66, 0.95) 0%, rgba(15, 16, 28, 0.98) 100%)', border: '1px solid rgba(167, 139, 250, 0.4)', borderRadius: '20px', padding: '28px', boxShadow: '0 16px 40px rgba(94, 67, 243, 0.22)' }}>
-                <div className="saas-step-header" style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '14px', width: '100%' }}>
-                  <div className="saas-step-icon" style={{ width: '48px', height: '48px', minWidth: '48px', maxWidth: '48px', borderRadius: '14px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '1.25rem', background: 'rgba(254, 240, 138, 0.2)', color: '#fef08a' }}>
-                    <i className="fa-solid fa-handshake"></i>
-                  </div>
-                  <div>
-                    <span className="saas-step-number" style={{ fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#fef08a', display: 'block', marginBottom: '3px' }}>Unfair Advantage</span>
-                    <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.3 }}>Why Pay $297+/mo For Corporate CRMs?</h3>
-                  </div>
-                </div>
-                <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: 1.65, margin: '12px 0 16px' }}>Traditional corporate platforms penalize your growth with per-seat taxes and contact volume fees. We provide full marketing automation at honest freelancer rates.</p>
-
-                <div className="saas-pricing-split">
-                  <div className="price-card-competitor">
-                    <div className="price-title">Other Platforms</div>
-                    <div className="price-amount">$297 - $497</div>
-                    <div style={{ fontSize: '0.74rem', color: '#f87171' }}>/month + per-seat taxes</div>
-                  </div>
-                  <div className="price-card-flowdesk">
-                    <div className="price-title">FlowDesk by Zerolt</div>
-                    <div className="price-amount">$49</div>
-                    <div className="price-sub">/mo flat or FREE with custom builds</div>
-                  </div>
-                </div>
-
-                <div className="saas-cta-actions">
-                  <button 
-                    type="button" 
-                    onClick={() => setIsModalOpen(true)} 
-                    className="btn btn-primary" 
-                    style={{ fontSize: '0.95rem', padding: '12px 24px' }}
-                  >
-                    Claim Free Consultation <span className="btn-pill-icon"><i className="fa-solid fa-arrow-right"></i></span>
-                  </button>
-                  <Link 
-                    href="/services" 
-                    className="btn btn-outline" 
-                    style={{ background: 'rgba(255,255,255,0.06)', color: 'white', borderColor: 'rgba(255,255,255,0.2)', fontSize: '0.95rem', padding: '12px 20px' }}
-                  >
-                    View Capabilities
-                  </Link>
-                </div>
-              </TiltCard>
+            <div className="saas-dashboard-viewport">
+              <img 
+                src={saasTab === 'workflows' ? '/images/flowdesk-workflows.png' : '/images/flowdesk-dashboard.png'} 
+                alt={saasTab === 'workflows' ? 'FlowDesk Automation Workflows Studio' : 'FlowDesk Zerolt Marketing OS Admin Dashboard'} 
+                className="saas-dashboard-img" 
+                loading="lazy"
+              />
             </div>
           </div>
+
+          {/* Central Live Metrics Strip Underneath Window */}
+          <div className="saas-central-metrics">
+            <span className="saas-central-pill"><i className="fa-solid fa-bolt"></i> 48ms API Latency</span>
+            <span className="saas-central-pill"><i className="fa-solid fa-shield-halved"></i> 100% Data Sovereignty</span>
+            <span className="saas-central-pill"><i className="fa-solid fa-users"></i> Unlimited Seats</span>
+            <span className="saas-central-pill"><i className="fa-brands fa-whatsapp" style={{ color: '#22c55e' }}></i> WhatsApp Cloud Native</span>
+          </div>
+        </div>
+
+        {/* Modern Bento Feature Grid */}
+        <div className="saas-bento-grid">
+          {/* Bento Card 1: 1-Line HTML Lead Ingestion */}
+          <TiltCard className="saas-bento-card">
+            <div>
+              <div className="saas-bento-icon" style={{ background: 'rgba(94, 67, 243, 0.2)', color: '#a78bfa' }}>
+                <i className="fa-solid fa-code"></i>
+              </div>
+              <span className="saas-bento-tag" style={{ color: '#a78bfa' }}>Step 01 • Instant Ingest</span>
+              <h3>1-Line HTML Lead Ingestion</h3>
+              <p>Embed our zero-dependency form snippet into Webflow, Shopify, WordPress, or custom HTML in 30 seconds with direct MySQL pipeline auto-sync.</p>
+              
+              <div className="bento-code-box">
+                <span>&lt;script src="https://flowdesk.zerolt.com/embed.js"&gt;&lt;/script&gt;</span>
+                <i className="fa-solid fa-copy" style={{ color: '#94a3b8', cursor: 'pointer' }}></i>
+              </div>
+            </div>
+            <div className="saas-bento-tags">
+              <span>Zero-Dependency JS</span>
+              <span>Direct MySQL Sync</span>
+              <span>OCR Parser</span>
+            </div>
+          </TiltCard>
+
+          {/* Bento Card 2: Sub-60s WhatsApp Cloud Speed-to-Lead */}
+          <TiltCard className="saas-bento-card">
+            <div>
+              <div className="saas-bento-icon" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399' }}>
+                <i className="fa-solid fa-paper-plane"></i>
+              </div>
+              <span className="saas-bento-tag" style={{ color: '#34d399' }}>Step 02 • Sub-60s SLA</span>
+              <h3>WhatsApp & SMTP Workflows</h3>
+              <p>Speed to lead decides deals. The moment a lead captures, FlowDesk automatically triggers official WhatsApp Cloud API messages and scheduled email drip sequences.</p>
+              
+              <div className="bento-whatsapp-bubble">
+                <i className="fa-brands fa-whatsapp"></i>
+                <div>
+                  <strong>"Hi Alex! Your Zerolt demo is ready."</strong>
+                  <span>Delivered in 2.1s • Verified Read</span>
+                </div>
+              </div>
+            </div>
+            <div className="saas-bento-tags">
+              <span>WhatsApp Cloud API</span>
+              <span>Verified SMTP Drip</span>
+              <span>&lt;60s Response</span>
+            </div>
+          </TiltCard>
+
+          {/* Bento Card 3: 4 Production Recipes Included */}
+          <TiltCard className="saas-bento-card">
+            <div>
+              <div className="saas-bento-icon" style={{ background: 'rgba(245, 158, 11, 0.2)', color: '#fbbf24' }}>
+                <i className="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <span className="saas-bento-tag" style={{ color: '#fbbf24' }}>Step 03 • 1-Click Launch</span>
+              <h3>Production Workflow Recipes</h3>
+              <p>Pre-configured, high-converting automation workflows ready to launch on day one with full multi-branch logic.</p>
+              
+              <div className="bento-recipes-mini">
+                <div className="bento-recipe-pill"><span>⚡</span> 5-Min Speed-to-Lead</div>
+                <div className="bento-recipe-pill"><span>📅</span> Demo Booking</div>
+                <div className="bento-recipe-pill"><span>🚀</span> Lead Auto-Tagging</div>
+                <div className="bento-recipe-pill"><span>❄️</span> 3-Touch Re-engage</div>
+              </div>
+            </div>
+            <div className="saas-bento-tags">
+              <span>Multi-Branch Logic</span>
+              <span>CRM Auto-Sync</span>
+              <span>Webhook Ready</span>
+            </div>
+          </TiltCard>
+
+          {/* Row 2 Full-Width Bento Banner: Unfair Pricing Advantage */}
+          <div className="saas-bento-banner">
+            <div className="saas-banner-info">
+              <span className="saas-bento-tag" style={{ color: '#fef08a' }}>Unfair Advantage • Zero Per-Seat Markups</span>
+              <h3>Why Pay $297+/mo For Corporate CRMs?</h3>
+              <p>Traditional corporate platforms penalize your growth with per-seat taxes and contact volume fees. We provide full marketing automation at honest freelancer rates.</p>
+            </div>
+
+            <div className="saas-bento-pricing-grid">
+              <div className="price-card-competitor">
+                <div className="price-title">Other Platforms</div>
+                <div className="price-amount">$297 - $497</div>
+                <div style={{ fontSize: '0.74rem', color: '#f87171' }}>/month + per-seat taxes</div>
+              </div>
+              <div className="price-card-flowdesk">
+                <div className="price-title">FlowDesk by Zerolt</div>
+                <div className="price-amount">$49</div>
+                <div className="price-sub">/mo flat or FREE with custom builds</div>
+              </div>
+            </div>
+
+            <div className="saas-banner-actions">
+              <button 
+                type="button" 
+                onClick={() => setIsModalOpen(true)} 
+                className="btn btn-primary" 
+                style={{ fontSize: '0.95rem', padding: '12px 24px' }}
+              >
+                Claim Free Consultation <span className="btn-pill-icon"><i className="fa-solid fa-arrow-right"></i></span>
+              </button>
+              <Link 
+                href="/services" 
+                className="btn btn-outline" 
+                style={{ background: 'rgba(255,255,255,0.06)', color: 'white', borderColor: 'rgba(255,255,255,0.2)', fontSize: '0.95rem', padding: '12px 20px', textAlign: 'center' }}
+              >
+                Explore Capabilities
+              </Link>
+            </div>
+          </div>
+        </div>
         </div>
       </section>
 
