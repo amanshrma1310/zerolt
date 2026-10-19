@@ -46,8 +46,8 @@
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-  <!-- Core Stylesheet with Cache-Buster v12.0 -->
-  <link rel="stylesheet" href="css/style.css?v=12.0">
+  <!-- Core Stylesheet with Cache-Buster v13.0 -->
+  <link rel="stylesheet" href="css/style.css?v=13.0">
 
   <!-- Critical Inline Styles to Guarantee 100% Reliable Hero & FlowDesk Display Against Any Caching -->
   <style id="critical-hero-flowdesk">
@@ -66,9 +66,11 @@
     .site-header .logo-text {
       color: #ffffff !important;
     }
-    .site-header .nav-menu {
-      background: rgba(255, 255, 255, 0.07) !important;
-      border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    @media (min-width: 993px) {
+      .site-header .nav-menu {
+        background: rgba(255, 255, 255, 0.07) !important;
+        border: 1px solid rgba(255, 255, 255, 0.14) !important;
+      }
     }
     .site-header .nav-link {
       color: #cbd5e1 !important;
@@ -84,8 +86,97 @@
       color: #ffffff !important;
       border: 1px solid rgba(167, 139, 250, 0.4) !important;
     }
+    .mobile-nav-toggle {
+      width: 42px !important;
+      height: 42px !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      border-radius: 10px !important;
+      padding: 8px !important;
+      z-index: 1002 !important;
+    }
     .mobile-nav-toggle span {
       background: #ffffff !important;
+    }
+    @media (max-width: 992px) {
+      .mobile-nav-toggle {
+        display: flex !important;
+      }
+      .site-header .nav-menu {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        background: #090a14 !important;
+        background: linear-gradient(180deg, #090a14 0%, #111322 100%) !important;
+        padding: 90px 24px 35px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        z-index: 1001 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: translateY(-12px) !important;
+        transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .site-header .nav-menu.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
+        display: flex !important;
+      }
+      .site-header .nav-menu li {
+        width: 100% !important;
+        list-style: none !important;
+      }
+      .site-header .nav-menu .nav-link {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 13px 18px !important;
+        border-radius: 12px !important;
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        color: #e2e8f0 !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      }
+      .site-header .nav-menu .nav-link:hover,
+      .site-header .nav-menu .nav-link:active,
+      .site-header .nav-menu .nav-link.active {
+        background: rgba(94, 67, 243, 0.3) !important;
+        border-color: rgba(167, 139, 250, 0.45) !important;
+        color: #ffffff !important;
+      }
+      .mobile-menu-drawer-footer {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin-top: 14px !important;
+        padding-top: 16px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        width: 100% !important;
+      }
+      .mobile-menu-email-link {
+        color: #a78bfa !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        font-size: 0.94rem !important;
+        font-weight: 600 !important;
+        padding: 8px !important;
+        text-align: center !important;
+      }
     }
     /* Hero Banner Critical */
     .hero-section {
@@ -211,6 +302,14 @@
           </li>
           <li><a href="/#work" class="nav-link">Work</a></li>
           <li><a href="/contact" class="nav-link">Contact</a></li>
+          <li class="mobile-menu-drawer-footer">
+            <a href="/contact" class="btn btn-primary" style="width:100%; padding:13px 20px; font-size:0.96rem; text-align:center;">
+              Free Consultation <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
+            </a>
+            <a href="mailto:zerolthelp@gmail.com" class="mobile-menu-email-link">
+              <i class="fa-solid fa-envelope"></i> zerolthelp@gmail.com
+            </a>
+          </li>
         </ul>
 
         <!-- Action CTA -->
@@ -897,6 +996,11 @@
             <a href="#" style="color:#9ba1b0;"><i class="fa-brands fa-linkedin"></i></a>
             <a href="#" style="color:#9ba1b0;"><i class="fa-brands fa-github"></i></a>
             <a href="#" style="color:#9ba1b0;"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+          <div style="margin-top:14px; font-size:0.92rem;">
+            <a href="mailto:zerolthelp@gmail.com" style="color:var(--primary); display:inline-flex; align-items:center; gap:8px; font-weight:600;">
+              <i class="fa-solid fa-envelope"></i> zerolthelp@gmail.com
+            </a>
           </div>
         </div>
 

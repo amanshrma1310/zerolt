@@ -347,10 +347,10 @@ export default function ContactPage() {
                 <div>
                   <strong style={{ display: 'block', fontSize: '0.95rem' }}>Inquiries & Proposals</strong>
                   <a
-                    href="mailto:hello@zerolt.com"
+                    href="mailto:zerolthelp@gmail.com"
                     style={{ color: 'var(--primary)', fontSize: '0.92rem', fontWeight: 600 }}
                   >
-                    hello@zerolt.com
+                    zerolthelp@gmail.com
                   </a>
                 </div>
               </div>

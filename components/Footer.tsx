@@ -40,6 +40,11 @@ export default function Footer() {
               <a href="https://linkedin.com" target="_blank" rel="noreferrer" style={{ color: '#9ba1b0' }} aria-label="LinkedIn"><i className="fa-brands fa-linkedin"></i></a>
               <a href="https://github.com/amanshrma1310/zerolt" target="_blank" rel="noreferrer" style={{ color: '#9ba1b0' }} aria-label="GitHub"><i className="fa-brands fa-github"></i></a>
             </div>
+            <div style={{ marginTop: '14px', fontSize: '0.92rem' }}>
+              <a href="mailto:zerolthelp@gmail.com" style={{ color: '#a78bfa', display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
+                <i className="fa-solid fa-envelope"></i> zerolthelp@gmail.com
+              </a>
+            </div>
           </div>
 
           <div className="footer-col">

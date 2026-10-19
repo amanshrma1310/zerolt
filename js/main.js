@@ -35,7 +35,13 @@ document.addEventListener('DOMContentLoaded', function () {
       e.stopPropagation();
       const isActive = navMenu.classList.toggle('active');
       mobileToggle.classList.toggle('open', isActive);
+      mobileToggle.classList.toggle('active', isActive);
       mobileToggle.setAttribute('aria-expanded', isActive);
+      if (isActive) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
     });
 
     // Close mobile menu when clicking outside
@@ -43,16 +49,20 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
         navMenu.classList.remove('active');
         mobileToggle.classList.remove('open');
+        mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       }
     });
 
     // Close menu when clicking any nav link
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
+    navMenu.querySelectorAll('.nav-link, a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         mobileToggle.classList.remove('open');
+        mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       });
     });
   }
@@ -79,69 +89,37 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ==========================================================================
-  // 4. PURE NATIVE 3D CARD TILT (DESKTOP & MOBILE TOUCH ENABLED)
-  // Real-time perspective transforms on hover and touch drag
+  // 4. PURE NATIVE 3D CARD TILT (DESKTOP MOUSE ONLY TO PREVENT MOBILE CLIPPING)
   // ==========================================================================
-  const tiltElements = document.querySelectorAll('[data-tilt]');
-  tiltElements.forEach(element => {
-    element.style.transition = 'transform 0.15s ease-out, box-shadow 0.25s ease';
-
-    // Desktop Mouse Move
-    element.addEventListener('mousemove', function (e) {
-      const rect = element.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * -8;
-      const rotateY = ((x - centerX) / centerX) * 8;
-
-      element.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
-    });
-
-    element.addEventListener('mouseleave', function () {
-      element.style.transition = 'transform 0.4s ease, box-shadow 0.3s ease';
-      element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-    });
-
-    element.addEventListener('mouseenter', function () {
+  const hasMouseHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (hasMouseHover) {
+    const tiltElements = document.querySelectorAll('[data-tilt]');
+    tiltElements.forEach(element => {
       element.style.transition = 'transform 0.15s ease-out, box-shadow 0.25s ease';
-    });
 
-    // Mobile Touch Move - Dynamic 3D interactive tilt under user touch
-    element.addEventListener('touchstart', function () {
-      element.style.transition = 'transform 0.1s ease-out';
-    }, { passive: true });
-
-    element.addEventListener('touchmove', function (e) {
-      if (e.touches && e.touches[0]) {
-        const touch = e.touches[0];
+      element.addEventListener('mousemove', function (e) {
         const rect = element.getBoundingClientRect();
-        if (
-          touch.clientX >= rect.left &&
-          touch.clientX <= rect.right &&
-          touch.clientY >= rect.top &&
-          touch.clientY <= rect.bottom
-        ) {
-          const x = touch.clientX - rect.left;
-          const y = touch.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
 
-          const rotateX = ((y - centerY) / centerY) * -12;
-          const rotateY = ((x - centerX) / centerX) * 12;
+        const rotateX = ((y - centerY) / centerY) * -7;
+        const rotateY = ((x - centerX) / centerX) * 7;
 
-          element.style.transform = `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
-        }
-      }
-    }, { passive: true });
+        element.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+      });
 
-    element.addEventListener('touchend', function () {
-      element.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
-      element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    }, { passive: true });
-  });
+      element.addEventListener('mouseleave', function () {
+        element.style.transition = 'transform 0.4s ease, box-shadow 0.3s ease';
+        element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+      });
+
+      element.addEventListener('mouseenter', function () {
+        element.style.transition = 'transform 0.15s ease-out, box-shadow 0.25s ease';
+      });
+    });
+  }
 
   // ==========================================================================
   // 5. HOMEPAGE CAPABILITIES ACCORDION SWITCHER
