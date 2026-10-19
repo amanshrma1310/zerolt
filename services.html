@@ -37,7 +37,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Comfortaa:wght@600;700&family=Quicksand:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="css/style.css?v=13.0">
+  <link rel="stylesheet" href="css/style.css?v=14.0">
 
   <style>
     /* Logo Typography Matching Reference Screenshot */
@@ -132,7 +132,7 @@
     }
 
     .service-showcase-row {
-      display: grid !important;
+      display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 55px;
@@ -194,7 +194,7 @@
 
     /* Bullet-Free Deliverables Grid */
     .deliverables-grid {
-      display: grid !important;
+      display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin: 18px 0 28px;
@@ -335,27 +335,89 @@
 
     @media (max-width: 860px) {
       .service-showcase-row, .service-showcase-row.reversed {
-        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
         padding: 24px 18px !important;
-        gap: 24px !important;
+        gap: 20px !important;
+        width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
         overflow: hidden !important;
+        min-width: 0 !important;
       }
-      .service-showcase-row.reversed .mockup-side { order: 2; }
-      .service-showcase-row.reversed .content-side { order: 1; }
-      .deliverables-grid { grid-template-columns: 1fr !important; }
-      .page-hero h1 { font-size: 2.3rem; }
-      .pricing-advantage-banner { padding: 22px 18px; }
-      .browser-mockup-frame { max-width: 100% !important; box-sizing: border-box !important; }
+      .service-showcase-row.reversed .mockup-side { order: 2 !important; }
+      .service-showcase-row.reversed .content-side { order: 1 !important; }
+      .content-side,
+      .mockup-side,
+      .service-showcase-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+      }
+      .deliverables-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+      }
+      .deliverable-item {
+        min-width: 0 !important;
+        word-break: break-word !important;
+      }
+      .service-showcase-content h2 {
+        font-size: 1.55rem !important;
+        line-height: 1.25 !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      .service-showcase-content p {
+        font-size: 0.95rem !important;
+        line-height: 1.55 !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      .browser-mockup-frame {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+      }
+      .pricing-advantage-banner {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 24px 18px !important;
+        gap: 18px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .page-hero h1 { font-size: 2.1rem !important; }
     }
 
     @media (max-width: 480px) {
-      .page-hero { padding: 110px 0 35px; }
-      .page-hero h1 { font-size: 1.95rem; }
-      .service-showcase-content h2 { font-size: 1.5rem; }
+      .page-hero { padding: 110px 14px 35px !important; }
+      .page-hero h1 { font-size: 1.85rem !important; }
+      .service-showcase-row, .service-showcase-row.reversed {
+        padding: 20px 14px !important;
+        border-radius: 18px !important;
+      }
+      .service-showcase-content h2 {
+        font-size: 1.35rem !important;
+        line-height: 1.25 !important;
+      }
+      .service-tech-pill {
+        font-size: 0.72rem !important;
+        padding: 4px 10px !important;
+      }
       .filter-btn { padding: 7px 14px; font-size: 0.8rem; }
       .browser-live-overlay { font-size: 0.72rem; padding: 8px 12px; }
+      .browser-content { height: 210px !important; }
+      .pricing-advantage-banner { padding: 20px 14px !important; }
+      .pricing-advantage-text h3 { font-size: 1.25rem !important; }
     }
   </style>
 </head>
@@ -512,7 +574,7 @@
               </div>
             </div>
             <div class="browser-content">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Webflow Enterprise SaaS Platform" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Webflow Enterprise SaaS Platform" width="600" height="380" loading="lazy" decoding="async">
               <div class="browser-live-overlay">
                 <span class="live-metrics-pill" style="color:#10b981;">
                   <span class="pulse-indicator"></span> Live Webflow Build
@@ -536,7 +598,7 @@
               </div>
             </div>
             <div class="browser-content">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80" alt="GoHighLevel Pipeline Architecture" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80" alt="GoHighLevel Pipeline Architecture" width="600" height="380" loading="lazy" decoding="async">
               <div class="browser-live-overlay">
                 <span class="live-metrics-pill" style="color:#60a5fa;">
                   <i class="fa-solid fa-diagram-project"></i> GHL Pipeline Active
@@ -606,7 +668,7 @@
               </div>
             </div>
             <div class="browser-content">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="n8n Enterprise Automation Canvas" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="n8n Enterprise Automation Canvas" width="600" height="380" loading="lazy" decoding="async">
               <div class="browser-live-overlay">
                 <span class="live-metrics-pill" style="color:#ff7a59;">
                   <i class="fa-solid fa-bolt"></i> n8n Cluster: 14 Nodes
@@ -630,7 +692,7 @@
               </div>
             </div>
             <div class="browser-content">
-              <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=900&q=80" alt="Shopify Plus E-Commerce Experience" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=900&q=80" alt="Shopify Plus E-Commerce Experience" width="600" height="380" loading="lazy" decoding="async">
               <div class="browser-live-overlay">
                 <span class="live-metrics-pill" style="color:#34d399;">
                   <i class="fa-brands fa-shopify"></i> Shopify 2.0 Storefront
@@ -700,7 +762,7 @@
               </div>
             </div>
             <div class="browser-content">
-              <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=900&q=80" alt="Zoho CRM Enterprise Integration" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=900&q=80" alt="Zoho CRM Enterprise Integration" width="600" height="380" loading="lazy" decoding="async">
               <div class="browser-live-overlay">
                 <span class="live-metrics-pill" style="color:#fb7185;">
                   <i class="fa-solid fa-database"></i> Zoho Two-Way Sync
@@ -724,7 +786,7 @@
               </div>
             </div>
             <div class="browser-content">
-              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80" alt="Lovable AI App Architecture" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80" alt="Lovable AI App Architecture" width="600" height="380" loading="lazy" decoding="async">
               <div class="browser-live-overlay">
                 <span class="live-metrics-pill" style="color:#ec4899;">
                   <i class="fa-solid fa-wand-magic-sparkles"></i> Lovable AI MVP
@@ -839,10 +901,13 @@
         <div class="footer-col footer-newsletter">
           <h4>Stay Ahead</h4>
           <p>Receive bi-weekly playbooks on marketing automation and web design.</p>
-          <form class="footer-input-wrap" onsubmit="event.preventDefault(); alert('Subscribed to Zerolt Insights!');">
+          <form class="footer-input-wrap newsletter-form" onsubmit="window.handleNewsletterSubmit(event, this)">
             <input type="email" placeholder="Enter your email" required>
-            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+            <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
           </form>
+          <div class="newsletter-success" style="display:none; color:#10b981; font-weight:600; font-size:0.92rem; margin-top:10px; align-items:center; gap:8px;">
+            <i class="fa-solid fa-circle-check"></i> Subscribed to Zerolt Insights!
+          </div>
         </div>
       </div>
       <div class="footer-bottom">

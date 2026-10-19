@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Comfortaa:wght@600;700&family=Quicksand:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="css/style.css?v=13.0">
+  <link rel="stylesheet" href="css/style.css?v=14.0">
 
   <style>
     /* Logo Typography Matching Reference Screenshot */
@@ -454,10 +454,13 @@
         <div class="footer-col footer-newsletter">
           <h4>Stay Ahead</h4>
           <p>Receive bi-weekly playbooks on marketing automation and web design.</p>
-          <form class="footer-input-wrap" onsubmit="event.preventDefault(); alert('Subscribed to Zerolt Insights!');">
+          <form class="footer-input-wrap newsletter-form" onsubmit="window.handleNewsletterSubmit(event, this)">
             <input type="email" placeholder="Enter your email" required>
-            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+            <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
           </form>
+          <div class="newsletter-success" style="display:none; color:#10b981; font-weight:600; font-size:0.92rem; margin-top:10px; align-items:center; gap:8px;">
+            <i class="fa-solid fa-circle-check"></i> Subscribed to Zerolt Insights!
+          </div>
         </div>
       </div>
       <div class="footer-bottom">

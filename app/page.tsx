@@ -101,11 +101,13 @@ export default function HomePage() {
             muted 
             loop 
             playsInline 
+            preload="metadata"
             poster="/images/zerolt-team-wave-poster.png"
+            width={1920}
+            height={1080}
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center bottom', opacity: 0.92, filter: 'hue-rotate(150deg) saturate(1.25) contrast(1.12)' }}
           >
             <source src="/videos/zerolt-team-wave-opt.mp4" type="video/mp4" />
-            <source src="/videos/zerolt-team-wave.mp4" type="video/mp4" />
           </video>
           <div className="hero-video-overlay" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 32%, rgba(94, 67, 243, 0.48) 0%, rgba(13, 14, 28, 0.82) 65%, #090a14 100%), linear-gradient(180deg, rgba(13, 14, 28, 0.85) 0%, rgba(94, 67, 243, 0.28) 50%, rgba(9, 10, 20, 0.98) 100%)', pointerEvents: 'none' }}></div>
         </div>
@@ -271,7 +273,10 @@ export default function HomePage() {
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
                 alt="Zerolt Collaboration Team" 
+                width={800}
+                height={500}
                 loading="lazy" 
+                decoding="async"
               />
             </TiltCard>
 
@@ -431,7 +436,10 @@ export default function HomePage() {
                 src={saasTab === 'workflows' ? '/images/flowdesk-workflows.png' : '/images/flowdesk-dashboard.png'} 
                 alt={saasTab === 'workflows' ? 'FlowDesk Automation Workflows Studio' : 'FlowDesk Zerolt Marketing OS Admin Dashboard'} 
                 className="saas-dashboard-img" 
+                width={960}
+                height={560}
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -590,7 +598,7 @@ export default function HomePage() {
             <TiltCard className="project-card">
               <div className="project-thumbnail">
                 <span className="project-pill-category">Webflow & GoHighLevel</span>
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="FinTech SaaS Growth Infrastructure" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="FinTech SaaS Growth Infrastructure" width={800} height={500} loading="lazy" decoding="async" />
               </div>
               <div className="project-info">
                 <h3>FinTech SaaS Growth Infrastructure</h3>
@@ -607,7 +615,7 @@ export default function HomePage() {
             <TiltCard className="project-card">
               <div className="project-thumbnail">
                 <span className="project-pill-category">Shopify Plus & n8n</span>
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Autonomous E-Commerce Supply Pipeline" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Autonomous E-Commerce Supply Pipeline" width={800} height={500} loading="lazy" decoding="async" />
               </div>
               <div className="project-info">
                 <h3>Autonomous E-Commerce Supply Pipeline</h3>
@@ -624,7 +632,7 @@ export default function HomePage() {
             <TiltCard className="project-card">
               <div className="project-thumbnail">
                 <span className="project-pill-category">Lovable AI & Supabase</span>
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="AI Healthcare Patient Portal" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="AI Healthcare Patient Portal" width={800} height={500} loading="lazy" decoding="async" />
               </div>
               <div className="project-info">
                 <h3>AI-Powered Customer Portal & Booking Engine</h3>
@@ -641,7 +649,7 @@ export default function HomePage() {
             <TiltCard className="project-card">
               <div className="project-thumbnail">
                 <span className="project-pill-category">WordPress & Zoho CRM</span>
-                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Enterprise Global Consulting Platform" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Enterprise Global Consulting Platform" width={800} height={500} loading="lazy" decoding="async" />
               </div>
               <div className="project-info">
                 <h3>Enterprise Global Consulting Platform</h3>
@@ -672,7 +680,7 @@ export default function HomePage() {
             {/* Founder: Aman */}
             <TiltCard className="team-card">
               <div className="team-photo-wrap">
-                <img src="/images/aman-founder.jpg" alt="Aman — Founder & Lead Systems Architect" loading="lazy" />
+                <img src="/images/aman-founder.jpg" alt="Aman — Founder & Lead Systems Architect" width={400} height={400} loading="lazy" decoding="async" />
               </div>
               <div className="team-details">
                 <h4>Aman</h4>
@@ -684,7 +692,7 @@ export default function HomePage() {
             {/* Co-Founder: Ankush */}
             <TiltCard className="team-card">
               <div className="team-photo-wrap">
-                <img src="/images/ankush-co-founder.jpg" alt="Ankush — Co-Founder & Full-Stack Automation Lead" loading="lazy" />
+                <img src="/images/ankush-co-founder.jpg" alt="Ankush — Co-Founder & Full-Stack Automation Lead" width={400} height={400} loading="lazy" decoding="async" />
               </div>
               <div className="team-details">
                 <h4>Ankush</h4>
@@ -696,7 +704,7 @@ export default function HomePage() {
             {/* CEO: Neha */}
             <TiltCard className="team-card">
               <div className="team-photo-wrap">
-                <img src="/images/neha-ceo.jpg" alt="Neha — CEO & Head of Digital Product" loading="lazy" />
+                <img src="/images/neha-ceo.jpg" alt="Neha — CEO & Head of Digital Product" width={400} height={400} loading="lazy" decoding="async" />
               </div>
               <div className="team-details">
                 <h4>Neha</h4>

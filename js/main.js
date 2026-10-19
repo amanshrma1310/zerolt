@@ -450,4 +450,41 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  // ==========================================================================
+  // 12. INLINE NEWSLETTER SUBSCRIPTION (ELIMINATE BROWSER ALERT POPUPS)
+  // ==========================================================================
+  window.handleNewsletterSubmit = function (e, form) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (!form) return;
+    const input = form.querySelector('input[type="email"]');
+    const email = input ? input.value.trim() : '';
+    if (!email) return;
+
+    try {
+      fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      }).catch(function () {});
+    } catch (err) {}
+
+    form.style.display = 'none';
+    const nextEl = form.nextElementSibling;
+    if (nextEl && nextEl.classList.contains('newsletter-success')) {
+      nextEl.style.display = 'flex';
+    } else {
+      const msg = document.createElement('div');
+      msg.className = 'newsletter-success';
+      msg.style.cssText = 'color: #10b981; font-weight: 600; font-size: 0.92rem; margin-top: 10px; display: flex; align-items: center; gap: 8px;';
+      msg.innerHTML = '<i class="fa-solid fa-circle-check"></i> Subscribed to Zerolt Insights!';
+      form.parentNode.appendChild(msg);
+    }
+  };
+
+  document.querySelectorAll('.footer-input-wrap').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      window.handleNewsletterSubmit(e, form);
+    });
+  });
 });

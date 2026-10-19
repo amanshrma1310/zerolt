@@ -320,7 +320,7 @@ function ServicesContent() {
                   </div>
                 </div>
                 <div className="browser-content">
-                  <img src={service.image} alt={service.imageAlt} />
+                  <img src={service.image} alt={service.imageAlt} width={600} height={380} loading="lazy" decoding="async" />
                   <div className="browser-live-overlay">
                     <span className="live-metrics-pill" style={{ color: service.statusBadge.color }}>
                       {service.statusBadge.icon === 'pulse' ? (

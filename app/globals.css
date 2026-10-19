@@ -1329,6 +1329,7 @@ img {
 
 .browser-address-bar {
   flex: 1;
+  min-width: 0;
   background: #ffffff;
   border: 1px solid #e3e2ec;
   border-radius: 6px;
@@ -1338,6 +1339,15 @@ img {
   display: flex;
   align-items: center;
   gap: 6px;
+  overflow: hidden;
+}
+
+.browser-address-bar span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .browser-content {
@@ -1915,18 +1925,66 @@ img {
 
 @media (max-width: 860px) {
   .service-showcase-row, .service-showcase-row.reversed {
-    grid-template-columns: 1fr;
-    padding: 26px 18px;
-    gap: 24px;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 24px 18px !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    min-width: 0 !important;
   }
-  .service-showcase-row.reversed .mockup-side { order: 2; }
-  .service-showcase-row.reversed .content-side { order: 1; }
-  .deliverables-grid { grid-template-columns: 1fr; gap: 10px; }
-  .service-showcase-content h2 { font-size: 1.6rem; }
-  .service-showcase-content p { font-size: 0.95rem; }
+  .service-showcase-row.reversed .mockup-side { order: 2 !important; }
+  .service-showcase-row.reversed .content-side { order: 1 !important; }
+  .content-side,
+  .mockup-side,
+  .service-showcase-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .deliverables-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+  }
+  .deliverable-item {
+    min-width: 0 !important;
+    word-break: break-word !important;
+  }
+  .service-showcase-content h2 {
+    font-size: 1.55rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  .service-showcase-content p {
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  .browser-mockup-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .pricing-advantage-banner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 24px 18px !important;
+    gap: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1967,12 +2025,22 @@ img {
   .stats-number { font-size: 1.4rem; }
   .floating-3d-quality-badge { bottom: 0; left: -5px; padding: 8px 12px; }
   .floating-3d-play-pill { bottom: 50px; right: -5px; padding: 6px 14px; font-size: 0.8rem; }
-  .service-showcase-row, .service-showcase-row.reversed { padding: 22px 16px; border-radius: 18px; }
-  .service-showcase-content h2 { font-size: 1.7rem; }
-  .browser-content { height: 210px; }
-  .pricing-advantage-banner { padding: 22px 16px; }
-  .pricing-advantage-text h3 { font-size: 1.35rem; }
-  .container { padding: 0 16px; }
+  .service-showcase-row, .service-showcase-row.reversed {
+    padding: 20px 14px !important;
+    border-radius: 18px !important;
+  }
+  .service-showcase-content h2 {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+  }
+  .service-tech-pill {
+    font-size: 0.72rem !important;
+    padding: 4px 10px !important;
+  }
+  .browser-content { height: 210px !important; }
+  .pricing-advantage-banner { padding: 20px 14px !important; }
+  .pricing-advantage-text h3 { font-size: 1.25rem !important; }
+  .container { padding: 0 14px !important; }
   .btn { padding: 11px 20px; font-size: 0.92rem; }
 }
 

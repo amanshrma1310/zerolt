@@ -119,6 +119,10 @@ export default function AboutPage() {
                   <img 
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" 
                     alt="Zerolt Team Workstation" 
+                    width={900}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="browser-live-overlay">
                     <span className="live-metrics-pill" style={{ color: '#10b981' }}>
@@ -219,6 +223,10 @@ export default function AboutPage() {
               <img 
                 src="/images/aman-founder.jpg" 
                 alt="Aman — Founder & Lead Systems Architect" 
+                width={400}
+                height={400}
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="team-details">
@@ -234,6 +242,10 @@ export default function AboutPage() {
               <img 
                 src="/images/ankush-co-founder.jpg" 
                 alt="Ankush — Co-Founder & Full-Stack Automation Lead" 
+                width={400}
+                height={400}
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="team-details">
@@ -249,6 +261,10 @@ export default function AboutPage() {
               <img 
                 src="/images/neha-ceo.jpg" 
                 alt="Neha — CEO & Head of Digital Product" 
+                width={400}
+                height={400}
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="team-details">
