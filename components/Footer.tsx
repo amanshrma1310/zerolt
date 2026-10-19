@@ -11,11 +11,27 @@ export default function Footer() {
     e.preventDefault();
     if (!email) return;
     try {
-      await fetch('/api/waitlist', {
+      // 1. Post to /api/waitlist (saves in MySQL and dispatches lead)
+      fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
-      });
+      }).catch(() => {});
+
+      // 2. Direct dispatch to Hostinger Form intake endpoint for zerolthelp@gmail.com
+      const formData = new FormData();
+      formData.append('name', 'Newsletter Subscriber');
+      formData.append('email', email);
+      formData.append('phone', 'Newsletter');
+      formData.append('company', 'Zerolt Insights');
+      formData.append('notes', `New subscriber for Zerolt Insights: ${email}`);
+
+      fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors',
+      }).catch(() => {});
+
       setIsSubscribed(true);
       setEmail('');
     } catch {

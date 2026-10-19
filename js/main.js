@@ -452,8 +452,20 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ==========================================================================
-  // 12. INLINE NEWSLETTER SUBSCRIPTION (ELIMINATE BROWSER ALERT POPUPS)
+  // 12. INLINE NEWSLETTER SUBSCRIPTION (ELIMINATE BROWSER ALERT POPUPS & DELIVER TO ZEROLTHELP@GMAIL.COM)
   // ==========================================================================
+  // Global guard against any legacy browser alert popups
+  try {
+    const _origAlert = window.alert;
+    window.alert = function (msg) {
+      if (msg && typeof msg === 'string' && msg.toLowerCase().includes('subscribed to zerolt')) {
+        console.log('[Newsletter Alert Silenced]:', msg);
+        return;
+      }
+      return _origAlert ? _origAlert.apply(this, arguments) : undefined;
+    };
+  } catch (alertErr) {}
+
   window.handleNewsletterSubmit = function (e, form) {
     if (e && e.preventDefault) e.preventDefault();
     if (!form) return;
@@ -461,6 +473,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const email = input ? input.value.trim() : '';
     if (!email) return;
 
+    // 1. Post to local Next.js / MySQL waitlist API
     try {
       fetch('/api/waitlist', {
         method: 'POST',
@@ -469,6 +482,22 @@ document.addEventListener('DOMContentLoaded', function () {
       }).catch(function () {});
     } catch (err) {}
 
+    // 2. Direct POST to Hostinger Form Intake Endpoint (delivers lead notification to zerolthelp@gmail.com)
+    try {
+      const fd = new FormData();
+      fd.append('name', 'Newsletter Subscriber');
+      fd.append('email', email);
+      fd.append('phone', 'Newsletter');
+      fd.append('company', 'Zerolt Insights');
+      fd.append('notes', 'New newsletter subscription for Zerolt Insights. Send notification to zerolthelp@gmail.com. Email: ' + email);
+      fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
+        method: 'POST',
+        body: fd,
+        mode: 'no-cors'
+      }).catch(function () {});
+    } catch (err) {}
+
+    // 3. Smooth inline success UI replacement with zero browser alert popup
     form.style.display = 'none';
     const nextEl = form.nextElementSibling;
     if (nextEl && nextEl.classList.contains('newsletter-success')) {

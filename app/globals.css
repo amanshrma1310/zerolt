@@ -1923,12 +1923,12 @@ img {
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   .service-showcase-row, .service-showcase-row.reversed {
     display: flex !important;
     flex-direction: column !important;
-    padding: 24px 18px !important;
-    gap: 20px !important;
+    padding: 32px 22px !important;
+    gap: 26px !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -1938,37 +1938,76 @@ img {
   .service-showcase-row.reversed .mockup-side { order: 2 !important; }
   .service-showcase-row.reversed .content-side { order: 1 !important; }
   .content-side,
-  .mockup-side,
   .service-showcase-content {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;
+    overflow: visible !important; /* CRITICAL: Never clip text inside cards */
+  }
+  .mockup-side {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
   .deliverables-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 10px !important;
+    gap: 12px !important;
     width: 100% !important;
     min-width: 0 !important;
     padding: 0 !important;
   }
   .deliverable-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
     min-width: 0 !important;
+    width: 100% !important;
+    font-size: 0.94rem !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
     word-break: break-word !important;
+  }
+  .deliverable-item i {
+    margin-top: 4px !important;
+    flex-shrink: 0 !important;
+  }
+  .deliverable-item span {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
   }
   .service-showcase-content h2 {
-    font-size: 1.55rem !important;
+    font-size: clamp(1.35rem, 3.8vw, 1.8rem) !important;
     line-height: 1.25 !important;
-    word-break: break-word !important;
     overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
   }
   .service-showcase-content p {
-    font-size: 0.95rem !important;
-    line-height: 1.55 !important;
-    word-break: break-word !important;
+    font-size: clamp(0.9rem, 2.5vw, 1.02rem) !important;
+    line-height: 1.6 !important;
     overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+  }
+  .service-tech-badges {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    max-width: 100% !important;
+  }
+  .service-tech-pill {
+    font-size: 0.74rem !important;
+    padding: 4px 12px !important;
+    white-space: normal !important;
+    max-width: 100% !important;
   }
   .browser-mockup-frame {
     width: 100% !important;
@@ -2028,17 +2067,30 @@ img {
   .service-showcase-row, .service-showcase-row.reversed {
     padding: 20px 14px !important;
     border-radius: 18px !important;
+    gap: 18px !important;
   }
   .service-showcase-content h2 {
-    font-size: 1.35rem !important;
+    font-size: 1.3rem !important;
     line-height: 1.25 !important;
   }
-  .service-tech-pill {
-    font-size: 0.72rem !important;
-    padding: 4px 10px !important;
+  .service-showcase-content p {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 18px !important;
   }
-  .browser-content { height: 210px !important; }
-  .pricing-advantage-banner { padding: 20px 14px !important; }
+  .service-showcase-content .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .service-tech-pill {
+    font-size: 0.7rem !important;
+    padding: 4px 9px !important;
+  }
+  .browser-content { height: 200px !important; }
+  .pricing-advantage-banner { padding: 18px 14px !important; border-radius: 18px !important; }
+  .pricing-advantage-text h3 { font-size: 1.25rem !important; }
+  .pricing-advantage-banner .btn { width: 100% !important; justify-content: center !important; }
   .pricing-advantage-text h3 { font-size: 1.25rem !important; }
   .container { padding: 0 14px !important; }
   .btn { padding: 11px 20px; font-size: 0.92rem; }

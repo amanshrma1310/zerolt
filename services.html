@@ -35,9 +35,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Comfortaa:wght@600;700&family=Quicksand:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="css/style.css?v=14.0">
+  <link rel="stylesheet" href="css/style.css?v=15.0">
+
+  <script>
+    // Bulletproof: intercept and silence any legacy alert popups
+    (function () {
+      var _nativeAlert = window.alert;
+      window.alert = function (msg) {
+        if (msg && typeof msg === 'string' && msg.toLowerCase().indexOf('subscribed to zerolt') !== -1) {
+          console.log('[Newsletter Alert Silenced]:', msg);
+          return;
+        }
+        return _nativeAlert ? _nativeAlert.apply(this, arguments) : undefined;
+      };
+    })();
+  </script>
 
   <style>
     /* Logo Typography Matching Reference Screenshot */
@@ -179,17 +191,22 @@
     }
 
     .service-showcase-content h2 {
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, 2.3vw, 2.3rem);
       margin-bottom: 14px;
       line-height: 1.2;
       color: #111218;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
     }
 
     .service-showcase-content p {
-      font-size: 1.05rem;
+      font-size: clamp(0.96rem, 1.1vw, 1.05rem);
       color: #4e5264;
       line-height: 1.65;
       margin-bottom: 24px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
     /* Bullet-Free Deliverables Grid */
@@ -333,12 +350,12 @@
       gap: 6px;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 1024px) {
       .service-showcase-row, .service-showcase-row.reversed {
         display: flex !important;
         flex-direction: column !important;
-        padding: 24px 18px !important;
-        gap: 20px !important;
+        padding: 32px 22px !important;
+        gap: 26px !important;
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
@@ -348,37 +365,76 @@
       .service-showcase-row.reversed .mockup-side { order: 2 !important; }
       .service-showcase-row.reversed .content-side { order: 1 !important; }
       .content-side,
-      .mockup-side,
       .service-showcase-content {
         width: 100% !important;
         max-width: 100% !important;
         min-width: 0 !important;
         box-sizing: border-box !important;
-        overflow: hidden !important;
+        overflow: visible !important; /* CRITICAL: Never clip text inside cards */
+      }
+      .mockup-side {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
       }
       .deliverables-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 10px !important;
+        gap: 12px !important;
         width: 100% !important;
         min-width: 0 !important;
         padding: 0 !important;
       }
       .deliverable-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
         min-width: 0 !important;
+        width: 100% !important;
+        font-size: 0.94rem !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
         word-break: break-word !important;
+      }
+      .deliverable-item i {
+        margin-top: 4px !important;
+        flex-shrink: 0 !important;
+      }
+      .deliverable-item span {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
       }
       .service-showcase-content h2 {
-        font-size: 1.55rem !important;
+        font-size: clamp(1.35rem, 3.8vw, 1.8rem) !important;
         line-height: 1.25 !important;
-        word-break: break-word !important;
         overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+        max-width: 100% !important;
       }
       .service-showcase-content p {
-        font-size: 0.95rem !important;
-        line-height: 1.55 !important;
-        word-break: break-word !important;
+        font-size: clamp(0.9rem, 2.5vw, 1.02rem) !important;
+        line-height: 1.6 !important;
         overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        max-width: 100% !important;
+      }
+      .service-tech-badges {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        max-width: 100% !important;
+      }
+      .service-tech-pill {
+        font-size: 0.74rem !important;
+        padding: 4px 12px !important;
+        white-space: normal !important;
+        max-width: 100% !important;
       }
       .browser-mockup-frame {
         width: 100% !important;
@@ -398,26 +454,38 @@
       .page-hero h1 { font-size: 2.1rem !important; }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       .page-hero { padding: 110px 14px 35px !important; }
       .page-hero h1 { font-size: 1.85rem !important; }
       .service-showcase-row, .service-showcase-row.reversed {
         padding: 20px 14px !important;
         border-radius: 18px !important;
+        gap: 18px !important;
       }
       .service-showcase-content h2 {
-        font-size: 1.35rem !important;
+        font-size: 1.3rem !important;
         line-height: 1.25 !important;
       }
+      .service-showcase-content p {
+        font-size: 0.88rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 18px !important;
+      }
+      .service-showcase-content .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+      }
       .service-tech-pill {
-        font-size: 0.72rem !important;
-        padding: 4px 10px !important;
+        font-size: 0.7rem !important;
+        padding: 4px 9px !important;
       }
       .filter-btn { padding: 7px 14px; font-size: 0.8rem; }
       .browser-live-overlay { font-size: 0.72rem; padding: 8px 12px; }
-      .browser-content { height: 210px !important; }
-      .pricing-advantage-banner { padding: 20px 14px !important; }
+      .browser-content { height: 200px !important; }
+      .pricing-advantage-banner { padding: 18px 14px !important; border-radius: 18px !important; }
       .pricing-advantage-text h3 { font-size: 1.25rem !important; }
+      .pricing-advantage-banner .btn { width: 100% !important; justify-content: center !important; }
     }
   </style>
 </head>
@@ -967,6 +1035,6 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=15.0"></script>
 </body>
 </html>

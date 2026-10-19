@@ -46,8 +46,22 @@
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-  <!-- Core Stylesheet with Cache-Buster v14.0 -->
-  <link rel="stylesheet" href="css/style.css?v=14.0">
+  <!-- Core Stylesheet with Cache-Buster v15.0 -->
+  <link rel="stylesheet" href="css/style.css?v=15.0">
+
+  <script>
+    // Bulletproof: intercept and silence any legacy alert popups
+    (function () {
+      var _nativeAlert = window.alert;
+      window.alert = function (msg) {
+        if (msg && typeof msg === 'string' && msg.toLowerCase().indexOf('subscribed to zerolt') !== -1) {
+          console.log('[Newsletter Alert Silenced]:', msg);
+          return;
+        }
+        return _nativeAlert ? _nativeAlert.apply(this, arguments) : undefined;
+      };
+    })();
+  </script>
 
   <!-- Critical Inline Styles to Guarantee 100% Reliable Hero & FlowDesk Display Against Any Caching -->
   <style id="critical-hero-flowdesk">
@@ -1095,7 +1109,7 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=15.0"></script>
   <script>
     function switchSaasTab(tab) {
       var img = document.getElementById('saas-preview-img');
