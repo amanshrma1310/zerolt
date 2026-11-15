@@ -2906,10 +2906,194 @@ img {
   transition: all 0.2s ease;
 }
 
-.flowdesk-modal-close:hover {
+.flowdesk-modal-close:hover,
+.zerolt-modal-close:hover {
   background: #fee2e2;
   color: #ef4444;
   border-color: #fca5a5;
+}
+
+/* ==========================================================================
+   BANK-GRADE SECURITY CAPTCHA & ANTI-BOT SHIELD STYLES
+   ========================================================================== */
+.zerolt-security-captcha-wrap {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+}
+
+.captcha-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.captcha-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #334155;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: -0.01em;
+}
+
+.captcha-title i {
+  color: var(--primary);
+  font-size: 13px;
+}
+
+.captcha-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.captcha-calc-pill {
+  background: #ede9fe;
+  border: 1px solid #c4b5fd;
+  color: #5b21b6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  user-select: none;
+  letter-spacing: 0.05em;
+}
+
+.captcha-refresh-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #64748b;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.captcha-refresh-btn:hover {
+  background: #f1f5f9;
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: rotate(45deg);
+}
+
+.captcha-input {
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+  padding: 6px 12px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: ui-monospace, monospace;
+}
+
+.captcha-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(94, 67, 243, 0.15);
+}
+
+.captcha-error-alert {
+  display: none;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.4;
+}
+
+/* Invisible Bot Trap (Honeypot) - Off-screen to human visitors */
+.zerolt-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+  tabindex: -1 !important;
+}
+
+/* Aliases for Zerolt Modal */
+.zerolt-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 11, 18, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.zerolt-modal-backdrop.active {
+  display: flex;
+  opacity: 1;
+}
+
+.zerolt-modal-window {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  max-width: 500px;
+  width: 100%;
+  padding: 34px 30px;
+  position: relative;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zerolt-modal-backdrop.active .zerolt-modal-window {
+  transform: translateY(0) scale(1);
+}
+
+.zerolt-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
 }
 
 /* ==========================================================================

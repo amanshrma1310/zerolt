@@ -46,8 +46,8 @@
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-  <!-- Core Stylesheet with Cache-Buster v15.0 -->
-  <link rel="stylesheet" href="css/style.css?v=15.0">
+  <!-- Core Stylesheet with Cache-Buster v16.0 -->
+  <link rel="stylesheet" href="css/style.css?v=16.0">
 
   <script>
     // Bulletproof: intercept and silence any legacy alert popups
@@ -1043,6 +1043,7 @@
           <h4>Stay Ahead</h4>
           <p>Receive bi-weekly playbooks on marketing automation, n8n workflows, and high-conversion design.</p>
           <form class="footer-input-wrap newsletter-form" onsubmit="window.handleNewsletterSubmit(event, this)">
+            <input type="text" name="_zerolt_shield_trap" class="zerolt-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="email" placeholder="Enter your email" required>
             <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
           </form>
@@ -1096,6 +1097,23 @@
             <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px;">Project Brief / Notes</label>
             <textarea name="notes" rows="3" placeholder="Tell us about your requirements, timeline, budget..." style="width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:14px; box-sizing:border-box; outline:none; resize:vertical;" onfocus="this.style.borderColor='#6366f1'" onblur="this.style.borderColor='#cbd5e1'"></textarea>
           </div>
+
+          <!-- Invisible Bot Trap (Honeypot) -->
+          <input type="text" name="_zerolt_shield_trap" class="zerolt-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <!-- Interactive Anti-Bot CAPTCHA Verification -->
+          <div class="zerolt-security-captcha-wrap">
+            <div class="captcha-header">
+              <span class="captcha-title"><i class="fa-solid fa-shield-halved"></i> Security Verification</span>
+              <button type="button" class="captcha-refresh-btn" title="Refresh Calculation" aria-label="Refresh Calculation"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+            <div class="captcha-body">
+              <span class="captcha-calc-pill">4 + 3 = ?</span>
+              <input type="number" class="captcha-input" placeholder="Answer" required aria-label="Captcha Answer">
+            </div>
+            <div class="captcha-error-alert"></div>
+          </div>
+
           <button type="submit" id="flowdesk-submit-btn-form-1" style="width:100%; padding:12px; background:linear-gradient(135deg, #5e43f3 0%, #4328d6 100%); color:#fff; border:none; border-radius:8px; font-size:15px; font-weight:700; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.opacity='0.95'" onmouseout="this.style.opacity='1'">
             Request Free Consultation
           </button>
@@ -1109,7 +1127,7 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=15.0"></script>
+  <script src="js/main.js?v=16.0"></script>
   <script>
     function switchSaasTab(tab) {
       var img = document.getElementById('saas-preview-img');

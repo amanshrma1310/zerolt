@@ -5,31 +5,56 @@ import Link from 'next/link';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+
+    // Bot trap check
+    if (honeypot && honeypot.trim().length > 0) {
+      setIsSubscribed(true);
+      return;
+    }
+
+    const cleanEmail = email ? email.replace(/<[^>]*>/g, '').trim() : '';
+    if (!cleanEmail || !cleanEmail.includes('@')) return;
+
     try {
-      // 1. Post to /api/waitlist (saves in MySQL and dispatches lead)
-      fetch('/api/waitlist', {
+      // 1. Direct Delivery to zerolthelp@gmail.com via FormSubmit AJAX
+      fetch('https://formsubmit.co/ajax/zerolthelp@gmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          'Subscriber Email': cleanEmail,
+          'Subscription Type': 'Zerolt Insights Bi-Weekly Playbook',
+          'Security Timestamp': new Date().toLocaleString(),
+          _subject: `⚡ [Newsletter Subscriber]: ${cleanEmail}`,
+          _replyto: cleanEmail,
+          _template: 'table',
+          _captcha: 'false',
+        }),
       }).catch(() => {});
 
-      // 2. Direct dispatch to Hostinger Form intake endpoint for zerolthelp@gmail.com
+      // 2. Direct dispatch to FlowDesk Hostinger Form intake endpoint
       const formData = new FormData();
       formData.append('name', 'Newsletter Subscriber');
-      formData.append('email', email);
+      formData.append('email', cleanEmail);
       formData.append('phone', 'Newsletter');
       formData.append('company', 'Zerolt Insights');
-      formData.append('notes', `New subscriber for Zerolt Insights: ${email}`);
+      formData.append('notes', `New subscriber for Zerolt Insights: ${cleanEmail}`);
 
       fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
         method: 'POST',
         body: formData,
         mode: 'no-cors',
+      }).catch(() => {});
+
+      // 3. Post to /api/waitlist (saves in MySQL)
+      fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: cleanEmail }),
       }).catch(() => {});
 
       setIsSubscribed(true);
@@ -95,6 +120,16 @@ export default function Footer() {
               </div>
             ) : (
               <form className="footer-input-wrap" onSubmit={handleSubscribe}>
+                <input
+                  type="text"
+                  name="_zerolt_shield_trap"
+                  value={honeypot}
+                  onChange={e => setHoneypot(e.target.value)}
+                  className="zerolt-honeypot"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
                 <input 
                   type="email" 
                   placeholder="Enter your email" 

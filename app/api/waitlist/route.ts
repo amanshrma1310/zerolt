@@ -4,6 +4,16 @@ import { getDbPool, initDatabase } from '@/lib/db';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+
+    // Honeypot bot trap check
+    if (body._zerolt_shield_trap || body._gotcha) {
+      console.warn('[API /api/waitlist] Bot trap triggered. Dropping request.');
+      return NextResponse.json({
+        success: true,
+        message: "You're on the VIP waitlist!",
+      });
+    }
+
     const { email } = body;
 
     if (!email || !email.includes('@')) {
@@ -13,7 +23,24 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const normalizedEmail = email.trim().toLowerCase();
+    const normalizedEmail = String(email).replace(/<[^>]*>/g, '').trim().toLowerCase();
+
+    // 0. Forward lead to zerolthelp@gmail.com via FormSubmit AJAX
+    try {
+      fetch('https://formsubmit.co/ajax/zerolthelp@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          'Subscriber Email': normalizedEmail,
+          'Subscription Type': 'LeadSpark VIP Waitlist & Zerolt Insights',
+          'Security Timestamp': new Date().toLocaleString(),
+          _subject: `⚡ [VIP Waitlist Lead]: ${normalizedEmail}`,
+          _replyto: normalizedEmail,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      }).catch(() => {});
+    } catch {}
 
     // 1. Store in MySQL database (both waitlist and contact_leads for CRM tracking)
     try {

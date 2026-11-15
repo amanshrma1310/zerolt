@@ -13,7 +13,7 @@ export default function HomePage() {
   const [waitlistError, setWaitlistError] = useState('');
   const [saasTab, setSaasTab] = useState<'workflows' | 'dashboard'>('workflows');
 
-  // FlowDesk Quick Consultation Modal state
+  // FlowDesk Quick Consultation Modal state & Bank-Grade Security
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalLoading, setModalLoading] = useState(false);
   const [modalSuccess, setModalSuccess] = useState(false);
@@ -25,26 +25,117 @@ export default function HomePage() {
     notes: '',
   });
 
+  const [modalHoneypot, setModalHoneypot] = useState('');
+  const [modalCaptcha, setModalCaptcha] = useState<{ equation: string; expected: number }>({ equation: '4 + 3', expected: 7 });
+  const [modalCaptchaInput, setModalCaptchaInput] = useState('');
+  const [modalCaptchaError, setModalCaptchaError] = useState('');
+
+  const refreshModalCaptcha = () => {
+    const n1 = Math.floor(Math.random() * 8) + 2;
+    const n2 = Math.floor(Math.random() * 7) + 1;
+    const isPlus = Math.random() > 0.25;
+    const equation = isPlus ? `${n1} + ${n2}` : `${n1 + n2} - ${n1}`;
+    const expected = isPlus ? n1 + n2 : n2;
+    setModalCaptcha({ equation, expected });
+    setModalCaptchaInput('');
+    setModalCaptchaError('');
+  };
+
+  const sanitizeStr = (val: string) => (val ? val.replace(/<[^>]*>/g, '').trim() : '');
+
+  const openConsultationModal = () => {
+    refreshModalCaptcha();
+    setModalSuccess(false);
+    setIsModalOpen(true);
+  };
+
   const handleModalSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // 1. Bot Honeypot Check
+    if (modalHoneypot && modalHoneypot.trim().length > 0) {
+      console.warn('[Security] Bot trap triggered in modal. Dropping request.');
+      setModalSuccess(true);
+      return;
+    }
+
+    // 2. Interactive CAPTCHA Check
+    if (!modalCaptchaInput || parseInt(modalCaptchaInput.trim(), 10) !== modalCaptcha.expected) {
+      setModalCaptchaError('Security verification failed. Please enter the correct calculation answer.');
+      return;
+    }
+
     setModalLoading(true);
+    setModalCaptchaError('');
+
+    const cleanName = sanitizeStr(modalFormData.name);
+    const cleanEmail = sanitizeStr(modalFormData.email);
+    const cleanPhone = sanitizeStr(modalFormData.phone);
+    const cleanCompany = sanitizeStr(modalFormData.company);
+    const cleanNotes = sanitizeStr(modalFormData.notes);
 
     try {
-      const formData = new FormData();
-      formData.append('name', modalFormData.name);
-      formData.append('phone', modalFormData.phone);
-      formData.append('email', modalFormData.email);
-      formData.append('company', modalFormData.company);
-      formData.append('notes', modalFormData.notes);
+      // Destination A: Direct Delivery to zerolthelp@gmail.com via FormSubmit AJAX
+      try {
+        fetch('https://formsubmit.co/ajax/zerolthelp@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            'Full Name': cleanName || 'Anonymous',
+            'Work Email': cleanEmail,
+            'Phone / WhatsApp': cleanPhone || 'Not provided',
+            'Company Name': cleanCompany || 'Not provided',
+            'Requirements / Scope': cleanNotes || 'General Consultation Request',
+            'Security Status': 'VERIFIED HUMAN (Dynamic CAPTCHA Passed)',
+            'Submission Timestamp': new Date().toLocaleString(),
+            _subject: `⚡ [Zerolt Modal Lead]: New inquiry from ${cleanName || cleanEmail}`,
+            _replyto: cleanEmail,
+            _template: 'table',
+            _captcha: 'false',
+          }),
+        }).catch(() => {});
+      } catch {}
 
-      await fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors',
-      });
+      // Destination B: FlowDesk CRM backend
+      try {
+        const formData = new FormData();
+        formData.append('name', cleanName);
+        formData.append('phone', cleanPhone);
+        formData.append('email', cleanEmail);
+        formData.append('company', cleanCompany);
+        formData.append('notes', cleanNotes);
+
+        fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors',
+        }).catch(() => {});
+      } catch {}
+
+      // Destination C: Internal Database Endpoint (/api/contact)
+      try {
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: cleanName,
+            email: cleanEmail,
+            phone: cleanPhone,
+            company: cleanCompany,
+            message: cleanNotes,
+          }),
+        }).catch(() => {});
+      } catch {}
+
       setModalSuccess(true);
-    } catch (err) {
-      console.warn('FlowDesk handled with fallback:', err);
+      setModalFormData({
+        name: '',
+        phone: '',
+        email: '',
+        company: '',
+        notes: '',
+      });
+    } catch {
       setModalSuccess(true);
     } finally {
       setModalLoading(false);
@@ -550,7 +641,7 @@ export default function HomePage() {
             <div className="saas-banner-actions">
               <button 
                 type="button" 
-                onClick={() => setIsModalOpen(true)} 
+                onClick={openConsultationModal} 
                 className="btn btn-primary" 
                 style={{ fontSize: '0.95rem', padding: '12px 24px' }}
               >
@@ -826,12 +917,63 @@ export default function HomePage() {
                       style={{ width: '100%', padding: '10px 12px', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '14px', boxSizing: 'border-box', outline: 'none', resize: 'vertical' }}
                     />
                   </div>
+
+                  {/* Invisible Bot Trap (Honeypot) */}
+                  <input
+                    type="text"
+                    name="_zerolt_shield_trap"
+                    value={modalHoneypot}
+                    onChange={e => setModalHoneypot(e.target.value)}
+                    className="zerolt-honeypot"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+
+                  {/* Interactive Anti-Bot CAPTCHA Verification */}
+                  <div className="zerolt-security-captcha-wrap" style={{ marginBottom: '16px' }}>
+                    <div className="captcha-header">
+                      <span className="captcha-title">
+                        <i className="fa-solid fa-shield-halved"></i> Security Verification
+                      </span>
+                      <button
+                        type="button"
+                        onClick={refreshModalCaptcha}
+                        className="captcha-refresh-btn"
+                        title="Refresh Calculation"
+                        aria-label="Refresh Calculation"
+                      >
+                        <i className="fa-solid fa-rotate-right"></i>
+                      </button>
+                    </div>
+                    <div className="captcha-body">
+                      <span className="captcha-calc-pill">{modalCaptcha.equation} = ?</span>
+                      <input
+                        type="number"
+                        className="captcha-input"
+                        placeholder="Answer"
+                        value={modalCaptchaInput}
+                        onChange={e => {
+                          setModalCaptchaInput(e.target.value);
+                          if (modalCaptchaError) setModalCaptchaError('');
+                        }}
+                        required
+                        aria-label="Captcha Answer"
+                      />
+                    </div>
+                    {modalCaptchaError && (
+                      <div className="captcha-error-alert" style={{ display: 'flex' }}>
+                        <i className="fa-solid fa-triangle-exclamation"></i> {modalCaptchaError}
+                      </div>
+                    )}
+                  </div>
+
                   <button
                     type="submit"
                     disabled={modalLoading}
                     style={{ width: '100%', padding: '12px', background: 'linear-gradient(135deg, #5e43f3 0%, #4328d6 100%)', color: '#fff', border: 'none', borderRadius: '8px', fontSize: '15px', fontWeight: 700, cursor: 'pointer' }}
                   >
-                    {modalLoading ? 'Submitting Details...' : 'Request Free Consultation'}
+                    {modalLoading ? 'Securing & Submitting...' : 'Request Free Consultation'}
                   </button>
                 </form>
               ) : (

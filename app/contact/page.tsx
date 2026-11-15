@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TiltCard from '@/components/TiltCard';
 
 const platformsList = [
@@ -54,6 +54,27 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Security Hardening: Honeypot & Interactive Dynamic CAPTCHA
+  const [honeypot, setHoneypot] = useState('');
+  const [captcha, setCaptcha] = useState<{ equation: string; expected: number }>({ equation: '4 + 3', expected: 7 });
+  const [captchaInput, setCaptchaInput] = useState('');
+  const [captchaError, setCaptchaError] = useState('');
+
+  const refreshCaptcha = () => {
+    const n1 = Math.floor(Math.random() * 8) + 2;
+    const n2 = Math.floor(Math.random() * 7) + 1;
+    const isPlus = Math.random() > 0.25;
+    const equation = isPlus ? `${n1} + ${n2}` : `${n1 + n2} - ${n1}`;
+    const expected = isPlus ? n1 + n2 : n2;
+    setCaptcha({ equation, expected });
+    setCaptchaInput('');
+    setCaptchaError('');
+  };
+
+  useEffect(() => {
+    refreshCaptcha();
+  }, []);
+
   const togglePlatform = (platform: string) => {
     setSelectedPlatforms(prev =>
       prev.includes(platform)
@@ -62,49 +83,103 @@ export default function ContactPage() {
     );
   };
 
+  const sanitize = (val: string) => (val ? val.replace(/<[^>]*>/g, '').trim() : '');
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.email) return;
 
+    // 1. Bot Honeypot Check
+    if (honeypot && honeypot.trim().length > 0) {
+      console.warn('[Security] Bot trap triggered. Dropping request.');
+      setIsSubmitted(true);
+      return;
+    }
+
+    // 2. Interactive CAPTCHA Check
+    if (!captchaInput || parseInt(captchaInput.trim(), 10) !== captcha.expected) {
+      setCaptchaError('Security verification failed. Please enter the correct calculation answer.');
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMessage('');
+    setCaptchaError('');
+
+    const cleanName = sanitize(formData.name);
+    const cleanEmail = sanitize(formData.email);
+    const cleanPhone = sanitize(formData.phone);
+    const cleanCompany = sanitize(formData.company);
+    const cleanNotes = sanitize(formData.message);
 
     try {
-      const payload = {
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        company: formData.company,
-        notes: `Platforms: ${selectedPlatforms.join(', ')}\nBudget: ${formData.budget}\nDetails: ${formData.message}`,
-      };
+      // Destination A: Direct Delivery to zerolthelp@gmail.com via FormSubmit AJAX
+      try {
+        fetch('https://formsubmit.co/ajax/zerolthelp@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            'Full Name': cleanName || 'Anonymous',
+            'Work Email': cleanEmail,
+            'Phone / WhatsApp': cleanPhone || 'Not provided',
+            'Company Name': cleanCompany || 'Not provided',
+            'Selected Platforms': selectedPlatforms.join(', '),
+            'Estimated Budget': formData.budget,
+            'Requirements / Notes': cleanNotes || 'General Consultation Request',
+            'Security Status': 'VERIFIED HUMAN (Dynamic CAPTCHA Passed)',
+            'Submission Timestamp': new Date().toLocaleString(),
+            _subject: `⚡ [Zerolt Contact Lead]: New inquiry from ${cleanName || cleanEmail}`,
+            _replyto: cleanEmail,
+            _template: 'table',
+            _captcha: 'false',
+          }),
+        }).catch(() => {});
+      } catch {}
 
-      const res = await fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload),
+      // Destination B: FlowDesk CRM intake
+      try {
+        const fd = new FormData();
+        fd.append('name', cleanName);
+        fd.append('phone', cleanPhone);
+        fd.append('email', cleanEmail);
+        fd.append('company', cleanCompany);
+        fd.append('notes', `Platforms: ${selectedPlatforms.join(', ')}\nBudget: ${formData.budget}\nDetails: ${cleanNotes}`);
+
+        fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
+          method: 'POST',
+          body: fd,
+          mode: 'no-cors',
+        }).catch(() => {});
+      } catch {}
+
+      // Destination C: Internal Database Endpoint (/api/contact)
+      try {
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: cleanName,
+            email: cleanEmail,
+            phone: cleanPhone,
+            company: cleanCompany,
+            platforms: selectedPlatforms,
+            budget: formData.budget,
+            message: cleanNotes,
+          }),
+        }).catch(() => {});
+      } catch {}
+
+      setIsSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        website: '',
+        budget: '$3,000 – $6,000 (Full Website + GHL Pipeline)',
+        message: '',
       });
-
-      const data = await res.json();
-      if (data.success) {
-        if (data.redirectUrl) {
-          window.location.href = data.redirectUrl;
-          return;
-        }
-        setIsSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          website: '',
-          budget: '$3,000 – $6,000 (Full Website + GHL Pipeline)',
-          message: '',
-        });
-      } else {
-        setErrorMessage(data.error || 'Submission failed. Please try again.');
-      }
     } catch {
-      // Fallback
       setIsSubmitted(true);
     } finally {
       setIsSubmitting(false);
@@ -265,13 +340,63 @@ export default function ContactPage() {
                 ></textarea>
               </div>
 
+              {/* Invisible Bot Trap (Honeypot) */}
+              <input
+                type="text"
+                name="_zerolt_shield_trap"
+                value={honeypot}
+                onChange={e => setHoneypot(e.target.value)}
+                className="zerolt-honeypot"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
+
+              {/* Interactive Anti-Bot CAPTCHA Verification */}
+              <div className="zerolt-security-captcha-wrap" style={{ marginBottom: '22px' }}>
+                <div className="captcha-header">
+                  <span className="captcha-title">
+                    <i className="fa-solid fa-shield-halved"></i> Security Verification
+                  </span>
+                  <button
+                    type="button"
+                    onClick={refreshCaptcha}
+                    className="captcha-refresh-btn"
+                    title="Refresh Calculation"
+                    aria-label="Refresh Calculation"
+                  >
+                    <i className="fa-solid fa-rotate-right"></i>
+                  </button>
+                </div>
+                <div className="captcha-body">
+                  <span className="captcha-calc-pill">{captcha.equation} = ?</span>
+                  <input
+                    type="number"
+                    className="captcha-input"
+                    placeholder="Answer"
+                    value={captchaInput}
+                    onChange={e => {
+                      setCaptchaInput(e.target.value);
+                      if (captchaError) setCaptchaError('');
+                    }}
+                    required
+                    aria-label="Captcha Answer"
+                  />
+                </div>
+                {captchaError && (
+                  <div className="captcha-error-alert" style={{ display: 'flex' }}>
+                    <i className="fa-solid fa-triangle-exclamation"></i> {captchaError}
+                  </div>
+                )}
+              </div>
+
               <button
                 type="submit"
                 className="btn btn-primary"
                 disabled={isSubmitting}
                 style={{ width: '100%', fontSize: '1.05rem', padding: '16px' }}
               >
-                {isSubmitting ? 'Submitting...' : 'Get Free Consultation'}
+                {isSubmitting ? 'Securing & Submitting...' : 'Get Free Consultation'}
                 <span className="btn-pill-icon"><i className="fa-solid fa-arrow-right"></i></span>
               </button>
 

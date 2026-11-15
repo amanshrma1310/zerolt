@@ -324,34 +324,177 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ==========================================================================
-  // 10. FLOWDESK LEAD CAPTURE FORM HANDLER (Connected to Hostinger Endpoint)
-  // Endpoint: https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit
+  // 10. BANK-GRADE SECURITY FORM ENGINE (ANTI-BOT CAPTCHA & HONEYPOT DEFENSE)
+  // Dual-Dispatch: Delivers straight to zerolthelp@gmail.com AND FlowDesk CRM
   // ==========================================================================
-  const flowdeskForms = document.querySelectorAll('form[id^="flowdesk-form-"]');
-  flowdeskForms.forEach(form => {
+  function sanitizeInput(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/<[^>]*>/g, '') // Strip HTML tags
+      .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '') // Strip null & control chars
+      .trim();
+  }
+
+  function generateCaptcha(form) {
+    if (!form) return;
+    const n1 = Math.floor(Math.random() * 8) + 2; // 2..9
+    const n2 = Math.floor(Math.random() * 7) + 1; // 1..7
+    const isPlus = Math.random() > 0.25;
+    const equation = isPlus ? `${n1} + ${n2}` : `${n1 + n2} - ${n1}`;
+    const expected = isPlus ? (n1 + n2) : n2;
+
+    form.dataset.captchaExpected = String(expected);
+    const pill = form.querySelector('.captcha-calc-pill');
+    if (pill) {
+      pill.textContent = `${equation} = ?`;
+    }
+    const input = form.querySelector('.captcha-input');
+    if (input) {
+      input.value = '';
+    }
+    const errAlert = form.querySelector('.captcha-error-alert');
+    if (errAlert) {
+      errAlert.style.display = 'none';
+    }
+  }
+
+  // Initialize CAPTCHAs for all intake forms
+  const allSecureForms = document.querySelectorAll('form[id^="zerolt-"], form[id^="flowdesk-"], .zerolt-secure-form');
+  allSecureForms.forEach(form => {
+    generateCaptcha(form);
+
+    const refreshBtn = form.querySelector('.captcha-refresh-btn');
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        generateCaptcha(form);
+      });
+    }
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      const formContainer = form.closest('[id^="flowdesk-form-container-"]') || form.parentElement;
-      const successBox = formContainer ? formContainer.querySelector('[id^="flowdesk-success-"]') : null;
-      const submitBtn = form.querySelector('button[type="submit"]');
 
+      // 1. Bot Honeypot Check (Invisible trap field)
+      const honeypot = form.querySelector('input[name="_zerolt_shield_trap"], input[name="_gotcha"]');
+      if (honeypot && honeypot.value && honeypot.value.trim().length > 0) {
+        console.warn('[Zerolt Security] Bot trap triggered. Dropping request.');
+        form.reset();
+        return;
+      }
+
+      // 2. Interactive CAPTCHA Verification Check
+      const expectedAns = form.dataset.captchaExpected;
+      const captchaInput = form.querySelector('.captcha-input');
+      const errAlert = form.querySelector('.captcha-error-alert');
+
+      if (expectedAns && captchaInput) {
+        const userAns = captchaInput.value.trim();
+        if (!userAns || parseInt(userAns, 10) !== parseInt(expectedAns, 10)) {
+          if (errAlert) {
+            errAlert.style.display = 'flex';
+            errAlert.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Security verification failed. Please enter the correct calculation answer.';
+          }
+          captchaInput.focus();
+          captchaInput.style.borderColor = '#ef4444';
+          return;
+        }
+      }
+
+      if (errAlert) {
+        errAlert.style.display = 'none';
+      }
+
+      // 3. Extract and Sanitize Inputs
+      const nameInput = form.querySelector('input[name="name"]');
+      const phoneInput = form.querySelector('input[name="phone"]');
+      const emailInput = form.querySelector('input[name="email"]');
+      const companyInput = form.querySelector('input[name="company"]');
+      const notesInput = form.querySelector('textarea[name="notes"], textarea[name="message"]');
+
+      const name = sanitizeInput(nameInput ? nameInput.value : '');
+      const phone = sanitizeInput(phoneInput ? phoneInput.value : '');
+      const email = sanitizeInput(emailInput ? emailInput.value : '');
+      const company = sanitizeInput(companyInput ? companyInput.value : '');
+      const notes = sanitizeInput(notesInput ? notesInput.value : '');
+
+      if (!email || !email.includes('@')) {
+        alert('Please provide a valid email address.');
+        return;
+      }
+
+      // 4. Multi-Click / Anti-DDoS Button Lock
+      const submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn) {
-        submitBtn.dataset.originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="margin-right:8px;"></i> Submitting...';
+        submitBtn.dataset.originalHtml = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fa-solid fa-shield-halved fa-spin" style="margin-right:8px;"></i> Securing & Submitting...';
         submitBtn.disabled = true;
       }
 
-      const formData = new FormData(form);
+      // 5. PARALLEL SECURE DISPATCH:
+      // Destination A: Direct Email Delivery to zerolthelp@gmail.com via FormSubmit AJAX
+      const emailPayload = {
+        'Full Name': name || 'Inquiry',
+        'Work Email': email,
+        'Phone / WhatsApp': phone || 'Not provided',
+        'Company Name': company || 'Not specified',
+        'Requirements / Scope': notes || 'General Consultation Request',
+        'Security Status': 'VERIFIED HUMAN (Dynamic CAPTCHA Passed)',
+        'Submission Timestamp': new Date().toLocaleString(),
+        _subject: '⚡ [Zerolt Security Lead]: New Inquiry from ' + (name || email),
+        _replyto: email,
+        _template: 'table',
+        _captcha: 'false'
+      };
 
       try {
-        await fetch(form.action, {
+        fetch('https://formsubmit.co/ajax/zerolthelp@gmail.com', {
           method: 'POST',
-          body: formData,
-          mode: 'no-cors'
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(emailPayload)
+        }).catch(function (e) {
+          console.warn('[Email Dispatch Notice]:', e);
         });
-      } catch (err) {
-        console.warn('[FlowDesk] Handled with network fallback:', err);
-      }
+      } catch (err) {}
+
+      // Destination B: FlowDesk Backend System (Third-Party CRM Endpoint)
+      try {
+        const fd = new FormData();
+        fd.append('name', name);
+        fd.append('phone', phone);
+        fd.append('email', email);
+        fd.append('company', company);
+        fd.append('notes', notes);
+
+        fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
+          method: 'POST',
+          body: fd,
+          mode: 'no-cors'
+        }).catch(function (e) {
+          console.warn('[FlowDesk Backend Notice]:', e);
+        });
+      } catch (err) {}
+
+      // Destination C: Local MySQL Database (/api/contact)
+      try {
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            company: company,
+            message: notes
+          })
+        }).catch(function () {});
+      } catch (err) {}
+
+      // 6. Display Success State
+      const formContainer = form.closest('[id$="-container-form-1"], .contact-form-card') || form.parentElement;
+      const successBox = formContainer ? formContainer.querySelector('[id$="-success-form-1"], [id^="flowdesk-success-"]') : null;
 
       form.style.display = 'none';
       if (successBox) {
@@ -360,101 +503,59 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Legacy fallback if any #project-contact-form exists
-  const contactForm = document.getElementById('project-contact-form');
-  const contactSuccessBanner = document.getElementById('form-success-banner');
-  const contactSubmitBtn = document.getElementById('contact-submit-btn');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
-      const platforms = [];
-      contactForm.querySelectorAll('input[name="platform"]:checked').forEach(cb => {
-        platforms.push(cb.value);
-      });
-
-      const payload = {
-        name: formData.get('name') || '',
-        email: formData.get('email') || '',
-        phone: formData.get('phone') || '',
-        platforms: platforms,
-        budget: formData.get('budget') || '',
-        message: `Company: ${formData.get('company') || 'N/A'}\nWebsite: ${formData.get('website') || 'N/A'}\nDetails: ${formData.get('message') || ''}`
-      };
-
-      if (contactSubmitBtn) {
-        contactSubmitBtn.textContent = 'Sending Request...';
-        contactSubmitBtn.disabled = true;
-      }
-
-      try {
-        await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-      } catch (err) {
-        console.warn('[Contact] Inquiry sent with graceful fallback:', err);
-      }
-
-      if (contactSuccessBanner) {
-        contactSuccessBanner.style.display = 'block';
-      }
-      contactForm.reset();
-      if (contactSubmitBtn) {
-        contactSubmitBtn.textContent = 'Inquiry Sent!';
-      }
-    });
-  }
-
   // ==========================================================================
-  // 11. FLOWDESK QUICK-CONSULTATION MODAL CONTROLLER
-  // Opens modal anywhere on the site when user requests consultation
+  // 11. QUICK-CONSULTATION MODAL CONTROLLER (WITH INSTANT CAPTCHA RE-ROLL)
   // ==========================================================================
-  const flowdeskModal = document.getElementById('flowdesk-modal');
-  const flowdeskModalClose = document.getElementById('flowdesk-modal-close');
+  const consultationModal = document.getElementById('zerolt-consultation-modal') || document.getElementById('flowdesk-modal');
+  const consultationModalClose = document.getElementById('zerolt-modal-close') || document.getElementById('flowdesk-modal-close');
 
-  if (flowdeskModal) {
-    document.querySelectorAll('.btn-consultation, [data-flowdesk-open]').forEach(btn => {
+  if (consultationModal) {
+    document.querySelectorAll('.btn-consultation, [data-flowdesk-open], [data-zerolt-open]').forEach(btn => {
       btn.addEventListener('click', function (e) {
-        // If not on the dedicated contact page, launch modal
         const isContactPage = window.location.pathname.endsWith('/contact') || 
                               window.location.pathname.endsWith('/contact.html');
         if (!isContactPage) {
           e.preventDefault();
-          flowdeskModal.classList.add('active');
+          consultationModal.classList.add('active');
           document.body.style.overflow = 'hidden';
+
+          // Re-roll dynamic CAPTCHA on every modal open
+          const modalForm = consultationModal.querySelector('form');
+          if (modalForm) {
+            generateCaptcha(modalForm);
+            modalForm.style.display = 'block';
+            const successBox = consultationModal.querySelector('[id$="-success-form-1"], [id^="flowdesk-success-"]');
+            if (successBox) successBox.style.display = 'none';
+          }
         }
       });
     });
 
     const closeModal = () => {
-      flowdeskModal.classList.remove('active');
+      consultationModal.classList.remove('active');
       document.body.style.overflow = '';
     };
 
-    if (flowdeskModalClose) {
-      flowdeskModalClose.addEventListener('click', closeModal);
+    if (consultationModalClose) {
+      consultationModalClose.addEventListener('click', closeModal);
     }
 
-    flowdeskModal.addEventListener('click', function (e) {
-      if (e.target === flowdeskModal) {
+    consultationModal.addEventListener('click', function (e) {
+      if (e.target === consultationModal) {
         closeModal();
       }
     });
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && flowdeskModal.classList.contains('active')) {
+      if (e.key === 'Escape' && consultationModal.classList.contains('active')) {
         closeModal();
       }
     });
   }
 
   // ==========================================================================
-  // 12. INLINE NEWSLETTER SUBSCRIPTION (ELIMINATE BROWSER ALERT POPUPS & DELIVER TO ZEROLTHELP@GMAIL.COM)
+  // 12. SECURE NEWSLETTER SUBSCRIPTION (CAPTURED & SENT TO ZEROLTHELP@GMAIL.COM)
   // ==========================================================================
-  // Global guard against any legacy browser alert popups
   try {
     const _origAlert = window.alert;
     window.alert = function (msg) {
@@ -469,11 +570,48 @@ document.addEventListener('DOMContentLoaded', function () {
   window.handleNewsletterSubmit = function (e, form) {
     if (e && e.preventDefault) e.preventDefault();
     if (!form) return;
-    const input = form.querySelector('input[type="email"]');
-    const email = input ? input.value.trim() : '';
-    if (!email) return;
 
-    // 1. Post to local Next.js / MySQL waitlist API
+    // Check honeypot
+    const hp = form.querySelector('input[name="_zerolt_shield_trap"]');
+    if (hp && hp.value && hp.value.length > 0) return;
+
+    const input = form.querySelector('input[type="email"]');
+    const email = input ? sanitizeInput(input.value) : '';
+    if (!email || !email.includes('@')) return;
+
+    // 1. Direct Delivery to zerolthelp@gmail.com
+    try {
+      fetch('https://formsubmit.co/ajax/zerolthelp@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          'Subscriber Email': email,
+          'Subscription Type': 'Zerolt Insights Bi-Weekly Playbook',
+          'Security Timestamp': new Date().toLocaleString(),
+          _subject: '⚡ [Newsletter Subscriber]: ' + email,
+          _replyto: email,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      }).catch(function () {});
+    } catch (err) {}
+
+    // 2. Post to FlowDesk CRM intake
+    try {
+      const fd = new FormData();
+      fd.append('name', 'Newsletter Subscriber');
+      fd.append('email', email);
+      fd.append('phone', 'Newsletter');
+      fd.append('company', 'Zerolt Insights');
+      fd.append('notes', 'New newsletter subscription for Zerolt Insights. Notification to zerolthelp@gmail.com. Email: ' + email);
+      fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
+        method: 'POST',
+        body: fd,
+        mode: 'no-cors'
+      }).catch(function () {});
+    } catch (err) {}
+
+    // 3. Post to local MySQL waitlist API
     try {
       fetch('/api/waitlist', {
         method: 'POST',
@@ -482,22 +620,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }).catch(function () {});
     } catch (err) {}
 
-    // 2. Direct POST to Hostinger Form Intake Endpoint (delivers lead notification to zerolthelp@gmail.com)
-    try {
-      const fd = new FormData();
-      fd.append('name', 'Newsletter Subscriber');
-      fd.append('email', email);
-      fd.append('phone', 'Newsletter');
-      fd.append('company', 'Zerolt Insights');
-      fd.append('notes', 'New newsletter subscription for Zerolt Insights. Send notification to zerolthelp@gmail.com. Email: ' + email);
-      fetch('https://wheat-raccoon-340819.hostingersite.com/api/v1/forms/form-1/submit', {
-        method: 'POST',
-        body: fd,
-        mode: 'no-cors'
-      }).catch(function () {});
-    } catch (err) {}
-
-    // 3. Smooth inline success UI replacement with zero browser alert popup
+    // 4. Smooth inline success UI replacement with zero alert popup
     form.style.display = 'none';
     const nextEl = form.nextElementSibling;
     if (nextEl && nextEl.classList.contains('newsletter-success')) {
