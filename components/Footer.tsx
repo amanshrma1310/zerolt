@@ -69,9 +69,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Link href="/" className="logo logo-dark">
-              <span className="logo-text">Zerolt</span>
-              <span className="logo-dot"></span>
+            <Link href="/" className="logo logo-dark" aria-label="Zerolt Home">
+              <img src="/images/zerolt-logo.png" alt="Zerolt — Innovative Web & Automation Solutions" className="logo-brand-img footer-logo-img" height={46} width={220} />
             </Link>
             <p>
               An elite freelance collective crafting high-converting storefronts, custom CMS websites, and autonomous marketing engines at fair market prices.

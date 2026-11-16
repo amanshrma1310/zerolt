@@ -17,13 +17,13 @@
   <meta property="og:title" content="Zerolt — Elite Freelance Builders & Automation Specialists">
   <meta property="og:description" content="We are not just an agency. We are freelance builders who work like friends on your team at fair market rates.">
   <meta property="og:url" content="https://zerolt.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image" content="https://zerolt.com/images/og-image.png">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Zerolt — Elite Freelance Web & Automation Collective">
   <meta name="twitter:description" content="Enterprise-grade Webflow, GHL, and n8n workflows at 50% lower market pricing.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:image" content="https://zerolt.com/images/og-image.png">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -36,8 +36,15 @@
   }
   </script>
 
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%235e43f3'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='50' fill='white' font-family='sans-serif' font-weight='bold'>Z</text></svg>">
+  <!-- Favicon & Mobile App Icons (Standard, Apple Touch, Google Search 48x48) -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#5e43f3">
 
   <!-- Fonts & Icons (Optimized for Sub-Second Load) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,8 +53,8 @@
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-  <!-- Core Stylesheet with Cache-Buster v16.0 -->
-  <link rel="stylesheet" href="css/style.css?v=16.0">
+  <!-- Core Stylesheet with Cache-Buster v17.0 -->
+  <link rel="stylesheet" href="css/style.css?v=17.0">
 
   <script>
     // Bulletproof: intercept and silence any legacy alert popups
@@ -298,9 +305,9 @@
   <header class="site-header">
     <div class="container">
       <div class="nav-wrapper">
-        <!-- Logo matching uploaded rounded typography -->
-        <a href="/" class="logo">
-          <span class="logo-text">Zerolt</span><span class="logo-dot"></span>
+        <!-- Official Zerolt Brand Logo with Electric Theme Accent -->
+        <a href="/" class="logo" aria-label="Zerolt Home">
+          <img src="images/zerolt-logo-nav.png" alt="Zerolt" class="logo-brand-img" height="38" width="210">
         </a>
 
         <!-- Desktop Navigation Links -->
@@ -998,8 +1005,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="/" class="logo logo-dark">
-            <span class="logo-text">Zerolt</span><span class="logo-dot"></span>
+          <a href="/" class="logo logo-dark" aria-label="Zerolt Home">
+            <img src="images/zerolt-logo.png" alt="Zerolt — Innovative Web & Automation Solutions" class="logo-brand-img footer-logo-img" height="46" width="220">
           </a>
           <p>
             An elite freelance collective crafting high-converting storefronts, custom CMS websites, and autonomous marketing engines at fair market prices.
@@ -1127,7 +1134,7 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=16.0"></script>
+  <script src="js/main.js?v=17.0"></script>
   <script>
     function switchSaasTab(tab) {
       var img = document.getElementById('saas-preview-img');

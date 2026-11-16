@@ -32,10 +32,9 @@ export default function Header() {
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="nav-wrapper">
-          {/* Logo with rounded typography */}
-          <Link href="/" className="logo" onClick={() => setIsMenuOpen(false)}>
-            <span className="logo-text">Zerolt</span>
-            <span className="logo-dot"></span>
+          {/* Official Zerolt Brand Logo with Electric Theme Accent */}
+          <Link href="/" className="logo" onClick={() => setIsMenuOpen(false)} aria-label="Zerolt Home">
+            <img src="/images/zerolt-logo-nav.png" alt="Zerolt" className="logo-brand-img" height={38} width={210} />
           </Link>
 
           {/* Desktop & Mobile Navigation Menu */}
